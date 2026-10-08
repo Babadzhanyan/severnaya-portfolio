@@ -3,31 +3,38 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self' blob: data:; connect-src 'none'; object-src 'none'; base-uri 'self'; form-action 'none'">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://docs.google.com/spreadsheets/; style-src 'self'; font-src 'self'; img-src 'self' blob: data:; connect-src 'none'; object-src 'none'; base-uri 'self'; form-action 'none'">
   <title>Северная / Портфель инициатив</title>
-  <link rel="stylesheet" href="styles.css">
-  <script src="vendor/jszip.min.js" defer></script>
-  <script src="schema.js" defer></script>
-  <script src="workbook.js" defer></script>
-  <script src="portfolio-ui.js" defer></script>
+  <link rel="stylesheet" href="styles.css?v=20261008-live-v9">
+  <script src="vendor/jszip.min.js?v=20261008-live-v9" defer></script>
+  <script src="schema.js?v=20261008-live-v9" defer></script>
+  <script src="workbook.js?v=20261008-live-v9" defer></script>
+  <script src="portfolio-ui.js?v=20261008-live-v9" defer></script>
+  <script src="live-config.js?v=20261008-live-v9" defer></script>
+  <script src="live-source.js?v=20261008-live-v9" defer></script>
 </head>
 <body>
   <header class="app-header">
     <div class="header-line">
       <a class="brand" href="#overview">Северная<span>Портфель инициатив ИТ</span></a>
       <div class="file-state"><span id="file-name">Команда загружает рабочий реестр</span><small id="slice-date">Книга обрабатывается в браузере</small><label class="snapshot-control">Дата среза <input id="snapshot-date" type="date" disabled></label></div>
-      <div class="header-actions"><button id="open-file" class="primary">Открыть Excel</button><button id="export-file" disabled>Сохранить Excel</button><button id="more-button" aria-expanded="false">Действия</button></div>
+      <div class="header-actions"><button id="connect-live" class="primary">Живая таблица</button><button id="open-file" hidden>Локальный Excel</button><button id="export-file" hidden disabled>Сохранить Excel</button><button id="presentation-mode">Режим заседания</button><button id="more-button" hidden aria-expanded="false">Действия</button></div>
     </div>
     <div id="more-actions" class="more-actions" hidden><button id="export-patch">Сохранить пакет правок</button><button id="open-patch">Применить пакет правок</button><button id="close-file">Закрыть книгу</button></div>
+    <div class="live-status" id="live-status" role="status" aria-live="polite">
+      <div class="live-status-line"><span class="live-dot" aria-hidden="true"></span><span class="live-source" id="live-source-label">Google Sheets связывает портфель с управленческими экранами</span><span class="sync-meta" id="live-sync-meta">Источник подключается</span></div>
+      <div class="source-actions"><button id="refresh-live">Обновить сейчас</button><a id="edit-google" target="_blank" rel="noopener">Редактировать в Google Sheets</a></div>
+    </div>
+    <div id="presentation-controls" class="presentation-controls" hidden><button id="presentation-prev">Предыдущий раздел</button><strong id="presentation-section">Обзор портфеля</strong><button id="presentation-next">Следующий раздел</button><button id="presentation-print">Печать раздела</button><button id="presentation-exit">Завершить показ</button></div>
     <nav class="tabs" aria-label="Разделы портфеля">
       <button data-view="overview" class="active">Обзор</button><button data-view="tracker">Стадии и эффекты</button><button data-view="gantt">Общий Гант</button><button data-view="map">Карта завода</button><button data-view="teams">Направления и люди</button><button data-view="passport">Паспорт</button>
     </nav>
   </header>
   <main class="app-main">
-    <section id="welcome" class="welcome"><p class="eyebrow">Единая рабочая книга</p><h1>Руководитель связывает инициативы, эффекты и ресурсы</h1><p>Загрузите реестр Excel, выберите направление и подготовьте пакет инициатив к решению комитета</p><div class="welcome-flow"><span>Общий портфель</span><span>Куратор направления</span><span>Сотрудник</span><span>Инициатива и четыре фазы</span></div><button id="welcome-upload" class="primary">Открыть рабочий реестр</button><p class="caption">Исходные сведения показываются на белом фоне / дополнения и гипотезы – фиолетовым / формулы – серым</p></section>
+    <section id="welcome" class="welcome"><p class="eyebrow">Единый источник портфеля</p><h1>Google Sheets обновляет паспорта, эффекты и планы</h1><p>Команда правит рабочую таблицу. Экран обновляет обзор, трекер, Ганты и паспорта каждые 15 секунд</p><div class="welcome-flow"><span>Общий портфель</span><span>Куратор направления</span><span>Сотрудник</span><span>Инициатива и пять сроков стадий</span></div><button id="welcome-live" class="primary">Подключить живую таблицу</button><button id="welcome-upload" hidden>Открыть локальный Excel</button><p class="caption">Исходные сведения показываются на белом фоне / дополнения для согласования – светло-синим / формулы – серым</p></section>
     <section id="workspace" hidden>
-      <div class="filters"><label class="search-label"><span class="sr-only">Найти инициативу</span><input id="search" type="search" placeholder="Код или название инициативы"></label><select id="filter-group" aria-label="Направление ИТ"><option value="">Все направления ИТ</option></select><select id="filter-person" aria-label="Сотрудник"><option value="">Все сотрудники</option></select><select id="filter-process" aria-label="Участок бизнеса"><option value="">Все участки бизнеса</option></select><select id="filter-status" aria-label="Статус плана"><option value="">Весь портфель</option><option value="confirmed">Подтверждённые назначения</option><option value="hypothesis">Гипотезы назначений</option></select><button id="reset-filters" class="plain">Сбросить</button><span id="filter-count" class="caption"></span></div>
-      <div class="legend"><span><i class="source-swatch"></i>Три исходных реестра</span><span><i class="addition-swatch"></i>Дополнение / гипотеза</span><span><i class="formula-swatch"></i>Расчёт Excel</span><span id="dirty-status"></span></div>
+      <div class="filters"><label class="search-label"><span class="sr-only">Найти инициативу</span><input id="search" type="search" placeholder="Код или название инициативы"></label><select id="filter-group" aria-label="Направление ИТ"><option value="">Все направления ИТ</option></select><select id="filter-person" aria-label="Сотрудник"><option value="">Все сотрудники</option></select><select id="filter-process" aria-label="Участок бизнеса"><option value="">Все участки бизнеса</option></select><select id="filter-status" aria-label="Статус плана"><option value="">Рабочий портфель</option><option value="all_source">Все исходные карточки</option><option value="confirmed">Подтверждённые назначения</option><option value="hypothesis">Назначения для согласования</option></select><button id="reset-filters" class="plain">Сбросить</button><span id="filter-count" class="caption"></span></div>
+      <div class="legend"><span><i class="source-swatch"></i>Три исходных реестра</span><span><i class="addition-swatch"></i>Дополнение для согласования</span><span><i class="formula-swatch"></i>Расчёт источника</span><span id="dirty-status"></span></div>
       <div id="metric-strip" class="metric-strip"></div>
       <section id="overview" class="view active"></section>
       <section id="tracker" class="view"></section>
@@ -35,7 +42,7 @@
       <section id="map" class="view"></section>
       <section id="teams" class="view"></section>
       <section id="passport" class="view"></section>
-      <footer><span id="source-footer"></span><span>Изменения сохраняются в локальный файл</span></footer>
+      <footer><span id="source-footer"></span><span id="edit-mode-footer">Команда редактирует источник в Google Sheets</span></footer>
     </section>
   </main>
   <input id="file-input" type="file" accept=".xlsx" hidden><input id="patch-input" type="file" accept=".json" hidden>
