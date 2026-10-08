@@ -1,0 +1,119 @@
+{
+  "version": 1,
+  "title": "Семь иллюстраций показывают этапы производства Северной",
+  "generation": "Встроенный image_gen",
+  "palette": {
+    "white": "#FFFFFF",
+    "navy": "#003C72",
+    "steel": "#6E8CA8",
+    "light_blue": "#EDF3F8",
+    "amber": "#F2AA00"
+  },
+  "assets": [
+    {
+      "id": "procurement",
+      "name": "Закупка сырья и логистика",
+      "path": "assets/production-ai/procurement.webp",
+      "size": {
+        "width": 640,
+        "height": 640,
+        "bytes": 77010
+      },
+      "sha256": "4f7e034345807fc5d8b98814417843ff69eb9fc00540ba2ea26a192b7c59b628",
+      "architecture_nodes": [
+        "procurement"
+      ]
+    },
+    {
+      "id": "feed",
+      "name": "Комбикормовый завод",
+      "path": "assets/production-ai/feed.webp",
+      "size": {
+        "width": 640,
+        "height": 640,
+        "bytes": 95148
+      },
+      "sha256": "4b9609d7795f28578a1611bd3718993e3b4d2872e05398b57bf54e53aa960bfb",
+      "architecture_nodes": [
+        "feed"
+      ]
+    },
+    {
+      "id": "parent",
+      "name": "Родительское стадо",
+      "path": "assets/production-ai/parent.webp",
+      "size": {
+        "width": 640,
+        "height": 640,
+        "bytes": 72534
+      },
+      "sha256": "243f1fae509a9b6b8e96471ae1245e84c0e3063de296a510cdefe6fd7f06f099",
+      "architecture_nodes": [
+        "parent"
+      ]
+    },
+    {
+      "id": "hatchery",
+      "name": "Инкубаторий",
+      "path": "assets/production-ai/hatchery.webp",
+      "size": {
+        "width": 640,
+        "height": 640,
+        "bytes": 59282
+      },
+      "sha256": "d1931172dd2e955695e4aa87c6ddcc2a23cdf8193313afc9241a0cca0147ad68",
+      "architecture_nodes": [
+        "hatchery"
+      ]
+    },
+    {
+      "id": "broiler",
+      "name": "Выращивание бройлеров",
+      "path": "assets/production-ai/broiler.webp",
+      "size": {
+        "width": 640,
+        "height": 640,
+        "bytes": 62166
+      },
+      "sha256": "2601e59bcea1c86a7921d68a1b3bcd5899a96fbbb9af88ceafe9e3b6198acda1",
+      "architecture_nodes": [
+        "broiler"
+      ]
+    },
+    {
+      "id": "processing",
+      "name": "Убой, разделка и глубокая переработка",
+      "path": "assets/production-ai/processing.webp",
+      "size": {
+        "width": 640,
+        "height": 640,
+        "bytes": 69688
+      },
+      "sha256": "281a6d30569b5d8d829cc1d24d3dd7fa0a503e678cd5a9f0fb4556677283df8a",
+      "architecture_nodes": [
+        "slaughter",
+        "chilling",
+        "cutting",
+        "deep",
+        "packing"
+      ]
+    },
+    {
+      "id": "sales",
+      "name": "Продажи и отгрузка",
+      "path": "assets/production-ai/sales.webp",
+      "size": {
+        "width": 640,
+        "height": 640,
+        "bytes": 66058
+      },
+      "sha256": "1103c74bf29aa883e926c9f8081650afe37d6e79f75d6e927fb1afdb424b2d4c",
+      "architecture_nodes": [
+        "warehouse",
+        "sales"
+      ]
+    }
+  ],
+  "source": "20261007_Master_v65.pdf / схема производственных узлов",
+  "meaning": "Предметные иллюстрации этапов; оборудование показано условно"
+}
