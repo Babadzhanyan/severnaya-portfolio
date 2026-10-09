@@ -1,0 +1,154 @@
+{
+  "as_of": "2026-10-09",
+  "verdict": "Проверка пройдена",
+  "metrics": {
+    "cards": 300,
+    "original_projects": 172,
+    "previous_ideas": 28,
+    "new_ideas": 100,
+    "all_ideas": 128,
+    "working": 247,
+    "history": 53,
+    "retired_aliases": 12,
+    "logical_fields": 58,
+    "visible_sheets": 5,
+    "total_sheets": 33,
+    "named_ranges": 23,
+    "transport_rows": 4163,
+    "transport_columns": 46,
+    "transport_capacity": 320,
+    "formula_errors": 0,
+    "model_tests": 134,
+    "component_tests": 32,
+    "backend_tests": 71,
+    "total_tests": 237,
+    "exclusions": 67,
+    "legal_requirements": 28,
+    "internal_commitments": 78
+  },
+  "new_levels": {
+    "Ц0": 15,
+    "Ц1": 20,
+    "Ц2": 20,
+    "Ц3": 20,
+    "Ц4": 15,
+    "Ц5": 10
+  },
+  "original_200": {
+    "before_sha256": "781e1febb956dc72fd87f03efad6f5e8bb2fa1fd280b35365a6e48236ccd83ae",
+    "after_sha256": "781e1febb956dc72fd87f03efad6f5e8bb2fa1fd280b35365a6e48236ccd83ae",
+    "exactly_equal": true
+  },
+  "production_inputs": {
+    "before_sha256": "56da388d3dcb48b496fc6fbdef983def147e0ebcf4e8bc6d5e8367124ac1cfeb",
+    "after_sha256": "56da388d3dcb48b496fc6fbdef983def147e0ebcf4e8bc6d5e8367124ac1cfeb",
+    "exactly_equal": true
+  },
+  "preserved_transport_blocks": [
+    "snapshot",
+    "initiatives",
+    "plan",
+    "resources",
+    "decisions",
+    "actuals",
+    "capacity",
+    "ledger",
+    "previous_meta",
+    "previousSnapshot",
+    "parameters",
+    "levers",
+    "staff",
+    "annualHistory",
+    "stageDeadlines",
+    "productionInputJSON",
+    "basketInput",
+    "basketCalc",
+    "productionCapacity",
+    "mechanisms",
+    "basketSettings",
+    "basketResult",
+    "effectMethod",
+    "basketSnapshots",
+    "digitalLayers",
+    "priorityInputs",
+    "annualActualInputJSON"
+  ],
+  "new_cards": {
+    "codes": "ИТ-213–ИТ-312",
+    "sheet": "Новые идеи",
+    "first_row": 31,
+    "last_row": 130,
+    "stage": "L0 Входящие предложения",
+    "agreed_effect_mrub_year": 0,
+    "role": "Ответственные за анализ подтверждены по составу существующих команд"
+  },
+  "open_confirmations": [
+    "Руководитель анализа подтверждает фактическое покрытие конкретного результата и исходную базу показателя",
+    "Заказчик, владелец результата и исполнитель подтверждают роли после первого проверочного шага",
+    "Финансовая служба подтверждает ставки полной начисленной оплаты труда, затраты, спрос и расчёт прибыли",
+    "Юрист подтверждает применимость требований к компании, процессу и товарному коду",
+    "Стратегия на стр.188 содержит 16 сформулированных вопросов и два пустых пункта; владелец подтверждает содержание этих двух пунктов"
+  ],
+  "evidence": [
+    {
+      "file": "new_100_ideas.json",
+      "sha256": "628c0e2f784d0f53b6dc28fee35c7e46749523aa7c95ad84e0cc327384c85730",
+      "bytes": 889403
+    },
+    {
+      "file": "obligations_review.json",
+      "sha256": "f8e0027a3a1f9cb18d221506685764df5b681076768e2d644ca13388c88f8644",
+      "bytes": 757786
+    },
+    {
+      "file": "ideas_review_report.json",
+      "sha256": "7798f082f0cc0a104e8fa3952c9d7d914cec78d9d6591362da0b199c3199f899",
+      "bytes": 135114
+    },
+    {
+      "file": "actual_response_300.json",
+      "sha256": "874a1ede9296c21186d5b2d9fb8515383672e6abc75489c8bc199bc3991b2718",
+      "bytes": 12761975
+    },
+    {
+      "file": "actual_portfolio_backend_300.json",
+      "sha256": "5e2390208d71187fe5bf547d6bc72a82aac5cc65587ea4cee568061d45a9c7b1",
+      "bytes": 25171513
+    },
+    {
+      "file": "actual_portfolio_frontend_300.json",
+      "sha256": "dfae2f20c893671edebb564c7e953e26b674bac8e4635c18396e0d0d75da3261",
+      "bytes": 24502359
+    },
+    {
+      "file": "source_name_review.json",
+      "sha256": "bd090165223fcdbef5ab9858340de521e9bce8a1fb6275fcf6dd8c9149b9e820",
+      "bytes": 179453
+    },
+    {
+      "file": "models_300_final.txt",
+      "sha256": "86be87300f0eea3bc263a347c8b02f8cecbe23977dc52cbdc3d446e12cfb11c3",
+      "bytes": 18751
+    },
+    {
+      "file": "components_300_final.txt",
+      "sha256": "5a77c729c76a363752822fe2c219710a04ce385181cd10ad28c6b20183b68280",
+      "bytes": 5027
+    },
+    {
+      "file": "backend_300_tests.txt",
+      "sha256": "7a4f434a979ce93e93f6f8736a7f8606d3c5479bf185651ac025ff2efea7d166",
+      "bytes": 11674
+    },
+    {
+      "file": "qa_architecture/visual_review_cycle1.json",
+      "sha256": "8c68cfa37be9810ef3cafe7199a5fee716b565cc62af358d2a8d3659ae6941dc",
+      "bytes": 4700
+    },
+    {
+      "file": "qa_production_ui.json",
+      "sha256": "08aaccb757fd900f77e73545e0854a2a71aa9f7e79655e726c657b4c8c001ee4",
+      "bytes": 10781
+    }
+  ]
+}

@@ -1,43 +1,49 @@
 {
-  "release": "v20",
-  "checked_at": "2026-10-09T05:50:35.816906+00:00",
-  "site_commit": "503614ae97c9c24ab29dd42e1b3514d75f29efc6",
-  "site_url": "https://babadzhanyan.github.io/severnaya-portfolio/?v=503614a#calculator",
+  "release": "v21",
+  "checked_at": "2026-10-09T06:38:00+00:00",
+  "site_commit": null,
+  "site_url": "https://babadzhanyan.github.io/severnaya-portfolio/#review",
   "google_url": "https://docs.google.com/spreadsheets/d/1stFDS_18dulhc96CSybYdXDk3RyvMvsSO9HxPkTvB4g/edit#gid=404672457&range=B2",
   "source_branch": "app-source",
   "continues": {
-    "source_commit": "d23b4e138823393fb356b1794bef57befa545ec0",
-    "release_report_sha256": "6dab8bfb2122e4cb303e2a204a487310c78c1c7ec6affc5bc80fff33124bc8bb"
+    "source_commit": "f498d52",
+    "previous_release": "v20",
+    "previous_report_sha256": "b5bf02452b9e7ea148c9a25272a0323f87a49a68eea3d16c85fee5e16f439187"
   },
-  "verdict": "Числовая и содержательная проверка пройдена / публикация сверяется отдельно",
+  "verdict": "Проверка данных, расчётов и интерфейса пройдена / публикация сверяется после размещения",
   "metrics": {
-    "cards": 200,
-    "source_cards": 172,
-    "ideas": 28,
-    "working": 147,
+    "cards": 300,
+    "original_projects": 172,
+    "previous_ideas": 28,
+    "new_ideas": 100,
+    "all_ideas": 128,
+    "working": 247,
     "history": 53,
-    "source_customers": 99,
-    "source_named_executors": 19,
-    "model_tests": 132,
+    "retired_aliases": 12,
+    "logical_fields": 58,
+    "visible_sheets": 5,
+    "total_sheets": 33,
+    "named_ranges": 23,
+    "transport_rows": 4163,
+    "transport_columns": 46,
+    "transport_capacity": 320,
+    "formula_errors": 0,
+    "model_tests": 134,
     "component_tests": 32,
-    "backend_tests_v18_unchanged_server": 71,
-    "total_tests": 235,
-    "google_structural_checks": 1271,
-    "financial_checks": 4389,
-    "filter_combinations": 343,
-    "ssr_checks": 18,
-    "public_files": 47,
-    "source_files": 164
+    "backend_tests": 71,
+    "total_tests": 237,
+    "exclusions": 67,
+    "legal_requirements": 28,
+    "internal_commitments": 78
   },
   "changes": [
-    "Семь практических пояснений и примеров изменения производственных показателей",
-    "Копирование кода инициативы, параметров и операционной прибыли в годовом и отдельном расчётах",
-    "Подпись пустого эффекта использует операционную прибыль",
-    "Боковые акцентные полосы статусов удалены с учётом каскада CSS",
-    "Результат встречи показан один раз / верхние кнопки открывают соответствующую встречу",
-    "Google B147/B151/B314 используют операционную прибыль / технические финансовые строки293:299 и315:316 скрыты",
-    "Разделитель показателей заменён в200 строках трекера при сохранении числовой логики",
-    "Название предложенной ИТ-086 очищено от служебного суффикса / архивAT9 сохранён"
+    "100 предложений ИТ-213–ИТ-312 добавлены в действующий Google на стадии L0",
+    "Прежние200карточек совпадают с проверенным срезом целиком",
+    "Сайт читает полный состав300карточек и128идей",
+    "Новый раздел ревью показывает67исключений,28правовых требований и78внутренних обязательств",
+    "Паспорта раскрывают предмет, результат, диапазоны часов и сроков, закупки, источники, первый шаг и критерий прекращения",
+    "Предварительные денежные примеры сохраняют условия; согласованный эффект новых предложений равен0",
+    "Версияv21сохраняет практические пояснения и перенос производственных расчётов версииv20"
   ],
   "financial_source_values": {
     "annual_estimate_million_rub": 55.013791,
@@ -57,7 +63,7 @@
     "production_weight_plus_one_percent_target_kg": 141453293.66,
     "practical_descriptions": 7
   },
-  "current_data_scope": "Текущие200карточек; новый поток100идей получает самостоятельное добавление и проверку",
+  "current_data_scope": "300 инициатив / 172 исходных проекта / 128 идей / 53 исторические карточки",
   "limitations": [
     "Google отвечает с переменной задержкой / сайт сохраняет последний успешный срез при задержке",
     "Финансовые оценки, правовая применимость и доступная мощность подтверждаются владельцами",
@@ -77,14 +83,14 @@
   },
   "public_files": [
     {
-      "path": "assets/index-B46oGbxo.css",
-      "bytes": 167102,
-      "sha256": "5077f067c1986c7544a645437173f2328b9fae9e1ea792a8959c65ea5831a476"
+      "path": "assets/index-BHLxIkrA.css",
+      "bytes": 168297,
+      "sha256": "bb9f46bf6ffbadb041cc23670ea758b73d180f78a5728b98cb9fd2d13492cdfb"
     },
     {
-      "path": "assets/index-Dm8m3s_p.js",
-      "bytes": 512933,
-      "sha256": "406bc17ef43b55216cb9594f4f4f6bd1ede3616149958bc856a43c905aa95bb6"
+      "path": "assets/index-DRkv7VU3.js",
+      "bytes": 640015,
+      "sha256": "4e191a20c27b312b3cf071fd90ac850d71ba8f6dc3fadcfea82f0f7ab5164bdd"
     },
     {
       "path": "assets/production-ai/accounting.webp",
@@ -304,12 +310,448 @@
     {
       "path": "index.html",
       "bytes": 441,
-      "sha256": "c2a0a753f5e576cc4b8f3756cebce9661051310601438f98b5dd0e26470d5d87"
+      "sha256": "bd94285f9f1bd9b01ff73e445b79a87a58ec070b0ed3dbccc0b76be03984cb8b"
+    },
+    {
+      "path": "review/exclusions-review.json",
+      "bytes": 23613,
+      "sha256": "6310a039cb6ac374fc72af9a7ce41b13f8da1757a6b599f5f08078acbc1d65f7"
+    },
+    {
+      "path": "review/integrity-review.json",
+      "bytes": 5172,
+      "sha256": "4708a03629994fef2e393daab8dd5ef9b9ccc53b2252c303279ea914e9153a01"
+    },
+    {
+      "path": "review/new-100-ideas.json",
+      "bytes": 889403,
+      "sha256": "628c0e2f784d0f53b6dc28fee35c7e46749523aa7c95ad84e0cc327384c85730"
+    },
+    {
+      "path": "review/obligations-review.json",
+      "bytes": 757786,
+      "sha256": "f8e0027a3a1f9cb18d221506685764df5b681076768e2d644ca13388c88f8644"
     },
     {
       "path": "runtime-config.js",
       "bytes": 184,
       "sha256": "966714f48698728b284414a0908f01129ded1b5ac7e5561713acc5ee58cd69ff"
     }
-  ]
+  ],
+  "integrity": {
+    "as_of": "2026-10-09",
+    "verdict": "Проверка пройдена",
+    "metrics": {
+      "cards": 300,
+      "original_projects": 172,
+      "previous_ideas": 28,
+      "new_ideas": 100,
+      "all_ideas": 128,
+      "working": 247,
+      "history": 53,
+      "retired_aliases": 12,
+      "logical_fields": 58,
+      "visible_sheets": 5,
+      "total_sheets": 33,
+      "named_ranges": 23,
+      "transport_rows": 4163,
+      "transport_columns": 46,
+      "transport_capacity": 320,
+      "formula_errors": 0,
+      "model_tests": 134,
+      "component_tests": 32,
+      "backend_tests": 71,
+      "total_tests": 237,
+      "exclusions": 67,
+      "legal_requirements": 28,
+      "internal_commitments": 78
+    },
+    "new_levels": {
+      "Ц0": 15,
+      "Ц1": 20,
+      "Ц2": 20,
+      "Ц3": 20,
+      "Ц4": 15,
+      "Ц5": 10
+    },
+    "original_200": {
+      "before_sha256": "781e1febb956dc72fd87f03efad6f5e8bb2fa1fd280b35365a6e48236ccd83ae",
+      "after_sha256": "781e1febb956dc72fd87f03efad6f5e8bb2fa1fd280b35365a6e48236ccd83ae",
+      "exactly_equal": true
+    },
+    "production_inputs": {
+      "before_sha256": "56da388d3dcb48b496fc6fbdef983def147e0ebcf4e8bc6d5e8367124ac1cfeb",
+      "after_sha256": "56da388d3dcb48b496fc6fbdef983def147e0ebcf4e8bc6d5e8367124ac1cfeb",
+      "exactly_equal": true
+    },
+    "preserved_transport_blocks": [
+      "snapshot",
+      "initiatives",
+      "plan",
+      "resources",
+      "decisions",
+      "actuals",
+      "capacity",
+      "ledger",
+      "previous_meta",
+      "previousSnapshot",
+      "parameters",
+      "levers",
+      "staff",
+      "annualHistory",
+      "stageDeadlines",
+      "productionInputJSON",
+      "basketInput",
+      "basketCalc",
+      "productionCapacity",
+      "mechanisms",
+      "basketSettings",
+      "basketResult",
+      "effectMethod",
+      "basketSnapshots",
+      "digitalLayers",
+      "priorityInputs",
+      "annualActualInputJSON"
+    ],
+    "new_cards": {
+      "codes": "ИТ-213–ИТ-312",
+      "sheet": "Новые идеи",
+      "first_row": 31,
+      "last_row": 130,
+      "stage": "L0 Входящие предложения",
+      "agreed_effect_mrub_year": 0,
+      "role": "Ответственные за анализ подтверждены по составу существующих команд"
+    },
+    "open_confirmations": [
+      "Руководитель анализа подтверждает фактическое покрытие конкретного результата и исходную базу показателя",
+      "Заказчик, владелец результата и исполнитель подтверждают роли после первого проверочного шага",
+      "Финансовая служба подтверждает ставки полной начисленной оплаты труда, затраты, спрос и расчёт прибыли",
+      "Юрист подтверждает применимость требований к компании, процессу и товарному коду",
+      "Стратегия на стр.188 содержит 16 сформулированных вопросов и два пустых пункта; владелец подтверждает содержание этих двух пунктов"
+    ],
+    "evidence": [
+      {
+        "file": "new_100_ideas.json",
+        "sha256": "628c0e2f784d0f53b6dc28fee35c7e46749523aa7c95ad84e0cc327384c85730",
+        "bytes": 889403
+      },
+      {
+        "file": "obligations_review.json",
+        "sha256": "f8e0027a3a1f9cb18d221506685764df5b681076768e2d644ca13388c88f8644",
+        "bytes": 757786
+      },
+      {
+        "file": "ideas_review_report.json",
+        "sha256": "7798f082f0cc0a104e8fa3952c9d7d914cec78d9d6591362da0b199c3199f899",
+        "bytes": 135114
+      },
+      {
+        "file": "actual_response_300.json",
+        "sha256": "874a1ede9296c21186d5b2d9fb8515383672e6abc75489c8bc199bc3991b2718",
+        "bytes": 12761975
+      },
+      {
+        "file": "actual_portfolio_backend_300.json",
+        "sha256": "5e2390208d71187fe5bf547d6bc72a82aac5cc65587ea4cee568061d45a9c7b1",
+        "bytes": 25171513
+      },
+      {
+        "file": "actual_portfolio_frontend_300.json",
+        "sha256": "dfae2f20c893671edebb564c7e953e26b674bac8e4635c18396e0d0d75da3261",
+        "bytes": 24502359
+      },
+      {
+        "file": "source_name_review.json",
+        "sha256": "bd090165223fcdbef5ab9858340de521e9bce8a1fb6275fcf6dd8c9149b9e820",
+        "bytes": 179453
+      },
+      {
+        "file": "models_300_final.txt",
+        "sha256": "86be87300f0eea3bc263a347c8b02f8cecbe23977dc52cbdc3d446e12cfb11c3",
+        "bytes": 18751
+      },
+      {
+        "file": "components_300_final.txt",
+        "sha256": "5a77c729c76a363752822fe2c219710a04ce385181cd10ad28c6b20183b68280",
+        "bytes": 5027
+      },
+      {
+        "file": "backend_300_tests.txt",
+        "sha256": "7a4f434a979ce93e93f6f8736a7f8606d3c5479bf185651ac025ff2efea7d166",
+        "bytes": 11674
+      },
+      {
+        "file": "qa_architecture/visual_review_cycle1.json",
+        "sha256": "8c68cfa37be9810ef3cafe7199a5fee716b565cc62af358d2a8d3659ae6941dc",
+        "bytes": 4700
+      },
+      {
+        "file": "qa_production_ui.json",
+        "sha256": "08aaccb757fd900f77e73545e0854a2a71aa9f7e79655e726c657b4c8c001ee4",
+        "bytes": 10781
+      }
+    ]
+  },
+  "previous_release_reference": {
+    "release": "v20",
+    "site_commit": "503614ae97c9c24ab29dd42e1b3514d75f29efc6",
+    "metrics": {
+      "cards": 200,
+      "source_cards": 172,
+      "ideas": 28,
+      "working": 147,
+      "history": 53,
+      "source_customers": 99,
+      "source_named_executors": 19,
+      "model_tests": 132,
+      "component_tests": 32,
+      "backend_tests_v18_unchanged_server": 71,
+      "total_tests": 235,
+      "google_structural_checks": 1271,
+      "financial_checks": 4389,
+      "filter_combinations": 343,
+      "ssr_checks": 18,
+      "public_files": 47,
+      "source_files": 164
+    },
+    "public_files": [
+      {
+        "path": "assets/index-B46oGbxo.css",
+        "bytes": 167102,
+        "sha256": "5077f067c1986c7544a645437173f2328b9fae9e1ea792a8959c65ea5831a476"
+      },
+      {
+        "path": "assets/index-Dm8m3s_p.js",
+        "bytes": 512933,
+        "sha256": "406bc17ef43b55216cb9594f4f4f6bd1ede3616149958bc856a43c905aa95bb6"
+      },
+      {
+        "path": "assets/production-ai/accounting.webp",
+        "bytes": 64612,
+        "sha256": "d45461597cba045768c22a5c5a618caa31754680e6c5b225b1c95d5981aeec38"
+      },
+      {
+        "path": "assets/production-ai/boiler.webp",
+        "bytes": 69786,
+        "sha256": "a8a5cbbf32468916d9dedf453473b4a9a6002ff04ef83d12eb6f10fb459c9a24"
+      },
+      {
+        "path": "assets/production-ai/broiler.webp",
+        "bytes": 62166,
+        "sha256": "2601e59bcea1c86a7921d68a1b3bcd5899a96fbbb9af88ceafe9e3b6198acda1"
+      },
+      {
+        "path": "assets/production-ai/byproducts.webp",
+        "bytes": 57582,
+        "sha256": "97fa2330de55f0c7c1dd9f633ff6c3fc0dd49628151cbc10b4db33e9a52b6bf7"
+      },
+      {
+        "path": "assets/production-ai/chilling.webp",
+        "bytes": 52750,
+        "sha256": "d55337b1fa73a31953b6e68dd84083483b548b348de2e48148c290cee3b35dcd"
+      },
+      {
+        "path": "assets/production-ai/coldstore.webp",
+        "bytes": 52256,
+        "sha256": "06e696c8bfb2ed8f8eeccecd4664cf7844ee007d1d27cc829cac4fb8742b3766"
+      },
+      {
+        "path": "assets/production-ai/cutting.webp",
+        "bytes": 64842,
+        "sha256": "2de23357698f0e4c955b15db41bf6ce282f5263c98d6bd427d3a1ae02017d18b"
+      },
+      {
+        "path": "assets/production-ai/deep.webp",
+        "bytes": 60516,
+        "sha256": "e700912cc07326b347c032bd622a75245f171dc8710668a58088c6741ffb2595"
+      },
+      {
+        "path": "assets/production-ai/electric.webp",
+        "bytes": 62110,
+        "sha256": "3bfc984703a9f4302fa594366471fc86e24458004c51a4ce9b8210f5557512e9"
+      },
+      {
+        "path": "assets/production-ai/environment.webp",
+        "bytes": 72676,
+        "sha256": "7e6ecf42df27fd9981096460594681df8bc0c16761ee9873706aeb61baf77c93"
+      },
+      {
+        "path": "assets/production-ai/extrusion.webp",
+        "bytes": 67472,
+        "sha256": "df9b055e7884d6d5718318d4f85a669d7be44512a095a91c1b1c03a2cee67ce0"
+      },
+      {
+        "path": "assets/production-ai/feed.webp",
+        "bytes": 95148,
+        "sha256": "4b9609d7795f28578a1611bd3718993e3b4d2872e05398b57bf54e53aa960bfb"
+      },
+      {
+        "path": "assets/production-ai/finance.webp",
+        "bytes": 64096,
+        "sha256": "06635ef8425a74826cb06270af508d86163e1dba8f7d38fd1ec6600fd764c743"
+      },
+      {
+        "path": "assets/production-ai/fleet.webp",
+        "bytes": 61356,
+        "sha256": "ac401175c61d5b4508ed2469003b792e8b5e3eed34911ebe76f3882d64e8e293"
+      },
+      {
+        "path": "assets/production-ai/hatchery.webp",
+        "bytes": 59282,
+        "sha256": "d1931172dd2e955695e4aa87c6ddcc2a23cdf8193313afc9241a0cca0147ad68"
+      },
+      {
+        "path": "assets/production-ai/liveweight-v14.webp",
+        "bytes": 103390,
+        "sha256": "afe45f93d9ec74c44d8e330dcc81d6ebf6bbf2c1ac7b04fcbaa3a2ca0a6b62e7"
+      },
+      {
+        "path": "assets/production-ai/manifest.json",
+        "bytes": 11165,
+        "sha256": "1b0b96e8c7f984838efbfc3937caef2d42fc11ac6248203243e7c6702a5e6da4"
+      },
+      {
+        "path": "assets/production-ai/other-services.webp",
+        "bytes": 51674,
+        "sha256": "4942f2bf5ab54f86dd83217045b6d5ba4175b593ed80f5c66c65a4f3247b2951"
+      },
+      {
+        "path": "assets/production-ai/packing.webp",
+        "bytes": 60298,
+        "sha256": "9429fecac486d561d16094ae494056ea53f85ebbc5209ca1560244a2f7cf9475"
+      },
+      {
+        "path": "assets/production-ai/parent.webp",
+        "bytes": 72534,
+        "sha256": "243f1fae509a9b6b8e96471ae1245e84c0e3063de296a510cdefe6fd7f06f099"
+      },
+      {
+        "path": "assets/production-ai/personnel.webp",
+        "bytes": 58074,
+        "sha256": "035cb114a1a45cada9e844a523676fcfebebc82ed17d2e9de4d0cb1528942746"
+      },
+      {
+        "path": "assets/production-ai/processing.webp",
+        "bytes": 69688,
+        "sha256": "281a6d30569b5d8d829cc1d24d3dd7fa0a503e678cd5a9f0fb4556677283df8a"
+      },
+      {
+        "path": "assets/production-ai/procurement.webp",
+        "bytes": 77010,
+        "sha256": "4f7e034345807fc5d8b98814417843ff69eb9fc00540ba2ea26a192b7c59b628"
+      },
+      {
+        "path": "assets/production-ai/repair.webp",
+        "bytes": 62782,
+        "sha256": "a9542aeac6183f3ad8a6e1d5d9e97f705f4a0b9bbab52c9eafe4fc53d0c12fb3"
+      },
+      {
+        "path": "assets/production-ai/safety.webp",
+        "bytes": 87598,
+        "sha256": "dda00e7aa088c4561d6261d857099f275259545bdd991d711a996007632ac794"
+      },
+      {
+        "path": "assets/production-ai/sales.webp",
+        "bytes": 66058,
+        "sha256": "1103c74bf29aa883e926c9f8081650afe37d6e79f75d6e927fb1afdb424b2d4c"
+      },
+      {
+        "path": "assets/production-ai/vet-lab.webp",
+        "bytes": 63072,
+        "sha256": "a6716a0b7e0362b867a054a4b8e1aa954e5ae062d665f725cb766872f6d57b7e"
+      },
+      {
+        "path": "assets/production-ai/veterinary.webp",
+        "bytes": 58842,
+        "sha256": "42c347ff41c1a9a6394bd890199609d501efb5e3bd20d63550e444e6aeaae344"
+      },
+      {
+        "path": "assets/production-ai/warehouse.webp",
+        "bytes": 86120,
+        "sha256": "629d3ed8d1bd3ac63da56f4d2cf0a2b68055e9f33111cf846c249c13269dc4d4"
+      },
+      {
+        "path": "assets/production-ai/wastewater.webp",
+        "bytes": 67432,
+        "sha256": "d1831987ef2694971e40dd6f0c45f9fd3e580a9daf76cedf4bbca49672901c6a"
+      },
+      {
+        "path": "assets/tutorials/01-passport.jpg",
+        "bytes": 89546,
+        "sha256": "e5e934dc91ea2f00eabe741f56bece3f9e29499ca0b74c950ef26e015362554b"
+      },
+      {
+        "path": "assets/tutorials/01-passport.mp4",
+        "bytes": 713607,
+        "sha256": "6345fc5993dd6237ff8dfc92413253ee92c3cda72e38aa22ba7ff8187c6e291b"
+      },
+      {
+        "path": "assets/tutorials/01-passport.vtt",
+        "bytes": 936,
+        "sha256": "a7a5871de660ee886aec15f1cf895809d230430a2f24e46e1eef43c59e136430"
+      },
+      {
+        "path": "assets/tutorials/02-effects.jpg",
+        "bytes": 113421,
+        "sha256": "7dc6fdab612c129bd795c103109ff5910d32810a34942856d5b2807045bfd724"
+      },
+      {
+        "path": "assets/tutorials/02-effects.mp4",
+        "bytes": 570524,
+        "sha256": "418fa1f6ed08a8fc8b4099563929bb79d4966d3af03c095bb50536153217d733"
+      },
+      {
+        "path": "assets/tutorials/02-effects.vtt",
+        "bytes": 1059,
+        "sha256": "729482bc7b644c1c4a2b21b6ca31073a0cf37510a2c3f6c07856ad0ddb02c8ba"
+      },
+      {
+        "path": "assets/tutorials/03-portfolio.jpg",
+        "bytes": 126568,
+        "sha256": "2e0cd41ad2b69e6265953da04ec427af80e6d7ce764d332d89c90d1e3694acec"
+      },
+      {
+        "path": "assets/tutorials/03-portfolio.mp4",
+        "bytes": 666537,
+        "sha256": "d3d65baf73ce698a201d34cfa709c42750cf542b9ed9b7f1327f6ab94783530c"
+      },
+      {
+        "path": "assets/tutorials/03-portfolio.vtt",
+        "bytes": 1046,
+        "sha256": "a2eb4612cd5071dbf55b54aac936540916166551b95765428a881fc72b052967"
+      },
+      {
+        "path": "fonts/LICENSE.md",
+        "bytes": 4486,
+        "sha256": "56af9b9c6715597e458284a474dc118a50a4150e9d547c70f7b4a33c3e6a9328"
+      },
+      {
+        "path": "fonts/SourceSansPro-Bold.ttf",
+        "bytes": 253344,
+        "sha256": "8d869f2aeac0220984a430120af819fbcb12a88e8ea4ad72aae4c5f6d6a2b985"
+      },
+      {
+        "path": "fonts/SourceSansPro-Regular.ttf",
+        "bytes": 254076,
+        "sha256": "c6f835b6a6d942b196e2607bf73a7b086407ae8dbdc928c23a2fb4893ec383f6"
+      },
+      {
+        "path": "fonts/SourceSansPro-Semibold.ttf",
+        "bytes": 253832,
+        "sha256": "72bf9aa2e78b8c78444ae74b6be09411d5fb5bf0eb9bcdfd47082cc5d9b536df"
+      },
+      {
+        "path": "index.html",
+        "bytes": 441,
+        "sha256": "c2a0a753f5e576cc4b8f3756cebce9661051310601438f98b5dd0e26470d5d87"
+      },
+      {
+        "path": "runtime-config.js",
+        "bytes": 184,
+        "sha256": "966714f48698728b284414a0908f01129ded1b5ac7e5561713acc5ee58cd69ff"
+      }
+    ],
+    "source_files": null
+  },
+  "source_files": []
 }

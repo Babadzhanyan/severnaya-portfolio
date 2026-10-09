@@ -13,7 +13,7 @@ import httpx
 
 from .config import FEED_SHEET_ID, SPREADSHEET_ID, Settings, load_data, source_config, strict_json
 
-PROJECTOR_VERSION = "12.2"
+PROJECTOR_VERSION = "12.3"
 
 class SourceError(ValueError):
     """Проверка источника сохраняет предыдущий срез."""
