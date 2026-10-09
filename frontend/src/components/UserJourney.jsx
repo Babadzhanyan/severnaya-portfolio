@@ -32,10 +32,11 @@ export default function UserJourney({data,list,employee,initiative,onEmployee,on
  </section>;
 }
 
-export function InitiativeCollection({list,history=false,all=false,onOpen}){
+export function InitiativeCollection({list,history=false,all=false,onOpen,children}){
  const status=i=>isCompleted(i)?"Выполнено":isHistorical(i)?"Отменено":stageCode(i);
  return <section className="initiative-collection">
   <div className="journey-heading"><h1>{all?'Все инициативы':history?'История проектов':'Новые идеи'} / {list.length}</h1><p>{all?'Выберите паспорт для проверки, расчёта и обсуждения':history?'Исходные реестры фиксируют завершение и отмену работ':'Руководители команд проверяют предмет, владельца и целесообразность входящих предложений'}</p></div>
+  {children}
   <div className="collection-list">{list.map(i=><article data-code={i.code} key={i.code} className={'collection-item '+(isHistorical(i)?'is-historical':'')}>
    <span className={'journey-code '+(i.provenance?.origin==='primary'?'source-primary':'addition')}>{i.code}</span>
    <div className="collection-content"><h2>{initiativeTitle(i)}</h2><p>{status(i)} / {person(i)}{(history||all)&&i.execution_fact&&executionLabel(i)!==status(i)?' / '+executionLabel(i):''}{history&&actualFinishLabel(i)?' / '+actualFinishLabel(i):''}</p>{history&&isCompleted(i)&&!actualFinishLabel(i)&&<p>Требуется дата завершения</p>}</div>

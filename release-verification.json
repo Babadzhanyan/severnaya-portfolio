@@ -1,8 +1,8 @@
 {
-  "release": "v21",
-  "checked_at": "2026-10-09T06:38:00+00:00",
+  "release": "v21.1",
+  "checked_at": "2026-10-09T07:05:47.354873+00:00",
   "site_commit": null,
-  "site_url": "https://babadzhanyan.github.io/severnaya-portfolio/#review",
+  "site_url": "https://babadzhanyan.github.io/severnaya-portfolio/#ideas",
   "google_url": "https://docs.google.com/spreadsheets/d/1stFDS_18dulhc96CSybYdXDk3RyvMvsSO9HxPkTvB4g/edit#gid=404672457&range=B2",
   "source_branch": "app-source",
   "continues": {
@@ -43,7 +43,8 @@
     "Новый раздел ревью показывает67исключений,28правовых требований и78внутренних обязательств",
     "Паспорта раскрывают предмет, результат, диапазоны часов и сроков, закупки, источники, первый шаг и критерий прекращения",
     "Предварительные денежные примеры сохраняют условия; согласованный эффект новых предложений равен0",
-    "Версияv21сохраняет практические пояснения и перенос производственных расчётов версииv20"
+    "Версияv21сохраняет практические пояснения и перенос производственных расчётов версииv20",
+    "Пользователь объединил список128идей и результаты ревью в странице «Новые идеи» / прежняя ссылка#reviewоткрывает#ideas"
   ],
   "financial_source_values": {
     "annual_estimate_million_rub": 55.013791,
@@ -83,14 +84,14 @@
   },
   "public_files": [
     {
-      "path": "assets/index-BHLxIkrA.css",
-      "bytes": 168297,
-      "sha256": "bb9f46bf6ffbadb041cc23670ea758b73d180f78a5728b98cb9fd2d13492cdfb"
+      "path": "assets/index-CHTvXGKZ.js",
+      "bytes": 640532,
+      "sha256": "8dccb3da174924d274c24c28dce26ee2f0599b98fd8c5a016bdc3a9fd3d37ca2"
     },
     {
-      "path": "assets/index-DRkv7VU3.js",
-      "bytes": 640015,
-      "sha256": "4e191a20c27b312b3cf071fd90ac850d71ba8f6dc3fadcfea82f0f7ab5164bdd"
+      "path": "assets/index-CL2ZC5M4.css",
+      "bytes": 168767,
+      "sha256": "353a552a16464a06e5fefd2da314bd994e499fb66a4e350f0c2731b47d51029a"
     },
     {
       "path": "assets/production-ai/accounting.webp",
@@ -310,7 +311,7 @@
     {
       "path": "index.html",
       "bytes": 441,
-      "sha256": "bd94285f9f1bd9b01ff73e445b79a87a58ec070b0ed3dbccc0b76be03984cb8b"
+      "sha256": "f4f5a3e855abc31b0c98ebefc0e68346e6f0950a26be9b732fc46872adf8926c"
     },
     {
       "path": "review/exclusions-review.json",
