@@ -18,10 +18,10 @@
     "transport_columns": 46,
     "transport_capacity": 320,
     "formula_errors": 0,
-    "model_tests": 134,
-    "component_tests": 32,
+    "model_tests": 135,
+    "component_tests": 33,
     "backend_tests": 71,
-    "total_tests": 237,
+    "total_tests": 239,
     "exclusions": 67,
     "legal_requirements": 28,
     "internal_commitments": 78
@@ -92,8 +92,8 @@
   "evidence": [
     {
       "file": "new_100_ideas.json",
-      "sha256": "628c0e2f784d0f53b6dc28fee35c7e46749523aa7c95ad84e0cc327384c85730",
-      "bytes": 889403
+      "sha256": "3c6071f5f0e004f1a5948d79c7fdc06e494766b48a24e2ea885bfab0b1914670",
+      "bytes": 895955
     },
     {
       "file": "obligations_review.json",
@@ -107,18 +107,18 @@
     },
     {
       "file": "actual_response_300.json",
-      "sha256": "874a1ede9296c21186d5b2d9fb8515383672e6abc75489c8bc199bc3991b2718",
-      "bytes": 12761975
+      "sha256": "bf48a312d1a17421903249a6247e31ad5b4c7c86b85c694c6630632c44d29d9d",
+      "bytes": 16817151
     },
     {
       "file": "actual_portfolio_backend_300.json",
-      "sha256": "5e2390208d71187fe5bf547d6bc72a82aac5cc65587ea4cee568061d45a9c7b1",
-      "bytes": 25171513
+      "sha256": "c0016776ff6d21d3300068d836ce317d083adb7bf0bccb3eba2bb58b83a0d5e4",
+      "bytes": 29447948
     },
     {
       "file": "actual_portfolio_frontend_300.json",
-      "sha256": "dfae2f20c893671edebb564c7e953e26b674bac8e4635c18396e0d0d75da3261",
-      "bytes": 24502359
+      "sha256": "778d61d8ee1d7f224d2744d5c4c9d8609ac7224c0fc5bcfb37e410f7943d505f",
+      "bytes": 29348723
     },
     {
       "file": "source_name_review.json",
@@ -126,14 +126,14 @@
       "bytes": 179453
     },
     {
-      "file": "models_300_final.txt",
-      "sha256": "86be87300f0eea3bc263a347c8b02f8cecbe23977dc52cbdc3d446e12cfb11c3",
-      "bytes": 18751
+      "file": "models_300_tabs_final.txt",
+      "sha256": "797694094cc73849719625e24040d9c6d7a387cb6a2084692a0ee7ccf90b495a",
+      "bytes": 18807
     },
     {
-      "file": "components_300_final.txt",
-      "sha256": "5a77c729c76a363752822fe2c219710a04ce385181cd10ad28c6b20183b68280",
-      "bytes": 5027
+      "file": "components_300_tabs_final.txt",
+      "sha256": "9933e30dcd0eaee1f1c9c8d0870b39df0a5636e00f3e94932b8a744cc7c45338",
+      "bytes": 5310
     },
     {
       "file": "backend_300_tests.txt",
@@ -149,6 +149,16 @@
       "file": "qa_production_ui.json",
       "sha256": "08aaccb757fd900f77e73545e0854a2a71aa9f7e79655e726c657b4c8c001ee4",
       "bytes": 10781
+    },
+    {
+      "file": "qa_process_groups_100.json",
+      "sha256": "2c0c7f0bf104049a6d9d0db984cc38503410173bce5b9ba593e4a36a3df78112",
+      "bytes": 9968
+    },
+    {
+      "file": "qa_architecture/public_review_cycle2.json",
+      "sha256": "03150edcdd91cb1d9f3d1f81bdd5993e86ca875fb15938519142177a41d4f5f5",
+      "bytes": 6866
     }
   ]
 }
