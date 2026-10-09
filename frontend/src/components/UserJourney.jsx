@@ -1,5 +1,5 @@
 import React from 'react';
-import {initiativeTitle,display,person,isNewIdea,googleLink,isHistorical,isCompleted,executionLabel,actualFinishLabel,stageCode} from '../model/portfolio.js';
+import {initiativeTitle,display,person,isNewIdea,googleLink,isHistorical,isCompleted,executionLabel,actualFinishLabel,stageCode,cardReadiness} from '../model/portfolio.js';
 import {Legend} from './Common.jsx';
 import report from '../data/ideas-review.json';
 import {passportGaps,passportCheckLevel} from '../model/user-journey.js';
@@ -12,7 +12,7 @@ const passportWord=n=>n%100>=11&&n%100<=14?'паспортов':n%10===1?'пас
 export default function UserJourney({data,list,employee,initiative,onEmployee,onSelect,onOpen,coordinator}){
  const people=[...new Set((data.staff||[]).map(s=>s.employee).filter(Boolean))].sort((a,b)=>a.localeCompare(b,'ru'));
  const owned=employee?list.filter(i=>!isNewIdea(i)&&person(i)===employee):[],cards=owned.filter(i=>!isHistorical(i)),completed=owned.filter(isCompleted),closed=owned.filter(i=>isHistorical(i)&&!isCompleted(i)),ideas=employee?list.filter(i=>isNewIdea(i)&&person(i)===employee):[],selected=cards.find(i=>i.code===initiative?.code)||cards[0],gaps=passportGaps(selected),level=passportCheckLevel(selected);
- const curator=display(coordinator||selected?.curator);
+ const curator=display(coordinator||selected?.curator),readiness=cardReadiness(selected);
  const supporting=employee?data.initiatives.filter(i=>person(i)!==employee&&String(i.team||'').includes(employee)):[];
  return <section className="employee-journey">
   <div className="journey-heading"><h1>Мои инициативы</h1><p>Проверьте свои паспорта до <strong>13 октября, 18:00</strong></p></div>
@@ -21,10 +21,10 @@ export default function UserJourney({data,list,employee,initiative,onEmployee,on
    <div className="journey-count"><strong>{cards.length} {passportWord(cards.length)} текущих инициатив</strong><span>Руководитель проверяет пакет текущих инициатив</span></div>
    {cards.length>0?<div className="journey-workspace">{cards.length>1&&<label className="journey-card-select">Выберите паспорт<select aria-label="Выберите паспорт" value={selected.code} onChange={e=>onSelect(e.target.value)}>{cards.map(i=><option key={i.code} value={i.code}>{i.code} / {initiativeTitle(i)}</option>)}</select></label>}
     <div className="journey-list" role="group" aria-label="Мои паспорта">{cards.map(i=><button type="button" key={i.code} aria-pressed={i.code===selected.code} onClick={()=>onSelect(i.code)}><span className={'journey-code '+(i.provenance?.origin==='primary'?'source-primary':'addition')}>{i.code}</span><span>{initiativeTitle(i)}</span></button>)}</div>
-    <div className="journey-check" aria-live="polite"><h2>{initiativeTitle(selected)}</h2><p className="journey-instruction">{level===2?'Подтвердите показатель, базу, цель и источники':'Сверьте задачу, основной результат и владельцев'}</p>
-     {gaps.length>0?<div className="journey-gaps"><h3>Дополните данные</h3><ul>{gaps.slice(0,3).map(label=><li key={label}>{label}</li>)}</ul></div>:<p className="journey-gaps">Проверьте содержание паспорта перед обсуждением</p>}
+    <div className="journey-check" aria-live="polite"><h2>{initiativeTitle(selected)}</h2>{readiness&&<p className="journey-gaps" data-field="admission">Проверка карточки: {readiness}</p>}<p className="journey-instruction">{level===2?'Заполните показатель, базу, цель, эффект и затраты':'Проверьте название, проблему, решение, работы и ответственного. Куратор рассчитывается автоматически'}</p>
+     {gaps.length>0?<div className="journey-gaps"><h3>Дополните данные</h3><ul>{gaps.slice(0,3).map(label=><li key={label}>{label}</li>)}</ul></div>:!readiness&&<p className="journey-gaps">{level===1?'Состав готов к проверке перехода в L2':'Состав готов к обсуждению'}</p>}
      <div className="journey-actions"><button className="journey-main-action" onClick={()=>onOpen(selected.code)}>Проверить паспорт</button><a className="button-link" href={googleLink(selected)} target="_blank" rel="noopener noreferrer">Открыть в таблице</a></div>
-     <p className="journey-handoff">Передайте проверенные паспорта руководителю{curator&&<span>Куратор выбранной инициативы: {curator}</span>}</p>
+     <p className="journey-handoff">{level===1?'Для перехода в L2 отметьте готовность в таблице':'Передайте оценку и подтверждения руководителю'}{curator&&<span>Куратор выбранной инициативы: {curator}</span>}</p>
     </div>
    </div>:<p className="journey-start">{ideas.length?'Новые идеи для вашего анализа доступны ниже':'Руководитель закрепляет за вами карточки в общем реестре'}</p>}
    {ideas.length>0&&<section className="journey-ideas"><h2>Новые идеи для анализа / {ideas.length}</h2><p>Рассмотрите предмет, владельца и целесообразность каждой идеи</p>{ideas.map(i=><button key={i.code} onClick={()=>onOpen(i.code)}><span className="journey-code addition">{i.code}</span><span>{initiativeTitle(i)}</span><span>Проверить паспорт</span></button>)}</section>}

@@ -158,3 +158,17 @@ test('200 источников сохраняют исходные даты и �
 });
 
 test('Положение идеи вычисляется по живому диапазону и сохраняется при сортировке',()=>{const input=structuredClone(fixture),block=config.blocks.find(b=>b.key==='initiatives');const rows=input.table.rows.slice(block.feedFirst-1,block.feedLast);const offset=rows.findIndex(r=>r.c[0]?.v==='s:ИТ-177');const first=172,other=173;[rows[first].c,rows[other].c]=[rows[other].c,rows[first].c];const previous=config.sourcePartitionPolicy;config.sourcePartitionPolicy='ranges';try{const data=projectResponse(input);for(const v of [first,other]){const code=rows[v].c[0].v.slice(2),card=data.initiatives.find(i=>i.code===code);assert.equal(card._source_sheet_id,807030037);assert.equal(card._source_row,3+v-first);}}finally{config.sourcePartitionPolicy=previous;}});
+
+
+test('Ссылки паспортных полей используют физическую перестановку отдельно от логической схемы',()=>{
+ const current=JSON.parse(fs.readFileSync(new URL('../data/live-config.js',import.meta.url),'utf8').replace(/^export default /,'').replace(/;\s*$/,''));
+ for(const sheetId of [404672457,807030037]){
+  const card={_source_sheet_id:sheetId,_source_row:31};
+  for(const [key,column] of Object.entries({code:'B',title:'C',stage:'D',problem:'E',solution:'F',scope:'G',initiative_lead:'H',curator:'I',transition_decision:'J',return_reason:'K',next_action:'L',it_group:'M',target:'AC',sources:'AW',due_l1:'AY',digital_layer:'BD'})){
+   const hash=new URLSearchParams(new URL(googleLink(card,key,current)).hash.slice(1));assert.equal(hash.get('gid'),String(sheetId));assert.equal(hash.get('range'),column+'31',key);
+  }
+  assert.equal(new URLSearchParams(new URL(googleLink(card,null,current)).hash.slice(1)).get('range'),'B31:BJ31');
+ }
+ const legacy={...current};delete legacy.physicalColumns;assert.equal(new URLSearchParams(new URL(googleLink({_source_sheet_id:807030037,_source_row:9},'initiative_lead',legacy)).hash.slice(1)).get('range'),'E9');
+ assert.equal(config.masterColumns,58);
+});

@@ -6,15 +6,16 @@ const hourValue=i=>{if(isNumber(i.total_hours))return i.total_hours;const m=disp
 export function priorityMetrics(i){
  const missing=[],invalid=[];
  const read=(key,label,{nonnegative=false}={})=>{const value=number(i[key]);if(value===null)missing.push(label);else if(nonnegative&&value<0)invalid.push(label+' должно быть от 0');return value;};
- const ebitda=read('priority_annual_ebitda','Операционная прибыль после затрат ИТ'),depreciation=read('priority_annual_depreciation','Дополнительная амортизация'),rate=read('priority_hour_rate','Стоимость часа ИТ',{nonnegative:true}),equipment=read('one_off_2027','Оборудование и контракты 2027',{nonnegative:true}),run=read('run_2027','Сопровождение 2027',{nonnegative:true}),duration=read('priority_duration_months','Срок реализации',{nonnegative:true}),hours=hourValue(i);
+ const ebitda=read('priority_annual_ebitda','Операционная прибыль после затрат ИТ'),depreciation=number(i.priority_annual_depreciation),rate=read('priority_hour_rate','Стоимость часа ИТ',{nonnegative:true}),equipment=read('one_off_2027','Оборудование и контракты 2027',{nonnegative:true}),run=read('run_2027','Сопровождение 2027',{nonnegative:true}),duration=read('priority_duration_months','Срок реализации',{nonnegative:true}),hours=hourValue(i);
  if(hours===null)missing.push('Часы ИТ 2027');else if(hours<0)invalid.push('Часы ИТ должны быть от 0');
- const ebit=ebitda!==null&&depreciation!==null?ebitda-depreciation:null;
+ const ebit=ebitda;
  const resourceCost=hours!==null&&rate!==null&&equipment!==null&&run!==null&&run>=0&&hours>=0&&rate>=0&&equipment>=0?hours*rate/1e6+equipment+run:null;
- const capitalScopePending=i.provenance?.assessment?.requires_capital_scope_confirmation===true;if(capitalScopePending)missing.push('Требуется подтверждение: состав оборудования');
+ const capitalScopePending=i.provenance?.assessment?.requires_capital_scope_confirmation===true;
  const legal=i.legal_required==='Да'?'required':i.legal_required==='Нет'?'voluntary':'unknown';
  const legalBasis=display(i.legal_basis);if(legal==='required'&&!legalBasis.trim())missing.push('Основание и срок обязательства');
- const complete=ebit!==null&&resourceCost!==null&&duration!==null&&duration>=0&&!capitalScopePending&&invalid.length===0&&(legal!=='required'||legalBasis.trim().length>0);
- return {code:i.code,ebit,ebitda,depreciation,hours,rate,equipment,run,grossPayroll:hours!==null&&rate!==null?hours*rate/1e6:null,resourceCost,duration,complete,missing,invalid,legal,legalBasis,capitalScopePending,historical:isHistorical(i),status:'Расчётная оценка',financeStatus:display(i.finance_status)};
+ const complete=ebit!==null&&resourceCost!==null&&duration!==null&&duration>=0&&invalid.length===0&&(legal!=='required'||legalBasis.trim().length>0);
+ const financeStatus=display(i.finance_status);
+ return {code:i.code,ebit,ebitda,depreciation,hours,rate,equipment,run,grossPayroll:hours!==null&&rate!==null?hours*rate/1e6:null,resourceCost,duration,complete,missing,invalid,legal,legalBasis,capitalScopePending,historical:isHistorical(i),status:capitalScopePending||financeStatus==='Предварительная оценка'?'Предварительная оценка':'Расчётная оценка',financeStatus};
 }
 
 export function priorityProjection(points,{yaw=-35,pitch=20,mode='3d'}={}){

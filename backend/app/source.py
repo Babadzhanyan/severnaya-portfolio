@@ -159,6 +159,35 @@ def finite_tree(value, *, depth=0):
             finite_tree(item, depth=depth + 1)
 
 
+def source_cell_location(cfg, schema, block, index, column):
+    def column_text(number):
+        result = ""
+        while number:
+            number, rest = divmod(number - 1, 26)
+            result = chr(65 + rest) + result
+        return result
+
+    actual = cfg.get("actualBlocks", {}).get(block["key"], {}) if block else {}
+    if not actual:
+        return cfg["feedSheetName"] + "!" + column_text(column + 2) + str(index + 2)
+    offset = index + 1 - block["feedFirst"]
+    passport = block["key"] in ("initiatives", "stageDeadlines", "digitalLayers", "priorityInputs")
+    if passport and cfg.get("sourcePartitionPolicy") == "ranges":
+        main = cfg["actualBlocks"]["initiatives"]
+        count = int(re.search(r"(\d+)$", main["sourceRange"])[1]) - main["firstDataRow"] + 1
+        if offset >= count:
+            actual = cfg["actualBlocks"]["ideas"]
+            offset -= count
+    physical = None
+    if passport:
+        field = schema["columns"][block["firstSourceColumn"] + column - 1]
+        physical = cfg.get("physicalColumns", {}).get(str(actual["sheetId"]), {}).get(field["key"])
+        if not physical:
+            physical = column_text(cfg["actualBlocks"]["initiatives"]["firstColumn"] + block["firstSourceColumn"] + column - 1)
+    cell = (physical or column_text(actual["firstColumn"] + column)) + str(actual["firstDataRow"] + offset)
+    return actual["sheetName"] + "!" + cell
+
+
 def project_response(response: dict, config=None, *, minimum_records=190):
     cfg = config or source_config()
     schema = load_data("schema.json")
@@ -192,13 +221,6 @@ def project_response(response: dict, config=None, *, minimum_records=190):
     finite_tree(response)
     # Все ячейки потока проходят проверку, включая резервные строки между блоками
     decoded = []
-    def column_text(number):
-        result = ""
-        while number:
-            number, rest = divmod(number - 1, 26)
-            result = chr(65 + rest) + result
-        return result
-
     for index, row in enumerate(rows):
         cells = row.get("c", [])
         values = []
@@ -207,12 +229,7 @@ def project_response(response: dict, config=None, *, minimum_records=190):
                 values.append(decode_value(cells[column] if column < len(cells) else None))
             except SourceError as exc:
                 block = next((b for b in cfg["blocks"] if b["feedFirst"] <= index + 1 <= b["feedLast"] and column < b["columns"]), None)
-                actual = cfg.get("actualBlocks", {}).get(block["key"], {}) if block else {}
-                if actual:
-                    cell = column_text(actual["firstColumn"] + column) + str(actual["firstDataRow"] + index + 1 - block["feedFirst"])
-                    location = actual["sheetName"] + "!" + cell
-                else:
-                    location = cfg["feedSheetName"] + "!" + column_text(column + 2) + str(index + 2)
+                location = source_cell_location(cfg, schema, block, index, column)
                 raise SourceError(f"{exc} / источник {location}") from exc
         decoded.append(values)
     grids: dict[str, dict[tuple[int, int], Any]] = {}

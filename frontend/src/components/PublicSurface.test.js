@@ -73,7 +73,7 @@ test('История показывает завершённое внедрен�
 
 test('Единый раздел переключает идеи и открытые результаты ревью',()=>{
  const idea={code:'ИТ-312',title:'Проверка обмена',stage:'L0 Входящие предложения',initiative_lead:'Лебедев Андрей',collection:'ideas'};
- const data={initiatives:[idea]},review=React.createElement(IdeasReview,{data,onOpen:()=>{},compact:true});
+ const data={initiatives:[idea]},review=React.createElement(IdeasReview,{key:'review',data,onOpen:()=>{},compact:true});
  const list=render(InitiativeCollection,{list:[idea],children:review,onOpen:()=>{},section:'ideas',onSection:()=>{}});
  assert.match(list,/Содержание новых идей/);assert.match(list,/Идеи \/ 1/);assert.match(list,/Результаты ревью/);assert.match(list,/collection-item/);assert.doesNotMatch(list,/review-levels/);
  const result=render(InitiativeCollection,{list:[idea],children:review,onOpen:()=>{},section:'review',onSection:()=>{}});

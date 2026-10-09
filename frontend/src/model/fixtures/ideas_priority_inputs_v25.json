@@ -1,0 +1,1802 @@
+[
+  {
+    "code": "ИТ-213",
+    "title": "Казначейство разделяет полномочия для независимого подтверждения платежа",
+    "priority_annual_ebitda": -0.03,
+    "priority_hour_rate": 1450,
+    "priority_duration_months": 4.5,
+    "total_hours": 560,
+    "one_off_2027": 0,
+    "run_2027": 0.01875,
+    "legal_required": "Уточнить",
+    "legal_basis": "Договорные требования и действующая политика защиты информации",
+    "finance_status": "Предварительная оценка",
+    "provenance": {
+      "assessment": {
+        "requires_capital_scope_confirmation": true
+      }
+    }
+  },
+  {
+    "code": "ИТ-214",
+    "title": "Команда управляет служебными секретами и подтверждает смену доступа",
+    "priority_annual_ebitda": -0.03,
+    "priority_hour_rate": 950,
+    "priority_duration_months": 3,
+    "total_hours": 256,
+    "one_off_2027": 0,
+    "run_2027": 0.0225,
+    "legal_required": "Уточнить",
+    "legal_basis": "Договорные требования и действующая политика защиты информации",
+    "finance_status": "Предварительная оценка",
+    "provenance": {
+      "assessment": {
+        "requires_capital_scope_confirmation": true
+      }
+    }
+  },
+  {
+    "code": "ИТ-215",
+    "title": "Главный инженер подтверждает удалённую команду подрядчика перед исполнением",
+    "priority_annual_ebitda": -0.03,
+    "priority_hour_rate": 1450,
+    "priority_duration_months": 4.5,
+    "total_hours": 560,
+    "one_off_2027": 0,
+    "run_2027": 0.01875,
+    "legal_required": "Уточнить",
+    "legal_basis": "Договорные требования и действующая политика защиты информации",
+    "finance_status": "Предварительная оценка",
+    "provenance": {
+      "assessment": {
+        "requires_capital_scope_confirmation": true
+      }
+    }
+  },
+  {
+    "code": "ИТ-216",
+    "title": "Инженерное рабочее место запускает только разрешённые программы",
+    "priority_annual_ebitda": -0.03,
+    "priority_hour_rate": 1450,
+    "priority_duration_months": 4.5,
+    "total_hours": 560,
+    "one_off_2027": 0,
+    "run_2027": 0.01875,
+    "legal_required": "Уточнить",
+    "legal_basis": "Договорные требования и действующая политика защиты информации",
+    "finance_status": "Предварительная оценка",
+    "provenance": {
+      "assessment": {
+        "requires_capital_scope_confirmation": true
+      }
+    }
+  },
+  {
+    "code": "ИТ-217",
+    "title": "Автоматика проверяет новую программу контроллера до производственной загрузки",
+    "priority_annual_ebitda": -0.03,
+    "priority_hour_rate": 1100,
+    "priority_duration_months": 6,
+    "total_hours": 1000,
+    "one_off_2027": 0,
+    "run_2027": 0.015,
+    "legal_required": "Уточнить",
+    "legal_basis": "Договорные требования и действующая политика защиты информации",
+    "finance_status": "Предварительная оценка",
+    "provenance": {
+      "assessment": {
+        "requires_capital_scope_confirmation": true
+      }
+    }
+  },
+  {
+    "code": "ИТ-218",
+    "title": "Защита выявляет опасные изменения обмена внутри производственной сети",
+    "priority_annual_ebitda": -0.03,
+    "priority_hour_rate": 1450,
+    "priority_duration_months": 6,
+    "total_hours": 1000,
+    "one_off_2027": 0,
+    "run_2027": 0.015,
+    "legal_required": "Уточнить",
+    "legal_basis": "Договорные требования и действующая политика защиты информации",
+    "finance_status": "Предварительная оценка",
+    "provenance": {
+      "assessment": {
+        "requires_capital_scope_confirmation": true
+      }
+    }
+  },
+  {
+    "code": "ИТ-219",
+    "title": "Склад сохраняет ограниченные операции при разрыве связи с учётом",
+    "priority_annual_ebitda": -0.03,
+    "priority_hour_rate": 1350,
+    "priority_duration_months": 6,
+    "total_hours": 1000,
+    "one_off_2027": 0,
+    "run_2027": 0.015,
+    "legal_required": "Уточнить",
+    "legal_basis": "Договорные требования и действующая политика защиты информации",
+    "finance_status": "Предварительная оценка",
+    "provenance": {
+      "assessment": {
+        "requires_capital_scope_confirmation": true
+      }
+    }
+  },
+  {
+    "code": "ИТ-220",
+    "title": "Команда синхронизирует время устройств для сопоставления производственных событий",
+    "priority_annual_ebitda": -0.03,
+    "priority_hour_rate": 950,
+    "priority_duration_months": 3,
+    "total_hours": 256,
+    "one_off_2027": 0,
+    "run_2027": 0.0225,
+    "legal_required": "Уточнить",
+    "legal_basis": "Договорные требования и действующая политика защиты информации",
+    "finance_status": "Предварительная оценка",
+    "provenance": {
+      "assessment": {
+        "requires_capital_scope_confirmation": true
+      }
+    }
+  },
+  {
+    "code": "ИТ-221",
+    "title": "Контрольная операция подтверждает работоспособность цепочки отгрузки",
+    "priority_annual_ebitda": -0.03,
+    "priority_hour_rate": 950,
+    "priority_duration_months": 4.5,
+    "total_hours": 560,
+    "one_off_2027": 0,
+    "run_2027": 0.01875,
+    "legal_required": "Уточнить",
+    "legal_basis": "Договорные требования и действующая политика защиты информации",
+    "finance_status": "Предварительная оценка",
+    "provenance": {
+      "assessment": {
+        "requires_capital_scope_confirmation": true
+      }
+    }
+  },
+  {
+    "code": "ИТ-222",
+    "title": "Команда сохраняет ограниченный доступ смены при отказе центрального входа",
+    "priority_annual_ebitda": -0.03,
+    "priority_hour_rate": 950,
+    "priority_duration_months": 4.5,
+    "total_hours": 560,
+    "one_off_2027": 0,
+    "run_2027": 0.01875,
+    "legal_required": "Уточнить",
+    "legal_basis": "Договорные требования и действующая политика защиты информации",
+    "finance_status": "Предварительная оценка",
+    "provenance": {
+      "assessment": {
+        "requires_capital_scope_confirmation": true
+      }
+    }
+  },
+  {
+    "code": "ИТ-223",
+    "title": "Разработка подтверждает происхождение установленной версии программы",
+    "priority_annual_ebitda": -0.03,
+    "priority_hour_rate": 1350,
+    "priority_duration_months": 4.5,
+    "total_hours": 560,
+    "one_off_2027": 0,
+    "run_2027": 0.01875,
+    "legal_required": "Уточнить",
+    "legal_basis": "Договорные требования и действующая политика защиты информации",
+    "finance_status": "Предварительная оценка",
+    "provenance": {
+      "assessment": {
+        "requires_capital_scope_confirmation": true
+      }
+    }
+  },
+  {
+    "code": "ИТ-224",
+    "title": "Платформа ИИ защищает чувствительные сведения в запросах и ответах",
+    "priority_annual_ebitda": -0.06,
+    "priority_hour_rate": 1550,
+    "priority_duration_months": 4.5,
+    "total_hours": 560,
+    "one_off_2027": 0,
+    "run_2027": 0.0375,
+    "legal_required": "Уточнить",
+    "legal_basis": "152-ФЗ – закон о персональных данных",
+    "finance_status": "Предварительная оценка",
+    "provenance": {
+      "assessment": {
+        "requires_capital_scope_confirmation": true
+      }
+    }
+  },
+  {
+    "code": "ИТ-225",
+    "title": "Помощник 1С выполняет действия в подтверждённых пределах полномочий",
+    "priority_annual_ebitda": -0.06,
+    "priority_hour_rate": 1550,
+    "priority_duration_months": 4.5,
+    "total_hours": 560,
+    "one_off_2027": 0,
+    "run_2027": 0.0375,
+    "legal_required": "Уточнить",
+    "legal_basis": "Договорные требования и действующая политика защиты информации",
+    "finance_status": "Предварительная оценка",
+    "provenance": {
+      "assessment": {
+        "requires_capital_scope_confirmation": true
+      }
+    }
+  },
+  {
+    "code": "ИТ-226",
+    "title": "Платформа ИИ отклоняет посторонние команды внутри документов поставщика",
+    "priority_annual_ebitda": -0.06,
+    "priority_hour_rate": 1550,
+    "priority_duration_months": 4.5,
+    "total_hours": 560,
+    "one_off_2027": 0,
+    "run_2027": 0.0375,
+    "legal_required": "Уточнить",
+    "legal_basis": "Договорные требования и действующая политика защиты информации",
+    "finance_status": "Предварительная оценка",
+    "provenance": {
+      "assessment": {
+        "requires_capital_scope_confirmation": true
+      }
+    }
+  },
+  {
+    "code": "ИТ-227",
+    "title": "Защита сохраняет доказательства вмешательства в производственные системы",
+    "priority_annual_ebitda": -0.03,
+    "priority_hour_rate": 1450,
+    "priority_duration_months": 4.5,
+    "total_hours": 560,
+    "one_off_2027": 0,
+    "run_2027": 0.01875,
+    "legal_required": "Уточнить",
+    "legal_basis": "Договорные требования и действующая политика защиты информации",
+    "finance_status": "Предварительная оценка",
+    "provenance": {
+      "assessment": {
+        "requires_capital_scope_confirmation": true
+      }
+    }
+  },
+  {
+    "code": "ИТ-228",
+    "title": "Лаборатория измеряет прочность скорлупы по стадам",
+    "priority_annual_ebitda": -0.044,
+    "priority_hour_rate": 1100,
+    "priority_duration_months": 3,
+    "total_hours": 128,
+    "one_off_2027": 0.392,
+    "run_2027": 0.033,
+    "legal_required": "Уточнить",
+    "legal_basis": "Требуется подтверждение: главный ветеринарный врач подтверждает ветеринарные правила содержания и перевозки птицы, действующий ветеринарный план и условия применения оборудования; инструкцию кросса использует как методический источник",
+    "finance_status": "Предварительная оценка",
+    "provenance": {
+      "assessment": {
+        "requires_capital_scope_confirmation": false
+      }
+    }
+  },
+  {
+    "code": "ИТ-229",
+    "title": "Регистратор фиксирует условия яйца на всём пути",
+    "priority_annual_ebitda": -0.038,
+    "priority_hour_rate": 1100,
+    "priority_duration_months": 3,
+    "total_hours": 144,
+    "one_off_2027": 0.224,
+    "run_2027": 0.0285,
+    "legal_required": "Уточнить",
+    "legal_basis": "Требуется подтверждение: главный ветеринарный врач подтверждает ветеринарные правила содержания и перевозки птицы, действующий ветеринарный план и условия применения оборудования; инструкцию кросса использует как методический источник",
+    "finance_status": "Предварительная оценка",
+    "provenance": {
+      "assessment": {
+        "requires_capital_scope_confirmation": false
+      }
+    }
+  },
+  {
+    "code": "ИТ-230",
+    "title": "Датчики фиксируют фактический поворот лотков инкубатора",
+    "priority_annual_ebitda": -0.042,
+    "priority_hour_rate": 1100,
+    "priority_duration_months": 3.5,
+    "total_hours": 176,
+    "one_off_2027": 0.336,
+    "run_2027": 0.02975,
+    "legal_required": "Уточнить",
+    "legal_basis": "Требуется подтверждение: главный ветеринарный врач подтверждает ветеринарные правила содержания и перевозки птицы, действующий ветеринарный план и условия применения оборудования; инструкцию кросса использует как методический источник",
+    "finance_status": "Предварительная оценка",
+    "provenance": {
+      "assessment": {
+        "requires_capital_scope_confirmation": false
+      }
+    }
+  },
+  {
+    "code": "ИТ-231",
+    "title": "Инкубатор измеряет температуру скорлупы при переводе",
+    "priority_annual_ebitda": -0.04,
+    "priority_hour_rate": 1100,
+    "priority_duration_months": 3,
+    "total_hours": 152,
+    "one_off_2027": 0.28,
+    "run_2027": 0.03,
+    "legal_required": "Уточнить",
+    "legal_basis": "Требуется подтверждение: главный ветеринарный врач подтверждает ветеринарные правила содержания и перевозки птицы, действующий ветеринарный план и условия применения оборудования; инструкцию кросса использует как методический источник",
+    "finance_status": "Предварительная оценка",
+    "provenance": {
+      "assessment": {
+        "requires_capital_scope_confirmation": false
+      }
+    }
+  },
+  {
+    "code": "ИТ-232",
+    "title": "Инкубатор подтверждает фактическую дозу вакцины",
+    "priority_annual_ebitda": -0.066,
+    "priority_hour_rate": 1100,
+    "priority_duration_months": 4.5,
+    "total_hours": 224,
+    "one_off_2027": 1.008,
+    "run_2027": 0.04125,
+    "legal_required": "Уточнить",
+    "legal_basis": "Требуется подтверждение: главный ветеринарный врач подтверждает ветеринарные правила содержания и перевозки птицы, действующий ветеринарный план и условия применения оборудования; инструкцию кросса использует как методический источник",
+    "finance_status": "Предварительная оценка",
+    "provenance": {
+      "assessment": {
+        "requires_capital_scope_confirmation": false
+      }
+    }
+  },
+  {
+    "code": "ИТ-233",
+    "title": "Кормоцех измеряет состав сырья у приёмного бункера",
+    "priority_annual_ebitda": -0.17,
+    "priority_hour_rate": 1100,
+    "priority_duration_months": 4.5,
+    "total_hours": 256,
+    "one_off_2027": 3.92,
+    "run_2027": 0.10625,
+    "legal_required": "Уточнить",
+    "legal_basis": "Требуется подтверждение: технолог и главный ветеринарный врач определяют требования к виду комбикорма, добавкам и срокам применения препаратов; служба качества подтверждает спецификацию партии и план контроля",
+    "finance_status": "Предварительная оценка",
+    "provenance": {
+      "assessment": {
+        "requires_capital_scope_confirmation": false
+      }
+    }
+  },
+  {
+    "code": "ИТ-234",
+    "title": "Кормоцех измеряет размер частиц корма у птицы",
+    "priority_annual_ebitda": -0.042,
+    "priority_hour_rate": 1100,
+    "priority_duration_months": 3,
+    "total_hours": 144,
+    "one_off_2027": 0.336,
+    "run_2027": 0.0315,
+    "legal_required": "Уточнить",
+    "legal_basis": "Требуется подтверждение: технолог и главный ветеринарный врач определяют требования к виду комбикорма, добавкам и срокам применения препаратов; служба качества подтверждает спецификацию партии и план контроля",
+    "finance_status": "Предварительная оценка",
+    "provenance": {
+      "assessment": {
+        "requires_capital_scope_confirmation": false
+      }
+    }
+  },
+  {
+    "code": "ИТ-235",
+    "title": "Кормоцех подтверждает однородность смеси по точкам выгрузки",
+    "priority_annual_ebitda": -0.044,
+    "priority_hour_rate": 1100,
+    "priority_duration_months": 3,
+    "total_hours": 144,
+    "one_off_2027": 0.392,
+    "run_2027": 0.033,
+    "legal_required": "Уточнить",
+    "legal_basis": "Требуется подтверждение: технолог и главный ветеринарный врач определяют требования к виду комбикорма, добавкам и срокам применения препаратов; служба качества подтверждает спецификацию партии и план контроля",
+    "finance_status": "Предварительная оценка",
+    "provenance": {
+      "assessment": {
+        "requires_capital_scope_confirmation": false
+      }
+    }
+  },
+  {
+    "code": "ИТ-236",
+    "title": "Корпус измеряет качество воды в конце линии поения",
+    "priority_annual_ebitda": -0.048,
+    "priority_hour_rate": 1100,
+    "priority_duration_months": 3.5,
+    "total_hours": 168,
+    "one_off_2027": 0.504,
+    "run_2027": 0.034,
+    "legal_required": "Уточнить",
+    "legal_basis": "Требуется подтверждение: главный ветеринарный врач подтверждает ветеринарные правила содержания и перевозки птицы, действующий ветеринарный план и условия применения оборудования; инструкцию кросса использует как методический источник",
+    "finance_status": "Предварительная оценка",
+    "provenance": {
+      "assessment": {
+        "requires_capital_scope_confirmation": false
+      }
+    }
+  },
+  {
+    "code": "ИТ-237",
+    "title": "Корпус измеряет аммиак в зонах нахождения птицы",
+    "priority_annual_ebitda": -0.046,
+    "priority_hour_rate": 1100,
+    "priority_duration_months": 3,
+    "total_hours": 144,
+    "one_off_2027": 0.448,
+    "run_2027": 0.0345,
+    "legal_required": "Уточнить",
+    "legal_basis": "Требуется подтверждение: главный ветеринарный врач подтверждает ветеринарные правила содержания и перевозки птицы, действующий ветеринарный план и условия применения оборудования; инструкцию кросса использует как методический источник",
+    "finance_status": "Предварительная оценка",
+    "provenance": {
+      "assessment": {
+        "requires_capital_scope_confirmation": false
+      }
+    }
+  },
+  {
+    "code": "ИТ-238",
+    "title": "Перевозчик измеряет температуру внутри модулей живой птицы",
+    "priority_annual_ebitda": -0.042,
+    "priority_hour_rate": 1100,
+    "priority_duration_months": 3,
+    "total_hours": 144,
+    "one_off_2027": 0.336,
+    "run_2027": 0.0315,
+    "legal_required": "Уточнить",
+    "legal_basis": "Требуется подтверждение: главный ветеринарный врач подтверждает ветеринарные правила содержания и перевозки птицы, действующий ветеринарный план и условия применения оборудования; инструкцию кросса использует как методический источник",
+    "finance_status": "Предварительная оценка",
+    "provenance": {
+      "assessment": {
+        "requires_capital_scope_confirmation": false
+      }
+    }
+  },
+  {
+    "code": "ИТ-239",
+    "title": "Убой измеряет температуру мяса после охлаждения",
+    "priority_annual_ebitda": -0.046,
+    "priority_hour_rate": 1100,
+    "priority_duration_months": 3,
+    "total_hours": 168,
+    "one_off_2027": 0.448,
+    "run_2027": 0.0345,
+    "legal_required": "Уточнить",
+    "legal_basis": "Требуется подтверждение: служба качества сопоставляет продукт, режим и участок с ТР ЕАЭС 051/2021 и процедурами анализа опасностей и критических контрольных точек по ТР ТС 021/2011; технические пределы закрепляет технологическая инструкция",
+    "finance_status": "Предварительная оценка",
+    "provenance": {
+      "assessment": {
+        "requires_capital_scope_confirmation": false
+      }
+    }
+  },
+  {
+    "code": "ИТ-240",
+    "title": "Разделка выявляет рентгеном костные остатки в филе",
+    "priority_annual_ebitda": -0.31,
+    "priority_hour_rate": 1100,
+    "priority_duration_months": 6,
+    "total_hours": 256,
+    "one_off_2027": 7.84,
+    "run_2027": 0.155,
+    "legal_required": "Уточнить",
+    "legal_basis": "Требуется подтверждение: служба качества сопоставляет продукт, режим и участок с ТР ЕАЭС 051/2021 и процедурами анализа опасностей и критических контрольных точек по ТР ТС 021/2011; технические пределы закрепляет технологическая инструкция; юридическая служба проверяет 3-ФЗ о радиационной безопасности населения и санитарные / разрешительные условия конкретной установки: тип источника, персонал, рабочие режимы и эксплуатационные документы",
+    "finance_status": "Предварительная оценка",
+    "provenance": {
+      "assessment": {
+        "requires_capital_scope_confirmation": false
+      }
+    }
+  },
+  {
+    "code": "ИТ-241",
+    "title": "Переработка измеряет состав мяса механической обвалки",
+    "priority_annual_ebitda": -0.17,
+    "priority_hour_rate": 1100,
+    "priority_duration_months": 4.5,
+    "total_hours": 224,
+    "one_off_2027": 3.92,
+    "run_2027": 0.10625,
+    "legal_required": "Уточнить",
+    "legal_basis": "Требуется подтверждение: служба качества сопоставляет продукт, режим и участок с ТР ЕАЭС 051/2021 и процедурами анализа опасностей и критических контрольных точек по ТР ТС 021/2011; технические пределы закрепляет технологическая инструкция",
+    "finance_status": "Предварительная оценка",
+    "provenance": {
+      "assessment": {
+        "requires_capital_scope_confirmation": false
+      }
+    }
+  },
+  {
+    "code": "ИТ-242",
+    "title": "Упаковка измеряет состав защитной газовой среды",
+    "priority_annual_ebitda": -0.046,
+    "priority_hour_rate": 1100,
+    "priority_duration_months": 3,
+    "total_hours": 144,
+    "one_off_2027": 0.448,
+    "run_2027": 0.0345,
+    "legal_required": "Уточнить",
+    "legal_basis": "Требуется подтверждение: служба качества сопоставляет продукт, режим и участок с ТР ЕАЭС 051/2021 и процедурами анализа опасностей и критических контрольных точек по ТР ТС 021/2011; технические пределы закрепляет технологическая инструкция; ТР ТС 005/2011 применяется к фактически используемой пищевой упаковке",
+    "finance_status": "Предварительная оценка",
+    "provenance": {
+      "assessment": {
+        "requires_capital_scope_confirmation": false
+      }
+    }
+  },
+  {
+    "code": "ИТ-243",
+    "title": "Упаковка выявляет загрязнение сварного шва камерой",
+    "priority_annual_ebitda": -0.078,
+    "priority_hour_rate": 1100,
+    "priority_duration_months": 4.5,
+    "total_hours": 208,
+    "one_off_2027": 1.344,
+    "run_2027": 0.04875,
+    "legal_required": "Уточнить",
+    "legal_basis": "Требуется подтверждение: служба качества сопоставляет продукт, режим и участок с ТР ЕАЭС 051/2021 и процедурами анализа опасностей и критических контрольных точек по ТР ТС 021/2011; технические пределы закрепляет технологическая инструкция; ТР ТС 005/2011 применяется к фактически используемой пищевой упаковке",
+    "finance_status": "Предварительная оценка",
+    "provenance": {
+      "assessment": {
+        "requires_capital_scope_confirmation": false
+      }
+    }
+  },
+  {
+    "code": "ИТ-244",
+    "title": "Кормоцех подтверждает чувствительность металлодетектора контрольным образцом",
+    "priority_annual_ebitda": -0.05,
+    "priority_hour_rate": 1100,
+    "priority_duration_months": 4,
+    "total_hours": 168,
+    "one_off_2027": 0.56,
+    "run_2027": 0.033333,
+    "legal_required": "Уточнить",
+    "legal_basis": "Требуется подтверждение: технолог и главный ветеринарный врач определяют требования к виду комбикорма, добавкам и срокам применения препаратов; служба качества подтверждает спецификацию партии и план контроля",
+    "finance_status": "Предварительная оценка",
+    "provenance": {
+      "assessment": {
+        "requires_capital_scope_confirmation": false
+      }
+    }
+  },
+  {
+    "code": "ИТ-245",
+    "title": "Санитарная служба измеряет концентрацию мойки у рабочих форсунок",
+    "priority_annual_ebitda": -0.054,
+    "priority_hour_rate": 1100,
+    "priority_duration_months": 3.5,
+    "total_hours": 176,
+    "one_off_2027": 0.672,
+    "run_2027": 0.03825,
+    "legal_required": "Уточнить",
+    "legal_basis": "Требуется подтверждение: служба качества сопоставляет продукт, режим и участок с ТР ЕАЭС 051/2021 и процедурами анализа опасностей и критических контрольных точек по ТР ТС 021/2011; технические пределы закрепляет технологическая инструкция",
+    "finance_status": "Предварительная оценка",
+    "provenance": {
+      "assessment": {
+        "requires_capital_scope_confirmation": false
+      }
+    }
+  },
+  {
+    "code": "ИТ-246",
+    "title": "Очистные измеряют органическую нагрузку стока по участкам",
+    "priority_annual_ebitda": -0.102,
+    "priority_hour_rate": 1100,
+    "priority_duration_months": 4.5,
+    "total_hours": 248,
+    "one_off_2027": 2.016,
+    "run_2027": 0.06375,
+    "legal_required": "Уточнить",
+    "legal_basis": "Требуется подтверждение: экологическая служба определяет категорию объекта, разрешительные документы и показатели сброса; владелец подтверждает границы производственного экологического контроля",
+    "finance_status": "Предварительная оценка",
+    "provenance": {
+      "assessment": {
+        "requires_capital_scope_confirmation": false
+      }
+    }
+  },
+  {
+    "code": "ИТ-247",
+    "title": "Котельная измеряет качество возвратного конденсата у теплообменника",
+    "priority_annual_ebitda": -0.058,
+    "priority_hour_rate": 1100,
+    "priority_duration_months": 3.5,
+    "total_hours": 176,
+    "one_off_2027": 0.784,
+    "run_2027": 0.041083,
+    "legal_required": "Уточнить",
+    "legal_basis": "Требуется подтверждение: главный инженер подтверждает паспорта оборудования, категорию опасного производственного объекта и действующие требования промышленной безопасности; эксплуатационные пределы определяет производственная инструкция",
+    "finance_status": "Предварительная оценка",
+    "provenance": {
+      "assessment": {
+        "requires_capital_scope_confirmation": false
+      }
+    }
+  },
+  {
+    "code": "ИТ-248",
+    "title": "Родительский корпус регулирует норму корма петухов",
+    "priority_annual_ebitda": -0.062,
+    "priority_hour_rate": 1100,
+    "priority_duration_months": 4.5,
+    "total_hours": 256,
+    "one_off_2027": 0.896,
+    "run_2027": 0.03875,
+    "legal_required": "Уточнить",
+    "legal_basis": "Требуется подтверждение: главный ветеринарный врач подтверждает ветеринарные правила содержания и перевозки птицы, действующий ветеринарный план и условия применения оборудования; инструкцию кросса использует как методический источник",
+    "finance_status": "Предварительная оценка",
+    "provenance": {
+      "assessment": {
+        "requires_capital_scope_confirmation": false
+      }
+    }
+  },
+  {
+    "code": "ИТ-249",
+    "title": "Инкубатор прогревает яйцо длительного хранения для сохранения вывода",
+    "priority_annual_ebitda": -0.046,
+    "priority_hour_rate": 1100,
+    "priority_duration_months": 5,
+    "total_hours": 256,
+    "one_off_2027": 0.448,
+    "run_2027": 0.026833,
+    "legal_required": "Уточнить",
+    "legal_basis": "Требуется подтверждение: главный ветеринарный врач подтверждает ветеринарные правила содержания и перевозки птицы, действующий ветеринарный план и условия применения оборудования; инструкцию кросса использует как методический источник",
+    "finance_status": "Предварительная оценка",
+    "provenance": {
+      "assessment": {
+        "requires_capital_scope_confirmation": false
+      }
+    }
+  },
+  {
+    "code": "ИТ-250",
+    "title": "Инкубатор выбирает момент выгрузки по готовности цыплят",
+    "priority_annual_ebitda": -0.03,
+    "priority_hour_rate": 1250,
+    "priority_duration_months": 3.5,
+    "total_hours": 176,
+    "one_off_2027": 0,
+    "run_2027": 0.02125,
+    "legal_required": "Уточнить",
+    "legal_basis": "Требуется подтверждение: главный ветеринарный врач подтверждает ветеринарные правила содержания и перевозки птицы, действующий ветеринарный план и условия применения оборудования; инструкцию кросса использует как методический источник",
+    "finance_status": "Предварительная оценка",
+    "provenance": {
+      "assessment": {
+        "requires_capital_scope_confirmation": false
+      }
+    }
+  },
+  {
+    "code": "ИТ-251",
+    "title": "Кормоцех регулирует конечную влажность гранулы после охлаждения",
+    "priority_annual_ebitda": -0.078,
+    "priority_hour_rate": 1100,
+    "priority_duration_months": 6,
+    "total_hours": 328,
+    "one_off_2027": 1.344,
+    "run_2027": 0.039,
+    "legal_required": "Уточнить",
+    "legal_basis": "Требуется подтверждение: технолог и главный ветеринарный врач определяют требования к виду комбикорма, добавкам и срокам применения препаратов; служба качества подтверждает спецификацию партии и план контроля",
+    "finance_status": "Предварительная оценка",
+    "provenance": {
+      "assessment": {
+        "requires_capital_scope_confirmation": false
+      }
+    }
+  },
+  {
+    "code": "ИТ-252",
+    "title": "Кормоцех удерживает остаточный перенос при смене рецепта",
+    "priority_annual_ebitda": -0.04,
+    "priority_hour_rate": 1100,
+    "priority_duration_months": 4.5,
+    "total_hours": 256,
+    "one_off_2027": 0.28,
+    "run_2027": 0.025,
+    "legal_required": "Уточнить",
+    "legal_basis": "Требуется подтверждение: технолог и главный ветеринарный врач определяют требования к виду комбикорма, добавкам и срокам применения препаратов; служба качества подтверждает спецификацию партии и план контроля",
+    "finance_status": "Предварительная оценка",
+    "provenance": {
+      "assessment": {
+        "requires_capital_scope_confirmation": false
+      }
+    }
+  },
+  {
+    "code": "ИТ-253",
+    "title": "Кормоцех корректирует смесь по фактическому составу сырья",
+    "priority_annual_ebitda": -0.042,
+    "priority_hour_rate": 1100,
+    "priority_duration_months": 5,
+    "total_hours": 328,
+    "one_off_2027": 0.336,
+    "run_2027": 0.0245,
+    "legal_required": "Уточнить",
+    "legal_basis": "Требуется подтверждение: технолог и главный ветеринарный врач определяют требования к виду комбикорма, добавкам и срокам применения препаратов; служба качества подтверждает спецификацию партии и план контроля",
+    "finance_status": "Предварительная оценка",
+    "provenance": {
+      "assessment": {
+        "requires_capital_scope_confirmation": false
+      }
+    }
+  },
+  {
+    "code": "ИТ-254",
+    "title": "Корпус промывает линии поения по качеству воды",
+    "priority_annual_ebitda": -0.054,
+    "priority_hour_rate": 1100,
+    "priority_duration_months": 4.5,
+    "total_hours": 256,
+    "one_off_2027": 0.672,
+    "run_2027": 0.03375,
+    "legal_required": "Уточнить",
+    "legal_basis": "Требуется подтверждение: главный ветеринарный врач подтверждает ветеринарные правила содержания и перевозки птицы, действующий ветеринарный план и условия применения оборудования; инструкцию кросса использует как методический источник",
+    "finance_status": "Предварительная оценка",
+    "provenance": {
+      "assessment": {
+        "requires_capital_scope_confirmation": false
+      }
+    }
+  },
+  {
+    "code": "ИТ-255",
+    "title": "Корпус корректирует вентиляцию и подстилку по карте аммиака",
+    "priority_annual_ebitda": -0.042,
+    "priority_hour_rate": 1100,
+    "priority_duration_months": 4.5,
+    "total_hours": 224,
+    "one_off_2027": 0.336,
+    "run_2027": 0.02625,
+    "legal_required": "Уточнить",
+    "legal_basis": "Требуется подтверждение: главный ветеринарный врач подтверждает ветеринарные правила содержания и перевозки птицы, действующий ветеринарный план и условия применения оборудования; инструкцию кросса использует как методический источник",
+    "finance_status": "Предварительная оценка",
+    "provenance": {
+      "assessment": {
+        "requires_capital_scope_confirmation": false
+      }
+    }
+  },
+  {
+    "code": "ИТ-256",
+    "title": "Перевозчик задаёт загрузку живой птицы по тепловой нагрузке",
+    "priority_annual_ebitda": -0.03,
+    "priority_hour_rate": 1250,
+    "priority_duration_months": 4.5,
+    "total_hours": 224,
+    "one_off_2027": 0,
+    "run_2027": 0.01875,
+    "legal_required": "Уточнить",
+    "legal_basis": "Требуется подтверждение: главный ветеринарный врач подтверждает ветеринарные правила содержания и перевозки птицы, действующий ветеринарный план и условия применения оборудования; инструкцию кросса использует как методический источник",
+    "finance_status": "Предварительная оценка",
+    "provenance": {
+      "assessment": {
+        "requires_capital_scope_confirmation": false
+      }
+    }
+  },
+  {
+    "code": "ИТ-257",
+    "title": "Диспетчер удерживает кормовую паузу по времени фактического убоя",
+    "priority_annual_ebitda": -0.03,
+    "priority_hour_rate": 1250,
+    "priority_duration_months": 4.5,
+    "total_hours": 248,
+    "one_off_2027": 0,
+    "run_2027": 0.01875,
+    "legal_required": "Уточнить",
+    "legal_basis": "Требуется подтверждение: главный ветеринарный врач подтверждает ветеринарные правила содержания и перевозки птицы, действующий ветеринарный план и условия применения оборудования; инструкцию кросса использует как методический источник",
+    "finance_status": "Предварительная оценка",
+    "provenance": {
+      "assessment": {
+        "requires_capital_scope_confirmation": false
+      }
+    }
+  },
+  {
+    "code": "ИТ-258",
+    "title": "Убой регулирует потрошение по анатомии партии",
+    "priority_annual_ebitda": -0.066,
+    "priority_hour_rate": 1100,
+    "priority_duration_months": 5,
+    "total_hours": 312,
+    "one_off_2027": 1.008,
+    "run_2027": 0.0385,
+    "legal_required": "Уточнить",
+    "legal_basis": "Требуется подтверждение: служба качества сопоставляет продукт, режим и участок с ТР ЕАЭС 051/2021 и процедурами анализа опасностей и критических контрольных точек по ТР ТС 021/2011; технические пределы закрепляет технологическая инструкция",
+    "finance_status": "Предварительная оценка",
+    "provenance": {
+      "assessment": {
+        "requires_capital_scope_confirmation": false
+      }
+    }
+  },
+  {
+    "code": "ИТ-259",
+    "title": "Убой регулирует шпарку для сохранения кожи",
+    "priority_annual_ebitda": -0.042,
+    "priority_hour_rate": 1100,
+    "priority_duration_months": 4.5,
+    "total_hours": 248,
+    "one_off_2027": 0.336,
+    "run_2027": 0.02625,
+    "legal_required": "Уточнить",
+    "legal_basis": "Требуется подтверждение: служба качества сопоставляет продукт, режим и участок с ТР ЕАЭС 051/2021 и процедурами анализа опасностей и критических контрольных точек по ТР ТС 021/2011; технические пределы закрепляет технологическая инструкция",
+    "finance_status": "Предварительная оценка",
+    "provenance": {
+      "assessment": {
+        "requires_capital_scope_confirmation": false
+      }
+    }
+  },
+  {
+    "code": "ИТ-260",
+    "title": "Разделка регулирует обвалку по весовой группе",
+    "priority_annual_ebitda": -0.046,
+    "priority_hour_rate": 1100,
+    "priority_duration_months": 5,
+    "total_hours": 320,
+    "one_off_2027": 0.448,
+    "run_2027": 0.026833,
+    "legal_required": "Уточнить",
+    "legal_basis": "Требуется подтверждение: служба качества сопоставляет продукт, режим и участок с ТР ЕАЭС 051/2021 и процедурами анализа опасностей и критических контрольных точек по ТР ТС 021/2011; технические пределы закрепляет технологическая инструкция",
+    "finance_status": "Предварительная оценка",
+    "provenance": {
+      "assessment": {
+        "requires_capital_scope_confirmation": false
+      }
+    }
+  },
+  {
+    "code": "ИТ-261",
+    "title": "Переработка удерживает маринад по фактическому привесу",
+    "priority_annual_ebitda": -0.058,
+    "priority_hour_rate": 1100,
+    "priority_duration_months": 4.5,
+    "total_hours": 256,
+    "one_off_2027": 0.784,
+    "run_2027": 0.03625,
+    "legal_required": "Уточнить",
+    "legal_basis": "Требуется подтверждение: служба качества сопоставляет продукт, режим и участок с ТР ЕАЭС 051/2021 и процедурами анализа опасностей и критических контрольных точек по ТР ТС 021/2011; технические пределы закрепляет технологическая инструкция",
+    "finance_status": "Предварительная оценка",
+    "provenance": {
+      "assessment": {
+        "requires_capital_scope_confirmation": false
+      }
+    }
+  },
+  {
+    "code": "ИТ-262",
+    "title": "Переработка смешивает мясо обвалки под целевую спецификацию",
+    "priority_annual_ebitda": -0.046,
+    "priority_hour_rate": 1100,
+    "priority_duration_months": 5,
+    "total_hours": 312,
+    "one_off_2027": 0.448,
+    "run_2027": 0.026833,
+    "legal_required": "Уточнить",
+    "legal_basis": "Требуется подтверждение: служба качества сопоставляет продукт, режим и участок с ТР ЕАЭС 051/2021 и процедурами анализа опасностей и критических контрольных точек по ТР ТС 021/2011; технические пределы закрепляет технологическая инструкция",
+    "finance_status": "Предварительная оценка",
+    "provenance": {
+      "assessment": {
+        "requires_capital_scope_confirmation": false
+      }
+    }
+  },
+  {
+    "code": "ИТ-263",
+    "title": "Разделка режет порции под заданные вес и форму",
+    "priority_annual_ebitda": -0.09,
+    "priority_hour_rate": 1100,
+    "priority_duration_months": 6.5,
+    "total_hours": 328,
+    "one_off_2027": 1.68,
+    "run_2027": 0.04125,
+    "legal_required": "Уточнить",
+    "legal_basis": "Требуется подтверждение: служба качества сопоставляет продукт, режим и участок с ТР ЕАЭС 051/2021 и процедурами анализа опасностей и критических контрольных точек по ТР ТС 021/2011; технические пределы закрепляет технологическая инструкция",
+    "finance_status": "Предварительная оценка",
+    "provenance": {
+      "assessment": {
+        "requires_capital_scope_confirmation": false
+      }
+    }
+  },
+  {
+    "code": "ИТ-264",
+    "title": "Санитарная служба регулирует дозировку и окончание циркуляционной мойки",
+    "priority_annual_ebitda": -0.078,
+    "priority_hour_rate": 1100,
+    "priority_duration_months": 5,
+    "total_hours": 288,
+    "one_off_2027": 1.344,
+    "run_2027": 0.0455,
+    "legal_required": "Уточнить",
+    "legal_basis": "Требуется подтверждение: служба качества сопоставляет продукт, режим и участок с ТР ЕАЭС 051/2021 и процедурами анализа опасностей и критических контрольных точек по ТР ТС 021/2011; технические пределы закрепляет технологическая инструкция",
+    "finance_status": "Предварительная оценка",
+    "provenance": {
+      "assessment": {
+        "requires_capital_scope_confirmation": false
+      }
+    }
+  },
+  {
+    "code": "ИТ-265",
+    "title": "Холодильный участок регулирует заморозку по состоянию продукта",
+    "priority_annual_ebitda": -0.05,
+    "priority_hour_rate": 1100,
+    "priority_duration_months": 6,
+    "total_hours": 320,
+    "one_off_2027": 0.56,
+    "run_2027": 0.025,
+    "legal_required": "Уточнить",
+    "legal_basis": "Требуется подтверждение: служба качества сопоставляет продукт, режим и участок с ТР ЕАЭС 051/2021 и процедурами анализа опасностей и критических контрольных точек по ТР ТС 021/2011; технические пределы закрепляет технологическая инструкция",
+    "finance_status": "Предварительная оценка",
+    "provenance": {
+      "assessment": {
+        "requires_capital_scope_confirmation": false
+      }
+    }
+  },
+  {
+    "code": "ИТ-266",
+    "title": "Энергоцех согласует работу воздушных компрессоров по спросу",
+    "priority_annual_ebitda": -0.062,
+    "priority_hour_rate": 1100,
+    "priority_duration_months": 5,
+    "total_hours": 312,
+    "one_off_2027": 0.896,
+    "run_2027": 0.036167,
+    "legal_required": "Уточнить",
+    "legal_basis": "Требуется подтверждение: главный инженер подтверждает паспорта оборудования, категорию опасного производственного объекта и действующие требования промышленной безопасности; эксплуатационные пределы определяет производственная инструкция",
+    "finance_status": "Предварительная оценка",
+    "provenance": {
+      "assessment": {
+        "requires_capital_scope_confirmation": false
+      }
+    }
+  },
+  {
+    "code": "ИТ-267",
+    "title": "Цех регулирует переработку побочных продуктов по конечному составу",
+    "priority_annual_ebitda": -0.09,
+    "priority_hour_rate": 1100,
+    "priority_duration_months": 6,
+    "total_hours": 328,
+    "one_off_2027": 1.68,
+    "run_2027": 0.045,
+    "legal_required": "Уточнить",
+    "legal_basis": "Требуется подтверждение: технолог и главный ветеринарный врач определяют требования к виду комбикорма, добавкам и срокам применения препаратов; служба качества подтверждает спецификацию партии и план контроля",
+    "finance_status": "Предварительная оценка",
+    "provenance": {
+      "assessment": {
+        "requires_capital_scope_confirmation": false
+      }
+    }
+  },
+  {
+    "code": "ИТ-268",
+    "title": "Лаборатория разрешает выпуск партии по утверждённым результатам",
+    "priority_annual_ebitda": -0.03,
+    "priority_hour_rate": 1350,
+    "priority_duration_months": 4,
+    "total_hours": 360,
+    "one_off_2027": 0,
+    "run_2027": 0.02,
+    "legal_required": "Уточнить",
+    "legal_basis": "ТР ТС 021/2011 и ТР ЕАЭС 051/2021: программа производственного контроля и безопасность охваченной продукции; перечень испытаний и полномочия выпуска подтверждает качество",
+    "finance_status": "Предварительная оценка",
+    "provenance": {
+      "assessment": {
+        "requires_capital_scope_confirmation": true
+      }
+    }
+  },
+  {
+    "code": "ИТ-269",
+    "title": "Качество разрешает запуск линии после санитарной приёмки",
+    "priority_annual_ebitda": -0.03,
+    "priority_hour_rate": 1350,
+    "priority_duration_months": 3,
+    "total_hours": 240,
+    "one_off_2027": 0,
+    "run_2027": 0.0225,
+    "legal_required": "Уточнить",
+    "legal_basis": "ТР ТС 021/2011: санитарные процедуры и контроль производства; состав цифровой приёмки задаёт владелец качества",
+    "finance_status": "Предварительная оценка",
+    "provenance": {
+      "assessment": {
+        "requires_capital_scope_confirmation": true
+      }
+    }
+  },
+  {
+    "code": "ИТ-270",
+    "title": "Качество закрывает отклонения критических точек с проверкой результата",
+    "priority_annual_ebitda": -0.03,
+    "priority_hour_rate": 1350,
+    "priority_duration_months": 3,
+    "total_hours": 272,
+    "one_off_2027": 0,
+    "run_2027": 0.0225,
+    "legal_required": "Уточнить",
+    "legal_basis": "ТР ТС 021/2011: процедуры на принципах анализа опасностей и критических контрольных точек; ISO 9001:2026 выступает добровольной практикой",
+    "finance_status": "Предварительная оценка",
+    "provenance": {
+      "assessment": {
+        "requires_capital_scope_confirmation": true
+      }
+    }
+  },
+  {
+    "code": "ИТ-271",
+    "title": "Технолог согласует изменение рецептуры вместе с аллергенами и этикеткой",
+    "priority_annual_ebitda": -0.03,
+    "priority_hour_rate": 1250,
+    "priority_duration_months": 4,
+    "total_hours": 328,
+    "one_off_2027": 0,
+    "run_2027": 0.02,
+    "legal_required": "Уточнить",
+    "legal_basis": "ТР ТС 022/2011 и ТР ЕАЭС 051/2021: состав и маркировка; конкретный перечень аллергенов и документы подтверждает качество; Codex служит практикой",
+    "finance_status": "Предварительная оценка",
+    "provenance": {
+      "assessment": {
+        "requires_capital_scope_confirmation": true
+      }
+    }
+  },
+  {
+    "code": "ИТ-272",
+    "title": "Качество устраняет причины потребительских претензий по партиям",
+    "priority_annual_ebitda": -0.03,
+    "priority_hour_rate": 1350,
+    "priority_duration_months": 3,
+    "total_hours": 304,
+    "one_off_2027": 0,
+    "run_2027": 0.0225,
+    "legal_required": "Уточнить",
+    "legal_basis": "29-ФЗ, применимые технические регламенты, договоры поставки и нормы о защите потребителей по фактическому каналу; сроки подтверждает юридическая служба",
+    "finance_status": "Предварительная оценка",
+    "provenance": {
+      "assessment": {
+        "requires_capital_scope_confirmation": true
+      }
+    }
+  },
+  {
+    "code": "ИТ-273",
+    "title": "Команда отзыва подтверждает судьбу партии у каждого получателя",
+    "priority_annual_ebitda": -0.03,
+    "priority_hour_rate": 1250,
+    "priority_duration_months": 2.5,
+    "total_hours": 160,
+    "one_off_2027": 0,
+    "run_2027": 0.02375,
+    "legal_required": "Уточнить",
+    "legal_basis": "29-ФЗ и применимые регламенты пищевой продукции: изъятие продукции по установленным основаниям; решение и уведомления подтверждает юридическая служба",
+    "finance_status": "Предварительная оценка",
+    "provenance": {
+      "assessment": {
+        "requires_capital_scope_confirmation": true
+      }
+    }
+  },
+  {
+    "code": "ИТ-274",
+    "title": "Мастер допускает работников к операциям по действующей квалификации",
+    "priority_annual_ebitda": -0.03,
+    "priority_hour_rate": 1350,
+    "priority_duration_months": 4,
+    "total_hours": 272,
+    "one_off_2027": 0,
+    "run_2027": 0.02,
+    "legal_required": "Уточнить",
+    "legal_basis": "ТК РФ и постановление № 2464 в изменении № 805 от 30 июня 2026: обучение и допуск по фактическим рискам; производственный допуск и повторное обучение имеют отдельные основания",
+    "finance_status": "Предварительная оценка",
+    "provenance": {
+      "assessment": {
+        "requires_capital_scope_confirmation": true
+      }
+    }
+  },
+  {
+    "code": "ИТ-275",
+    "title": "Охрана труда разрешает опасные работы подрядчиков по наряду",
+    "priority_annual_ebitda": -0.03,
+    "priority_hour_rate": 1350,
+    "priority_duration_months": 4,
+    "total_hours": 304,
+    "one_off_2027": 0,
+    "run_2027": 0.02,
+    "legal_required": "Уточнить",
+    "legal_basis": "Применимые правила охраны труда по фактическому виду работ: высота, электроустановки, огневые работы, ограниченные пространства; перечень и допустимую электронную форму утверждает охрана труда",
+    "finance_status": "Предварительная оценка",
+    "provenance": {
+      "assessment": {
+        "requires_capital_scope_confirmation": true
+      }
+    }
+  },
+  {
+    "code": "ИТ-276",
+    "title": "Кадры планируют смены с действующими медицинскими допусками",
+    "priority_annual_ebitda": -0.03,
+    "priority_hour_rate": 1250,
+    "priority_duration_months": 3,
+    "total_hours": 232,
+    "one_off_2027": 0,
+    "run_2027": 0.0225,
+    "legal_required": "Уточнить",
+    "legal_basis": "ТК РФ, статьи 214 и 220, применимый перечень медосмотров; 152-ФЗ, статьи 10 и 19: специальные категории данных и защита; мастер получает только статус допуска",
+    "finance_status": "Предварительная оценка",
+    "provenance": {
+      "assessment": {
+        "requires_capital_scope_confirmation": true
+      }
+    }
+  },
+  {
+    "code": "ИТ-277",
+    "title": "Охрана труда выдаёт средства защиты по нормам и срокам",
+    "priority_annual_ebitda": -0.03,
+    "priority_hour_rate": 1250,
+    "priority_duration_months": 3,
+    "total_hours": 240,
+    "one_off_2027": 0,
+    "run_2027": 0.0225,
+    "legal_required": "Уточнить",
+    "legal_basis": "ТК РФ, статья 221; действующие правила обеспечения средствами индивидуальной защиты и единые типовые нормы по фактическим работам; применимость норм подтверждает охрана труда",
+    "finance_status": "Предварительная оценка",
+    "provenance": {
+      "assessment": {
+        "requires_capital_scope_confirmation": true
+      }
+    }
+  },
+  {
+    "code": "ИТ-278",
+    "title": "Метролог допускает измерительные приборы по действующей поверке",
+    "priority_annual_ebitda": -0.03,
+    "priority_hour_rate": 1350,
+    "priority_duration_months": 3,
+    "total_hours": 248,
+    "one_off_2027": 0,
+    "run_2027": 0.0225,
+    "legal_required": "Уточнить",
+    "legal_basis": "102-ФЗ, статьи 9 и 13: регулируемая сфера, утверждённый тип и поверка; цифровые записи и применимый интервал проверяются по конкретному прибору",
+    "finance_status": "Предварительная оценка",
+    "provenance": {
+      "assessment": {
+        "requires_capital_scope_confirmation": true
+      }
+    }
+  },
+  {
+    "code": "ИТ-279",
+    "title": "Закупки возвращают стоимость подтверждённых дефектов поставщика",
+    "priority_annual_ebitda": -0.03,
+    "priority_hour_rate": 1250,
+    "priority_duration_months": 4,
+    "total_hours": 320,
+    "one_off_2027": 0,
+    "run_2027": 0.02,
+    "legal_required": "Уточнить",
+    "legal_basis": "Договор поставки и ГК РФ: качество, приёмка и предъявление требований; сроки и права устанавливаются конкретным договором",
+    "finance_status": "Предварительная оценка",
+    "provenance": {
+      "assessment": {
+        "requires_capital_scope_confirmation": true
+      }
+    }
+  },
+  {
+    "code": "ИТ-280",
+    "title": "Казначейство проверяет повторные счета перед оплатой",
+    "priority_annual_ebitda": -0.03,
+    "priority_hour_rate": 1250,
+    "priority_duration_months": 2.5,
+    "total_hours": 208,
+    "one_off_2027": 0,
+    "run_2027": 0.02375,
+    "legal_required": "Уточнить",
+    "legal_basis": "402-ФЗ, статья 19: внутренний контроль; закон определяет контроль, конкретный программный способ утверждает финансовая служба",
+    "finance_status": "Предварительная оценка",
+    "provenance": {
+      "assessment": {
+        "requires_capital_scope_confirmation": true
+      }
+    }
+  },
+  {
+    "code": "ИТ-281",
+    "title": "Энергетик сверяет счета с договорной мощностью и тарифом",
+    "priority_annual_ebitda": -0.03,
+    "priority_hour_rate": 1250,
+    "priority_duration_months": 4,
+    "total_hours": 272,
+    "one_off_2027": 0,
+    "run_2027": 0.02,
+    "legal_required": "Уточнить",
+    "legal_basis": "Договор энергоснабжения и действующие тарифные акты по конкретной точке; обязательность цифрового способа требует отдельного основания",
+    "finance_status": "Предварительная оценка",
+    "provenance": {
+      "assessment": {
+        "requires_capital_scope_confirmation": true
+      }
+    }
+  },
+  {
+    "code": "ИТ-282",
+    "title": "Коммерция проверяет совокупные выплаты торговым сетям",
+    "priority_annual_ebitda": -0.03,
+    "priority_hour_rate": 1250,
+    "priority_duration_months": 4,
+    "total_hours": 304,
+    "one_off_2027": 0,
+    "run_2027": 0.02,
+    "legal_required": "Уточнить",
+    "legal_basis": "381-ФЗ, статья 9: охват по роли контрагента, продукту и виду выплат; юридическая служба проверяет актуальную редакцию и исключения для отдельных товаров",
+    "finance_status": "Предварительная оценка",
+    "provenance": {
+      "assessment": {
+        "requires_capital_scope_confirmation": true
+      }
+    }
+  },
+  {
+    "code": "ИТ-283",
+    "title": "Логистика возвращает залог тары по подтверждённому обороту",
+    "priority_annual_ebitda": -0.03,
+    "priority_hour_rate": 1250,
+    "priority_duration_months": 4,
+    "total_hours": 288,
+    "one_off_2027": 0,
+    "run_2027": 0.02,
+    "legal_required": "Уточнить",
+    "legal_basis": "Договор тары и ГК РФ по конкретной операции; GS1 выступает добровольной практикой идентификации",
+    "finance_status": "Предварительная оценка",
+    "provenance": {
+      "assessment": {
+        "requires_capital_scope_confirmation": true
+      }
+    }
+  },
+  {
+    "code": "ИТ-284",
+    "title": "Коммерция оспаривает удержания покупателя по доказательствам поставки",
+    "priority_annual_ebitda": -0.03,
+    "priority_hour_rate": 1250,
+    "priority_duration_months": 4,
+    "total_hours": 328,
+    "one_off_2027": 0,
+    "run_2027": 0.02,
+    "legal_required": "Уточнить",
+    "legal_basis": "Договор поставки, ГК РФ и 402-ФЗ: доказательство поставки и финансовое решение; сроки возражений подтверждает юридическая служба",
+    "finance_status": "Предварительная оценка",
+    "provenance": {
+      "assessment": {
+        "requires_capital_scope_confirmation": true
+      }
+    }
+  },
+  {
+    "code": "ИТ-285",
+    "title": "Ветслужба подтверждает передачу биологических отходов до закрытия расчёта",
+    "priority_annual_ebitda": -0.03,
+    "priority_hour_rate": 1350,
+    "priority_duration_months": 4,
+    "total_hours": 272,
+    "one_off_2027": 0,
+    "run_2027": 0.02,
+    "legal_required": "Уточнить",
+    "legal_basis": "Закон РФ «О ветеринарии» и действующие ветеринарные правила обращения с биологическими отходами по фактической категории; 89-ФЗ проверяется отдельно для обычных отходов",
+    "finance_status": "Предварительная оценка",
+    "provenance": {
+      "assessment": {
+        "requires_capital_scope_confirmation": true
+      }
+    }
+  },
+  {
+    "code": "ИТ-286",
+    "title": "Технолог подтверждает замену упаковки и ингредиента испытаниями",
+    "priority_annual_ebitda": -0.03,
+    "priority_hour_rate": 1250,
+    "priority_duration_months": 4.5,
+    "total_hours": 224,
+    "one_off_2027": 0,
+    "run_2027": 0.01875,
+    "legal_required": "Уточнить",
+    "legal_basis": "ТР ТС 005/2011 по упаковке; ТР ТС 021/2011 и ТР ЕАЭС 051/2021 по продукту; состав испытаний, декларации и условия контакта подтверждает качество",
+    "finance_status": "Предварительная оценка",
+    "provenance": {
+      "assessment": {
+        "requires_capital_scope_confirmation": true
+      }
+    }
+  },
+  {
+    "code": "ИТ-287",
+    "title": "Бухгалтерия связывает модернизацию с вводом и амортизацией активов",
+    "priority_annual_ebitda": -0.03,
+    "priority_hour_rate": 1250,
+    "priority_duration_months": 3,
+    "total_hours": 192,
+    "one_off_2027": 0,
+    "run_2027": 0.0225,
+    "legal_required": "Уточнить",
+    "legal_basis": "402-ФЗ, применимые федеральные стандарты бухгалтерского учёта основных средств и капитальных вложений; финансовая служба утверждает классификацию и срок использования",
+    "finance_status": "Предварительная оценка",
+    "provenance": {
+      "assessment": {
+        "requires_capital_scope_confirmation": true
+      }
+    }
+  },
+  {
+    "code": "ИТ-288",
+    "title": "Команда связывает кормовую партию с исполненной версией рецептуры",
+    "priority_annual_ebitda": -0.06,
+    "priority_hour_rate": 1550,
+    "priority_duration_months": 4.5,
+    "total_hours": 560,
+    "one_off_2027": 0,
+    "run_2027": 0.0375,
+    "legal_required": "Уточнить",
+    "legal_basis": "Внутренний регламент качества данных и решения владельца процесса",
+    "finance_status": "Предварительная оценка",
+    "provenance": {
+      "assessment": {
+        "requires_capital_scope_confirmation": true
+      }
+    }
+  },
+  {
+    "code": "ИТ-289",
+    "title": "Закупки сверяют стоимость зерна по измеренному сухому веществу",
+    "priority_annual_ebitda": -0.06,
+    "priority_hour_rate": 1550,
+    "priority_duration_months": 4.5,
+    "total_hours": 560,
+    "one_off_2027": 0,
+    "run_2027": 0.0375,
+    "legal_required": "Уточнить",
+    "legal_basis": "Договор поставки зерна / 102-ФЗ – единство измерений / ТР ТС 015/2011 – безопасность зерна",
+    "finance_status": "Предварительная оценка",
+    "provenance": {
+      "assessment": {
+        "requires_capital_scope_confirmation": true
+      }
+    }
+  },
+  {
+    "code": "ИТ-290",
+    "title": "Производство объясняет материальный баланс каждой партии разделки",
+    "priority_annual_ebitda": -0.06,
+    "priority_hour_rate": 1550,
+    "priority_duration_months": 6,
+    "total_hours": 1000,
+    "one_off_2027": 0,
+    "run_2027": 0.03,
+    "legal_required": "Уточнить",
+    "legal_basis": "Внутренний регламент качества данных и решения владельца процесса",
+    "finance_status": "Предварительная оценка",
+    "provenance": {
+      "assessment": {
+        "requires_capital_scope_confirmation": true
+      }
+    }
+  },
+  {
+    "code": "ИТ-291",
+    "title": "Команда пересчитывает показатели после исправления исходного документа",
+    "priority_annual_ebitda": -0.06,
+    "priority_hour_rate": 1550,
+    "priority_duration_months": 6,
+    "total_hours": 1000,
+    "one_off_2027": 0,
+    "run_2027": 0.03,
+    "legal_required": "Уточнить",
+    "legal_basis": "Внутренний регламент качества данных и решения владельца процесса",
+    "finance_status": "Предварительная оценка",
+    "provenance": {
+      "assessment": {
+        "requires_capital_scope_confirmation": true
+      }
+    }
+  },
+  {
+    "code": "ИТ-292",
+    "title": "Владелец проверяет свежесть данных перед управленческим расчётом",
+    "priority_annual_ebitda": -0.06,
+    "priority_hour_rate": 1550,
+    "priority_duration_months": 4.5,
+    "total_hours": 560,
+    "one_off_2027": 0,
+    "run_2027": 0.0375,
+    "legal_required": "Уточнить",
+    "legal_basis": "Внутренний регламент качества данных и решения владельца процесса",
+    "finance_status": "Предварительная оценка",
+    "provenance": {
+      "assessment": {
+        "requires_capital_scope_confirmation": true
+      }
+    }
+  },
+  {
+    "code": "ИТ-293",
+    "title": "Команда проверяет совместимость изменённого формата производственного обмена",
+    "priority_annual_ebitda": -0.06,
+    "priority_hour_rate": 1550,
+    "priority_duration_months": 4.5,
+    "total_hours": 560,
+    "one_off_2027": 0,
+    "run_2027": 0.0375,
+    "legal_required": "Уточнить",
+    "legal_basis": "Внутренний регламент качества данных и решения владельца процесса",
+    "finance_status": "Предварительная оценка",
+    "provenance": {
+      "assessment": {
+        "requires_capital_scope_confirmation": true
+      }
+    }
+  },
+  {
+    "code": "ИТ-294",
+    "title": "Учёт сохраняет единственное складское движение при повторной передаче",
+    "priority_annual_ebitda": -0.06,
+    "priority_hour_rate": 1550,
+    "priority_duration_months": 6,
+    "total_hours": 1000,
+    "one_off_2027": 0,
+    "run_2027": 0.03,
+    "legal_required": "Уточнить",
+    "legal_basis": "Внутренний регламент качества данных и решения владельца процесса",
+    "finance_status": "Предварительная оценка",
+    "provenance": {
+      "assessment": {
+        "requires_capital_scope_confirmation": true
+      }
+    }
+  },
+  {
+    "code": "ИТ-295",
+    "title": "Команда подтверждает полноту аналитической загрузки сверкой с источником",
+    "priority_annual_ebitda": -0.06,
+    "priority_hour_rate": 1550,
+    "priority_duration_months": 4.5,
+    "total_hours": 560,
+    "one_off_2027": 0,
+    "run_2027": 0.0375,
+    "legal_required": "Уточнить",
+    "legal_basis": "Внутренний регламент качества данных и решения владельца процесса",
+    "finance_status": "Предварительная оценка",
+    "provenance": {
+      "assessment": {
+        "requires_capital_scope_confirmation": true
+      }
+    }
+  },
+  {
+    "code": "ИТ-296",
+    "title": "Финансы воспроизводят утверждённый расчёт себестоимости по сохранённой версии данных",
+    "priority_annual_ebitda": -0.06,
+    "priority_hour_rate": 1550,
+    "priority_duration_months": 6,
+    "total_hours": 1000,
+    "one_off_2027": 0,
+    "run_2027": 0.03,
+    "legal_required": "Уточнить",
+    "legal_basis": "402-ФЗ – бухгалтерский учёт / Утверждённая методика управленческой себестоимости",
+    "finance_status": "Предварительная оценка",
+    "provenance": {
+      "assessment": {
+        "requires_capital_scope_confirmation": true
+      }
+    }
+  },
+  {
+    "code": "ИТ-297",
+    "title": "Команда удаляет истёкшие аналитические копии по утверждённым срокам",
+    "priority_annual_ebitda": -0.06,
+    "priority_hour_rate": 1550,
+    "priority_duration_months": 4.5,
+    "total_hours": 560,
+    "one_off_2027": 0,
+    "run_2027": 0.0375,
+    "legal_required": "Уточнить",
+    "legal_basis": "152-ФЗ, статьи 5 и 21 – цель, срок и прекращение обработки / 402-ФЗ, статья 29 – хранение первичных учётных документов",
+    "finance_status": "Предварительная оценка",
+    "provenance": {
+      "assessment": {
+        "requires_capital_scope_confirmation": true
+      }
+    }
+  },
+  {
+    "code": "ИТ-298",
+    "title": "Команда готовит представительные обезличенные данные для испытания изменений",
+    "priority_annual_ebitda": -0.06,
+    "priority_hour_rate": 1550,
+    "priority_duration_months": 4.5,
+    "total_hours": 560,
+    "one_off_2027": 0,
+    "run_2027": 0.0375,
+    "legal_required": "Уточнить",
+    "legal_basis": "152-ФЗ – закон о персональных данных",
+    "finance_status": "Предварительная оценка",
+    "provenance": {
+      "assessment": {
+        "requires_capital_scope_confirmation": true
+      }
+    }
+  },
+  {
+    "code": "ИТ-299",
+    "title": "Владелец ограничивает аналитический доступ разрешёнными строками и полями",
+    "priority_annual_ebitda": -0.06,
+    "priority_hour_rate": 1550,
+    "priority_duration_months": 4.5,
+    "total_hours": 560,
+    "one_off_2027": 0,
+    "run_2027": 0.0375,
+    "legal_required": "Уточнить",
+    "legal_basis": "152-ФЗ – закон о персональных данных",
+    "finance_status": "Предварительная оценка",
+    "provenance": {
+      "assessment": {
+        "requires_capital_scope_confirmation": true
+      }
+    }
+  },
+  {
+    "code": "ИТ-300",
+    "title": "Показатель раскрывает фактические измерения и восстановленные значения",
+    "priority_annual_ebitda": -0.06,
+    "priority_hour_rate": 1550,
+    "priority_duration_months": 4.5,
+    "total_hours": 560,
+    "one_off_2027": 0,
+    "run_2027": 0.0375,
+    "legal_required": "Уточнить",
+    "legal_basis": "Внутренний регламент качества данных и решения владельца процесса",
+    "finance_status": "Предварительная оценка",
+    "provenance": {
+      "assessment": {
+        "requires_capital_scope_confirmation": true
+      }
+    }
+  },
+  {
+    "code": "ИТ-301",
+    "title": "Команда сохраняет суммы при объединении аналитических наборов",
+    "priority_annual_ebitda": -0.06,
+    "priority_hour_rate": 1550,
+    "priority_duration_months": 4.5,
+    "total_hours": 560,
+    "one_off_2027": 0,
+    "run_2027": 0.0375,
+    "legal_required": "Уточнить",
+    "legal_basis": "Внутренний регламент качества данных и решения владельца процесса",
+    "finance_status": "Предварительная оценка",
+    "provenance": {
+      "assessment": {
+        "requires_capital_scope_confirmation": true
+      }
+    }
+  },
+  {
+    "code": "ИТ-302",
+    "title": "Команда связывает результат модели с версией обучающей выборки",
+    "priority_annual_ebitda": -0.06,
+    "priority_hour_rate": 1550,
+    "priority_duration_months": 4.5,
+    "total_hours": 560,
+    "one_off_2027": 0,
+    "run_2027": 0.0375,
+    "legal_required": "Уточнить",
+    "legal_basis": "Внутренний регламент качества данных и решения владельца процесса",
+    "finance_status": "Предварительная оценка",
+    "provenance": {
+      "assessment": {
+        "requires_capital_scope_confirmation": true
+      }
+    }
+  },
+  {
+    "code": "ИТ-303",
+    "title": "Камера сверяет этикетку с производственным заданием и партией",
+    "priority_annual_ebitda": -0.108,
+    "priority_hour_rate": 1550,
+    "priority_duration_months": 6,
+    "total_hours": 1000,
+    "one_off_2027": 1.344,
+    "run_2027": 0.054,
+    "legal_required": "Уточнить",
+    "legal_basis": "ТР ТС 022/2011 / ТР ЕАЭС 051/2021",
+    "finance_status": "Предварительная оценка",
+    "provenance": {
+      "assessment": {
+        "requires_capital_scope_confirmation": true
+      }
+    }
+  },
+  {
+    "code": "ИТ-304",
+    "title": "Модель выделяет пробы зерна с риском микотоксинов",
+    "priority_annual_ebitda": -0.07,
+    "priority_hour_rate": 1550,
+    "priority_duration_months": 8,
+    "total_hours": 1352,
+    "one_off_2027": 0.28,
+    "run_2027": 0.023333,
+    "legal_required": "Уточнить",
+    "legal_basis": "ТР ТС 015/2011 – безопасность зерна",
+    "finance_status": "Предварительная оценка",
+    "provenance": {
+      "assessment": {
+        "requires_capital_scope_confirmation": true
+      }
+    }
+  },
+  {
+    "code": "ИТ-305",
+    "title": "Модель считает лабораторные колонии для проверки специалистом",
+    "priority_annual_ebitda": -0.078,
+    "priority_hour_rate": 1550,
+    "priority_duration_months": 6,
+    "total_hours": 1000,
+    "one_off_2027": 0.504,
+    "run_2027": 0.039,
+    "legal_required": "Уточнить",
+    "legal_basis": "ТР ТС 021/2011 / ТР ЕАЭС 051/2021",
+    "finance_status": "Предварительная оценка",
+    "provenance": {
+      "assessment": {
+        "requires_capital_scope_confirmation": true
+      }
+    }
+  },
+  {
+    "code": "ИТ-306",
+    "title": "Модель оценивает остаточный срок хранения для ранней отгрузки",
+    "priority_annual_ebitda": -0.072,
+    "priority_hour_rate": 1550,
+    "priority_duration_months": 8,
+    "total_hours": 1352,
+    "one_off_2027": 0.336,
+    "run_2027": 0.024,
+    "legal_required": "Уточнить",
+    "legal_basis": "ТР ТС 021/2011 / ТР ЕАЭС 051/2021",
+    "finance_status": "Предварительная оценка",
+    "provenance": {
+      "assessment": {
+        "requires_capital_scope_confirmation": true
+      }
+    }
+  },
+  {
+    "code": "ИТ-307",
+    "title": "Модель прогнозирует просрочку для ранней работы с задолженностью",
+    "priority_annual_ebitda": -0.06,
+    "priority_hour_rate": 1550,
+    "priority_duration_months": 6,
+    "total_hours": 1000,
+    "one_off_2027": 0,
+    "run_2027": 0.03,
+    "legal_required": "Уточнить",
+    "legal_basis": "Внутренний регламент качества данных и решения владельца процесса",
+    "finance_status": "Предварительная оценка",
+    "provenance": {
+      "assessment": {
+        "requires_capital_scope_confirmation": true
+      }
+    }
+  },
+  {
+    "code": "ИТ-308",
+    "title": "Камера предупреждает водителя о сближении погрузчика с человеком",
+    "priority_annual_ebitda": -0.16,
+    "priority_hour_rate": 1550,
+    "priority_duration_months": 8,
+    "total_hours": 1352,
+    "one_off_2027": 2.8,
+    "run_2027": 0.053333,
+    "legal_required": "Уточнить",
+    "legal_basis": "Трудовой кодекс РФ – обязанности по охране труда / 152-ФЗ при обработке изображений людей",
+    "finance_status": "Предварительная оценка",
+    "provenance": {
+      "assessment": {
+        "requires_capital_scope_confirmation": true
+      }
+    }
+  },
+  {
+    "code": "ИТ-309",
+    "title": "Модель выявляет дрейф измерителя для проверки метрологом",
+    "priority_annual_ebitda": -0.066,
+    "priority_hour_rate": 1550,
+    "priority_duration_months": 6,
+    "total_hours": 1000,
+    "one_off_2027": 0.168,
+    "run_2027": 0.033,
+    "legal_required": "Уточнить",
+    "legal_basis": "102-ФЗ – единство измерений",
+    "finance_status": "Предварительная оценка",
+    "provenance": {
+      "assessment": {
+        "requires_capital_scope_confirmation": true
+      }
+    }
+  },
+  {
+    "code": "ИТ-310",
+    "title": "Модель проверяет оплодотворённость яйца до занятия инкубационного места",
+    "priority_annual_ebitda": -0.14,
+    "priority_hour_rate": 1550,
+    "priority_duration_months": 8,
+    "total_hours": 1352,
+    "one_off_2027": 2.24,
+    "run_2027": 0.046667,
+    "legal_required": "Уточнить",
+    "legal_basis": "Внутренний регламент качества данных и решения владельца процесса",
+    "finance_status": "Предварительная оценка",
+    "provenance": {
+      "assessment": {
+        "requires_capital_scope_confirmation": true
+      }
+    }
+  },
+  {
+    "code": "ИТ-311",
+    "title": "Модель прогнозирует самосогревание зерна для раннего проветривания",
+    "priority_annual_ebitda": -0.088,
+    "priority_hour_rate": 1550,
+    "priority_duration_months": 6,
+    "total_hours": 1000,
+    "one_off_2027": 0.784,
+    "run_2027": 0.044,
+    "legal_required": "Уточнить",
+    "legal_basis": "ТР ТС 015/2011 – безопасность зерна",
+    "finance_status": "Предварительная оценка",
+    "provenance": {
+      "assessment": {
+        "requires_capital_scope_confirmation": true
+      }
+    }
+  },
+  {
+    "code": "ИТ-312",
+    "title": "Модель выявляет деградацию производственного обмена до пользовательского сбоя",
+    "priority_annual_ebitda": -0.06,
+    "priority_hour_rate": 1550,
+    "priority_duration_months": 6,
+    "total_hours": 1000,
+    "one_off_2027": 0,
+    "run_2027": 0.03,
+    "legal_required": "Уточнить",
+    "legal_basis": "Внутренний регламент качества данных и решения владельца процесса",
+    "finance_status": "Предварительная оценка",
+    "provenance": {
+      "assessment": {
+        "requires_capital_scope_confirmation": true
+      }
+    }
+  }
+]

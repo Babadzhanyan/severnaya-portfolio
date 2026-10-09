@@ -2,7 +2,7 @@ import React from 'react';
 import Icon from './Icon.jsx';
 import {PassportStagePath} from './PassportVisuals.jsx';
 import PassportTimeline from './PassportTimeline.jsx';
-import {display,initiativeTitle,processGroup,fmt,longDate,dateTimeLabel,color,stageCode,stages,person,group,aliasCodes,digitalLayer,deadlineStatus,isNewIdea,isHistorical,executionFact,executionLabel,actualFinishLabel,isNumber,hours} from '../model/portfolio.js';
+import {display,initiativeTitle,processGroup,fmt,longDate,dateTimeLabel,color,stageCode,stages,person,group,aliasCodes,digitalLayer,deadlineStatus,isNewIdea,isHistorical,executionFact,executionLabel,actualFinishLabel,isNumber,hours,cardReadiness} from '../model/portfolio.js';
 import '../passport-ui.css';
 
 function Field({i,name,label,icon,format,children,className='',empty='Требуется заполнение',originName=name}) {
@@ -21,7 +21,7 @@ export default function PassportCanvas({data,i}) {
   const proposal=i.provenance?.assessment?.proposal, ranges=proposal?.preliminary_ranges;
   const rangeText=(v,unit)=>Array.isArray(v)?`${fmt(v[0],2)}–${fmt(v[1],2)} ${unit} / предварительная оценка`:'Требуется подтверждение';
   const stageItems=stages.map(([code,label])=>({code,label}));
-  const deadline=deadlineStatus(data,i),isIdea=isNewIdea(i),historical=isHistorical(i),fact=executionFact(i);
+  const deadline=deadlineStatus(data,i),isIdea=isNewIdea(i),historical=isHistorical(i),fact=executionFact(i),readiness=cardReadiness(i);
   return <article className="passport-core passport-canvas" data-code={i.code}>
     <header className="pc-header">
       <div className="pc-identity pc-group-path"><ProvenanceValue i={i} name="digital_layer">{digitalLayer(i)}</ProvenanceValue><span> / </span><ProvenanceValue i={i} name="it_group">{group(i)}</ProvenanceValue><span> / </span><span className="pc-path-role">Куратор:</span><ProvenanceValue i={i} name="curator"/><span> / </span><span className="pc-path-role">{isIdea?'Ответственный за анализ:':'Ответственный за паспорт:'}</span><ProvenanceValue i={i} name="initiative_lead">{person(i)}</ProvenanceValue><span> / </span><ProvenanceValue i={i} name="process">{processGroup(i)}</ProvenanceValue><span> / </span><ProvenanceValue i={i} name="code"/></div>
@@ -55,6 +55,7 @@ export default function PassportCanvas({data,i}) {
           {fact?.date_conflict&&!historical&&<p className="pc-execution-conflict source-primary">Финиш по исходному реестру: {actualFinishLabel(i)} / требуется сверка</p>}
           {!historical&&<div className={'pc-deadline pc-deadline-'+deadline.code}><Icon name="clock"/><span>{deadline.text}{deadline.due&&<time>{deadline.dueLabel||longDate(deadline.due)}</time>}</span></div>}
           <Field i={i} name="decision" label="Решение по инициативе" icon="decision" empty="Требуется решение"/>
+          {readiness&&<div className="caption" data-field="admission">Проверка карточки: {readiness}</div>}
         </div>
         <PassportTimeline data={data} i={i}/>
         <div className="pc-action">
