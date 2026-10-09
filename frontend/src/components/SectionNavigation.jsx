@@ -16,10 +16,10 @@ export default function SectionNavigation({items,active,onChange}){
   },[active,items]);
   const move=direction=>{const nav=ref.current;if(nav){nav.scrollBy({left:direction*Math.max(150,nav.clientWidth*.7),behavior:'auto'});update();}};
   return <div className="section-navigation">
-    <button className="section-nav-arrow" type="button" aria-label="Предыдущие разделы" title="Предыдущие разделы" disabled={!edges.back} onClick={()=>move(-1)}><Icon name="backward" size={18}/></button>
+    <button className="section-nav-control" type="button" aria-label="Предыдущие разделы" title="Предыдущие разделы" disabled={!edges.back} onClick={()=>move(-1)}>Назад</button>
     <nav ref={ref} className="tabs" aria-label="Разделы портфеля" onScroll={update}>
       {items.map(([id,label])=><button className={active===id?'active':''} aria-current={active===id?'page':undefined} key={id} onClick={()=>onChange(id)}><Icon name={id==='transformation'?'layers':id}/>{label}</button>)}
     </nav>
-    <button className="section-nav-arrow" type="button" aria-label="Следующие разделы" title="Следующие разделы" disabled={!edges.forward} onClick={()=>move(1)}><Icon name="arrow" size={18}/></button>
+    <button className="section-nav-control" type="button" aria-label="Следующие разделы" title="Следующие разделы" disabled={!edges.forward} onClick={()=>move(1)}>Далее</button>
   </div>;
 }

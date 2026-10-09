@@ -17,10 +17,10 @@ export function PassportStagePath({stages, currentStage, nextAction, actionDue, 
         <span className="passport-stage-code">{stage.code}</span>
         <strong>{stage.label}</strong>
         {stage.date && <span className="passport-stage-date">{stage.date}</span>}
-        <span className="passport-route-arrow"><Icon name="arrow" size={18}/></span>
+        
       </li>)}
     </ol>
-    {!compact && <div className="passport-next-action"><Icon name="arrow"/><div><span>Ближайшее действие</span><strong>{nextAction || 'Требуется действие'}</strong></div><time>{actionDue || 'Требуется срок'}</time></div>}
+    {!compact && <div className="passport-next-action"><div><span>Ближайшее действие</span><strong>{nextAction || 'Требуется действие'}</strong></div><time>{actionDue || 'Требуется срок'}</time></div>}
   </section>;
 }
 
@@ -38,7 +38,7 @@ export function PassportResponsibility({customer, lead, curator, benefitOwner, d
       <div className="passport-owner-diagram">
         <div className="passport-governance"><div><Icon name="shield"/><span>Куратор направления</span><strong>{curator || 'Требуется назначение'}</strong></div><div><span>Решение</span><strong>{decision || 'Требуется решение'}</strong></div></div>
         <ol className="passport-owner-route">
-          {roles.map(role => <li key={role.label}><Icon name={role.icon}/><span>{role.label}</span><strong>{role.value || 'Требуется назначение'}</strong><span className="passport-route-arrow"><Icon name="arrow" size={18}/></span></li>)}
+          {roles.map(role => <li key={role.label}><Icon name={role.icon}/><span>{role.label}</span><strong>{role.value || 'Требуется назначение'}</strong></li>)}
         </ol>
       </div>
     </div>
@@ -50,8 +50,8 @@ export function PassportEffectFlow({metric, baseline, target, unit, effectFormul
   return <section className="passport-visual passport-effect-flow" aria-label="Связь показателя с финансовым эффектом">
     <header className="passport-visual-heading"><h2>Показатель связывает изменение с финансовым результатом</h2>{financeStatus && <p className="passport-finance-status">{financeStatus}</p>}</header>
     <div className="passport-effect-diagram">
-      <div className="passport-indicator"><Icon name="target"/><h3>{metric || 'Требуется показатель'}</h3><dl className="passport-base-target"><div><dt>База</dt><dd>{baseline ?? 'Требуется база'}</dd></div><Icon name="arrow"/><div><dt>Цель</dt><dd>{target ?? 'Требуется цель'}</dd></div></dl>{unit && <p className="passport-unit">{unit}</p>}</div>
-      <div className="passport-effect-mechanism"><Icon name="arrow"/><div><h3>Механизм эффекта</h3><p>{effectFormula || 'Требуется связь показателя с финансовым эффектом'}</p></div><Icon name="arrow"/></div>
+      <div className="passport-indicator"><Icon name="target"/><h3>{metric || 'Требуется показатель'}</h3><dl className="passport-base-target"><div><dt>База</dt><dd>{baseline ?? 'Требуется база'}</dd></div><div><dt>Цель</dt><dd>{target ?? 'Требуется цель'}</dd></div></dl>{unit && <p className="passport-unit">{unit}</p>}</div>
+      <div className="passport-effect-mechanism"><div><h3>Механизм эффекта</h3><p>{effectFormula || 'Требуется связь показателя с финансовым эффектом'}</p></div></div>
       <div className="passport-effect-result"><img className="passport-subject-image" src={illustrationBase + 'finance.webp'} width="640" height="640" alt="" loading="eager" decoding="async"/><dl><div><dt>Годовой потенциал до затрат ИТ, млн руб</dt><dd>{annualEffect ?? 'Требуется расчёт'}</dd></div><div><dt>Деньги 2027 до налога, млн руб</dt><dd>{cashEffect ?? 'Требуется расчёт'}</dd></div></dl></div>
     </div>
   </section>;

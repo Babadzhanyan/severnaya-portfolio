@@ -24,8 +24,7 @@
 .dp-parallel{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:12px;margin-top:9px;font-size:13px;font-weight:400;line-height:1.25}
 .dp-parallel>span+span{border-left:1px solid #6e8ca8;padding-left:12px}
 .dp-capabilities{display:block;font-size:13px;font-weight:400;line-height:1.35;margin-top:7px}
-.dp-purpose{display:grid;grid-template-columns:22px minmax(0,1fr);gap:14px;align-items:start;min-width:0}
-.dp-purpose>.ui-icon{color:#6e8ca8;margin-top:3px}
+.dp-purpose{min-width:0}
 .dp-purpose h3{font-size:18px;font-weight:600;line-height:1.25;color:#003c72;margin:0}
 .dp-purpose p{font-size:15px;line-height:1.4;margin:7px 0 0;min-width:0}
 .dp-purpose small{display:block;color:#555;font-size:13px;line-height:1.4;margin-top:7px}
@@ -39,17 +38,36 @@
 .dp-segment.dp-selected:hover,.dp-foundation-row .dp-segment:hover{color:#fff}
 .dp-segment:focus-visible,.dp-apex:focus-visible{outline:3px solid #6e8ca8;outline-offset:5px}
 .dp-segment:disabled{cursor:default}
-.dp-reading-note{font-size:13px;color:#555;line-height:1.4;margin:18px 0 0}
-.transformation-view .transformation-layout{display:block}
 .transformation-view .transformation-pyramid{max-width:none}
-.transformation-view .transformation-meaning{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:36px;margin-top:32px;padding-top:28px;border-top:1px solid #edf3f8}
-.transformation-view .transformation-meaning h2{margin:0 0 15px;font-size:22px}
-.transformation-view .transformation-results{grid-template-columns:105px minmax(0,1fr);gap:11px 18px;font-size:15px;line-height:1.4}
-.transformation-view .transformation-finance{border-top:0;margin:22px 0 0;padding:0}
-.transformation-view .transformation-finance small{display:block;color:#555;font-size:13px;line-height:1.4;margin-top:7px}
-.transformation-view .transformation-teams{margin-top:16px}
-.transformation-view .transformation-teams th:nth-child(n+2){text-align:right}
-.transformation-view .transformation-chain{margin:18px 0 25px}
+.transformation-portfolio{margin-top:34px;padding-top:30px;border-top:1px solid #edf3f8}
+.transformation-portfolio-heading{display:flex;justify-content:space-between;gap:40px;align-items:flex-start}
+.transformation-portfolio-heading h2{font-size:23px;margin:0 0 9px}
+.transformation-net{min-width:250px}
+.transformation-net span,.transformation-net small{display:block;font-size:13px;color:#52677d;line-height:1.35}
+.transformation-net strong{display:block;font-size:30px;color:#003c72;line-height:1.2;margin:6px 0}
+.transformation-finance-basis{font-size:13px;margin:17px 0 22px;max-width:840px}
+.transformation-branch-count{font-size:14px;color:#52677d;text-align:right;min-width:100px}
+.transformation-level{border-top:1px solid #edf3f8}
+.transformation-teams-tree{padding:0}
+.transformation-team>summary{padding:12px 0}
+.transformation-team>summary small,.transformation-owner>summary small{margin:0 0 3px;font-size:12px}
+.transformation-team>summary strong{font-size:17px}
+.transformation-owners{padding-left:0}
+.transformation-team-filter{margin:0 0 12px;padding:6px 10px;font-size:13px}
+.transformation-owner>summary{padding:9px 0}
+.transformation-owner>summary strong{font-size:16px}
+.transformation-initiatives{padding-left:0}
+.transformation-initiative{padding:15px 0;border-bottom:1px solid #edf3f8;min-width:0}
+.transformation-initiative-heading{display:flex;gap:14px;align-items:flex-start;justify-content:space-between}
+.transformation-passport-link{display:flex;gap:12px;align-items:flex-start;text-align:left;border:0;background:transparent;padding:0;color:#003c72;min-width:0;font-size:17px;line-height:1.35}
+.transformation-passport-link:hover{background:transparent;text-decoration:underline}
+.transformation-passport-link .code-button{font-size:13px;flex:none;text-decoration:none}
+.transformation-initiative-heading>.pill{flex:none}
+.transformation-initiative-result{display:grid;grid-template-columns:minmax(0,1fr) 210px;gap:20px;margin:13px 0 0;padding-left:80px}
+.transformation-result-label{display:block;font-size:12px;color:#52677d;margin-bottom:5px}
+.transformation-initiative-result p{font-size:14px;line-height:1.4;overflow-wrap:anywhere}
+.transformation-initiative-result small{display:flex;flex-wrap:wrap;gap:12px;font-size:13px;margin-top:6px}
+.transformation-initiative-money strong{font-size:20px;font-weight:600;color:#003c72;display:inline-block;padding:1px 5px;line-height:1.3}
 @media(max-width:1050px) and (min-width:761px){.dp-row{grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:20px}.dp-level-name{font-size:16px}.dp-purpose h3{font-size:16px}.dp-purpose p{font-size:14px}.dp-segment-content{padding:18px 22px;gap:9px;grid-template-columns:28px minmax(0,1fr) 49px}.dp-count strong{font-size:24px}.dp-count small{font-size:10px}.dp-apex{padding-right:25px;padding-left:30px}.dp-apex>span{font-size:17px}.dp-parallel{font-size:12px;gap:8px}.dp-parallel>span+span{padding-left:8px}}
 @media(max-width:760px){
   .digital-pyramid figcaption{margin-bottom:19px}
@@ -66,10 +84,9 @@
   .dp-count small{font-size:11px}
   .dp-parallel{font-size:13px;line-height:1.35;gap:10px}
   .dp-parallel>span+span{padding-left:10px}
-  .dp-purpose{grid-template-columns:22px minmax(0,1fr);gap:10px;padding-left:2px}
+  .dp-purpose{padding-left:2px}
   .dp-purpose h3{font-size:17px}
   .dp-purpose p{font-size:15px}
-  .dp-purpose>.ui-icon{transform:rotate(90deg)}
   .dp-apex{padding:13px 0;border-bottom:1px solid #003c72;justify-content:flex-start}
   .dp-apex>span{font-size:19px}
   .dp-selected{background:#003c72!important;border-bottom:0;border-radius:6px}
@@ -77,12 +94,23 @@
   .dp-foundation-row .dp-segment{background:#003c72;border-radius:6px;border-bottom:0}
   .dp-foundation-row .dp-segment-content{padding-left:10px}
   .dp-capabilities{font-size:12px}
-  .dp-reading-note{font-size:12px;margin-top:17px}
-  .transformation-view .transformation-meaning{grid-template-columns:minmax(0,1fr);gap:29px;margin-top:28px;padding-top:24px}
-  .transformation-view .transformation-results{grid-template-columns:98px minmax(0,1fr);font-size:15px;gap:10px 14px}
+  .transformation-portfolio{margin-top:26px;padding-top:24px}
+  .transformation-portfolio-heading{display:block}
+  .transformation-portfolio-heading h2{font-size:21px}
+  .transformation-net{margin-top:18px;min-width:0}
+  .transformation-finance-basis{font-size:12px}
+  .transformation-branch-count{min-width:64px;max-width:90px;font-size:12px;line-height:1.35;padding-top:4px}
+  .transformation-teams-tree{padding-left:13px}
+  .transformation-owners{padding-left:13px}
+  .transformation-initiatives{padding-left:13px}
+  .transformation-initiative-heading{display:block}
+  .transformation-passport-link{display:block;font-size:16px}
+  .transformation-passport-link .code-button{display:inline-block;margin:0 7px 5px 0}
+  .transformation-initiative-heading>.pill{margin-top:7px}
+  .transformation-initiative-result{grid-template-columns:minmax(0,1fr);gap:12px;padding-left:0;margin-top:12px}
+  .transformation-initiative-result small{gap:8px}
 }
 @media print{
-  #print-root .transformation-view .transformation-layout{display:block}
   #print-root .transformation-view .transformation-pyramid{max-width:none}
   #print-root .digital-pyramid{break-inside:avoid;page-break-inside:avoid}
   #print-root .digital-pyramid figcaption{margin-bottom:13px}
@@ -104,15 +132,32 @@
   #print-root .dp-count strong{font-size:23px}
   #print-root .dp-count small{font-size:10px}
   #print-root .dp-parallel,#print-root .dp-capabilities{font-size:11px;margin-top:6px}
-  #print-root .dp-purpose{padding:0;grid-template-columns:18px minmax(0,1fr);gap:12px}
+  #print-root .dp-purpose{padding:0}
   #print-root .dp-purpose h3{font-size:15px}
   #print-root .dp-purpose p{font-size:12px;margin-top:5px}
   #print-root .dp-purpose small{font-size:10px;margin-top:5px}
-  #print-root .dp-purpose>.ui-icon{transform:none;width:18px;height:18px}
-  #print-root .dp-reading-note{font-size:10px;margin-top:13px}
-  #print-root .transformation-view .transformation-meaning{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:28px;margin-top:22px;padding-top:18px}
-  #print-root .transformation-view .transformation-results{font-size:12px;grid-template-columns:85px minmax(0,1fr);gap:8px 13px}
-  #print-root .transformation-view .transformation-meaning h2{font-size:18px}
+  #print-root .transformation-portfolio{margin-top:24px;padding-top:18px;break-before:page}
+  #print-root .transformation-portfolio-heading{display:flex;gap:25px}
+  #print-root .transformation-portfolio-heading h2{font-size:18px}
+  #print-root .transformation-net strong{font-size:24px}
+  #print-root .transformation-net span,#print-root .transformation-net small,#print-root .transformation-finance-basis{font-size:11px}
+  #print-root .transformation-branch-count{font-size:11px}
+  #print-root .transformation-teams-tree,#print-root .transformation-owners,#print-root .transformation-initiatives{padding-left:18px}
+  #print-root .transformation-initiative{break-inside:avoid;padding:10px 0}
+  #print-root .transformation-print-title{font-size:13px;font-weight:600;color:#003c72}
+  #print-root .transformation-initiative-result{grid-template-columns:minmax(0,1fr) 175px;padding-left:0;margin-top:9px;gap:15px}
+  #print-root .transformation-initiative-result p{font-size:11px}
+  #print-root .transformation-initiative-money strong{font-size:16px}
+  #print-root .transformation-result-label{font-size:10px}
 }
-
-@media print{#print-root .transformation-view .transformation-layout{display:grid!important;grid-template-columns:65% 32%;gap:3%;align-items:start}#print-root .transformation-view .transformation-meaning{display:block!important;margin:0;padding:0;border:0}#print-root .transformation-view .transformation-meaning h2{font-size:16px}#print-root .transformation-view .transformation-results{grid-template-columns:75px minmax(0,1fr);gap:7px 10px;font-size:12px}#print-root .transformation-view .transformation-implementation{margin-top:20px}#print-root .transformation-view .transformation-teams th,#print-root .transformation-view .transformation-teams td{padding:6px;font-size:11px}#print-root .transformation-view .transformation-finance{margin:16px 0}#print-root .transformation-view .transformation-finance strong{font-size:18px}#print-root .transformation-view .dp-segment-content{padding:12px 18px;gap:9px;grid-template-columns:26px minmax(0,1fr) 42px}#print-root .transformation-view .dp-row{gap:18px}#print-root .transformation-view .dp-count strong{font-size:21px}#print-root .transformation-view .dp-purpose h3{font-size:14px}#print-root .transformation-view .dp-purpose p{font-size:12px}}
+.transformation-level{padding:25px 0 0;margin-top:12px;min-width:0}
+.transformation-level>h3{font-size:22px;line-height:1.3;background:#edf3f8;border-radius:8px;padding:14px 18px;margin:0 0 20px;color:#003c72}
+.transformation-team{margin:0 0 24px;min-width:0}.transformation-team-heading{display:flex;gap:16px;align-items:center;justify-content:space-between;margin-bottom:14px}.transformation-team h4{font-size:19px;line-height:1.35;font-weight:600;color:#003c72;margin:0}.transformation-team h4>span,.transformation-owner h5>span{display:block;color:#52677d;font-size:13px;font-weight:400;margin-bottom:4px}
+.transformation-team-heading .transformation-team-filter{margin:0;font-size:14px;padding:8px 12px;min-height:40px;flex:none}
+.transformation-owner{min-width:0;padding-left:18px;margin-bottom:24px}.transformation-owner>h5{font-size:17px;line-height:1.4;font-weight:600;color:#1a1a1a;margin:0 0 10px}
+.transformation-initiatives{padding-left:0}.transformation-initiative{padding:14px 0;min-width:0}.transformation-passport-link{font-size:17px;line-height:1.45;min-height:40px}.transformation-passport-link>span:last-child{overflow-wrap:anywhere}.transformation-result-label{font-size:13px;line-height:1.4}.transformation-initiative-result{padding-left:0;grid-template-columns:minmax(0,1fr) 235px;gap:28px;margin-top:9px}.transformation-initiative-result p{font-size:15px;line-height:1.45}.transformation-initiative-result small{font-size:14px;line-height:1.45}.transformation-initiative-money strong{font-size:22px;line-height:1.35}.transformation-pagination{display:flex;align-items:center;justify-content:flex-end;flex-wrap:wrap;gap:9px;padding:18px 0 4px;color:#52677d;font-size:14px}.transformation-pagination span{margin-right:auto}.transformation-pagination button{font-size:14px;min-height:40px;padding:8px 12px}
+.transformation-net{max-width:320px}.transformation-net span,.transformation-net small{font-size:14px;line-height:1.45}.transformation-net strong{font-size:32px;line-height:1.25}.transformation-portfolio-heading h2{font-size:24px;line-height:1.3;max-width:730px}
+@media(max-width:760px){.transformation-level{padding-top:18px;margin-top:4px}.transformation-level>h3{font-size:20px;padding:12px 14px;margin-bottom:16px}.transformation-team-heading{display:block}.transformation-team-heading .transformation-team-filter{margin-top:9px}.transformation-team h4{font-size:18px}.transformation-owner{padding-left:0;margin-bottom:18px}.transformation-owner>h5{font-size:17px;margin-bottom:10px}.transformation-initiative-result{grid-template-columns:minmax(0,1fr);gap:12px;padding-left:0}.transformation-passport-link{font-size:16px}.transformation-initiative-heading>.pill{font-size:12px;margin-top:8px}.transformation-initiative-money strong{font-size:22px}.transformation-portfolio-heading h2{font-size:22px}.transformation-net{max-width:none}.transformation-net span,.transformation-net small{font-size:13px}.transformation-pagination{padding-top:16px}}
+@media print{#print-root .transformation-pagination,#print-root .transformation-team-filter{display:none}#print-root .transformation-level>h3{font-size:18px;padding:10px 12px;break-after:avoid}#print-root .transformation-team h4{font-size:16px;break-after:avoid}#print-root .transformation-owner>h5{font-size:14px;break-after:avoid}#print-root .transformation-owner{padding-left:12px}#print-root .transformation-team h4>span,#print-root .transformation-owner h5>span{font-size:11px}#print-root .transformation-print-title{font-size:13px}}
+.transformation-page-count{margin:18px 0 0}.transformation-portfolio-heading h2{scroll-margin-top:24px}.transformation-portfolio-heading h2:focus{outline:none}
+@media(min-width:1000px){.transformation-initiative{display:grid;grid-template-columns:minmax(0,1fr) minmax(380px,46%);gap:24px;align-items:start;padding:12px 0}.transformation-initiative-heading{gap:10px;min-width:0}.transformation-passport-link{font-size:16px;line-height:1.5;gap:8px}.transformation-passport-link .code-button{min-height:30px;padding:5px 7px;align-self:start}.transformation-initiative-result{grid-template-columns:minmax(0,1fr) 145px;gap:18px;margin:0}.transformation-result-label{font-size:13px;line-height:1.4;margin-bottom:3px}.transformation-initiative-result p{font-size:15px;line-height:1.45}.transformation-initiative-result small{font-size:13px;margin-top:3px;gap:8px}.transformation-initiative-money strong{font-size:21px;line-height:1.4}}

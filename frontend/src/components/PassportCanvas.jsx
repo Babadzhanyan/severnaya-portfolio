@@ -2,7 +2,7 @@ import React from 'react';
 import Icon from './Icon.jsx';
 import {PassportStagePath} from './PassportVisuals.jsx';
 import PassportTimeline from './PassportTimeline.jsx';
-import {display,fmt,longDate,dateTimeLabel,color,stageCode,stages,person,group,aliasCodes,digitalLayer,finances,deadlineStatus,isNewIdea,isHistorical,executionFact,executionLabel,actualFinishLabel,isNumber,hours} from '../model/portfolio.js';
+import {display,initiativeTitle,processGroup,fmt,longDate,dateTimeLabel,color,stageCode,stages,person,group,aliasCodes,digitalLayer,deadlineStatus,isNewIdea,isHistorical,executionFact,executionLabel,actualFinishLabel,isNumber,hours} from '../model/portfolio.js';
 import '../passport-ui.css';
 
 function Field({i,name,label,icon,format,children,className='',empty='Требуется заполнение',originName=name}) {
@@ -15,16 +15,15 @@ function ProvenanceValue({i,name,children}) {
 }
 
 // finance получает текущий допуск модели; поддерживающий вклад сохраняет код конечного эффекта
-export default function PassportCanvas({data,i,finance}) {
+export default function PassportCanvas({data,i}) {
   if(!i)return null;
-  const admitted=finance ?? finances(data,[i]);
   const aliases=aliasCodes(i),supporting=i.effect_role==='Поддерживающий вклад';
   const stageItems=stages.map(([code,label])=>({code,label}));
   const deadline=deadlineStatus(data,i),isIdea=isNewIdea(i),historical=isHistorical(i),fact=executionFact(i);
   return <article className="passport-core passport-canvas" data-code={i.code}>
     <header className="pc-header">
-      <div className="pc-identity pc-group-path"><ProvenanceValue i={i} name="digital_layer">{digitalLayer(i)}</ProvenanceValue><span> / </span><ProvenanceValue i={i} name="it_group">{group(i)}</ProvenanceValue><span> / </span><span className="pc-path-role">Куратор:</span><ProvenanceValue i={i} name="curator"/><span> / </span><span className="pc-path-role">{isIdea?'Ответственный за анализ:':'Ответственный за паспорт:'}</span><ProvenanceValue i={i} name="initiative_lead">{person(i)}</ProvenanceValue><span> / </span><ProvenanceValue i={i} name="process"/><span> / </span><ProvenanceValue i={i} name="code"/></div>
-      <h1 className={color(i,'title')} data-field="title">{display(i.title)}</h1>
+      <div className="pc-identity pc-group-path"><ProvenanceValue i={i} name="digital_layer">{digitalLayer(i)}</ProvenanceValue><span> / </span><ProvenanceValue i={i} name="it_group">{group(i)}</ProvenanceValue><span> / </span><span className="pc-path-role">Куратор:</span><ProvenanceValue i={i} name="curator"/><span> / </span><span className="pc-path-role">{isIdea?'Ответственный за анализ:':'Ответственный за паспорт:'}</span><ProvenanceValue i={i} name="initiative_lead">{person(i)}</ProvenanceValue><span> / </span><ProvenanceValue i={i} name="process">{processGroup(i)}</ProvenanceValue><span> / </span><ProvenanceValue i={i} name="code"/></div>
+      <h1 className={color(i,'title')} data-field="title">{initiativeTitle(i)}</h1>
       {aliases.length>0 && <p className="pc-aliases">Карточка объединяет прежние коды {aliases.join(' / ')}</p>}
     </header>
     <div className="pc-columns">
@@ -35,15 +34,13 @@ export default function PassportCanvas({data,i,finance}) {
         <Field i={i} name="success" label="Критерий приёмки" icon="check"/>
         <div className="pc-measure">
           <Field i={i} name="metric" label="Результат и показатель успеха" icon="target"/>
-          <div className="pc-base-target"><div><span>База</span><strong><ProvenanceValue i={i} name="baseline">{fmt(i.baseline,3,'База ожидается')}</ProvenanceValue></strong></div><Icon name="arrow"/><div><span>Цель</span><strong><ProvenanceValue i={i} name="target">{fmt(i.target,3,'Цель ожидается')}</ProvenanceValue>{display(i.unit)&&<small className="pc-target-unit"><ProvenanceValue i={i} name="unit"/></small>}</strong></div></div>
+          <div className="pc-base-target"><div><span>База</span><strong><ProvenanceValue i={i} name="baseline">{fmt(i.baseline,3,'База ожидается')}</ProvenanceValue></strong></div><div><span>Цель</span><strong><ProvenanceValue i={i} name="target">{fmt(i.target,3,'Цель ожидается')}</ProvenanceValue>{display(i.unit)&&<small className="pc-target-unit"><ProvenanceValue i={i} name="unit"/></small>}</strong></div></div>
           <p className="pc-measure-details"><ProvenanceValue i={i} name="baseline_period"/><span> / цель </span><ProvenanceValue i={i} name="target_date">{longDate(i.target_date)}</ProvenanceValue></p>
           {display(i.baseline_source) && <p className="pc-baseline-reference"><ProvenanceValue i={i} name="baseline_source"/></p>}
         </div>
         <section className="pc-effect" aria-label="Ожидаемый эффект">
           <h2><Icon name="effect"/>Эффект</h2>
-          <Field i={i} name="priority_annual_ebitda" label="Годовой прирост EBITDA, млн руб" className={'pc-main-number '+(supporting?'pc-supporting-number':'')}>{historical?'Исторический проект':fmt(i.priority_annual_ebitda,2,'Требуется оценка')}</Field>
-          {!historical&&<Field i={i} name="priority_annual_depreciation" label="Годовой прирост EBIT, млн руб">{fmt(isNumber(i.priority_annual_ebitda)&&isNumber(i.priority_annual_depreciation)?i.priority_annual_ebitda-i.priority_annual_depreciation:null,2,'Требуется амортизация')}</Field>}
-          <Field i={i} name="net_2027" label="Деньги 2027 до налога, млн руб" className="pc-main-number">{fmt(admitted.cash,2,'Требуется согласование')}</Field>
+          <Field i={i} name="priority_annual_ebitda" label="Годовой прирост операционной прибыли, млн руб" className={'pc-main-number '+(supporting?'pc-supporting-number':'')}>{historical?'Исторический проект':fmt(i.priority_annual_ebitda,2,'Требуется оценка')}</Field>
         </section>
       </section>
       <section className="pc-project" aria-label="Описание, статус и план проекта">
@@ -59,14 +56,14 @@ export default function PassportCanvas({data,i,finance}) {
         </div>
         <PassportTimeline data={data} i={i}/>
         <div className="pc-action">
-          <Field i={i} name="next_action" label="Ближайшее действие" icon="arrow" empty="Требуется действие"/>
+          <Field i={i} name="next_action" label="Ближайшее действие" empty="Требуется действие"/>
           <p><Icon name="clock"/><ProvenanceValue i={i} name="action_due">{dateTimeLabel(i.action_due)}</ProvenanceValue></p>
         </div>
         <div className="pc-project-conditions">
           <div className="pc-risk"><Field i={i} name="risk" label="Главный риск" icon="risk"/><Field i={i} name="risk_action" label="Действие и владелец риска" icon="shield"/></div>
           <Field i={i} name="dependency_codes" label="Зависимости" icon="dependency" empty="Требуется проверка"/>
         </div>
-        <Field i={i} name="effect_formula" label="Связь показателя с финансовым эффектом" icon="arrow"/>
+        <Field i={i} name="effect_formula" label="Связь показателя с финансовым эффектом"/>
         <div className="pc-effect-role"><Field i={i} name="effect_role" label="Роль в финансовом эффекте" empty="Требуется роль эффекта"/><Field i={i} name="effect_group" label="Код конечного эффекта" empty="Требуется связь эффекта"/></div>
       </section>
       <aside className="pc-resources" aria-label="Люди, часы и деньги">

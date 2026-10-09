@@ -28,7 +28,7 @@ test('Мост сохраняет порядок и знак, скрывает �
   assert.ok(zero.bars.every(b=>b.height===0));
   const pending=renderToStaticMarkup(React.createElement(EffectBridge,{result:{...value,period_delta_ebitda:0}}));
   assert.doesNotMatch(pending,/ev-waterfall/);
-  assert.match(pending,/Сверьте денежные составляющие с изменением EBITDA/);
+  assert.match(pending,/Сверьте денежные составляющие с изменением операционной прибыли/);
   assert.match(pending,/\+1 млн руб/);
   assert.match(pending,/−1,8 млн руб/);
   assert.deepEqual(value,copy);

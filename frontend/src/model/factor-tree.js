@@ -5,7 +5,7 @@ export function productionTreeModel(input,result){
  const b=result?.baseline||{},t=result?.target||{},nodes=[];
  const add=(id,title,unit,baseline,target,{change=delta(baseline,target),editor=null,formula='',source='',image=null}={})=>nodes.push({id,title,unit,baseline,target,change,editor,formula,source,image,index:isNumber(baseline)&&baseline!==0&&isNumber(target)?target/baseline:null});
  add('ebit','Прирост EBIT','млн руб',null,null,{change:result?.period_delta_ebit,formula:'Прирост EBITDA − дополнительная амортизация'});
- add('ebitda','Прирост EBITDA','млн руб',b.ebitda,t.ebitda,{change:result?.period_delta_ebitda,formula:'Изменение выручки − изменение расходов'});
+ add('ebitda','Операционная прибыль','млн руб',b.ebitda,t.ebitda,{change:result?.period_delta_ebitda,formula:'Изменение выручки − изменение расходов'});
  add('depreciation','Дополнительная амортизация','млн руб',null,input?.additional_depreciation,{change:input?.additional_depreciation,editor:'depreciation',formula:'Амортизация того же периода'});
  add('revenue','Выручка','млн руб',b.revenue,t.revenue,{formula:'Продажи × средняя цена'});
  add('expenses','Операционные расходы','млн руб',sum(b.variable_expenses,b.fixed_expenses),sum(t.variable_expenses,t.fixed_expenses),{editor:'costs',formula:'Переменные + постоянные расходы'});
@@ -15,7 +15,7 @@ export function productionTreeModel(input,result){
  add('fixed','Постоянные расходы','млн руб',b.fixed_expenses,t.fixed_expenses,{editor:'fixed',formula:'Расходы сопоставимого периода'});
  add('meat','Годное мясо','кг',b.meat_kg,t.meat_kg,{formula:'Живая масса × выход годного'});
  add('mix','Выход конечной корзины','кг / кг',isNumber(b.meat_kg)&&b.meat_kg>0?b.sold_kg/b.meat_kg:null,isNumber(t.meat_kg)&&t.meat_kg>0?t.sold_kg/t.meat_kg:null,{editor:'mix',formula:'Продажи / годное мясо; структура и конечные выходы'});
- add('liveweight','Живой вес','кг',b.live_kg,t.live_kg,{formula:'Головы на убой × средняя масса',image:'liveweight-v14.webp'});
+ add('liveweight','Живой вес','кг',b.live_kg,t.live_kg,{formula:'Головы на убой × средняя масса'});
  add('yield','Выход годного','%',b.slaughter_yield,t.slaughter_yield,{editor:'slaughter_yield_pp',formula:'Изменение доли в процентных пунктах'});
  add('heads','Головы на убой','гол',b.live_heads,t.live_heads,{formula:'База голов × индекс посадки × индекс сохранности'});
  add('weight','Средняя масса птицы','кг / гол',b.average_weight_kg,t.average_weight_kg,{editor:'average_weight_pct',formula:'Живая масса / головы на убой'});

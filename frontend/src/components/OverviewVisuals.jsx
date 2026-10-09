@@ -17,7 +17,7 @@ export function OverviewRoutes({onView}){
       {routes.map(route=><button key={route.view} className="overview-route" onClick={()=>onView?.(route.view)}>
         <Icon name={route.icon} size={30} className="overview-route-icon"/>
         <strong>{route.title}</strong><span>{route.description}</span>
-        <span className="overview-route-action">Открыть раздел <Icon name="arrow" size={18}/></span>
+        <span className="overview-route-action">Открыть раздел </span>
       </button>)}
     </div>
   </section>;

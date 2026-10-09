@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
-  "released_at": "2026-10-09T00:09:51.240986+00:00",
+  "released_at": "2026-10-09T04:21:53.184187+00:00",
   "verdict": "Проверка пройдена",
   "site": "https://babadzhanyan.github.io/severnaya-portfolio/",
   "registry": "https://docs.google.com/spreadsheets/d/1stFDS_18dulhc96CSybYdXDk3RyvMvsSO9HxPkTvB4g/edit#gid=404672457&range=B2",
-  "site_commit": "e0e030dcd82a7b8555bb13bff05e2a743cf1970e",
+  "site_commit": "000165304d5407ccb988a792e68fde5e740d2c0f",
   "content": {
     "cards": 200,
     "source_projects": 172,
@@ -17,28 +17,37 @@
     "main_sections": 5,
     "linked_filters": 7,
     "meeting_sessions": 4,
-    "copyable_messages": 10,
     "videos": 3,
     "legal_items": 28,
     "legal_links": 95,
     "primary_plant_associations": 95,
     "general_systems": 105,
     "repeated_primary_plant_associations": 0,
-    "preliminary_annual_ebitda_mln_rub": 55.013791,
     "financially_approved_effects": 0,
     "staff_review_deadline": "2026-10-13T18:00:00+03:00",
-    "heads_review_deadline": "2026-10-14T18:00:00+03:00"
+    "heads_review_deadline": "2026-10-14T18:00:00+03:00",
+    "preliminary_annual_operating_profit_mln_rub": 55.013791,
+    "private_draft_messages_archived": 10,
+    "public_information_disclosures": 0,
+    "transformation_page_size": 20,
+    "all_transformation_codes": 200,
+    "merged_process_groups": 13,
+    "source_markers_in_titles": 0,
+    "video_duration_seconds": [
+      64,
+      64,
+      64
+    ],
+    "financial_label": "операционная прибыль",
+    "financial_basis": "Управленческая оценка после текущих расходов; исходные финансовые ключи сохранены для совместимости",
+    "calculator_sheet": "Калькулятор прибыли"
   },
   "checks": {
-    "frontend_model_tests": 125,
-    "frontend_component_tests": 14,
+    "frontend_model_tests": 131,
+    "frontend_component_tests": 27,
     "backend_tests": 71,
     "full_browser_checks": 94,
     "final_map_browser_checks": 51,
-    "independent_interface_score": {
-      "actual": 47,
-      "maximum": 50
-    },
     "native_independent_checks": 2292,
     "native_effective_cells": 17394,
     "formula_errors": 0,
@@ -47,24 +56,41 @@
     "public_assets_verified": 47,
     "google_link_access": "anyone / writer",
     "protected_ranges": 0,
-    "database_restart_preserves_200_cards": true
+    "database_restart_preserves_200_cards": true,
+    "initiative_financial_assertions": 2058,
+    "live_typed_feed_rows": 3663,
+    "live_typed_feed_columns": 46,
+    "raw_200_initiatives_preserved": true,
+    "independent_ui_flows": 15,
+    "independent_ui_verdict": "Пройдено / экранный контроль и исправление позднего ответа Google подтверждены",
+    "jsonp_late_reply_tests": 4,
+    "source_request_timeout_ms": 30000,
+    "poll_interval_ms": 15000,
+    "compact_row_desktop_px": 77,
+    "compact_row_mobile_px": 145,
+    "final_public_browser_bundle": "index-e7vL10Qm.js",
+    "final_public_browser_cards": 200,
+    "final_public_console_errors": 0,
+    "public_video_metadata_loaded": 3
   },
   "hashes": {
-    "static_manifest_sha256": "985b2dd64545208f9d6f6368a682d6b3fae626416d4a471c7bef7f87bb6d9db5",
-    "source_manifest_sha256": "f27cca63d7e81b2108be92e16c143c37f004d863f9c024500fdebde57ab8e8e4",
+    "static_manifest_sha256": "1f59c6409509aaa04aa79f27af3aca4f46f10db9977215fec78927a5d978f919",
+    "source_manifest_sha256": "cfc0820727d949ce0c96815061df721d54033c89374751211d6b782f5cbc3cb7",
     "backend_normalized_source_sha256": "e23409c30377764bd4aa0f363e8cf0d920c39a0c504b68ded2dbe2b56a25aac5",
-    "independent_interface_report_sha256": "6c3f7a42f14a0f38dd576e783d6705af9ccf532b3efb0bd54474a206b76f076e"
+    "independent_interface_report_sha256": "5c972fadb51a8fa7047bb415c3dfc04020ed39f2b5d652a063e69ef2346e288f",
+    "current_financial_report_sha256": "aace4518b285e8054d4fd019082f2d549bb5a871f8a66d42f7b283ca8feb64a7",
+    "final_public_browser_report_sha256": "aeb230f50e79f11bc36c9408fcb7076d1463f46ef02f1480f7e287dd937cbf8b"
   },
   "public_assets": [
     {
-      "path": "assets/index-BXWKmZnB.js",
-      "bytes": 553410,
-      "sha256": "a820c3589dc8016cbd86e35205c28197e76abff13a440803c0b2510da833a5e1"
+      "path": "assets/index-Bz5WaeSW.css",
+      "bytes": 167511,
+      "sha256": "e3548516e515c71e65c7f88e53d0f49999e8083c3d62b3b294fd17763615fbb5"
     },
     {
-      "path": "assets/index-Cd-aFBUU.css",
-      "bytes": 145933,
-      "sha256": "b9bc86ae3aba94699d3ea9412a93808567622ce76bafee970b3006a88b5ba491"
+      "path": "assets/index-e7vL10Qm.js",
+      "bytes": 508091,
+      "sha256": "540f281f30f242a9eb4f862389be72e8ec22ca4904642496e37b8346d6fc25f4"
     },
     {
       "path": "assets/production-ai/accounting.webp",
@@ -218,48 +244,48 @@
     },
     {
       "path": "assets/tutorials/01-passport.jpg",
-      "bytes": 62493,
-      "sha256": "939a0901354fa5d1d96afa6139993f8dfd70f77407d1f3c5137e4e4585bf62dd"
+      "bytes": 89546,
+      "sha256": "e5e934dc91ea2f00eabe741f56bece3f9e29499ca0b74c950ef26e015362554b"
     },
     {
       "path": "assets/tutorials/01-passport.mp4",
-      "bytes": 2386006,
-      "sha256": "10bb76fc32bec01fd2c9f3dcec87487b606f9e36e6ba5bd2bac700704153de1f"
+      "bytes": 713607,
+      "sha256": "6345fc5993dd6237ff8dfc92413253ee92c3cda72e38aa22ba7ff8187c6e291b"
     },
     {
       "path": "assets/tutorials/01-passport.vtt",
-      "bytes": 932,
-      "sha256": "3e306001d5894f4d00a1c9c79f92492d3d5530c849f1cf81cbb3a6ee354e524a"
+      "bytes": 936,
+      "sha256": "a7a5871de660ee886aec15f1cf895809d230430a2f24e46e1eef43c59e136430"
     },
     {
       "path": "assets/tutorials/02-effects.jpg",
-      "bytes": 65086,
-      "sha256": "fe64f317e0891c5df99f8e390a612f52754f5d281760ee7ed70175bbe7ce75b7"
+      "bytes": 113421,
+      "sha256": "7dc6fdab612c129bd795c103109ff5910d32810a34942856d5b2807045bfd724"
     },
     {
       "path": "assets/tutorials/02-effects.mp4",
-      "bytes": 2274546,
-      "sha256": "ea24a7a5d69d4627ce4b587509420d42e4b3fa2648e7f3b4fe373afcdccc3d32"
+      "bytes": 570524,
+      "sha256": "418fa1f6ed08a8fc8b4099563929bb79d4966d3af03c095bb50536153217d733"
     },
     {
       "path": "assets/tutorials/02-effects.vtt",
-      "bytes": 1111,
-      "sha256": "b56549ae6958d556370cdd5b0b0b493a93ff4ebaac1ca4adcac5c1d74ebc24c8"
+      "bytes": 1059,
+      "sha256": "729482bc7b644c1c4a2b21b6ca31073a0cf37510a2c3f6c07856ad0ddb02c8ba"
     },
     {
       "path": "assets/tutorials/03-portfolio.jpg",
-      "bytes": 76430,
-      "sha256": "134afcc333aa9c13f1af94822c771e39e578d85a372238133510473faa6293c0"
+      "bytes": 126568,
+      "sha256": "2e0cd41ad2b69e6265953da04ec427af80e6d7ce764d332d89c90d1e3694acec"
     },
     {
       "path": "assets/tutorials/03-portfolio.mp4",
-      "bytes": 3530232,
-      "sha256": "08650e530d9b2b59c5d240926e1b39d3eef85fea12298c2f5c2b4ed37f089084"
+      "bytes": 666537,
+      "sha256": "d3d65baf73ce698a201d34cfa709c42750cf542b9ed9b7f1327f6ab94783530c"
     },
     {
       "path": "assets/tutorials/03-portfolio.vtt",
-      "bytes": 1061,
-      "sha256": "26527f3f761f2eaab45bc39c9aec904115096cf7761bacd73f1ab78cba1a4e48"
+      "bytes": 1046,
+      "sha256": "a2eb4612cd5071dbf55b54aac936540916166551b95765428a881fc72b052967"
     },
     {
       "path": "fonts/LICENSE.md",
@@ -284,7 +310,7 @@
     {
       "path": "index.html",
       "bytes": 441,
-      "sha256": "b71fc1cb6f69110ed8c043fd1ce984f9b87ba31f317deef8575851c5daf632a7"
+      "sha256": "617f674903f346b7657695df5eb5b0047e45684e4c0327f7b76bfcaf8ce29a70"
     },
     {
       "path": "runtime-config.js",
@@ -298,11 +324,24 @@
     "external_backend_hosting": "Площадка определяется владельцем системы"
   },
   "business_confirmation": [
-    "Ставки начисленной зарплаты, предложения поставщиков, состав расходов и амортизация",
+    "Ставки начисленной зарплаты, предложения поставщиков, состав расходов",
     "Спрос, производственные выходы и доступная мощность",
     "Применимость правовых требований и фактические сроки",
     "Полный состав оборудования ИТ-050",
     "Персональные назначения и доступные часы команд",
     "Факт первой встречи и календарь следующих встреч"
+  ],
+  "version": 18,
+  "verification_scope": {
+    "current_cycle": "Интерфейс, публичные файлы, модели, сервер, источник, имена и подписи Google, новые видео",
+    "retained_prior_native_cycle": "Проверки исходных значений, календаря, формул и доступа Google из v16; текущие 12 подписей проверены повторно; числовой поток совпал до и после",
+    "independent_live_bundle": "index-Dm92nLwr.js",
+    "final_transport": "Матрица значений совпала; опубликованная сборка получила успешные ответы Google в 07:22 и 07:26; задержки сохраняют карточки и отображаются в индикаторе",
+    "source_matrix_values_same_with_no_format": true
+  },
+  "limitations": [
+    "Google иногда отвечает с задержкой; последний корректный набор сохраняется и обновляется после восстановления",
+    "Предварительные финансовые оценки утверждают владельцы показателей и финансовая служба",
+    "Внешняя площадка FastAPI и PostgreSQL определяется владельцем системы"
   ]
 }

@@ -59,12 +59,12 @@ export function CalculationFlow({input,result}){
       <div><span><Icon name="money"/>Выручка</span><ComparedValue result={result} name="revenue" unit="млн руб" empty="Заполните цены" money/></div>
     </div>
     <div className="ev-profit-equation" aria-label="Прибыль равна выручке за вычетом переменных и постоянных расходов">
-      {[['revenue','Выручка','money','Заполните цены'],['variable_expenses','Переменные расходы','costs','Заполните ставки'],['fixed_expenses','Постоянные расходы','costs','Заполните расходы'],['ebitda','EBITDA','effect',ebitdaRequirement(result)]].map(([key,label,icon,empty],k)=><React.Fragment key={key}>
+      {[['revenue','Выручка','money','Заполните цены'],['variable_expenses','Переменные расходы','costs','Заполните ставки'],['fixed_expenses','Постоянные расходы','costs','Заполните расходы'],['ebitda','Операционная прибыль','effect',ebitdaRequirement(result)]].map(([key,label,icon,empty],k)=><React.Fragment key={key}>
         {k>0&&<b className="ev-operator" aria-hidden="true">{k===3?'=':'−'}</b>}
         <div className={k===3?'ev-equation-result':''}><span><Icon name={icon}/>{label}</span><strong>{fmt(isNumber(result?.target?.[key])?result.target[key]/1e6:null,2,empty)}</strong><small>млн руб / база {fmt(isNumber(result?.baseline?.[key])?result.baseline[key]/1e6:null,2,empty)}</small></div>
       </React.Fragment>)}
     </div>
-    <p className="ev-calculation-note">Прибыль до процентов, налогов и амортизации (EBITDA) / {display(result?.baseline_period)||'Укажите период расчёта'}</p>
+    <p className="ev-calculation-note">Выручка − переменные и постоянные расходы / {display(result?.baseline_period)||'Укажите период расчёта'}</p>
   </figure>;
 }
 
@@ -90,8 +90,8 @@ export function EffectBridge({result}){
   return <figure className="ev-effect-bridge">
     <figcaption><h2>Выход, структура и расходы формируют изменение прибыли</h2><p>Млн руб за период / {display(result.baseline_period)}</p></figcaption>
     {geometry?<>
-      <div className="ev-bridge-scroll"><svg className="ev-waterfall" viewBox="0 0 900 326" role="img" aria-label={'Последовательное изменение EBITDA за период: '+signed(geometry.total)+' млн руб'}>
-        <title>Денежные составляющие формируют изменение EBITDA</title>
+      <div className="ev-bridge-scroll"><svg className="ev-waterfall" viewBox="0 0 900 326" role="img" aria-label={'Последовательное изменение операционной прибыли за период: '+signed(geometry.total)+' млн руб'}>
+        <title>Денежные составляющие формируют изменение операционной прибыли</title>
         <line x1="24" x2="884" y1={geometry.zeroY} y2={geometry.zeroY} className="ev-zero-line"/>
         {geometry.bars.map((b,k)=><g key={b.code}>
           <title>{display(b.name)+': '+signed(b.rub)+' млн руб'}</title>
@@ -101,11 +101,11 @@ export function EffectBridge({result}){
           <text x={b.x} y="286" className="ev-bar-label">{(bridgeLabels[b.code]||[display(b.name)]).map((line,j)=><tspan key={j} x={b.x} dy={j?18:0}>{line}</tspan>)}</text>
         </g>)}
         <rect className="ev-total" x={geometry.x} y={geometry.totalY} width={geometry.barWidth} height={Math.max(geometry.totalHeight,1)}/>
-        <text x={geometry.x} y={geometry.totalY-9} className="ev-bar-value">{signed(geometry.total)}</text><text x={geometry.x} y="286" className="ev-bar-label">Изменение<tspan x={geometry.x} dy="18">EBITDA</tspan></text>
+        <text x={geometry.x} y={geometry.totalY-9} className="ev-bar-value">{signed(geometry.total)}</text><text x={geometry.x} y="286" className="ev-bar-label">Изменение<tspan x={geometry.x} dy="18">прибыли</tspan></text>
       </svg></div>
-      <div className="ev-bridge-reading"><span><i className="ev-positive"/>Рост прибыли</span><span><i className="ev-negative"/>Снижение прибыли</span><strong>Изменение EBITDA {signed(result.period_delta_ebitda)} млн руб</strong></div>
+      <div className="ev-bridge-reading"><span><i className="ev-positive"/>Рост прибыли</span><span><i className="ev-negative"/>Снижение прибыли</span><strong>Изменение операционной прибыли {signed(result.period_delta_ebitda)} млн руб</strong></div>
     </>:<div className="ev-bridge-pending">
-      <p>{isNumber(result.period_delta_ebitda)?'Сверьте денежные составляющие с изменением EBITDA':'Цены и ставки расходов завершают денежный расчёт'}</p>
+      <p>{isNumber(result.period_delta_ebitda)?'Сверьте денежные составляющие с изменением операционной прибыли':'Цены и ставки расходов завершают денежный расчёт'}</p>
       <dl>{(result.bridge||[]).map((r,k)=><React.Fragment key={r.code+'-'+k}><dt>{display(r.name)}</dt><dd>{isNumber(r.rub)?signed(r.rub)+' млн руб':['yield','mix','price'].includes(r.code)?'Заполните цены':'Заполните ставки'}</dd></React.Fragment>)}</dl>
       {!isNumber(result.period_delta_ebitda)&&<p>Физические объёмы показаны в производственной схеме</p>}
     </div>}
@@ -115,8 +115,8 @@ export function EffectBridge({result}){
 export function InitiativeEffect({lever}){
   if(!lever)return null;
   return <section className="ev-initiative-effect">
-    <div className="ev-initiative-metric"><Icon name="target" size={26}/><div><h3>{display(lever.metric)||'Укажите показатель эффекта'}</h3><p>База {fmt(lever.baseline,3,'Заполните базу')} <Icon name="arrow"/> цель {fmt(lever.target,3,'Заполните цель')}</p></div><span>{display(lever.readiness)}</span></div>
-    <dl className="ev-initiative-money">{[['annual_ebitda','Годовая EBITDA выбранного режима','effect',display(lever.mechanism)],['ebitda_2027','EBITDA 2027','clock','Срок начала, охват и освоение'],['cash_2027','Деньги 2027 до налога','money','Реализация денежного эффекта и платежи']].map(([key,label,icon,detail])=><div key={key}><dt><Icon name={icon}/>{label}</dt><dd>{fmt(lever[key],2)}<small>млн руб</small></dd><p>{detail}</p></div>)}</dl>
+    <div className="ev-initiative-metric"><Icon name="target" size={26}/><div><h3>{display(lever.metric)||'Укажите показатель эффекта'}</h3><p><span>База {fmt(lever.baseline,3,'Заполните базу')}</span><span>Цель {fmt(lever.target,3,'Заполните цель')}</span></p></div><span>{display(lever.readiness)}</span></div>
+    <dl className="ev-initiative-money">{[['annual_ebitda','Годовая операционная прибыль выбранного режима','effect',display(lever.mechanism)],['ebitda_2027','Операционная прибыль 2027','clock','Срок начала, охват и освоение'],['cash_2027','Деньги 2027 до налога','money','Реализация денежного эффекта и платежи']].map(([key,label,icon,detail])=><div key={key}><dt><Icon name={icon}/>{label}</dt><dd>{fmt(lever[key],2)}<small>млн руб</small></dd><p>{detail}</p></div>)}</dl>
   </section>;
 }
 

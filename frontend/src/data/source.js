@@ -4,15 +4,17 @@ import schema from './schema.js';
 import {projectResponse} from './projector.js';
 const API=String(window.PMO_RUNTIME?.apiBase||import.meta.env.VITE_API_BASE||'').replace(/\/$/,'');
 let seq=0;
+const pendingGoogle=new Map();
+window.__pmoReactFeed=response=>pendingGoogle.get(String(response?.reqId))?.(response);
 export const apiBase=API;
 export function queryGoogle(signature='',signal){return new Promise((resolve,reject)=>{
- const req=++seq,name='__pmoReactFeed'+req,script=document.createElement('script');let done=false;
- const finish=(error,value)=>{if(done)return;done=true;clearTimeout(timer);script.remove();signal?.removeEventListener('abort',abort);window[name]=()=>{};setTimeout(()=>delete window[name],60000);error?reject(error):resolve(value);};
+ const req=String(++seq),script=document.createElement('script');let done=false;
+ const finish=(error,value)=>{if(done)return;done=true;clearTimeout(timer);script.remove();signal?.removeEventListener('abort',abort);pendingGoogle.delete(req);error?reject(error):resolve(value);};
  const abort=()=>finish(new DOMException('Источник переключён','AbortError'));
- window[name]=r=>String(r?.reqId)===String(req)?finish(null,r):finish(new Error('Google Sheets сопоставляет ответ текущему запросу'));
- const timer=setTimeout(()=>finish(new Error('Источник отвечает дольше 12 секунд')),config.timeoutMs);
+ pendingGoogle.set(req,response=>finish(null,response));
+ const timer=setTimeout(()=>finish(new Error('Источник отвечает дольше 30 секунд')),config.timeoutMs);
  script.onerror=()=>finish(new Error('Требуется соединение и доступ Google Sheets'));
- const url=new URL(`https://docs.google.com/spreadsheets/d/${config.spreadsheetId}/gviz/tq`);url.searchParams.set('gid',config.feedSheetId);url.searchParams.set('range',config.feedRange);url.searchParams.set('headers','0');url.searchParams.set('tqx',`out:json;reqId:${req};responseHandler:${name}${signature?';sig:'+signature:''}`);url.searchParams.set('_pmo',Math.floor(Date.now()/config.pollMs));script.src=url;script.referrerPolicy='no-referrer';signal?.addEventListener('abort',abort,{once:true});if(signal?.aborted)return abort();document.head.append(script);
+ const url=new URL(`https://docs.google.com/spreadsheets/d/${config.spreadsheetId}/gviz/tq`);url.searchParams.set('gid',config.feedSheetId);url.searchParams.set('range',config.feedRange);url.searchParams.set('headers','0');url.searchParams.set('tq','select * options no_format');url.searchParams.set('tqx',`out:json;reqId:${req};responseHandler:__pmoReactFeed${signature?';sig:'+signature:''}`);url.searchParams.set('_pmo',Math.floor(Date.now()/config.pollMs));script.src=url;script.referrerPolicy='no-referrer';signal?.addEventListener('abort',abort,{once:true});if(signal?.aborted)return abort();document.head.append(script);
  });}
 export function usePortfolioSource(){
  const [state,setState]=useState({data:null,mode:API?'api':'google',loading:true,error:'',lastChecked:null,lastChanged:null,syncedAt:null,paused:document.hidden,stale:false,sourceCheckedAt:null});

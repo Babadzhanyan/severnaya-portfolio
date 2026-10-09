@@ -1,4 +1,15 @@
 import React from 'react';
 import {display} from '../model/portfolio.js';
 import {obligationIndex,obligationStatus,obligationDeadlines,officialLinks} from '../model/legal.js';
-export default function LegalObligations({list,onOpen,compact=false}){const rows=obligationIndex(list);if(!rows.length)return null;return <details className="form-section legal-obligations"><summary>Обязательства и применимые требования / {rows.length}</summary><p className="caption">Юридическая служба подтверждает применимость, действующее покрытие и объём каждой работы</p><div className="table-wrap"><table><thead><tr><th>Требование</th><th>Применимость</th><th>Срок</th>{!compact&&<th>Связанные инициативы</th>}</tr></thead><tbody>{rows.map(law=><tr key={law.id}><td><strong>{display(law.title)}</strong><p className="caption">{display(law.reference)}</p><details><summary>Основание и проверка</summary><p>{display(law.applicability?.basis)}</p>{law.applicability?.required_evidence?.length>0&&<ul>{law.applicability.required_evidence.map((line,k)=><li key={k}>{display(line)}</li>)}</ul>}{officialLinks(law).map((item,k)=><p key={k}><a href={item.url} target="_blank" rel="noopener noreferrer">{display(item.title)||'Открыть нормативный акт'}</a></p>)}</details></td><td>{obligationStatus(law)}<div className="caption">Работа ИТ: требуется подтверждение</div></td><td>{obligationDeadlines(law).length?obligationDeadlines(law).join(' / '):'Действующее требование / владелец уточняет срок проверки'}</td>{!compact&&<td><div className="project-chips">{law.codes.map(code=><button key={code} className="code-button addition" onClick={()=>onOpen(code)}>{code}</button>)}</div></td>}</tr>)}</tbody></table></div></details>;}
+export default function LegalObligations({list,onOpen,compact=false}){
+ const rows=obligationIndex(list);
+ if(!rows.length)return null;
+ return <section className="section-block legal-obligations" aria-label="Обязательства и применимые требования">
+  <h2>Обязательства и применимые требования / {rows.length}</h2>
+  <p className="caption">Юридическая служба подтверждает применимость и состав работ</p>
+  <div className="legal-requirement-list">{rows.map(law=><article key={law.id} data-law={law.id} className="legal-requirement">
+   <div><h3>{display(law.title)}</h3><p className="caption">{display(law.reference)}</p><div className="legal-official-links">{officialLinks(law).map((item,k)=><a key={k} href={item.url} target="_blank" rel="noopener noreferrer">{display(item.title)||'Открыть нормативный акт'}</a>)}</div>{!compact&&<div className="project-chips">{law.codes.map(code=><button key={code} className="code-button addition" onClick={()=>onOpen(code)}>{code}</button>)}</div>}</div>
+   <div className="legal-requirement-status"><strong>{obligationStatus(law)}</strong><p>Работа ИТ: требуется подтверждение</p><p className="caption">{obligationDeadlines(law).length?obligationDeadlines(law).join(' / '):'Владелец уточняет срок проверки'}</p></div>
+  </article>)}</div>
+ </section>;
+}

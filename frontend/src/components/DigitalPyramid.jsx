@@ -19,21 +19,19 @@ function SegmentShape({apex=false}){
 export default function DigitalPyramid({items=[],selected='',onLayer,onResult}){
   const levels=layerSummary(items).reverse();
   return <figure className="digital-pyramid">
-    <figcaption><h2>Внутренняя схема задаёт назначение уровней</h2><p>Назначение инициативы определяет уровень; паспорт уточняет продукт, состав систем и результат</p></figcaption>
     <div className="dp-row dp-apex-row">
       <div className="dp-graphic-cell">{onResult?<button type="button" className="dp-apex" onClick={onResult} aria-label="Результаты бизнеса / открыть расчёт эффектов"><SegmentShape apex/><span><Icon name="effect" size={24}/>Результаты бизнеса</span></button>:<div className="dp-apex"><SegmentShape apex/><span><Icon name="effect" size={24}/>Результаты бизнеса</span></div>}</div>
-      <div className="dp-purpose"><Icon name="arrow"/><div><h3>Компания оценивает инициативы по результатам бизнеса</h3><p>Направление: повышение эффективности, прозрачности управления и ценности компании</p><small>Владелец подтверждает фактический эффект отдельными показателями</small></div></div>
+      <div className="dp-purpose"><div><h3>Компания оценивает инициативы по результатам бизнеса</h3><p>Повышение выхода годной продукции, доли разделки и глубокой переработки, средней цены</p></div></div>
     </div>
     <ol className="dp-levels" aria-label="Уровни цифровой трансформации от аналитики к общей опоре">
       {levels.map((l,k)=>{const meaning=meanings[l.code],value=l.code+' '+l.name,active=selected===value,enabled=l.count>0&&!!onLayer;
         return <li key={l.code} className={'dp-row '+(l.code==='Ц0'?'dp-foundation-row':'')} style={{'--dp-width':(70+k*6)+'%'}}>
           <div className="dp-graphic-cell"><button type="button" className={'dp-segment '+(active?'dp-selected':'')} disabled={!enabled} aria-pressed={active} aria-label={`${l.code} ${meaning.title} / количество инициатив: ${l.count}`} onClick={()=>onLayer(value)}>
-            <SegmentShape/><span className="dp-segment-content"><span className="dp-level-code"><Icon name={meaning.icon} size={22}/>{l.code}</span><span className="dp-level-name">{meaning.title}{meaning.parallel&&<span className="dp-parallel">{meaning.parallel.map(text=><span key={text}>{text}</span>)}</span>}{meaning.capabilities&&<span className="dp-capabilities">{meaning.capabilities.join(' / ')}</span>}</span><span className="dp-count"><strong>{fmt(l.count,0)}</strong><small>инициатив</small>{active&&<small className="dp-selected-label">Выбран</small>}</span></span>
+            <SegmentShape/><span className="dp-segment-content"><span className="dp-level-code"><Icon name={meaning.icon} size={22}/>{l.code}</span><span className="dp-level-name">{meaning.title}{meaning.parallel&&<span className="dp-parallel">{meaning.parallel.map(text=><span key={text}>{text}</span>)}</span>}{meaning.capabilities&&<span className="dp-capabilities">{meaning.capabilities.join(' / ')}</span>}</span><span className="dp-count"><strong>{fmt(l.count,0)}</strong><small>всего</small>{active&&<small className="dp-selected-label">Выбран</small>}</span></span>
           </button></div>
-          <div className="dp-purpose"><Icon name="arrow"/><div><h3>{meaning.purpose}</h3><p>{meaning.description}</p>{meaning.systems&&<small>По внутренней схеме: {meaning.systems}</small>}{l.code==='Ц0'&&<small>Общая опора уровней Ц1–Ц5</small>}</div></div>
+          <div className="dp-purpose"><div><h3>{meaning.purpose}</h3><p>{meaning.description}</p>{meaning.systems&&<small>{meaning.systems}</small>}{l.code==='Ц0'&&<small>Общая опора уровней Ц1–Ц5</small>}</div></div>
         </li>;
       })}
     </ol>
-    <p className="dp-reading-note">Счётчики показывают инициативы текущего состава; ширина сегментов задаёт положение уровней</p>
   </figure>;
 }

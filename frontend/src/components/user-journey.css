@@ -30,3 +30,19 @@
 .programme-message{white-space:pre-line;margin:15px 0;max-width:940px}.session-plan ol{padding-left:22px}.session-plan li{margin:10px 0}
 
 .collection-item.is-historical{background:#edf3f844}.collection-item.is-historical h2{color:#52677d}
+
+/* Код и действия занимают собственные компактные ячейки списка */
+.collection-item{grid-template-columns:72px minmax(0,1fr) auto;gap:12px;align-items:start;padding:12px 0;min-height:77px}
+.collection-item .journey-code,.journey-list .journey-code,.journey-ideas .journey-code,.journey-history .journey-code{align-self:start;justify-self:start;height:auto;min-height:0;padding:5px 7px;line-height:20px;font-size:14px;white-space:nowrap}
+.collection-content{min-width:0}.collection-item h2{font-size:17px;line-height:1.45;margin:0 0 4px;white-space:normal;overflow-wrap:anywhere;max-height:none}
+.collection-item p{font-size:14px;line-height:1.45;margin:0}.collection-item p+p{margin-top:3px}
+.collection-actions{display:flex;flex-direction:row;align-items:center;gap:8px;align-self:center;margin:0;flex-wrap:nowrap}
+.collection-actions button,.collection-actions .button-link{display:inline-flex;align-items:center;justify-content:center;min-height:40px;padding:8px 12px;line-height:1.4;font-size:14px;white-space:nowrap;border-radius:8px}
+.journey-list>button{font-size:16px;line-height:1.5;padding:12px;gap:8px;align-items:start;flex:none}
+.journey-list>button>span:last-child{white-space:normal;overflow-wrap:anywhere}
+.journey-ideas>button,.journey-history>button{grid-template-columns:72px minmax(0,1fr) 110px;gap:8px;align-items:start;padding:12px;font-size:16px;line-height:1.5}
+.journey-ideas>button>span:last-child,.journey-history>button>span:last-child{align-self:center;font-size:14px;line-height:1.4}.journey-history small{margin-top:3px;font-size:14px;line-height:1.4}
+@media(max-width:760px){
+ .collection-item{grid-template-columns:66px minmax(0,1fr);gap:4px 8px;padding:12px 0;min-height:0}.collection-item h2{font-size:16px;line-height:1.5;margin-bottom:3px}.collection-item p{font-size:14px;line-height:1.4}.collection-actions{grid-column:2;justify-self:start;flex-direction:row;gap:8px;margin-top:5px}.collection-actions button,.collection-actions .button-link{min-height:40px;font-size:14px;padding:8px 13px}
+ .journey-ideas>button,.journey-history>button{grid-template-columns:66px minmax(0,1fr);gap:4px 8px;padding:12px;line-height:1.5}.journey-ideas>button>span:last-child,.journey-history>button>span:last-child{grid-column:2;min-height:32px;align-content:center;font-size:14px}
+}

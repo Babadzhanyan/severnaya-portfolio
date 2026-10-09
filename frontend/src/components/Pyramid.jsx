@@ -1,31 +1,49 @@
-import React from 'react';
-import {digitalLayers,digitalLayerCode,layerSummary,group,person,fmt,finances,working} from '../model/portfolio.js';
+import React,{useEffect,useState} from 'react';
+import {digitalLayerCode,digitalLayer,initiativeTitle,layerSummary,group,person,display,color,fmt,finances,working,isHistorical,isNewIdea,isNumber,stageCode,executionLabel} from '../model/portfolio.js';
+import {annualForecast} from '../model/assessment.js';
 import {ViewTitle} from './Common.jsx';
 import DigitalPyramid from './DigitalPyramid.jsx';
 
 export function PyramidSvg(props){return <DigitalPyramid {...props}/>;}
+const grouped=(items,read)=>[...items.reduce((groups,i)=>groups.set(read(i),[...(groups.get(read(i))||[]),i]),new Map())].sort((a,b)=>a[0].localeCompare(b[0],'ru'));
+const value=v=>isNumber(v)?fmt(v):display(v)||'Требуется значение';
+export const transformationOrder=items=>[...items].sort((a,b)=>digitalLayer(b).localeCompare(digitalLayer(a),'ru')||group(a).localeCompare(group(b),'ru')||person(a).localeCompare(person(b),'ru')||String(a.code).localeCompare(String(b.code),'ru'));
+const pageSize=20;
 
-export default function Pyramid({data,list,contextList=list,filter={},onLayer,onTeamLayer,onView,onPrint}){
- const levels=layerSummary(contextList),unassigned=contextList.length-levels.reduce((sum,l)=>sum+l.count,0),finance=finances(data,list.filter(working));
- const departments=[...new Set(list.map(group))].sort((a,b)=>a.localeCompare(b,'ru'));
- return <section className="transformation-view">
-  <ViewTitle title="Уровни трансформации связывают технологии с результатами бизнеса" description="Уровень задаёт область изменения, стадия отражает готовность, владельцы подтверждают бизнесэффект показателями" onPrint={onPrint}/>
-  <div className="transformation-chain" aria-label="Связь изменений и результата"><span>Уровень</span><span>Инициатива</span><span>Показатель: база → цель</span><span>Критерий приёмки</span><span>Эффект бизнеса</span></div><div className="transformation-layout">
-   <div className="transformation-pyramid"><PyramidSvg items={contextList} selected={filter.layer} onLayer={onLayer} onResult={onView?()=>onView('calculator'):null}/>{unassigned>0&&<p className="notice">Уровень ожидает определения: {unassigned} инициатив</p>}</div>
-   <div className="transformation-meaning">
-    <section className="transformation-confirmation"><h2>Владельцы подтверждают эффект показателями бизнеса</h2>
-    <dl className="transformation-results"><dt>Производство</dt><dd>Годная продукция, кг / доля разделки и глубокой переработки / цена реализации</dd><dt>Деньги</dt><dd>Операционный результат / расходы внедрения и сопровождения / денежный эффект</dd><dt>Качество ИТ</dt><dd>Надёжность, сроки выполнения и качество поддержки</dd><dt>Обязательства</dt><dd>Безопасность и исполнение требований</dd></dl>
-    <div className="transformation-finance"><span>Годовой потенциал до затрат ИТ, млн руб</span><strong>{fmt(finance.annual,2,'Требуется согласование')}</strong><small>Согласованных конечных эффектов: {finance.confirmedCount}</small></div></section>
-    <section className="transformation-implementation">
-    <h2>Команды внедрения защищают выбранный состав</h2>
-    <p className="caption">{filter.layer?filter.layer:'Все уровни'} / {list.length} инициатив</p>
-    <table className="transformation-teams"><thead><tr><th>Команда внедрения</th><th>Инициатив</th><th>Ответственных</th></tr></thead><tbody>{departments.map(name=>{const cards=list.filter(i=>group(i)===name);return <tr key={name}><td>{name}</td><td className="numeric">{cards.length}</td><td className="numeric">{new Set(cards.map(person)).size}</td></tr>;})}</tbody></table>
-    {onView&&<div className="transformation-actions"><button className="primary" onClick={()=>onView('teams')}>Открыть уровни, направления и людей</button><button onClick={()=>onView('tracker')}>Открыть стадии и эффекты</button></div>}
-    <p className="caption">Уровни описывают область изменений; команды внедрения закрепляют исполнителей</p>
-    </section>
-   </div>
+function InitiativeResult({i,onOpen}){
+ const historical=isHistorical(i),label=historical?'История / '+executionLabel(i):(isNewIdea(i)?'Идея / ':'')+stageCode(i);
+ return <article className="transformation-initiative" data-code={i.code}>
+  <div className="transformation-initiative-heading">
+   {onOpen?<button className="transformation-passport-link" aria-label={`${i.code} ${initiativeTitle(i)} / открыть паспорт`} onClick={()=>onOpen(i.code)}><span className={'code-button '+color(i,'code')}>{i.code}</span><span className={color(i,'title')}>{initiativeTitle(i)}</span></button>:<strong className="transformation-print-title">{i.code} / {initiativeTitle(i)}</strong>}
+   <span className={'pill '+(isNewIdea(i)?'addition':'')}>{label}</span>
   </div>
-  <details className="form-section team-layer-details"><summary>Команды внедрения по уровням</summary><div className="table-wrap"><table className="team-layer-matrix"><thead><tr><th>Уровень изменения</th>{departments.map(name=><th key={name}>{name}</th>)}</tr></thead><tbody>{digitalLayers.map(level=><tr key={level.code}><th>{level.code} {level.name}</th>{departments.map(name=>{const count=list.filter(i=>digitalLayerCode(i)===level.code&&group(i)===name).length;return <td className="numeric" key={name}>{count>0&&onTeamLayer?<button aria-label={`${level.code} ${level.name} / ${name} / ${count} инициатив`} onClick={()=>onTeamLayer(level.code+' '+level.name,name)}>{count}</button>:count||'–'}</td>;})}</tr>)}</tbody></table></div><p className="caption">Команда внедрения ведёт изменение; состав паспорта закрепляет участников бизнеса и сопровождения</p></details>
-  <details className="form-section"><summary>Область изменения каждого уровня</summary><table><thead><tr><th>Уровень</th><th>Что меняет компания</th><th>Инициатив</th></tr></thead><tbody>{levels.map(l=><tr key={l.code}><td>{l.code} {l.name}</td><td>{l.scope}</td><td className="numeric">{l.count}</td></tr>)}</tbody></table></details>
+  <div className="transformation-initiative-result">
+   <div><span className="transformation-result-label">Операционный показатель</span><p className={color(i,'metric')}>{display(i.metric)||'Владелец уточняет показатель'}{i.unit?' / '+display(i.unit):''}</p><small><span className={color(i,'baseline')}>База: {value(i.baseline)}</span><span className={color(i,'target')}>Цель: {value(i.target)}</span></small></div>
+   {!historical&&<div className="transformation-initiative-money"><span className="transformation-result-label">Оценка прибыли, млн руб / год</span><strong className="addition">{fmt(i.priority_annual_ebitda,2,'Требуется оценка')}</strong></div>}
+  </div>
+ </article>;
+}
+
+export default function Pyramid({data,list,contextList=list,filter={},onLayer,onTeamLayer,onOpen,onView,onPrint}){
+ const [page,setPage]=useState(0),ordered=transformationOrder(list),signature=ordered.map(i=>i.code).join(','),pages=Math.max(1,Math.ceil(ordered.length/pageSize));
+ useEffect(()=>setPage(0),[signature]);
+ const currentPage=Math.min(page,pages-1),cards=onOpen?ordered.slice(currentPage*pageSize,(currentPage+1)*pageSize):ordered;
+ const levels=layerSummary(contextList).reverse(),unassigned=contextList.length-levels.reduce((sum,l)=>sum+l.count,0),finance=finances(data,list.filter(working)),annual=annualForecast(list),history=list.filter(isHistorical).length;
+ const changePage=value=>{setPage(value);const heading=document.getElementById('transformation-pack-heading');heading?.focus({preventScroll:true});heading?.scrollIntoView({block:'start',behavior:'instant'});};
+ return <section className="transformation-view">
+  <ViewTitle title="Уровни трансформации связывают технологии с результатами бизнеса" description="Выберите уровень, команду и ответственного в фильтрах; код открывает паспорт" onPrint={onPrint}/>
+  <div className="transformation-pyramid"><PyramidSvg items={contextList} selected={filter.layer} onLayer={onLayer} onResult={onView?()=>onView('calculator'):null}/>{unassigned>0&&<p className="caption">Уровень проходит уточнение / инициатив: {unassigned}</p>}</div>
+  <section className="transformation-portfolio" aria-label="Иерархия инициатив по уровням трансформации">
+   <div className="transformation-portfolio-heading"><div><h2 id="transformation-pack-heading" tabIndex={-1}>Уровень, команда и ответственный определяют пакет инициатив</h2><p className="caption">{filter.layer||'Все уровни'} / текущие проекты и идеи: {annual.count} / история: {history}</p></div><div className="transformation-net"><span>Предварительный годовой прирост операционной прибыли, млн руб</span><strong>{fmt(annual.value,2,'Требуется оценка')}</strong><small>Согласованных конечных эффектов: {finance.confirmedCount}</small></div></div>
+   {onOpen&&ordered.length>pageSize&&<p className="caption transformation-page-count">Инициативы {currentPage*pageSize+1}–{Math.min((currentPage+1)*pageSize,ordered.length)} из {ordered.length}</p>}
+   <div className="transformation-tree">{grouped(cards,digitalLayer).reverse().map(([level,levelCards])=><section className="transformation-level" data-layer={digitalLayerCode(levelCards[0])||'unassigned'} key={level}>
+    <h3>{level}</h3>
+    {grouped(levelCards,group).map(([team,teamCards])=><section className="transformation-team" data-team={team} key={team}><div className="transformation-team-heading"><h4><span>Команда внедрения</span>{team}</h4>{onTeamLayer&&digitalLayerCode(teamCards[0])&&<button className="transformation-team-filter" onClick={()=>onTeamLayer(level,team)}>Выбрать команду</button>}</div>
+     {grouped(teamCards,person).map(([owner,ownerCards])=><section className="transformation-owner" data-owner={owner} key={owner}><h5><span>Ответственный за паспорт</span>{owner}</h5><div className="transformation-initiatives">{ownerCards.map(i=><InitiativeResult i={i} onOpen={onOpen} key={i.code}/>)}</div></section>)}
+    </section>)}
+   </section>)}</div>
+   {onOpen&&ordered.length>pageSize&&<div className="transformation-pagination" aria-label="Страницы инициатив"><span>{currentPage*pageSize+1}–{Math.min((currentPage+1)*pageSize,ordered.length)} из {ordered.length}</span><button disabled={currentPage===0} onClick={()=>changePage(currentPage-1)}>Предыдущие</button><button disabled={currentPage===pages-1} onClick={()=>changePage(currentPage+1)}>Следующие</button></div>}
+   {list.length===0&&<p className="empty">Измените фильтры, чтобы выбрать инициативы</p>}
+  </section>
  </section>;
 }

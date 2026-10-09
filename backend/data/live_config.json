@@ -8,7 +8,7 @@
   "schemaVersion": 12,
   "protocolVersion": 1,
   "pollMs": 15000,
-  "timeoutMs": 12000,
+  "timeoutMs": 30000,
   "staleMs": 45000,
   "dateEncoding": "Числовые даты передаются серийным номером Google Sheets / Excel, дата отсчёта 1899-12-30; поля даты преобразуются в ГГГГ-ММ-ДД",
   "valueEncoding": {
@@ -474,7 +474,7 @@
       "sourceRange": "AV3:AZ174"
     },
     "productionInputJSON": {
-      "sheetName": "Калькулятор EBITDA",
+      "sheetName": "Калькулятор прибыли",
       "sheetId": 807030034,
       "headerRow": 2,
       "firstDataRow": 2,
@@ -547,7 +547,7 @@
       "sourceRange": "BB3:BG174"
     },
     "annualActualInputJSON": {
-      "sheetName": "Калькулятор EBITDA",
+      "sheetName": "Калькулятор прибыли",
       "sheetId": 807030034,
       "headerRow": 2,
       "firstDataRow": 3,

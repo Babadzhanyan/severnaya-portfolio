@@ -12,23 +12,21 @@ const nextCriteria={
  L4:'Замер подтверждает фактический эффект',
  L5:'Владелец фиксирует измеренный результат'
 };
-const roleLabels={layer:'Уровень трансформации',group:'Команда внедрения',curator:'Куратор команды',person:'Ответственный за паспорт',process:'Площадка / передел'};
+const roleLabels={layer:'Уровень трансформации',group:'Команда внедрения',curator:'Куратор команды',person:'Ответственный за паспорт',process:'Передел'};
 const roleIcons={layer:'layers',group:'teams',curator:'decision',person:'owner',process:'process'};
 
-export function StageGateFlow({rows,criteria=nextCriteria}){
+export function StageGateFlow({rows}){
  const known=rows.filter(row=>/^L[0-5]$/.test(row.code)),unassigned=rows.find(row=>row.code==='Уточнить');
+ const conditions=['Владелец','Состав и цель','Эффект и ресурсы','Решение о запуске','Приёмка результата','Подтверждённый эффект'];
  return <figure className="planning-visual planning-stage-distribution">
-  <figcaption>Стадии ведут инициативы от предложения к измеренному эффекту</figcaption>
+  <figcaption>Стадии снижают риск и направляют ресурсы в приоритетные инициативы</figcaption>
+  <div className="stage-risk"><span>Неопределённость решения</span><svg viewBox="0 0 1100 92" preserveAspectRatio="none" role="img" aria-label="Схема снижения неопределённости от идеи к подтверждённому результату"><path d="M0 4 L1100 46 L0 88 Z" fill="#EDF3F8" stroke="#6E8CA8" strokeWidth="1.3"/></svg></div>
   <ol className="planning-stage-flow" aria-label="Распределение карточек по текущим стадиям">
-   {known.map(row=><li key={row.code} className={'planning-stage-step'+(row.count>0?' has-initiatives':'')}>
-    <span className="planning-stage-marker"><Icon name={stageIcons[row.code]} size={22}/></span>
-    <span className="planning-stage-code">{row.code}</span>
-    <strong className="planning-stage-count" aria-label={row.count+' карточек'}>{row.count}</strong>
-    <h3>{row.name}</h3>
-    {criteria[row.code]&&<p className="planning-stage-criterion"><span>{row.code==='L5'?'Результат':'Следующее решение'}</span>{criteria[row.code]}</p>}
-   </li>)}
+   {known.map(row=><li key={row.code} className={'planning-stage-step'+(row.count>0?' has-initiatives':'')}><span className="planning-stage-code">{row.code}</span><strong className="planning-stage-count" aria-label={row.count+' карточек'}>{row.count}</strong><h3>{row.name}</h3></li>)}
   </ol>
-  {unassigned?.count>0&&<p className="planning-unassigned-stage"><Icon name="idea" size={18}/><span>Стадия ожидает определения: <strong>{unassigned.count}</strong> карточек</span></p>}
+  <div className="stage-gate-conditions"><span>Условия допуска</span><ol>{known.map((row,k)=><li key={row.code}>{conditions[k]}</li>)}</ol></div>
+  <div className="stage-resource-allocation"><span>Ресурсы</span><p>Проверяем идеи</p><p>Выделяем на приоритетные работы после L3</p></div>
+  {unassigned?.count>0&&<p className="caption">Стадия требует уточнения: {unassigned.count}</p>}
  </figure>;
 }
 
@@ -61,7 +59,7 @@ export function DeadlineFlow({data,initiative}){
 export function PlanDependencyFlow({rows}){
  return <div className="planning-dependencies" aria-label="Работы и явные предшественники">
   {rows.map(row=><article className={'planning-work'+(display(row.predecessor).trim()?' has-predecessor':'')} key={row._row}>
-   {display(row.predecessor).trim()&&<div className="planning-work-predecessor"><span>Предшественник</span><p>{display(row.predecessor)}</p><Icon name="arrow" size={24}/></div>}
+   {display(row.predecessor).trim()&&<div className="planning-work-predecessor"><span>Предшественник</span><p>{display(row.predecessor)}</p></div>}
    <div className="planning-work-result"><h4>{display(row.result)}</h4><p className="planning-work-dates"><Icon name="clock" size={16}/><span>{shortDate(row.start)} – {shortDate(row.end)}</span></p><p className="planning-work-owner"><Icon name="owner" size={16}/><span>{display(row.owner)}</span></p></div>
   </article>)}
  </div>;

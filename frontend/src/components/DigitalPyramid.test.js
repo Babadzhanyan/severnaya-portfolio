@@ -37,15 +37,67 @@ test('Нативные кнопки сохраняют выбор уровня �
   assert.match(render({items,selected:value,onLayer:()=>{}}),/Выбран/);
 });
 
-test('Внутренняя схема обозначает продукты, бизнесэффект и команды получают отдельные блоки',()=>{
+test('Пирамида связывает продукты и бизнесрезультат с одной иерархией инициатив',()=>{
   const data={initiatives:items,ledger:[]},html=renderToStaticMarkup(React.createElement(Pyramid,{data,list:items,contextList:items,onView:()=>{},onTeamLayer:()=>{}}));
-  assert.match(html,/По внутренней схеме: INNOVA \/ SKOV \/ FarmOnline/);
+  assert.match(html,/INNOVA \/ SKOV \/ FarmOnline/);
   assert.match(html,/1С \/ учёт/);
   assert.match(html,/Собственные приложения/);
-  assert.match(html,/Направление: повышение эффективности/);
+  assert.match(html,/Повышение выхода годной продукции/);
   assert.match(html,/инженерные службы получают оперативное управление/);
   assert.match(html,/Согласованных конечных эффектов: 0/);
-  assert.match(html,/Требуется согласование/);
-  assert.match(html,/team-layer-matrix/);
-  assert.match(html,/Область изменения каждого уровня/);
+  assert.match(html,/Требуется оценка/);
+  assert.match(html,/Иерархия инициатив по уровням трансформации/);
+  assert.equal((html.match(/class="transformation-initiative"/g)||[]).length,items.length);
+  assert.doesNotMatch(html,/<table|team-layer-matrix|transformation-meaning|Годовой потенциал до затрат|→|data-icon="arrow"/);
+});
+
+test('Иерархия сохраняет уровень, команду, ответственного и прямые переходы',()=>{
+  const level=digitalLayers[3],selected=level.code+' '+level.name,actions=[];
+  const props={data:{initiatives:items,ledger:[]},list:items.filter(i=>i.digital_layer===selected),contextList:items,filter:{layer:selected},onOpen:code=>actions.push(['passport',code]),onTeamLayer:(layer,team)=>actions.push(['team',layer,team])};
+  const html=renderToStaticMarkup(React.createElement(Pyramid,props));
+  assert.match(html,/Ц0 Устойчивый ИТ-контур \/ количество инициатив: 2/);
+  assert.match(html,/data-layer="Ц3"/);
+  assert.equal((html.match(/class="transformation-initiative"/g)||[]).length,1);
+  assert.match(html,/data-team="Команда проверки"/);
+  assert.match(html,/data-owner="Участник проверки"/);
+  assert.match(html,/текущие проекты и идеи: 1/);
+  assert.doesNotMatch(html,/<details|<summary/);
+  assert.doesNotMatch(html,/1 текущих|1 инициатив|2 инициатив<\/span>/);
+  assert.match(html,/aria-label="check-2[^"]*открыть паспорт/);
+  assert.match(html,/Выбрать команду/);
+});
+
+test('Годовая оценка использует чистый результат текущих карточек и сохраняет историю',()=>{
+  const cards=items.map((i,k)=>({...i,title:'Инициатива '+k,annual_effect:900,priority_annual_ebitda:[-.3,.8,100][k],...(k===2?{execution_fact:{audited:true,state:'completed',scope_complete:true}}:{})}));
+  const html=renderToStaticMarkup(React.createElement(Pyramid,{data:{initiatives:cards,ledger:[]},list:cards,onOpen:()=>{}}));
+  assert.match(html,/текущие проекты и идеи: 2 \/ история: 1/);
+  assert.match(html,/Предварительный годовой прирост операционной прибыли, млн руб<\/span><strong>0,5<\/strong>/);
+  assert.match(html,/Согласованных конечных эффектов: 0/);
+  assert.doesNotMatch(html,/EBIT|амортизац/);
+  assert.match(html,/История \/ Выполнено/);
+  assert.equal((html.match(/Оценка прибыли, млн руб \/ год/g)||[]).length,2);
+  assert.doesNotMatch(html,/>900<|>100<|до затрат/);
+});
+
+test('Печатный состав раскрывает команды и владельцев, неопределённый уровень сохраняет карточку',()=>{
+  const cards=[...items,{...items[0],code:'check-unknown',digital_layer:null}];
+  const html=renderToStaticMarkup(React.createElement(Pyramid,{data:{initiatives:cards,ledger:[]},list:cards}));
+  assert.match(html,/data-layer="unassigned"/);
+  assert.match(html,/Уточнить уровень/);
+  assert.equal((html.match(/class="transformation-initiative"/g)||[]).length,cards.length);
+  assert.doesNotMatch(html,/<details|<summary/);
+  assert.equal((html.match(/class="transformation-print-title"/g)||[]).length,cards.length);
+  assert.doesNotMatch(html,/transformation-passport-link|Выбрать команду/);
+});
+
+
+test('Публичный список показывает двадцать инициатив, печатный состав сохраняет все двести',()=>{
+ const cards=Array.from({length:200},(_,k)=>({...items[k%items.length],code:'ИТ-'+String(k+1).padStart(3,'0'),title:'Инициатива '+(k+1),priority_annual_ebitda:k/100}));
+ const props={data:{initiatives:cards,ledger:[]},list:cards};
+ const publicHtml=renderToStaticMarkup(React.createElement(Pyramid,{...props,onOpen:()=>{}}));
+ const printHtml=renderToStaticMarkup(React.createElement(Pyramid,props));
+ assert.equal((publicHtml.match(/class="transformation-initiative"/g)||[]).length,20);
+ assert.match(publicHtml,/1–20 из 200/);
+ assert.equal(new Set([...printHtml.matchAll(/data-code="(ИТ-\d{3})"/g)].map(m=>m[1])).size,200);
+ assert.doesNotMatch(publicHtml,/<details|<summary|EBIT|амортизац/);
 });
