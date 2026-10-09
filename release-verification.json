@@ -1,96 +1,90 @@
 {
-  "schema_version": 1,
-  "released_at": "2026-10-09T04:21:53.184187+00:00",
-  "verdict": "Проверка пройдена",
-  "site": "https://babadzhanyan.github.io/severnaya-portfolio/",
-  "registry": "https://docs.google.com/spreadsheets/d/1stFDS_18dulhc96CSybYdXDk3RyvMvsSO9HxPkTvB4g/edit#gid=404672457&range=B2",
-  "site_commit": "000165304d5407ccb988a792e68fde5e740d2c0f",
-  "content": {
+  "release": "v20",
+  "checked_at": "2026-10-09T05:50:35.816906+00:00",
+  "site_commit": "503614ae97c9c24ab29dd42e1b3514d75f29efc6",
+  "site_url": "https://babadzhanyan.github.io/severnaya-portfolio/?v=503614a#calculator",
+  "google_url": "https://docs.google.com/spreadsheets/d/1stFDS_18dulhc96CSybYdXDk3RyvMvsSO9HxPkTvB4g/edit#gid=404672457&range=B2",
+  "source_branch": "app-source",
+  "continues": {
+    "source_commit": "d23b4e138823393fb356b1794bef57befa545ec0",
+    "release_report_sha256": "6dab8bfb2122e4cb303e2a204a487310c78c1c7ec6affc5bc80fff33124bc8bb"
+  },
+  "verdict": "Числовая и содержательная проверка пройдена / публикация сверяется отдельно",
+  "metrics": {
     "cards": 200,
-    "source_projects": 172,
+    "source_cards": 172,
     "ideas": 28,
-    "working_cards": 147,
-    "historical_cards": 53,
-    "passport_fields": 58,
-    "visible_sheets": 5,
-    "table_start": "B2",
-    "main_sections": 5,
-    "linked_filters": 7,
-    "meeting_sessions": 4,
-    "videos": 3,
-    "legal_items": 28,
-    "legal_links": 95,
-    "primary_plant_associations": 95,
-    "general_systems": 105,
-    "repeated_primary_plant_associations": 0,
-    "financially_approved_effects": 0,
-    "staff_review_deadline": "2026-10-13T18:00:00+03:00",
-    "heads_review_deadline": "2026-10-14T18:00:00+03:00",
-    "preliminary_annual_operating_profit_mln_rub": 55.013791,
-    "private_draft_messages_archived": 10,
-    "public_information_disclosures": 0,
-    "transformation_page_size": 20,
-    "all_transformation_codes": 200,
-    "merged_process_groups": 13,
-    "source_markers_in_titles": 0,
-    "video_duration_seconds": [
-      64,
-      64,
-      64
-    ],
-    "financial_label": "операционная прибыль",
-    "financial_basis": "Управленческая оценка после текущих расходов; исходные финансовые ключи сохранены для совместимости",
-    "calculator_sheet": "Калькулятор прибыли"
+    "working": 147,
+    "history": 53,
+    "source_customers": 99,
+    "source_named_executors": 19,
+    "model_tests": 132,
+    "component_tests": 32,
+    "backend_tests_v18_unchanged_server": 71,
+    "total_tests": 235,
+    "google_structural_checks": 1271,
+    "financial_checks": 4389,
+    "filter_combinations": 343,
+    "ssr_checks": 18,
+    "public_files": 47,
+    "source_files": 164
   },
-  "checks": {
-    "frontend_model_tests": 131,
-    "frontend_component_tests": 27,
-    "backend_tests": 71,
-    "full_browser_checks": 94,
-    "final_map_browser_checks": 51,
-    "native_independent_checks": 2292,
-    "native_effective_cells": 17394,
-    "formula_errors": 0,
-    "duplicate_codes": 0,
-    "blank_card_rows": 0,
-    "public_assets_verified": 47,
-    "google_link_access": "anyone / writer",
-    "protected_ranges": 0,
-    "database_restart_preserves_200_cards": true,
-    "initiative_financial_assertions": 2058,
-    "live_typed_feed_rows": 3663,
-    "live_typed_feed_columns": 46,
-    "raw_200_initiatives_preserved": true,
-    "independent_ui_flows": 15,
-    "independent_ui_verdict": "Пройдено / экранный контроль и исправление позднего ответа Google подтверждены",
-    "jsonp_late_reply_tests": 4,
-    "source_request_timeout_ms": 30000,
-    "poll_interval_ms": 15000,
-    "compact_row_desktop_px": 77,
-    "compact_row_mobile_px": 145,
-    "final_public_browser_bundle": "index-e7vL10Qm.js",
-    "final_public_browser_cards": 200,
-    "final_public_console_errors": 0,
-    "public_video_metadata_loaded": 3
+  "changes": [
+    "Семь практических пояснений и примеров изменения производственных показателей",
+    "Копирование кода инициативы, параметров и операционной прибыли в годовом и отдельном расчётах",
+    "Подпись пустого эффекта использует операционную прибыль",
+    "Боковые акцентные полосы статусов удалены с учётом каскада CSS",
+    "Результат встречи показан один раз / верхние кнопки открывают соответствующую встречу",
+    "Google B147/B151/B314 используют операционную прибыль / технические финансовые строки293:299 и315:316 скрыты",
+    "Разделитель показателей заменён в200 строках трекера при сохранении числовой логики",
+    "Название предложенной ИТ-086 очищено от служебного суффикса / архивAT9 сохранён"
+  ],
+  "financial_source_values": {
+    "annual_estimate_million_rub": 55.013791,
+    "financial_approvals": 0,
+    "hours_required": 104592,
+    "proposed_capacity_hours": 21297.6,
+    "annual_sales_kg": 208515884.605,
+    "annual_sales_revenue_rub": 33096006892.8734,
+    "production_live_kg": 140052766,
+    "production_good_meat_kg": 112550620.19
   },
-  "hashes": {
-    "static_manifest_sha256": "1f59c6409509aaa04aa79f27af3aca4f46f10db9977215fec78927a5d978f919",
-    "source_manifest_sha256": "cfc0820727d949ce0c96815061df721d54033c89374751211d6b782f5cbc3cb7",
-    "backend_normalized_source_sha256": "e23409c30377764bd4aa0f363e8cf0d920c39a0c504b68ded2dbe2b56a25aac5",
-    "independent_interface_report_sha256": "5c972fadb51a8fa7047bb415c3dfc04020ed39f2b5d652a063e69ef2346e288f",
-    "current_financial_report_sha256": "aace4518b285e8054d4fd019082f2d549bb5a871f8a66d42f7b283ca8feb64a7",
-    "final_public_browser_report_sha256": "aeb230f50e79f11bc36c9408fcb7076d1463f46ef02f1480f7e287dd937cbf8b"
+  "browser_checks": {
+    "annual_copy_code": "ИТ-116",
+    "annual_copy_profit_million_rub": 328.96,
+    "mechanism_copy_code": "ИТ-086",
+    "mechanism_copy_profit_million_rub": 0.02,
+    "production_weight_plus_one_percent_target_kg": 141453293.66,
+    "practical_descriptions": 7
   },
-  "public_assets": [
+  "current_data_scope": "Текущие200карточек; новый поток100идей получает самостоятельное добавление и проверку",
+  "limitations": [
+    "Google отвечает с переменной задержкой / сайт сохраняет последний успешный срез при задержке",
+    "Финансовые оценки, правовая применимость и доступная мощность подтверждаются владельцами",
+    "Внешняя площадка FastAPI / PostgreSQL ожидает выбора владельца"
+  ],
+  "proof": {
+    "qa/data-requirements.json": "226ae8c6f63f627a70db3e72780c40c151e9f2bf3eb0e65869dcc324b0a78ff9",
+    "qa/source-bindings-current.json": "42c9e78395a039efd91efc4083c9de70699ffd90deb1304085d5266d92425ca0",
+    "qa/finance-requirements.json": "373eda9429744a36150a1fa90eabf904b1289f9b7ad10198f9e23dc9dac22c35",
+    "qa/ui-requirements.json": "f0b03ac8e335552e721d6e65c24ff1d759a6e7f77a65573fcca0149f764613f5",
+    "qa/google-display-fixes-verified.json": "099ebbaa4ba768df2aa77450174312218489ec7cf01ebcfd844a1549c2a676e6",
+    "qa/idea-title-fixed-v20.json": "14e44b6b7bcc3a39d45e726e76b9e1d14fd7cf621f9f240265e76f7263fd3f28",
+    "source-manifest-v20.json": "9509b910913d6561a8b38a488263db3247e8da42688ec777fd56b2a00e0bbb86",
+    "static-manifest-v20.json": "ecdf54ce90aca3445bec0a473ebb7849fcaeb389cd28c94eedb7416095235f78",
+    "qa/models-final-v20.log": "27f7b464f5104f17a37cb03b7ae90c5a4076ad7e7f36aa577665c19d1ab30a65",
+    "qa/components-final-v20.log": "fcb052940edc23970f8476b59d2cca64e473affe4258711869779467fb39b85f"
+  },
+  "public_files": [
     {
-      "path": "assets/index-Bz5WaeSW.css",
-      "bytes": 167511,
-      "sha256": "e3548516e515c71e65c7f88e53d0f49999e8083c3d62b3b294fd17763615fbb5"
+      "path": "assets/index-B46oGbxo.css",
+      "bytes": 167102,
+      "sha256": "5077f067c1986c7544a645437173f2328b9fae9e1ea792a8959c65ea5831a476"
     },
     {
-      "path": "assets/index-e7vL10Qm.js",
-      "bytes": 508091,
-      "sha256": "540f281f30f242a9eb4f862389be72e8ec22ca4904642496e37b8346d6fc25f4"
+      "path": "assets/index-Dm8m3s_p.js",
+      "bytes": 512933,
+      "sha256": "406bc17ef43b55216cb9594f4f4f6bd1ede3616149958bc856a43c905aa95bb6"
     },
     {
       "path": "assets/production-ai/accounting.webp",
@@ -310,38 +304,12 @@
     {
       "path": "index.html",
       "bytes": 441,
-      "sha256": "617f674903f346b7657695df5eb5b0047e45684e4c0327f7b76bfcaf8ce29a70"
+      "sha256": "c2a0a753f5e576cc4b8f3756cebce9661051310601438f98b5dd0e26470d5d87"
     },
     {
       "path": "runtime-config.js",
       "bytes": 184,
       "sha256": "966714f48698728b284414a0908f01129ded1b5ac7e5561713acc5ee58cd69ff"
     }
-  ],
-  "deployment": {
-    "public_frontend": "GitHub Pages / прямое чтение Google Sheets каждые 15 секунд",
-    "backend_verified": "Локальный FastAPI и PostgreSQL / сохранение после перезапуска",
-    "external_backend_hosting": "Площадка определяется владельцем системы"
-  },
-  "business_confirmation": [
-    "Ставки начисленной зарплаты, предложения поставщиков, состав расходов",
-    "Спрос, производственные выходы и доступная мощность",
-    "Применимость правовых требований и фактические сроки",
-    "Полный состав оборудования ИТ-050",
-    "Персональные назначения и доступные часы команд",
-    "Факт первой встречи и календарь следующих встреч"
-  ],
-  "version": 18,
-  "verification_scope": {
-    "current_cycle": "Интерфейс, публичные файлы, модели, сервер, источник, имена и подписи Google, новые видео",
-    "retained_prior_native_cycle": "Проверки исходных значений, календаря, формул и доступа Google из v16; текущие 12 подписей проверены повторно; числовой поток совпал до и после",
-    "independent_live_bundle": "index-Dm92nLwr.js",
-    "final_transport": "Матрица значений совпала; опубликованная сборка получила успешные ответы Google в 07:22 и 07:26; задержки сохраняют карточки и отображаются в индикаторе",
-    "source_matrix_values_same_with_no_format": true
-  },
-  "limitations": [
-    "Google иногда отвечает с задержкой; последний корректный набор сохраняется и обновляется после восстановления",
-    "Предварительные финансовые оценки утверждают владельцы показателей и финансовая служба",
-    "Внешняя площадка FastAPI и PostgreSQL определяется владельцем системы"
   ]
 }

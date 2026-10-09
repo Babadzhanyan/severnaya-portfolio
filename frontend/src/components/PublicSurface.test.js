@@ -26,6 +26,7 @@ test('Публичный план показывает четыре встреч
  assert.doesNotMatch(html,/<details|<summary|Костя|Готовые сообщения|Порядок первой встречи|EBIT|амортизац/);
  assert.equal(json.messages,undefined);assert.equal(json.instructions,undefined);
  assert.equal(json.first_agenda,undefined);assert.equal(json.sessions[0].kostya,undefined);
+ for(const s of json.sessions)assert.equal(html.split(s.output).length-1,1,"Результат встречи показан один раз");
 });
 
 test('Паспорт использует одну карточку и сохраняет основное действие редактирования',()=>{

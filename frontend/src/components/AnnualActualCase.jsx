@@ -1,6 +1,6 @@
 import React,{useEffect,useRef,useState} from 'react';
 import FactorTree from './FactorTree.jsx';
-import {sheetLink} from '../model/portfolio.js';
+import {sheetLink,initiativeTitle} from '../model/portfolio.js';
 import './annual-actual.css';
 
 const finite=value=>typeof value==='number'&&Number.isFinite(value);
@@ -31,8 +31,14 @@ export function annualPriceEstimate(actualCase,scenario={}){
  return {period,months:12,baseline_sales_kg:sales.quantity_kg,baseline_revenue:sales.revenue,baseline_price:sales.revenue/sales.quantity_kg,target_price:sales.revenue/sales.quantity_kg*(1+percent/100),revenue_delta:revenueDelta,period_delta_ebitda:ebitda,period_delta_ebit:ebit,additional_depreciation:da,depreciation_period_comparable:samePeriod,absolute_baseline_ebitda:null,absolute_target_ebitda:null,approved_delta_ebitda:null,approved_delta_ebit:null,financial_approval:false,status:estimateAllowed?'Расчётная оценка':'Требуется состав расходов',ebit_status:da===null?'Требуется дополнительная амортизация':!samePeriod?'Требуется сопоставимый период':ebit===null?'Требуется расчёт EBITDA':'Расчётная оценка'};
 }
 
-export default function AnnualActualCase({actualCase,scenario={},onScenarioChange}){
- const[editor,setEditor]=useState(''),[copied,setCopied]=useState(false),editorRef=useRef(null);useEffect(()=>{if(!editor)return;const previous=document.activeElement;requestAnimationFrame(()=>editorRef.current?.querySelector('input,button')?.focus());return()=>previous?.focus?.();},[editor]);
+export function annualResultText(result,scenario,initiative){
+ if(!finite(result?.period_delta_ebitda))return null;
+ const percent=scenario.price_change_pct??scenario.price_change_percent??0;
+ return [initiative?initiative.code+' / '+initiativeTitle(initiative):'Личный сценарий','Период: '+result.period,'Цена: '+number(percent)+'%','Расходы: '+million(scenario.additional_cash_expenses??0)+' млн руб','Прирост операционной прибыли: '+million(result.period_delta_ebitda)+' млн руб / год','Предварительная оценка / требуется согласование'].join('\n');
+}
+
+export default function AnnualActualCase({actualCase,scenario={},onScenarioChange,initiative}){
+ const[editor,setEditor]=useState(''),[copied,setCopied]=useState(false),[copyError,setCopyError]=useState(''),editorRef=useRef(null);useEffect(()=>{if(!editor)return;const previous=document.activeElement;requestAnimationFrame(()=>editorRef.current?.querySelector('input,button')?.focus());return()=>previous?.focus?.();},[editor]);
  const result=annualPriceEstimate(actualCase,scenario);
  if(result.error)return <section className="annual-actual"><h2>Годовой источник формирует ценовой сценарий</h2><p>{result.error}</p></section>;
  const source=normalizeAnnualInput(actualCase),sales=source.sales,production=source.production;scenario=currentScenario(actualCase,scenario);
@@ -45,7 +51,7 @@ export default function AnnualActualCase({actualCase,scenario={},onScenarioChang
    <label className="calculator-number"><span>Дополнительные операционные расходы</span><div><input aria-label="Расходы годового ценового решения, млн руб" type="number" step="0.1" value={(scenario.additional_cash_expenses??0)/1e6} onChange={e=>change({additional_cash_expenses:e.target.value===''?0:Number(e.target.value)*1e6})}/><small>млн руб / год</small></div></label>
   </div>
   <label className="annual-actual-assumption-control"><input data-annual-expenses type="checkbox" checked={(scenario.unchanged_expenses??scenario.other_expenses_unchanged)===true} onChange={e=>change({unchanged_expenses:e.target.checked})}/>Объём, структура продукции и остальные расходы сохраняются</label>
-  <div className="annual-actual-result" aria-live="polite"><div><span>Прирост операционной прибыли</span><strong>{million(result.period_delta_ebitda)} <small>млн руб / год</small></strong><span>Управленческая оценка / состав текущих расходов</span></div><div><span>Изменённые параметры</span><p>Цена {percent>0?'+':''}{number(percent)}% / расходы {million(scenario.additional_cash_expenses??0)} млн руб</p><button disabled={!finite(result.period_delta_ebitda)} onClick={async()=>{try{await navigator.clipboard.writeText(['Период: '+result.period,'Цена: '+number(percent)+'%','Расходы: '+million(scenario.additional_cash_expenses??0)+' млн руб','Прирост операционной прибыли: '+million(result.period_delta_ebitda)+' млн руб / год','Предварительная оценка / требуется согласование'].join('\n'));setCopied(true);setTimeout(()=>setCopied(false),2500);}catch{setCopied(false);}}}>{copied?'Результат скопирован':'Скопировать для паспорта'}</button></div></div>
+  <div className="annual-actual-result" aria-live="polite"><div>{initiative?.code&&<span>{initiative.code}</span>}<span>Прирост операционной прибыли</span><strong>{million(result.period_delta_ebitda)} <small>млн руб / год</small></strong><span>Управленческая оценка / состав текущих расходов</span></div><div><span>Изменённые параметры</span><p>Цена {percent>0?'+':''}{number(percent)}% / расходы {million(scenario.additional_cash_expenses??0)} млн руб</p><button disabled={!finite(result.period_delta_ebitda)} onClick={async()=>{const text=annualResultText(result,scenario,initiative);if(text===null)return;setCopyError('');try{await navigator.clipboard.writeText(text);setCopied(true);setTimeout(()=>setCopied(false),2500);}catch{setCopied(false);setCopyError('Скопируйте код инициативы, параметры и результат из карточки');}}}>{copied?'Результат скопирован':'Скопировать для паспорта'}</button>{copyError&&<p role="alert">{copyError}</p>}</div></div>
   <div className="annual-baseline"><span>Продажи {million(sales.quantity_kg)} млн кг</span><span>Выручка {million(sales.revenue)} млн руб</span><span>Средняя цена {number(result.baseline_price)} руб / кг</span></div>
   <FactorTree customModel={{period:result.period,months:12,byId:Object.fromEntries([
    ['ebitda','Операционная прибыль','млн руб',null,null,result.period_delta_ebitda,'expenses','Прирост выручки − дополнительные операционные расходы'],

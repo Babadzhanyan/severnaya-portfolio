@@ -6,7 +6,7 @@ const hourValue=i=>{if(isNumber(i.total_hours))return i.total_hours;const m=disp
 export function priorityMetrics(i){
  const missing=[],invalid=[];
  const read=(key,label,{nonnegative=false}={})=>{const value=number(i[key]);if(value===null)missing.push(label);else if(nonnegative&&value<0)invalid.push(label+' должно быть от 0');return value;};
- const ebitda=read('priority_annual_ebitda','EBITDA после затрат ИТ'),depreciation=read('priority_annual_depreciation','Дополнительная амортизация'),rate=read('priority_hour_rate','Стоимость часа ИТ',{nonnegative:true}),equipment=read('one_off_2027','Оборудование и контракты 2027',{nonnegative:true}),run=read('run_2027','Сопровождение 2027',{nonnegative:true}),duration=read('priority_duration_months','Срок реализации',{nonnegative:true}),hours=hourValue(i);
+ const ebitda=read('priority_annual_ebitda','Операционная прибыль после затрат ИТ'),depreciation=read('priority_annual_depreciation','Дополнительная амортизация'),rate=read('priority_hour_rate','Стоимость часа ИТ',{nonnegative:true}),equipment=read('one_off_2027','Оборудование и контракты 2027',{nonnegative:true}),run=read('run_2027','Сопровождение 2027',{nonnegative:true}),duration=read('priority_duration_months','Срок реализации',{nonnegative:true}),hours=hourValue(i);
  if(hours===null)missing.push('Часы ИТ 2027');else if(hours<0)invalid.push('Часы ИТ должны быть от 0');
  const ebit=ebitda!==null&&depreciation!==null?ebitda-depreciation:null;
  const resourceCost=hours!==null&&rate!==null&&equipment!==null&&run!==null&&run>=0&&hours>=0&&rate>=0&&equipment>=0?hours*rate/1e6+equipment+run:null;

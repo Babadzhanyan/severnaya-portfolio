@@ -122,9 +122,9 @@ export function InitiativeEffect({lever}){
 
 const journey=[['Владельцы','teams'],['Паспорта','passport'],['Портфель','check'],['Запуск','launch']];
 const spaced=s=>display(s).replace(/([А-Яа-я])(\d)/g,'$1 $2').replace(/(\d)([А-Яа-я])/g,'$1 $2');
-export function SessionJourney({sessions=[],selectedIndex,onSelect}){
+export function SessionJourney({sessions=[],selectedIndex,onSelect,showResults=true}){
   return <nav className="ev-session-journey" aria-label="Результаты четырёх встреч"><ol>
-    {sessions.slice(0,4).map((s,k)=>{const [label,icon]=journey[k],content=<><span className="ev-session-step"><b>{k+1}</b><Icon name={icon} size={25}/></span><strong>{label}</strong><time>{spaced(s.date)}</time><p>{spaced(s.output)}</p></>;
+    {sessions.slice(0,4).map((s,k)=>{const [label,icon]=journey[k],content=<><span className="ev-session-step"><b>{k+1}</b><Icon name={icon} size={25}/></span><strong>{label}</strong><time>{spaced(s.date)}</time>{showResults&&<p>{spaced(s.output)}</p>}</>;
       return <li key={s.date||k} className={selectedIndex===k?'ev-session-selected':''}>{onSelect?<button type="button" aria-pressed={selectedIndex===k} onClick={()=>onSelect(k)}>{content}</button>:<div>{content}</div>}</li>;
     })}
   </ol></nav>;
