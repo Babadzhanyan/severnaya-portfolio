@@ -1,757 +1,144 @@
 {
-  "release": "v24",
-  "checked_at": "2026-10-09T09:38:56.330126+00:00",
-  "source_code_commit": "865d051a38e96bacdef617d2b0b8a238833c8d5c",
-  "site_commit": "d82e193f7a25621f37dd57733a12f9815c495855",
-  "site_url": "https://babadzhanyan.github.io/severnaya-portfolio/?v=d82e193#ideas",
+  "release": "v25",
+  "checked_at": "2026-10-09T12:18:22.117753+00:00",
+  "verdict": "Проверка данных, формул, переходов и публикации пройдена",
+  "source_code_commit": "bfbb9fb861556cef64baec2ca9eba2e821286260",
+  "site_commit": "86afd72fcc730c305e003183b22496942affcc77",
+  "site_url": "https://babadzhanyan.github.io/severnaya-portfolio/?v=86afd72#passport",
   "google_url": "https://docs.google.com/spreadsheets/d/1stFDS_18dulhc96CSybYdXDk3RyvMvsSO9HxPkTvB4g/edit#gid=404672457&range=B2",
-  "source_branch": "app-source",
   "continues": {
-    "source_commit": "acbc7b54846f02b0e1f14ba1132145ad9cf154c6",
-    "site_commit": "825682058035e043132760820d7ec1f0a1f1be68",
-    "previous_release": "v23",
-    "previous_report_sha256": "906374f3a7d3592925b1d8a3d85f6b7b1635e6243180cd571519450cb8095caf"
+    "source_commit": "9fcbb8594e3b03b130a3bd5dac7d2e0e15579d3e",
+    "site_commit": "d82e193f7a25621f37dd57733a12f9815c495855",
+    "previous_release": "v24",
+    "previous_report_sha256": "41d9b4c793e4a16a59d4d389d7274d3233169a34702b701ef89b8d81a69a8f35"
   },
-  "verdict": "Проверка пройдена",
   "metrics": {
     "cards": 300,
     "original_projects": 172,
-    "previous_ideas": 28,
+    "ideas": 128,
     "new_ideas": 100,
-    "all_ideas": 128,
-    "L0": 128,
-    "working": 247,
+    "active": 247,
     "history": 53,
-    "retired_aliases": 12,
+    "completed": 52,
+    "cancelled": 1,
+    "visible_sheets": 3,
+    "retained_sheets": 28,
+    "deleted_duplicate_sheets": 5,
     "logical_fields": 58,
-    "visible_sheets": 5,
-    "transport_rows": 4163,
-    "transport_columns": 46,
-    "transport_capacity": 320,
+    "logical_comparisons": 17400,
+    "source_links_checked": 3600,
+    "native_grid_cells_checked": 293867,
     "formula_errors": 0,
-    "model_tests_passed": 153,
-    "component_tests_passed": 58,
-    "site_tests_passed": 211,
-    "backend_tests_run": 71,
-    "backend_tests_passed": 51,
+    "cell_notes": 0,
+    "validation_input_messages": 0,
+    "validation_rules_preserved": 22167,
+    "stage_decision_rules": 600,
+    "automatic_curators": 300,
+    "missing_curators": 0,
+    "identity_comparisons": 1500,
+    "identity_mismatches": 0,
+    "finance_values_checked": 800,
+    "finance_source_cells_checked": 100,
+    "finance_mismatches": 0,
+    "active_preliminary_estimates": 247,
+    "new100_estimates": 100,
+    "new100_priority_points": 100,
+    "original200_estimate_changes": 0,
+    "native_workflow_tests_passed": 12,
+    "native_workflow_test_failures": 0,
+    "model_tests_passed": 157,
+    "component_tests_passed": 64,
+    "site_tests_passed": 221,
+    "backend_tests_run": 73,
+    "backend_tests_passed": 53,
     "backend_tests_skipped": 20,
     "test_failures": 0,
-    "public_files_matched": 51,
-    "source_files_checked": 180,
-    "calculator_groups": 3,
-    "calculator_result_cards": 1,
-    "calculator_initiative_options": 300,
-    "pyramids": 1,
-    "transformation_kpi_levels": 6,
-    "visible_technology_kpis": 12,
-    "visible_kpis_per_level": 2,
-    "visible_apex_kpis": 0,
-    "department_kpi_tabs": 0,
-    "desktop_width": 1280,
-    "mobile_width": 390,
-    "browser_console_errors": 0,
-    "finance_targeted_checks": 77,
-    "ui_review_checks": 28
+    "public_files_matched": 51
   },
-  "changes": [
-    "Входящие показывают 28 прежних предложений и 100 новых по итогам ревью, всего 128",
-    "Кнопка L0 открывает действующий список идей; ссылки ИТ-213 и ИТ-312 ведут в строки 31 и 130 листа «Новые идеи»",
-    "Google передаёт все 300 карточек, 100 новых кодов сохраняют стадию L0",
-    "Калькулятор объединяет ввод в три группы: выпуск и структура, средняя цена, расходы и ресурсы",
-    "Одна карточка содержит результат, параметры расчёта и перенос в выбранный паспорт",
-    "Дополнительные операционные расходы учитываются один раз в карточке, дереве, мосте и печати",
-    "Пустые расходы сохраняют физические показатели и ожидающий денежный результат",
-    "Время, операционная экономия, оборотный капитал и риск показывают соответствующие виды результатов",
-    "Годовой расчёт цены сохраняет фактические продажи мая 2025 – апреля 2026, производственный расчёт сохраняет базу января – июня 2026",
-    "Пирамида показывает две метрики каждой ступени в одной строке настольного экрана; вершина содержит результаты бизнеса",
-    "Страница трансформации сохраняет единую пирамиду и выбранный уровень инициатив",
-    "Ось приоритетов показывает длительность реализации в месяцах"
+  "visible_fields": [
+    "Код",
+    "Название",
+    "Стадия проекта",
+    "Проблема",
+    "Решение",
+    "Описание проекта и состав работ",
+    "Ответственный",
+    "Куратор",
+    "Переход",
+    "Причина",
+    "Действие"
   ],
-  "browser": {
-    "site": "https://babadzhanyan.github.io/severnaya-portfolio/?v=d82e193#ideas",
-    "bundle": "index-CSRa1pBM.js",
-    "live": {
-      "cards": 300,
-      "primary": 172,
-      "ideas": 128,
-      "previousIdeas": 28,
-      "newIdeas": 100,
-      "L0": 128,
-      "filtersDefault": [
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        ""
-      ],
-      "ideaLinks": {
-        "first": "B31:BG31",
-        "last": "B130:BG130",
-        "sheetId": 807030037
-      }
-    },
-    "desktop": {
-      "width": 1280,
-      "documentWidth": 1280,
-      "pyramidMetrics": 12,
-      "metricsPerLevel": [
-        2,
-        2,
-        2,
-        2,
-        2,
-        2
-      ],
-      "metricRowHeight": 25,
-      "apexMetricTables": 0,
-      "departmentTab": false
-    },
-    "mobile": {
-      "ideas": {
-        "cards": 128,
-        "filters": 7,
-        "heading": "Новые идеи / 128",
-        "height": 844,
-        "scroll": 390,
-        "width": 390
-      },
-      "pyramid": {
-        "metrics": 12,
-        "perLevel": [
-          2,
-          2,
-          2,
-          2,
-          2,
-          2
-        ],
-        "scroll": 390,
-        "width": 390
-      }
-    },
-    "calculator": {
-      "groups": [
-        "Выпуск и структура",
-        "Средняя цена",
-        "Расходы и ресурсы"
-      ],
-      "initiativeOptions": 300,
-      "resultCards": 1,
-      "annualPriceScenario": {
-        "changePercent": 1,
-        "extraOpexMln": 2,
-        "resultMln": 328.96,
-        "period": "Май 2025–апрель 2026",
-        "copyCode": "ИТ-112"
-      },
-      "budget": {
-        "baseRub": 1000000,
-        "savingPercent": 10,
-        "extraRub": 50000,
-        "profitRub": 50000,
-        "clearedFieldPreservesNull": true
-      },
-      "hours": {
-        "operations": 3000,
-        "baseMinutes": 4,
-        "targetMinutes": 2,
-        "rateRubPerHour": 700,
-        "cashShare": 0.5,
-        "hours": 100,
-        "profitRub": 35000
-      },
-      "capital": {
-        "flowRubPerDay": 100000,
-        "baseDays": 30,
-        "targetDays": 20,
-        "releaseRub": 1000000
-      },
-      "annualClearedExpense": {
-        "input": "",
-        "targetPrice": 160.31,
-        "profitPending": true,
-        "copyDisabled": true
-      },
-      "productionClearedExpense": {
-        "weightChangePct": 1,
-        "profitPending": true,
-        "targetLiveKgDisplayed": 141453294
-      }
-    },
-    "priorityAxis": "Длительность реализации, мес.",
-    "consoleErrors": 0,
-    "consoleWarnings": 0,
-    "viewportReset": true,
-    "previewClosed": true
-  },
-  "source_validation": {
-    "readOnly": true,
-    "readStartedAt": "2026-10-09T09:07:52.157Z",
-    "readCompletedAt": "2026-10-09T09:07:56.729Z",
-    "transport": {
-      "url": "https://docs.google.com/spreadsheets/d/1stFDS_18dulhc96CSybYdXDk3RyvMvsSO9HxPkTvB4g/gviz/tq?gid=907270027&range=B2%3AAU4164&headers=0&tq=select+*+options+no_format&tqx=out%3Ajson%3BresponseHandler%3A__pmoAudit&_pmo=119435791",
-      "status": "ok",
-      "rows": 4163,
-      "columns": 46,
-      "signature": "154155152",
-      "encodedErrors": 0
-    },
-    "sourceConfig": {
-      "expectedRecords": 300,
-      "maximumRecords": 500,
-      "transportCapacity": 320,
-      "initiatives": {
-        "key": "initiatives",
-        "sheet": "Паспорта",
-        "sourceRange": "A7:AT326",
-        "firstSourceRow": 7,
-        "firstSourceColumn": 1,
-        "feedFirst": 2,
-        "feedLast": 321,
-        "columns": 46
-      },
-      "ideas": {
-        "sheetName": "Новые идеи",
-        "sheetId": 807030037,
-        "headerRow": 2,
-        "firstDataRow": 3,
-        "firstColumn": 2,
-        "sourceRange": "B2:BG130"
-      },
-      "sourcePartitionPolicy": "ranges"
-    },
-    "projected": {
-      "all": 300,
-      "primary": 172,
-      "ideas": 128,
-      "historical": 53,
-      "working": 247,
-      "new100": 100,
-      "new100Codes": [
-        "ИТ-213",
-        "ИТ-214",
-        "ИТ-215",
-        "ИТ-216",
-        "ИТ-217",
-        "ИТ-218",
-        "ИТ-219",
-        "ИТ-220",
-        "ИТ-221",
-        "ИТ-222",
-        "ИТ-223",
-        "ИТ-224",
-        "ИТ-225",
-        "ИТ-226",
-        "ИТ-227",
-        "ИТ-228",
-        "ИТ-229",
-        "ИТ-230",
-        "ИТ-231",
-        "ИТ-232",
-        "ИТ-233",
-        "ИТ-234",
-        "ИТ-235",
-        "ИТ-236",
-        "ИТ-237",
-        "ИТ-238",
-        "ИТ-239",
-        "ИТ-240",
-        "ИТ-241",
-        "ИТ-242",
-        "ИТ-243",
-        "ИТ-244",
-        "ИТ-245",
-        "ИТ-246",
-        "ИТ-247",
-        "ИТ-248",
-        "ИТ-249",
-        "ИТ-250",
-        "ИТ-251",
-        "ИТ-252",
-        "ИТ-253",
-        "ИТ-254",
-        "ИТ-255",
-        "ИТ-256",
-        "ИТ-257",
-        "ИТ-258",
-        "ИТ-259",
-        "ИТ-260",
-        "ИТ-261",
-        "ИТ-262",
-        "ИТ-263",
-        "ИТ-264",
-        "ИТ-265",
-        "ИТ-266",
-        "ИТ-267",
-        "ИТ-268",
-        "ИТ-269",
-        "ИТ-270",
-        "ИТ-271",
-        "ИТ-272",
-        "ИТ-273",
-        "ИТ-274",
-        "ИТ-275",
-        "ИТ-276",
-        "ИТ-277",
-        "ИТ-278",
-        "ИТ-279",
-        "ИТ-280",
-        "ИТ-281",
-        "ИТ-282",
-        "ИТ-283",
-        "ИТ-284",
-        "ИТ-285",
-        "ИТ-286",
-        "ИТ-287",
-        "ИТ-288",
-        "ИТ-289",
-        "ИТ-290",
-        "ИТ-291",
-        "ИТ-292",
-        "ИТ-293",
-        "ИТ-294",
-        "ИТ-295",
-        "ИТ-296",
-        "ИТ-297",
-        "ИТ-298",
-        "ИТ-299",
-        "ИТ-300",
-        "ИТ-301",
-        "ИТ-302",
-        "ИТ-303",
-        "ИТ-304",
-        "ИТ-305",
-        "ИТ-306",
-        "ИТ-307",
-        "ИТ-308",
-        "ИТ-309",
-        "ИТ-310",
-        "ИТ-311",
-        "ИТ-312"
-      ],
-      "new100Stages": [
-        "L0"
-      ],
-      "new100SourceSheets": [
-        "Новые идеи"
-      ],
-      "new100SourceRows": [
-        31,
-        130
-      ],
-      "missingNames": 0,
-      "unfilteredAll": 300,
-      "ideasFilter": 128,
-      "stageCounts": [
-        {
-          "code": "L0",
-          "count": 128
-        },
-        {
-          "code": "L1",
-          "count": 69
-        },
-        {
-          "code": "L2",
-          "count": 0
-        },
-        {
-          "code": "L3",
-          "count": 0
-        },
-        {
-          "code": "L4",
-          "count": 50
-        },
-        {
-          "code": "L5",
-          "count": 0
-        },
-        {
-          "code": "Уточнить",
-          "count": 0
-        }
-      ]
-    },
-    "publicBundle": {
-      "url": "https://babadzhanyan.github.io/severnaya-portfolio/assets/index-srIUmYRU.js",
-      "status": 200,
-      "asset": "./assets/index-srIUmYRU.js",
-      "expectedRecords": "300",
-      "transportCapacity": "320",
-      "hasRange4164": true,
-      "hasSourceRange130": true
-    },
-    "verdict": "Живой транспорт Google и текущая опубликованная сборка содержат 300 карточек, 128 входящих идей и все 100 добавленных идей. Экран пользователя с числом 28 требует проверки версии и текущих фильтров.",
-    "nativeGoogle": {
-      "checkedAt": "2026-10-09T09:11:32.427Z",
-      "metadata": {
-        "visibleSheets": [
-          {
-            "id": 404672457,
-            "name": "Реестр инициатив",
-            "rows": 174
-          },
-          {
-            "id": 807030037,
-            "name": "Новые идеи",
-            "rows": 130
-          },
-          {
-            "id": 807030034,
-            "name": "Калькулятор прибыли",
-            "rows": 316
-          },
-          {
-            "id": 807030030,
-            "name": "Воронка инициатив",
-            "rows": 12
-          },
-          {
-            "id": 807030035,
-            "name": "Трекер паспортов",
-            "rows": 302
-          }
-        ],
-        "namedRangesReturned": false,
-        "namedRanges": null
-      },
-      "ideas": {
-        "rows": 128,
-        "new100Rows": 100,
-        "stages": [
-          "L0 Входящие предложения"
-        ],
-        "emptyCodes": 0,
-        "duplicateCodes": 0
-      },
-      "funnel": [
-        [
-          "Стадия",
-          "Инициатив, шт",
-          "Изменение, шт",
-          "Годовой прирост операционной прибыли, млн руб",
-          "Операционная прибыль 2027, млн руб",
-          "Изменение операционной прибыли 2027, млн руб",
-          "Деньги 2027, млн руб",
-          "Платежи внедрения 2027, млн руб",
-          "Расчётов подтверждено, шт",
-          "Оценок платежей"
-        ],
-        [
-          "L0 Входящие предложения",
-          "128",
-          null,
-          "Требуется оценка",
-          "Требуется расчёт",
-          null,
-          "Требуется расчёт",
-          " 36,98",
-          "0",
-          "28 / 128"
-        ],
-        [
-          "L1 Идея",
-          "69",
-          null,
-          " 4,3",
-          "Требуется расчёт",
-          null,
-          "Требуется расчёт",
-          " 62,64",
-          "0",
-          "69 / 69"
-        ],
-        [
-          "L2 Оценка",
-          "0",
-          null,
-          " 0,0",
-          " 0,00",
-          null,
-          " 0,00",
-          " 0,00",
-          "0",
-          "0 / 0"
-        ],
-        [
-          "L3 Решение о запуске",
-          "0",
-          null,
-          " 0,0",
-          " 0,00",
-          null,
-          " 0,00",
-          " 0,00",
-          "0",
-          "0 / 0"
-        ],
-        [
-          "L4 Реализация",
-          "50",
-          null,
-          " 5,5",
-          "Требуется расчёт",
-          null,
-          "Требуется расчёт",
-          " 25,44",
-          "0",
-          "50 / 50"
-        ],
-        [
-          "L5 Подтверждение эффекта",
-          "0",
-          null,
-          " 0,0",
-          " 0,00",
-          null,
-          " 0,00",
-          " 0,00",
-          "0",
-          "0 / 0"
-        ],
-        [
-          "Рабочий состав",
-          "247",
-          null,
-          "Требуется оценка",
-          "Требуется расчёт",
-          null,
-          "Требуется расчёт",
-          " 125,06",
-          "0",
-          "147 / 247"
-        ],
-        [
-          "Внедрение завершено",
-          "52"
-        ],
-        [
-          "Отменено",
-          "1"
-        ],
-        [
-          "Все записи",
-          "300"
-        ]
-      ],
-      "tracker": {
-        "rows": 300,
-        "firstCode": "ИТ-038",
-        "lastCode": "ИТ-312",
-        "new100Rows": 100
-      },
-      "formulas": [
-        {
-          "sheet": "Воронка инициатив",
-          "formulaCount": 66,
-          "evidence": [
-            {
-              "cell": "C3",
-              "formula": "='Трекер портфеля'!C3",
-              "value": null
-            },
-            {
-              "cell": "K3",
-              "formula": "=(SUMPRODUCT(('Реестр инициатив'!$B$3:$B$174<>\"\")*('Реестр инициатив'!$F$3:$F$174=$B3)*('Реестр инициатив'!$G$3:$G$174<>\"История\")*ISNUMBER('Реестр инициатив'!$AE$3:$AE$174))+SUMPRODUCT(('Новые идеи'!$B$3:$B$130<>\"\")*('Новые идеи'!$F$3:$F$130=$B3)*ISNUMBER('Новые идеи'!$AE$3:$AE$130)))&\" / \"&C3",
-              "value": null
-            },
-            {
-              "cell": "C9",
-              "formula": "=SUM(C3:C8)",
-              "value": null
-            },
-            {
-              "cell": "C12",
-              "formula": "=SUM(C9:C11)",
-              "value": null
-            }
-          ]
-        },
-        {
-          "sheet": "Данные сайта",
-          "formulaCount": 2,
-          "evidence": [
-            {
-              "cell": "B2",
-              "formula": "=HSTACK(\"z:\";\"z:\";\"z:\";\"z:\";\"z:\";\"z:\";\"z:\";\"z:\";\"z:\";ARRAYFORMULA(IFERROR(IF(LEN('Настройки портфеля'!C3)=0;\"z:\";IF(ISNUMBER('Настройки портфеля'!C3);\"n:\"&TEXT('Настройки портфеля'!C3;\"0.###############\");IF(ISLOGICAL('Настройки портфеля'!C3);\"b:\"&IF('Настройки портфеля'!C3;\"1\";\"0\");\"s:\"&'Настройки портфеля'!C3)));\"e:Ошибка исходной ячейки\"));\"z:\";\"z:\")",
-              "value": null
-            },
-            {
-              "cell": "B3",
-              "formula": "=LET(v;VSTACK('Реестр инициатив'!B3:AU174;'Новые идеи'!B3:AU130;ARRAYFORMULA(IFERROR(SEQUENCE(20;46)/0;\"\")));ARRAYFORMULA(IFERROR(IF(LEN(v)=0;\"z:\";IF(ISNUMBER(v);\"n:\"&TEXT(v;\"0.###############\");IF(ISLOGICAL(v);\"b:\"&IF(v;\"1\";\"0\");\"s:\"&v)));\"e:Ошибка исходной ячейки\")))",
-              "value": null
-            }
-          ]
-        },
-        {
-          "sheet": "Трекер портфеля",
-          "formulaCount": 72,
-          "evidence": [
-            {
-              "cell": "C3",
-              "formula": "=COUNTIFS('Реестр инициатив'!$B$3:$B$174;\"<>\";'Реестр инициатив'!$F$3:$F$174;B3;'Реестр инициатив'!$G$3:$G$174;\"<>История\")+COUNTIFS('Новые идеи'!$B$3:$B$130;\"<>\";'Новые идеи'!$F$3:$F$130;B3)",
-              "value": null
-            },
-            {
-              "cell": "F3",
-              "formula": "=IF(C3=0;0;IF(COUNT(FILTER('Единый источник'!$BB$3:$BB$322;'Единый источник'!$F$3:$F$322=B3;'Единый источник'!$G$3:$G$322<>\"История\"))=C3;SUMIFS('Единый источник'!$BB$3:$BB$322;'Единый источник'!$F$3:$F$322;B3;'Единый источник'!$G$3:$G$322;\"<>История\");\"Требуется оценка\"))",
-              "value": null
-            }
-          ]
-        },
-        {
-          "sheet": "Свод портфеля",
-          "formulaCount": 13,
-          "evidence": [
-            {
-              "cell": "C3",
-              "formula": "=COUNTA('Реестр инициатив'!B3:B174)",
-              "value": null
-            },
-            {
-              "cell": "C10",
-              "formula": "=COUNTIF('Реестр инициатив'!$F$3:$F$174;\"Уточнить\")",
-              "value": null
-            },
-            {
-              "cell": "C11",
-              "formula": "=SUM(ARRAYFORMULA(--REGEXMATCH('Реестр инициатив'!$AT$3:$AT$174;\"Паспортные метаданные:\\s*\\{\"\"primary\"\":true\")))",
-              "value": null
-            },
-            {
-              "cell": "C12",
-              "formula": "=C3-C11",
-              "value": null
-            }
-          ]
-        }
-      ],
-      "hiddenOverview": {
-        "values": [
-          [
-            "Показатель",
-            "Значение",
-            "Единица"
-          ],
-          [
-            "Инициативы",
-            "172,",
-            "шт"
-          ],
-          [
-            "Выбрано в работу",
-            "50,",
-            "шт"
-          ],
-          [
-            "Денежный результат 2027",
-            "Требуется подтверждение",
-            "млн руб"
-          ],
-          [
-            "Подтверждённые часы выбранных инициатив",
-            "17 232,",
-            "ч"
-          ],
-          [
-            "Прибыль до процентов, налогов и амортизации 2027",
-            "Требуется подтверждение",
-            "млн руб"
-          ],
-          [
-            "Предварительные часы",
-            "22 664,"
-          ],
-          [
-            "Готово к решению",
-            "0,"
-          ],
-          [
-            "Стадия требует подтверждения",
-            "1,"
-          ],
-          [
-            "Первичные инициативы",
-            "172,"
-          ],
-          [
-            "Дополнительные инициативы",
-            "0,"
-          ],
-          [
-            "Сотрудники с назначениями",
-            "9,"
-          ],
-          [
-            "Фазы плана",
-            "476,"
-          ],
-          [
-            "Часы вне семи направлений",
-            "0,"
-          ]
-        ],
-        "sourceScope": "Скрытый служебный «Свод портфеля» считает только 172 строки основного реестра; текущие Overview/StageSummary/StageGateFlow рассчитывают количество по переданному списку инициатив"
-      },
-      "renderPath": {
-        "overview": "App.jsx / workingList / stageSummary(data, workingList)",
-        "stageSummary": "StageSummary.jsx / active=list.filter(!isHistorical) / list.filter(isNewIdea).length",
-        "stageVisual": "PlanningVisuals.jsx / StageGateFlow / row.count",
-        "defaultFilter": "App.jsx / scope:all",
-        "ideasFilter": "scope:ideas / isNewIdea / working",
-        "sourceCaching": "source.js сохраняет текущий ответ в памяти; принудительное обновление и возврат видимости запрашивают полный источник",
-        "namedRangeDependency": false
-      },
-      "notes": [
-        "Число 28 в видимой воронке обозначает заполненные оценки платежей: 28 / 128",
-        "Именованные диапазоны отсутствуют в возвращённых метаданных; транспорт и проектор используют явные диапазоны A1",
-        "Новые100 идей пока имеют незаполненные оценки часов/платежей; это отдельная полнота оценки, а не потеря карточек"
-      ]
-    },
-    "publicIdeasReview": {
-      "url": "https://babadzhanyan.github.io/severnaya-portfolio/review/new-100-ideas.json",
-      "status": 200,
-      "count": 100,
-      "missingLiveNew100Codes": [],
-      "firstCode": "ИТ-213",
-      "lastCode": "ИТ-312"
-    }
+  "changes": [
+    "Три рабочие вкладки показывают реестр, входящие идеи и количество карточек по стадиям",
+    "Пять дублирующих листов удалены после проверки входящих зависимостей; модели и справочники сохранены скрытыми",
+    "Полные исходные описания сохранены в скрытом архиве; 239 карточек получили короткие описания",
+    "Названия, стадии, исполнители и фактическое завершение всех 300 карточек сохранены",
+    "Куратор рассчитывается по справочнику команды во всех 300 строках",
+    "Галочка фиксирует готовность передать карточку куратору; куратор подтверждает фактическую стадию в D",
+    "Крестик выбирается вместе с одной причиной текущей стадии; действие указывает конкретную доработку",
+    "Прежняя галочка сохраняет подтверждённый переход и требует нового решения текущей стадии",
+    "L0 проверяет действующее покрытие; L1 проверяет название, проблему, решение, работы, ответственного и куратора",
+    "Предварительная экономика 247 действующих инициатив и калькулятор скрыты для следующих этапов",
+    "Все 100 новых идей оценены по трудозатратам, начисленной зарплате, закупкам, сопровождению и длительности",
+    "Примечания и всплывающие подсказки удалены; условия проверки значений и выпадающие списки сохранены",
+    "Сайт показывает проверку карточки из Google в паспорте, трекере и личном списке",
+    "Приоритизация использует операционную прибыль, стоимость ресурсов и длительность; все 100 новых идей получают точки"
+  ],
+  "verification": {
+    "native_workflow": "12 сценариев выполнены на временной скрытой копии; исходные строки сохранились; временная вкладка удалена",
+    "native_visual": "Проверены нативные экспорты Google; все 119 текущих карточек основного реестра присутствуют в печатном представлении; идеи сохраняют 128 карточек",
+    "public_assets": "51 опубликованный файл совпал побайтно с проверенной сборкой; GitHub Pages status built",
+    "formula_and_validation": "28 сеток прочитаны полностью; 3288 дат сохранили календарный смысл при нормализации DATE / ДАТА",
+    "approvals": "J/K остаются пустыми до решения сотрудника; финансовые согласования сохраняют отдельные правила"
   },
   "reports": {
-    "model-tests.log": {
-      "sha256": "9bf2f7dec8c0804e8a55c0da0b8bec260f5934e3833076c28ff3882d236a2636"
+    "cleanup-liveqa-result.json": {
+      "sha256": "7909edd0d92bd347142aeeb0dab16d479c18e8d1f06acafcc6aa93e7a03c11f6"
     },
-    "component-tests.log": {
-      "sha256": "ea3faaca980f672231d8f51bf1b55cb56f42497bc9b80431e5e8613417bfc229"
+    "independent-final-review.json": {
+      "sha256": "d873c11b6be8ff2fec25391adedcd9d9ae6a3036320ed3138d0cf89c8bb0e46d"
     },
-    "backend-tests.log": {
-      "sha256": "def96d2c8b0b24a6916230e7940021b2aef8715a0abfe87636a5101b8d1fbdff"
+    "root-final-source-check.json": {
+      "sha256": "1dff4fbb109b88ed243772d1ceff5daac136b672fd058301b249670312ce13e6"
     },
-    "finance-review.md": {
-      "sha256": "373c3eaa292acc36d6fcf9bc6740652480243060c1102ced44784ceff319e7b5"
+    "root-identity-estimates-check.json": {
+      "sha256": "926efdce24365007550166535faac1a56e64d3054cc11313e8537ac30f612163"
     },
-    "ui-review.md": {
-      "sha256": "fc7a896d9389d261b57833e54c1c57f5c38bb9137f1107067a609392104962e1"
+    "root-finance-write-check.json": {
+      "sha256": "89dac1fcfb4e31a10e55e2466669a7ca4cf3cb9144df99434105ebf52b49cfb7"
     },
-    "ideas-live-audit.json": {
-      "sha256": "ffc60da0d5d8dd5b1c8c68049621e2b0275caaea1a308128b346d0b4781766b8"
+    "root-finance-sources-check.json": {
+      "sha256": "83a86aa2c84e795ad46e7456233b6aaf684282e7c6f25bc3d52929e27b76e9db"
     },
-    "browser-public-v24.json": {
-      "sha256": "e0f735dbdb0fe36a7f8241da4aa5bfee1882a8f4be8897e31c650df2ff46bcb1"
+    "native-curator-check.json": {
+      "sha256": "62edf047e3aa30ede387dcf27297232fcb4d3502f17c8220b8869c964df7079b"
     },
-    "public-files-v24.json": {
-      "sha256": "420e4f50b4f64f9c74c8e75abb7438bfa668fe0aab8f13710269589f8fc8ee2a"
+    "native-workflow-functional-tests.json": {
+      "sha256": "ac96d9df4c71f8477842c0c24acc9ad345d230f6c25d25bc789534ab7e0426a6"
     },
-    "source-files-v24.json": {
-      "sha256": "ce25e859a83391e40bd07be58fec882019d267de5951598ef0b59d4d3c78e6e9"
+    "native-workflow-functional-tests-part2.json": {
+      "sha256": "72f91b63a7483132fa07fcbfa4438846e3c4859087044126faa8f5b8aebeae08"
+    },
+    "public-files-v25.json": {
+      "sha256": "018d070ebb61201e65600d89b3bc0a77fb13e13f90e152d9e048b0979eb231e0"
+    },
+    "sheet-final-visible-metadata.json": {
+      "sha256": "376755fe0929aa3fe5cb21514c393b4f7399035243d5e5e627791b139739bf7b"
+    },
+    "stage-ux-review.md": {
+      "sha256": "c60947dd7cc24bb3410720747c4fd5e074ac940ecef825384a0eeed1b257be8c"
+    },
+    "finance-estimates-verdict.md": {
+      "sha256": "3d1e1589780e782ed75e21195472b8b40262c82f19c3ec59365d4734819e5133"
+    },
+    "concise-cards-qa.json": {
+      "sha256": "566bbbf15117dbcdf4c68fef12d3b9f86ddd0ad59762ea239cb34827693f338c"
     }
   },
   "limits": [
-    "20 серверных интеграционных проверок требуют отдельную базу PostgreSQL; текущий публичный сайт читает Google напрямую",
-    "Владелец подтверждает фактическую структуру продукции, состав ставок расходов, спрос и мощности",
-    "Предварительные расчёты и предлагаемые цели сохраняют статус согласования"
+    "20 серверных интеграционных проверок требуют отдельную тестовую базу PostgreSQL; публичный сайт читает Google напрямую",
+    "Просмотр новой страницы во встроенном браузере завершился превышением времени ожидания; нативный вид таблицы проверен через экспорт Google, сайт проверен тестами компонентов и опубликованными файлами",
+    "Предварительные оценки требуют подтверждения владельцев; полезный денежный эффект новых поддерживающих идей зависит от замера базы и подтверждения общей группы эффекта",
+    "Галочка передаёт готовность куратору; фактическую стадию куратор изменяет в таблице"
   ]
 }
