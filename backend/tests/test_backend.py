@@ -80,7 +80,7 @@ class PostgreSQLIntegration(unittest.TestCase):
         self.assertEqual(len(levels), 6)
         identities = {i["code"]: (i["_source_row"], i["provenance"]["retired_aliases"]) for i in self.portfolio["initiatives"]}
         previous = load_data("identity_baseline_v10.json")
-        self.assertEqual(set(identities) - set(previous), {"ИТ-129", "ИТ-209", "ИТ-210", "ИТ-211", "ИТ-212"})
+        self.assertEqual(set(identities) - set(previous), {"ИТ-129", "ИТ-209", "ИТ-210", "ИТ-211", "ИТ-212"} | {f"ИТ-{n:03}" for n in range(213,313)})
         self.assertTrue(set(previous) <= set(identities))
         self.assertEqual({code: aliases for code, (_, aliases) in identities.items() if code in previous and code != "ИТ-127"},
                          {code: row["retired_aliases"] for code, row in previous.items() if code != "ИТ-127"})
@@ -104,7 +104,7 @@ class PostgreSQLIntegration(unittest.TestCase):
         projects = [i for i in published["initiatives"] if i.get("collection") == "projects"]
         ideas = [i for i in published["initiatives"] if i.get("collection") == "ideas"]
         self.assertEqual(len(projects), 172)
-        self.assertEqual(len(ideas), 28)
+        self.assertEqual(len(ideas), 128)
         self.assertEqual(sum(i["execution_fact"]["state"] == "completed" for i in projects), 52)
         self.assertEqual(sum(i["execution_fact"]["state"] == "in_progress" for i in projects), 50)
         self.assertTrue(all(i["stage"] == "L4 Реализация" for i in projects if i["execution_fact"]["state"] in {"completed", "in_progress"}))
@@ -113,12 +113,16 @@ class PostgreSQLIntegration(unittest.TestCase):
 
     def test_assessment_and_legal_links_survive_projection(self):
         cards = self.portfolio["initiatives"]
-        self.assertEqual(len(cards), 200)
-        self.assertEqual(sum(isinstance(i["provenance"]["assessment"], dict) for i in cards), 200)
+        self.assertEqual(len(cards), 300)
+        self.assertEqual(sum(isinstance(i["provenance"]["assessment"], dict) for i in cards), 300)
         self.assertEqual(sum(bool(i["provenance"]["legal_obligations"]) for i in cards), 58)
         self.assertEqual(sum(len(i["provenance"]["legal_obligations"]) for i in cards), 95)
         self.assertTrue(all(i["provenance"]["legal_review"] for i in cards if i["provenance"]["legal_obligations"]))
-        self.assertTrue(all(i["action_due"] == "2026-10-13T18:00:00+03:00" for i in cards))
+        self.assertTrue(all(i["action_due"] == "2026-10-13T18:00:00+03:00" for i in cards if not i["provenance"]["assessment"].get("proposal")))
+        proposals = [i for i in cards if i["provenance"]["assessment"].get("proposal")]
+        self.assertEqual(len(proposals),100)
+        self.assertTrue(all(i["priority_annual_ebitda"] is None for i in proposals))
+        self.assertTrue(all(i["provenance"]["assessment"]["proposal"]["agreed_effect_mrub_year"] == 0 for i in proposals))
 
     def test_calendar_alignment_keeps_source_precision(self):
         response = copy.deepcopy(self.response)

@@ -2,7 +2,7 @@
   "sheet": "Реестр инициатив",
   "header_row": 6,
   "first_data_row": 7,
-  "last_data_row": 226,
+  "last_data_row": 326,
   "columns": [
     {
       "section": "Обзор портфеля",
@@ -423,7 +423,7 @@
     {
       "section": "Приоритеты",
       "key": "priority_annual_ebitda",
-      "label": "EBITDA после затрат ИТ, млн руб/год",
+      "label": "Годовой потенциал после затрат ИТ до амортизации, млн руб / год",
       "type": "number",
       "width": 25,
       "column": "BA"

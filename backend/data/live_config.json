@@ -4,7 +4,7 @@
   "modelSheetId": 552477419,
   "feedSheetId": 907270027,
   "feedSheetName": "Данные сайта",
-  "feedRange": "B2:AU3664",
+  "feedRange": "B2:AU4164",
   "schemaVersion": 12,
   "protocolVersion": 1,
   "pollMs": 15000,
@@ -31,12 +31,12 @@
     },
     {
       "key": "initiatives",
-      "sheet": "Реестр инициатив",
-      "sourceRange": "A7:AT226",
+      "sheet": "Паспорта",
+      "sourceRange": "A7:AT326",
       "firstSourceRow": 7,
       "firstSourceColumn": 1,
       "feedFirst": 2,
-      "feedLast": 221,
+      "feedLast": 321,
       "columns": 46
     },
     {
@@ -45,8 +45,8 @@
       "sourceRange": "A261:G1100",
       "firstSourceRow": 261,
       "firstSourceColumn": 1,
-      "feedFirst": 222,
-      "feedLast": 1061,
+      "feedFirst": 322,
+      "feedLast": 1161,
       "columns": 7
     },
     {
@@ -55,8 +55,8 @@
       "sourceRange": "A1121:L1420",
       "firstSourceRow": 1121,
       "firstSourceColumn": 1,
-      "feedFirst": 1062,
-      "feedLast": 1361,
+      "feedFirst": 1162,
+      "feedLast": 1461,
       "columns": 12
     },
     {
@@ -65,8 +65,8 @@
       "sourceRange": "A1441:G1740",
       "firstSourceRow": 1441,
       "firstSourceColumn": 1,
-      "feedFirst": 1362,
-      "feedLast": 1661,
+      "feedFirst": 1462,
+      "feedLast": 1761,
       "columns": 7
     },
     {
@@ -75,8 +75,8 @@
       "sourceRange": "A1771:K1970",
       "firstSourceRow": 1771,
       "firstSourceColumn": 1,
-      "feedFirst": 1662,
-      "feedLast": 1861,
+      "feedFirst": 1762,
+      "feedLast": 1961,
       "columns": 11
     },
     {
@@ -85,8 +85,8 @@
       "sourceRange": "A1992:K1999",
       "firstSourceRow": 1992,
       "firstSourceColumn": 1,
-      "feedFirst": 1862,
-      "feedLast": 1869,
+      "feedFirst": 1962,
+      "feedLast": 1969,
       "columns": 11
     },
     {
@@ -95,18 +95,18 @@
       "sourceRange": "A2036:L2043",
       "firstSourceRow": 2036,
       "firstSourceColumn": 1,
-      "feedFirst": 1870,
-      "feedLast": 1877,
+      "feedFirst": 1970,
+      "feedLast": 1977,
       "columns": 12
     },
     {
       "key": "ledger",
-      "sheet": "Реестр инициатив",
-      "sourceRange": "A2091:M2310",
+      "sheet": "Свод инициатив",
+      "sourceRange": "A2091:M2410",
       "firstSourceRow": 2091,
       "firstSourceColumn": 1,
-      "feedFirst": 1878,
-      "feedLast": 2097,
+      "feedFirst": 1978,
+      "feedLast": 2297,
       "columns": 13
     },
     {
@@ -115,8 +115,8 @@
       "sourceRange": "A2325:I2325",
       "firstSourceRow": 2325,
       "firstSourceColumn": 1,
-      "feedFirst": 2098,
-      "feedLast": 2098,
+      "feedFirst": 2298,
+      "feedLast": 2298,
       "columns": 9
     },
     {
@@ -125,8 +125,8 @@
       "sourceRange": "A2330:L2549",
       "firstSourceRow": 2330,
       "firstSourceColumn": 1,
-      "feedFirst": 2099,
-      "feedLast": 2318,
+      "feedFirst": 2299,
+      "feedLast": 2518,
       "columns": 12
     },
     {
@@ -135,8 +135,8 @@
       "sourceRange": "A20:K100",
       "firstSourceRow": 20,
       "firstSourceColumn": 1,
-      "feedFirst": 2319,
-      "feedLast": 2399,
+      "feedFirst": 2519,
+      "feedLast": 2599,
       "columns": 11
     },
     {
@@ -145,8 +145,8 @@
       "sourceRange": "A111:AF430",
       "firstSourceRow": 111,
       "firstSourceColumn": 1,
-      "feedFirst": 2400,
-      "feedLast": 2719,
+      "feedFirst": 2600,
+      "feedLast": 2919,
       "columns": 32
     },
     {
@@ -155,8 +155,8 @@
       "sourceRange": "A464:I506",
       "firstSourceRow": 464,
       "firstSourceColumn": 1,
-      "feedFirst": 2720,
-      "feedLast": 2762,
+      "feedFirst": 2920,
+      "feedLast": 2962,
       "columns": 9
     },
     {
@@ -165,18 +165,18 @@
       "sourceRange": "A645:K666",
       "firstSourceRow": 645,
       "firstSourceColumn": 1,
-      "feedFirst": 2763,
-      "feedLast": 2784,
+      "feedFirst": 2963,
+      "feedLast": 2984,
       "columns": 11
     },
     {
       "key": "stageDeadlines",
-      "sheet": "Реестр инициатив",
-      "sourceRange": "AU7:AY226",
+      "sheet": "Паспорта",
+      "sourceRange": "AU7:AY326",
       "firstSourceRow": 7,
       "firstSourceColumn": 47,
-      "feedFirst": 2789,
-      "feedLast": 3008,
+      "feedFirst": 2989,
+      "feedLast": 3308,
       "columns": 5
     },
     {
@@ -185,8 +185,8 @@
       "sourceRange": "A1200:A1200",
       "firstSourceRow": 1200,
       "firstSourceColumn": 1,
-      "feedFirst": 3013,
-      "feedLast": 3013,
+      "feedFirst": 3313,
+      "feedLast": 3313,
       "columns": 1
     },
     {
@@ -195,8 +195,8 @@
       "sourceRange": "A1210:L1239",
       "firstSourceRow": 1210,
       "firstSourceColumn": 1,
-      "feedFirst": 3014,
-      "feedLast": 3043,
+      "feedFirst": 3314,
+      "feedLast": 3343,
       "columns": 12
     },
     {
@@ -205,8 +205,8 @@
       "sourceRange": "A1250:L1279",
       "firstSourceRow": 1250,
       "firstSourceColumn": 1,
-      "feedFirst": 3044,
-      "feedLast": 3073,
+      "feedFirst": 3344,
+      "feedLast": 3373,
       "columns": 12
     },
     {
@@ -215,8 +215,8 @@
       "sourceRange": "A1290:L1319",
       "firstSourceRow": 1290,
       "firstSourceColumn": 1,
-      "feedFirst": 3074,
-      "feedLast": 3103,
+      "feedFirst": 3374,
+      "feedLast": 3403,
       "columns": 12
     },
     {
@@ -225,8 +225,8 @@
       "sourceRange": "A1330:D1352",
       "firstSourceRow": 1330,
       "firstSourceColumn": 1,
-      "feedFirst": 3104,
-      "feedLast": 3126,
+      "feedFirst": 3404,
+      "feedLast": 3426,
       "columns": 4
     },
     {
@@ -235,8 +235,8 @@
       "sourceRange": "A1370:C1386",
       "firstSourceRow": 1370,
       "firstSourceColumn": 1,
-      "feedFirst": 3127,
-      "feedLast": 3143,
+      "feedFirst": 3427,
+      "feedLast": 3443,
       "columns": 3
     },
     {
@@ -245,8 +245,8 @@
       "sourceRange": "A1400:D1421",
       "firstSourceRow": 1400,
       "firstSourceColumn": 1,
-      "feedFirst": 3144,
-      "feedLast": 3165,
+      "feedFirst": 3444,
+      "feedLast": 3465,
       "columns": 4
     },
     {
@@ -255,8 +255,8 @@
       "sourceRange": "A1440:D1457",
       "firstSourceRow": 1440,
       "firstSourceColumn": 1,
-      "feedFirst": 3166,
-      "feedLast": 3183,
+      "feedFirst": 3466,
+      "feedLast": 3483,
       "columns": 4
     },
     {
@@ -265,28 +265,28 @@
       "sourceRange": "A1480:L1506",
       "firstSourceRow": 1480,
       "firstSourceColumn": 1,
-      "feedFirst": 3184,
-      "feedLast": 3210,
+      "feedFirst": 3484,
+      "feedLast": 3510,
       "columns": 12
     },
     {
       "key": "digitalLayers",
-      "sheet": "Реестр инициатив",
-      "sourceRange": "AZ7:AZ226",
+      "sheet": "Паспорта",
+      "sourceRange": "AZ7:AZ326",
       "firstSourceRow": 7,
       "firstSourceColumn": 52,
-      "feedFirst": 3215,
-      "feedLast": 3434,
+      "feedFirst": 3515,
+      "feedLast": 3834,
       "columns": 1
     },
     {
       "key": "priorityInputs",
-      "sheet": "Реестр инициатив",
-      "sourceRange": "BA7:BF226",
+      "sheet": "Паспорта",
+      "sourceRange": "BA7:BF326",
       "firstSourceRow": 7,
       "firstSourceColumn": 53,
-      "feedFirst": 3439,
-      "feedLast": 3658,
+      "feedFirst": 3839,
+      "feedLast": 4158,
       "columns": 6
     },
     {
@@ -295,8 +295,8 @@
       "sourceRange": "A1550:A1550",
       "firstSourceRow": 1550,
       "firstSourceColumn": 1,
-      "feedFirst": 3663,
-      "feedLast": 3663,
+      "feedFirst": 4163,
+      "feedLast": 4163,
       "columns": 1
     }
   ],
@@ -534,7 +534,7 @@
       "headerRow": 2,
       "firstDataRow": 3,
       "firstColumn": 2,
-      "sourceRange": "B2:BG30"
+      "sourceRange": "B2:BG130"
     },
     "priorityInputs": {
       "sheetName": "Реестр инициатив",
@@ -713,5 +713,10 @@
   },
   "ideasSheetId": 807030037,
   "ideasSheetName": "Новые идеи",
-  "sourcePartitionPolicy": "ranges"
+  "sourcePartitionPolicy": "ranges",
+  "sourceLimits": {
+    "maximumRecords": 500,
+    "expectedRecords": 300,
+    "transportCapacity": 320
+  }
 }

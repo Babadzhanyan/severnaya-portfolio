@@ -11,16 +11,17 @@ export function decodeValue(cell){
  if(prefix==='b:'&&['0','1'].includes(body))return body==='1';
  throw new Error(prefix==='e:'?'Google Sheets сообщает об ошибке исходной ячейки':'Google Sheets передаёт ячейку для повторной проверки');
 }
-export function projectResponse(response,receivedAt=new Date().toISOString()){
+export function projectResponse(response,receivedAt=new Date().toISOString(),sourceConfig=config){
+ const config=sourceConfig,initiativeBlock=config.blocks.find(b=>b.key==='initiatives');
  if(response.status!=='ok'||!Array.isArray(response.table?.rows))throw new Error('Google Sheets ожидает доступ по ссылке и исправные формулы');
  const rows=response.table.rows;if(rows.length!==config.blocks.at(-1).feedLast||response.table.cols?.length!==config.transportColumns)throw new Error('Требуется полный состав данных Google Sheets');
  const grids=new Map([...new Set(config.blocks.map(b=>b.sheet))].map(v=>[v,new Map()]));
  for(const b of config.blocks)for(let r=0;r<=b.feedLast-b.feedFirst;r++)for(let c=0;c<b.columns;c++){const value=decodeValue(rows[b.feedFirst-1+r]?.c?.[c]);if(value!==null)grids.get(b.sheet).set(`${b.firstSourceRow+r}:${b.firstSourceColumn+c}`,value);}
- const get=(r,c,s='Реестр инициатив')=>grids.get(s).get(`${r}:${c}`)??null;
+ const get=(r,c,s=initiativeBlock.sheet)=>grids.get(s).get(`${r}:${c}`)??null;
  const colNo=s=>[...s].reduce((a,c)=>a*26+c.charCodeAt(0)-64,0);
  const table=(key,keys,dates=[],keep=(x)=>!!x[keys[0]])=>{const b=config.blocks.find(x=>x.key===key);return Array.from({length:b.feedLast-b.feedFirst+1},(_,r)=>Object.fromEntries([['_row',b.firstSourceRow+r],...keys.map((key,c)=>[key,dates.includes(key)?dateText(get(b.firstSourceRow+r,b.firstSourceColumn+c,b.sheet)):get(b.firstSourceRow+r,b.firstSourceColumn+c,b.sheet)])])).filter(keep);};
  const initiatives=[];const unique=new Set();
- for(let r=7;r<=226;r++){const code=get(r,1);if(!code)continue;if(!/^ИТ-\d{3}$/.test(code)||unique.has(code))throw new Error('Реестр требует уникальные коды ИТ-001');unique.add(code);
+ for(let r=initiativeBlock.firstSourceRow;r<initiativeBlock.firstSourceRow+initiativeBlock.feedLast-initiativeBlock.feedFirst+1;r++){const code=get(r,1);if(!code)continue;if(!/^ИТ-\d{3}$/.test(code)||unique.has(code))throw new Error('Реестр требует уникальные коды ИТ-001');unique.add(code);
   const i={_row:r,_source_row:r-4};for(const f of schema.columns){const value=get(r,colNo(f.column));i[f.key]=f.type==='datetime'?dateTimeText(value):f.type==='date'?dateText(value):value;}
   if(i.digital_layer!==null&&i.digital_layer!==''&&!schema.lists.digital_layer.includes(i.digital_layer))throw new Error('Уровень трансформации требует значение из справочника');
   const raw=String(i.sources||'');const meta=raw.match(/Паспортные метаданные: (\{[^\n]+\})/);let p={};if(meta){try{p=JSON.parse(meta[1]);}catch{throw new Error('Требуется проверка происхождения '+code);}}
@@ -28,7 +29,7 @@ export function projectResponse(response,receivedAt=new Date().toISOString()){
   if(config.sourcePartitionPolicy==='ranges'){
    const main=config.actualBlocks?.initiatives,idea=config.actualBlocks?.ideas,block=config.blocks.find(b=>b.key==='initiatives');
    const last=Number(String(main?.sourceRange||'').match(/:[A-Z]+(\d+)$/)?.[1]),mainCount=last-Number(main?.firstDataRow)+1;
-   if(!Number.isSafeInteger(mainCount)||mainCount<1||mainCount>220||!idea||!block)throw new Error('Диапазоны реестра требуют проверку состава');
+   if(!Number.isSafeInteger(mainCount)||mainCount<1||mainCount>500||!idea||!block)throw new Error('Диапазоны реестра требуют проверку состава');
    const boundary=block.firstSourceRow+mainCount;
    configuredLocation=r>=boundary?{sheetId:idea.sheetId,sheetName:idea.sheetName,row:idea.firstDataRow+r-boundary}:undefined;
   }
@@ -38,7 +39,7 @@ export function projectResponse(response,receivedAt=new Date().toISOString()){
   i.execution_fact=normalizeExecutionFact(p.execution_fact);
   i.candidate_employee=display(i.initiative_lead||'Требуется назначение');i.business_stage=String(i.process||'Требуется привязка').split(' / ')[0];i.additional_business_stages=(raw.match(/Дополнительные участки: ([^\n]+)/)?.[1]||'').split(', ').filter(v=>v&&v!=='Связи уточняет владелец');initiatives.push(i);
  }
- if(!initiatives.length)throw new Error('Источник передаёт заполненный реестр инициатив');const aliases=initiatives.flatMap(i=>i.provenance.retired_aliases);if(new Set(aliases).size!==aliases.length||aliases.some(code=>unique.has(code)))throw new Error('Прежние коды требуют единственную связь с текущим паспортом');
+ if(initiatives.length<(config.sourceLimits?.expectedRecords||1)||initiatives.length>(config.sourceLimits?.maximumRecords||500))throw new Error('Источник передаёт полный состав реестра инициатив');const aliases=initiatives.flatMap(i=>i.provenance.retired_aliases);if(new Set(aliases).size!==aliases.length||aliases.some(code=>unique.has(code)))throw new Error('Прежние коды требуют единственную связь с текущим паспортом');
  const staff=table('staff',['employee','it_group','role','curator','assignment_status','assigned_count','in_work_count','historical_count','source']);
  const params=table('parameters',['code','process','name','unit','value','period','source','approved_by','approved_at','readiness','applicability'],['approved_at']);
  const details={};
@@ -58,5 +59,5 @@ export function projectResponse(response,receivedAt=new Date().toISOString()){
  const scenario=config.blocks.find(b=>b.key==='productionScenario'||b.key==='productionInput'||b.key==='productionInputJSON');let productionInput=null;if(scenario){const raw=get(scenario.firstSourceRow,scenario.firstSourceColumn,scenario.sheet);if(raw){try{productionInput=typeof raw==='string'?JSON.parse(raw):raw;}catch{throw new Error('Лист «Калькулятор прибыли» требует проверку структуры расчёта');}}}
  const annualBlock=config.blocks.find(b=>b.key==='annualActualInputJSON');let annualActualInput=null;if(annualBlock){const raw=get(annualBlock.firstSourceRow,annualBlock.firstSourceColumn,annualBlock.sheet);if(raw){try{annualActualInput=typeof raw==='string'?JSON.parse(raw):raw;}catch{throw new Error('Годовой расчёт требует проверку исходных данных');}}}
  const modelTables=Object.fromEntries(config.blocks.filter(b=>!['snapshot','initiatives','stageDeadlines','plan','resources','decisions','actuals','capacity','levers','ledger','previous_meta','previousSnapshot','parameters','staff','annualHistory','tracker','productionInputJSON','productionScenario','productionInput'].includes(b.key)).map(b=>[b.key,{values:Array.from({length:b.feedLast-b.feedFirst+1},(_,r)=>Array.from({length:b.columns},(_,c)=>get(b.firstSourceRow+r,b.firstSourceColumn+c,b.sheet))),sourceSheet:config.actualBlocks?.[b.key]?.sheetName,sourceRange:config.actualBlocks?.[b.key]?.sourceRange}]));
- return {schemaVersion:config.schemaVersion,modelTables,productionInput,annualActualInput,retiredAliasCount:aliases.length,originalRecordCount:initiatives.length+aliases.length,sourceMode:'google',sourceUrl:`https://docs.google.com/spreadsheets/d/${config.spreadsheetId}/edit#gid=${config.masterSheetId}`,receivedAt,asOf:dateText(get(1,10)),previousAsOf:dateText(get(2325,3)),snapshotMethod:get(2325,7),pmoCurator:get(2325,9),portfolioCurator:get(2325,9),director:staff.find(s=>/^(?:Руководитель (?:отдела|департамента) ИТ|Директор)/i.test(String(s.role)))?.employee||'Сергей Белов',fileName:'Google Sheets / Портфель инициатив ИТ 2027',cacheReady:true,dirty:false,initiatives,staff,parameters:params,annualHistory:history,...details,schema,provenance:Object.fromEntries(initiatives.map(i=>[i.code,i.provenance]))};
+ return {schemaVersion:config.schemaVersion,modelTables,productionInput,annualActualInput,retiredAliasCount:aliases.length,originalRecordCount:initiatives.length+aliases.length,sourceMode:'google',sourceUrl:`https://docs.google.com/spreadsheets/d/${config.spreadsheetId}/edit#gid=${config.masterSheetId}`,receivedAt,asOf:dateText(get(1,10,'Реестр инициатив')),previousAsOf:dateText(get(2325,3,'Реестр инициатив')),snapshotMethod:get(2325,7,'Реестр инициатив'),pmoCurator:get(2325,9,'Реестр инициатив'),portfolioCurator:get(2325,9,'Реестр инициатив'),director:staff.find(s=>/^(?:Руководитель (?:отдела|департамента) ИТ|Директор)/i.test(String(s.role)))?.employee||'Сергей Белов',fileName:'Google Sheets / Портфель инициатив ИТ 2027',cacheReady:true,dirty:false,initiatives,staff,parameters:params,annualHistory:history,...details,schema,provenance:Object.fromEntries(initiatives.map(i=>[i.code,i.provenance]))};
 }

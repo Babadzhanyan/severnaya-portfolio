@@ -3,7 +3,9 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import {productionNodes,productionLinks,parentMeatLink,mainStages,supportFunctions,allPlantNodes,primaryPlantNode,matches,plantCoverage} from './plant.js';
 import {normalizeManifest} from '../data/production-assets.js';
-import {projectResponse} from '../data/projector.js';
+import {projectResponse as rawProjectResponse} from '../data/projector.js';
+import config from './fixtures/source_config_v18.json' with {type:'json'};
+const projectResponse=(response)=>rawProjectResponse(response,undefined,config);
 const actual=projectResponse(JSON.parse(fs.readFileSync(new URL('./fixtures/ownership_fixture_v15.json',import.meta.url),'utf8'))).initiatives;
 test('Карта сохраняет13 производственных узлов,17 связей и15 служб образца',()=>{
   assert.equal(productionNodes.length,13);assert.equal(productionLinks.length,17);assert.equal(supportFunctions.length,15);

@@ -222,7 +222,8 @@ def project_response(response: dict, config=None, *, minimum_records=190):
             for col in range(b["columns"]):
                 grid[b["firstSourceRow"] + offset, b["firstSourceColumn"] + col] = decoded[b["feedFirst"] - 1 + offset][col]
 
-    def get(row, col, sheet="Реестр инициатив"):
+    def get(row, col, sheet=None):
+        sheet = sheet or blocks["initiatives"]["sheet"]
         return grids.get(sheet, {}).get((row, col))
 
     def column_no(column):
@@ -279,7 +280,7 @@ def project_response(response: dict, config=None, *, minimum_records=190):
             main, idea = cfg.get("actualBlocks", {}).get("initiatives"), cfg.get("actualBlocks", {}).get("ideas")
             match = re.search(r":[A-Z]+(\d+)$", str((main or {}).get("sourceRange", "")))
             count = int(match[1]) - int((main or {}).get("firstDataRow", 0)) + 1 if match else 0
-            if not 1 <= count <= 220 or not isinstance(idea, dict):
+            if not 1 <= count <= 500 or not isinstance(idea, dict):
                 raise SourceError("Диапазоны реестра требуют проверку состава")
             boundary = blocks["initiatives"]["firstSourceRow"] + count
             configured_location = {"sheetId": idea["sheetId"], "sheetName": idea["sheetName"], "row": idea["firstDataRow"] + row - boundary} if row >= boundary else None
@@ -332,7 +333,7 @@ def project_response(response: dict, config=None, *, minimum_records=190):
             record["it_group"] = member["it_group"]
         record["curator"] = display((coordinator.get("curator") if coordinator else None) or "Требуется куратор")
         initiatives.append(record)
-    if len(initiatives) < minimum_records:
+    if len(initiatives) < max(minimum_records, cfg.get("sourceLimits", {}).get("expectedRecords", 1)) or len(initiatives) > cfg.get("sourceLimits", {}).get("maximumRecords", 500):
         raise SourceError("Реестр требует проверку полноты состава инициатив")
     retired = set()
     for record in initiatives:
@@ -347,9 +348,9 @@ def project_response(response: dict, config=None, *, minimum_records=190):
     result = {
         "schemaVersion": cfg["schemaVersion"], "projectionVersion": PROJECTOR_VERSION, "sourceMode": "google",
         "sourceUrl": f"https://docs.google.com/spreadsheets/d/{SPREADSHEET_ID}/edit#gid={cfg['masterSheetId']}",
-        "receivedAt": utc_now(), "asOf": date_text(get(1, 10)),
-        "previousAsOf": date_text(get(2325, 3)), "snapshotMethod": get(2325, 7),
-        "pmoCurator": get(2325, 9), "portfolioCurator": get(2325, 9), "director": director,
+        "receivedAt": utc_now(), "asOf": date_text(get(1, 10, "Реестр инициатив")),
+        "previousAsOf": date_text(get(2325, 3, "Реестр инициатив")), "snapshotMethod": get(2325, 7, "Реестр инициатив"),
+        "pmoCurator": get(2325, 9, "Реестр инициатив"), "portfolioCurator": get(2325, 9, "Реестр инициатив"), "director": director,
         "fileName": "Google Sheets / Портфель инициатив ИТ 2027", "cacheReady": True, "dirty": False,
         "initiatives": initiatives, **data, "schema": schema,
         "provenance": {i["code"]: i["provenance"] for i in initiatives},

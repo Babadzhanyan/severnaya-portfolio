@@ -18,6 +18,8 @@ function ProvenanceValue({i,name,children}) {
 export default function PassportCanvas({data,i}) {
   if(!i)return null;
   const aliases=aliasCodes(i),supporting=i.effect_role==='Поддерживающий вклад';
+  const proposal=i.provenance?.assessment?.proposal, ranges=proposal?.preliminary_ranges;
+  const rangeText=(v,unit)=>Array.isArray(v)?`${fmt(v[0],2)}–${fmt(v[1],2)} ${unit} / предварительная оценка`:'Требуется подтверждение';
   const stageItems=stages.map(([code,label])=>({code,label}));
   const deadline=deadlineStatus(data,i),isIdea=isNewIdea(i),historical=isHistorical(i),fact=executionFact(i);
   return <article className="passport-core passport-canvas" data-code={i.code}>
@@ -45,7 +47,7 @@ export default function PassportCanvas({data,i}) {
       </section>
       <section className="pc-project" aria-label="Описание, статус и план проекта">
         <h2><Icon name="gantt"/>Что и когда</h2>
-        <Field i={i} name="scope" label="Описание проекта и состав работ" icon="product"/>
+        <Field i={i} name="scope" label="Описание проекта и состав работ" icon="product"/>{ranges&&<Field i={i} name="priority_duration_months" label="Срок реализации">{rangeText(ranges.duration_months,'мес')}</Field>}
         <div className="pc-project-status">
           <div className="pc-stage-label"><span>{fact?fact.basis==='user_confirmation'?'Стадия по подтверждённому выполнению':'Стадия по исходному реестру':'Стадия проекта'}</span><ProvenanceValue i={i} name="stage">{display(i.stage)||'Требуется стадия'}</ProvenanceValue></div>
           <PassportStagePath compact stages={stageItems} currentStage={stageCode(i)}/>
@@ -61,7 +63,7 @@ export default function PassportCanvas({data,i}) {
         </div>
         <div className="pc-project-conditions">
           <div className="pc-risk"><Field i={i} name="risk" label="Главный риск" icon="risk"/><Field i={i} name="risk_action" label="Действие и владелец риска" icon="shield"/></div>
-          <Field i={i} name="dependency_codes" label="Зависимости" icon="dependency" empty="Требуется проверка"/>
+          {proposal&&<Field i={i} name="risk" label="Критерий прекращения">{proposal.kill_criterion}</Field>}<Field i={i} name="dependency_codes" label="Зависимости" icon="dependency" empty="Требуется проверка"/>
         </div>
         <Field i={i} name="effect_formula" label="Связь показателя с финансовым эффектом"/>
         <div className="pc-effect-role"><Field i={i} name="effect_role" label="Роль в финансовом эффекте" empty="Требуется роль эффекта"/><Field i={i} name="effect_group" label="Код конечного эффекта" empty="Требуется связь эффекта"/></div>
@@ -72,13 +74,13 @@ export default function PassportCanvas({data,i}) {
         <section className="pc-team-resources">
           <h2><Icon name="resources"/>Команда и трудозатраты</h2>
           <Field i={i} name="team" label="Команда и роли" icon="teams" empty="Требуется состав"/>
-          {!historical&&<Field i={i} name="total_hours" label="Ресурсы ИТ 2027, ч" icon="clock" className="pc-resource-number"/>}
-        </section>
+          {!historical&&<Field i={i} name="total_hours" label={ranges?'Работа ИТ':'Ресурсы ИТ 2027, ч'} icon="clock" className="pc-resource-number">{ranges?rangeText(ranges.hours_it,'ч'):display(i.total_hours)||'Требуется заполнение'}</Field>}
+        {ranges&&<Field i={i} name="team" label="Участие бизнеса">{rangeText(ranges.hours_business,'ч')}</Field>}</section>
         <section className="pc-economy">
           <h2><Icon name="money"/>Деньги проекта</h2>
           <Field i={i} name="approved_budget" label="Утверждённый бюджет проекта, млн руб" format={v=>fmt(v,2,'Требуется утверждение')} className="pc-budget"/>
-          <div className="pc-payments"><Field i={i} name="one_off_2027" label="Платежи внедрения 2027, млн руб" format={v=>fmt(v)}/><Field i={i} name="run_2027" label="Платежи сопровождения 2027, млн руб" format={v=>fmt(v)}/></div>
-          {!historical&&<Field i={i} name="priority_hour_rate" label="Начисленный фонд оплаты труда 2027, млн руб">{fmt(hours(i)!==null&&isNumber(i.priority_hour_rate)?hours(i)*i.priority_hour_rate/1e6:null,2,'Требуется оценка')}</Field>}
+          {ranges&&<Field i={i} name="one_off_2027" label="Закупки">{rangeText(ranges.purchases_mrub,'млн руб')}</Field>}<div className="pc-payments"><Field i={i} name="one_off_2027" label="Платежи внедрения 2027, млн руб" format={v=>fmt(v)}/><Field i={i} name="run_2027" label="Платежи сопровождения 2027, млн руб" format={v=>fmt(v)}/></div>
+          {!historical&&<Field i={i} name="priority_hour_rate" label={ranges?'Начисленная оплата труда, млн руб':'Начисленный фонд оплаты труда 2027, млн руб'}>{ranges?rangeText(ranges.gross_payroll_mrub,'млн руб'):fmt(hours(i)!==null&&isNumber(i.priority_hour_rate)?hours(i)*i.priority_hour_rate/1e6:null,2,'Требуется оценка')}</Field>}
           <p className="pc-finance-status">Согласование финансов: <ProvenanceValue i={i} name="finance_status">{display(i.finance_status)||'Финансовые значения проходят согласование'}</ProvenanceValue></p>
         </section>
       </aside>

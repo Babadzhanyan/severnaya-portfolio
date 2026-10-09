@@ -1,8 +1,9 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
-import {projectResponse} from '../data/projector.js';
-import config from '../data/live-config.js';
+import {projectResponse as rawProjectResponse} from '../data/projector.js';
+import config from './fixtures/source_config_v18.json' with {type:'json'};
+const projectResponse=(response)=>rawProjectResponse(response,undefined,config);
 import {facetedOptions,filterPortfolio,group,fieldSource,googleLink,isNewIdea,color,cleanSourceDisplay} from './portfolio.js';
 
 async function readFixture(){
