@@ -4,32 +4,33 @@ import Icon from './Icon.jsx';
 import './digital-pyramid.css';
 
 const meanings={
-  Ц0:{title:'Устойчивый ИТ-контур',icon:'shield',purpose:'Сквозная опора поддерживает все уровни',description:'Инфраструктура, безопасность и способности команды поддерживают работу систем; проектный офис ведёт изменения',capabilities:['Инфраструктура','Безопасность','Способности команды']},
-  Ц1:{title:'Датчики и автоматика',icon:'sensor',purpose:'Автоматика передаёт первичные данные всей цепочки',description:'Датчики и контроллеры фиксируют параметры производства и поддерживающих служб'},
-  Ц2:{title:'Производственные системы',icon:'process',purpose:'Производство и инженерные службы получают оперативное управление',description:'Системы участков связывают планы, операции, состояние оборудования и обслуживание',systems:'INNOVA / SKOV / FarmOnline'},
-  Ц3:{title:'Учёт и цифровые процессы',icon:'accounting',purpose:'Учёт и приложения формализуют процессы всей цепочки',description:'Персонал, финансы, закупки и производство связывают документы, данные и операции',parallel:['1С / учёт','Собственные приложения'],systems:'1С / Excel'},
-  Ц4:{title:'Платформа данных и интеграции',icon:'integration',purpose:'Платформа объединяет данные систем',description:'Единая модель данных сохраняет сведения и правила работы внутри компании'},
-  Ц5:{title:'Аналитика и искусственный интеллект',icon:'analytics',purpose:'Аналитика поддерживает решения',description:'Отчётность и прогнозные модели связывают показатели с производственными и коммерческими решениями'}
+  Ц0:{title:'Устойчивый ИТ-контур',icon:'shield',meaning:'Инфраструктура, безопасность и команда поддерживают системы и изменения'},
+  Ц1:{title:'Датчики и автоматика',icon:'sensor',meaning:'Датчики фиксируют параметры производства и передают первичные данные'},
+  Ц2:{title:'Производственные системы',icon:'process',meaning:'Планы, операции и обслуживание оборудования управляются в INNOVA / SKOV / FarmOnline'},
+  Ц3:{title:'Учёт и цифровые процессы',icon:'accounting',meaning:'1С и собственные приложения связывают документы и операции всей цепочки'},
+  Ц4:{title:'Платформа данных и интеграции',icon:'integration',meaning:'Единая модель объединяет сведения и правила работы всех систем'},
+  Ц5:{title:'Аналитика и искусственный интеллект',icon:'analytics',meaning:'Отчётность и прогнозы помогают выбирать производственные и коммерческие решения'}
 };
 
 function SegmentShape({apex=false}){
   return <svg className="dp-segment-shape" viewBox="0 0 400 100" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path d={apex?'M200 2 398 98H2Z':'M20 2H380L398 98H2Z'}/></svg>;
 }
 
-export default function DigitalPyramid({items=[],selected='',onLayer,onResult}){
+export default function DigitalPyramid({items=[],selected='',onLayer,onResult,renderResult,renderLevel}){
   const levels=layerSummary(items).reverse();
-  return <figure className="digital-pyramid">
+  const resultContent=<><Icon name="effect" size={24}/><span><strong>Результаты бизнеса</strong><small>Годные кг / переработка<br/>Цена / прибыль</small></span></>;
+  return <figure className={'digital-pyramid '+(renderLevel||renderResult?'dp-with-kpis':'')}>
     <div className="dp-row dp-apex-row">
-      <div className="dp-graphic-cell">{onResult?<button type="button" className="dp-apex" onClick={onResult} aria-label="Результаты бизнеса / открыть расчёт эффектов"><SegmentShape apex/><span><Icon name="effect" size={24}/>Результаты бизнеса</span></button>:<div className="dp-apex"><SegmentShape apex/><span><Icon name="effect" size={24}/>Результаты бизнеса</span></div>}</div>
-      <div className="dp-purpose"><div><h3>Компания оценивает инициативы по результатам бизнеса</h3><p>Повышение выхода годной продукции, доли разделки и глубокой переработки, средней цены</p></div></div>
+      <div className="dp-graphic-cell">{onResult?<button type="button" className="dp-apex" onClick={onResult} aria-label="Результаты бизнеса / открыть расчёт эффектов"><SegmentShape apex/><span className="dp-apex-content">{resultContent}</span></button>:<div className="dp-apex"><SegmentShape apex/><span className="dp-apex-content">{resultContent}</span></div>}</div>
+      {renderResult&&<div className="dp-kpis dp-result-kpis">{renderResult()}</div>}
     </div>
     <ol className="dp-levels" aria-label="Уровни цифровой трансформации от аналитики к общей опоре">
       {levels.map((l,k)=>{const meaning=meanings[l.code],value=l.code+' '+l.name,active=selected===value,enabled=l.count>0&&!!onLayer;
-        return <li key={l.code} className={'dp-row '+(l.code==='Ц0'?'dp-foundation-row':'')} style={{'--dp-width':(70+k*6)+'%'}}>
+        return <li key={l.code} data-pyramid-level={l.code} className={'dp-row '+(l.code==='Ц0'?'dp-foundation-row':'')} style={{'--dp-width':(70+k*6)+'%'}}>
           <div className="dp-graphic-cell"><button type="button" className={'dp-segment '+(active?'dp-selected':'')} disabled={!enabled} aria-pressed={active} aria-label={`${l.code} ${meaning.title} / количество инициатив: ${l.count}`} onClick={()=>onLayer(value)}>
-            <SegmentShape/><span className="dp-segment-content"><span className="dp-level-code"><Icon name={meaning.icon} size={22}/>{l.code}</span><span className="dp-level-name">{meaning.title}{meaning.parallel&&<span className="dp-parallel">{meaning.parallel.map(text=><span key={text}>{text}</span>)}</span>}{meaning.capabilities&&<span className="dp-capabilities">{meaning.capabilities.join(' / ')}</span>}</span><span className="dp-count"><strong>{fmt(l.count,0)}</strong><small>всего</small>{active&&<small className="dp-selected-label">Выбран</small>}</span></span>
+            <SegmentShape/><span className="dp-segment-content"><span className="dp-level-code"><Icon name={meaning.icon} size={22}/>{l.code}</span><span className="dp-level-copy"><span className="dp-level-name">{meaning.title}</span><span className="dp-level-meaning">{meaning.meaning}</span></span><span className="dp-count"><strong>{fmt(l.count,0)}</strong><small>всего</small>{active&&<small className="dp-selected-label">Выбран</small>}</span></span>
           </button></div>
-          <div className="dp-purpose"><div><h3>{meaning.purpose}</h3><p>{meaning.description}</p>{meaning.systems&&<small>{meaning.systems}</small>}{l.code==='Ц0'&&<small>Общая опора уровней Ц1–Ц5</small>}</div></div>
+          {renderLevel&&<div className="dp-kpis">{renderLevel(l)}</div>}
         </li>;
       })}
     </ol>

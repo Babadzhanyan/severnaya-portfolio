@@ -40,15 +40,14 @@ test('Нативные кнопки сохраняют выбор уровня �
 test('Пирамида связывает продукты и бизнесрезультат с одной иерархией инициатив',()=>{
   const data={initiatives:items,ledger:[]},html=renderToStaticMarkup(React.createElement(Pyramid,{data,list:items,contextList:items,onView:()=>{},onTeamLayer:()=>{}}));
   assert.match(html,/INNOVA \/ SKOV \/ FarmOnline/);
-  assert.match(html,/1С \/ учёт/);
-  assert.match(html,/Собственные приложения/);
-  assert.match(html,/Повышение выхода годной продукции/);
-  assert.match(html,/инженерные службы получают оперативное управление/);
+  assert.match(html,/1С и собственные приложения/);
+  assert.match(html,/Годные кг \/ переработка/);
+  assert.match(html,/Планы, операции и обслуживание оборудования управляются/);
   assert.match(html,/Согласованных конечных эффектов: 0/);
   assert.match(html,/Требуется оценка/);
   assert.match(html,/Иерархия инициатив по уровням трансформации/);
   assert.equal((html.match(/class="transformation-initiative"/g)||[]).length,items.length);
-  assert.doesNotMatch(html,/<table|team-layer-matrix|transformation-meaning|Годовой потенциал до затрат|→|data-icon="arrow"/);
+  assert.doesNotMatch(html,/team-layer-matrix|transformation-meaning|Годовой потенциал до затрат|→|data-icon="arrow"/);
 });
 
 test('Иерархия сохраняет уровень, команду, ответственного и прямые переходы',()=>{
@@ -100,4 +99,28 @@ test('Публичный список показывает двадцать ин
  assert.match(publicHtml,/1–20 из 200/);
  assert.equal(new Set([...printHtml.matchAll(/data-code="(ИТ-\d{3})"/g)].map(m=>m[1])).size,200);
  assert.doesNotMatch(publicHtml,/<details|<summary|EBIT|амортизац/);
+});
+
+
+test('Показатели компании и каждого уровня располагаются рядом с единственной пирамидой',()=>{
+  const calls=[],html=render({items,onLayer:()=>{},renderResult:()=>React.createElement('section',{'data-kpi-company':true},'Прибыль / продукция / переработка / цена'),renderLevel:level=>{calls.push(level.code);return React.createElement('section',{'data-kpi-level':level.code},'Показатели '+level.code)}});
+  assert.deepEqual(calls,['Ц5','Ц4','Ц3','Ц2','Ц1','Ц0']);
+  assert.equal((html.match(/<figure/g)||[]).length,1);
+  assert.equal((html.match(/class="dp-kpis/g)||[]).length,7);
+  assert.equal((html.match(/class="dp-level-meaning"/g)||[]).length,6);
+  for(const code of calls){
+    const start=html.indexOf('data-pyramid-level="'+code+'"'),end=html.indexOf('</li>',start),row=html.slice(start,end);
+    assert.match(row,new RegExp('data-kpi-level="'+code+'"'));
+    assert.ok(row.indexOf('dp-segment-content')<row.indexOf('data-kpi-level'));
+  }
+  assert.doesNotMatch(html,/dp-purpose|Компания оценивает инициативы|Сквозная опора поддерживает все уровни/);
+});
+
+test('Самостоятельная пирамида содержит определения внутри сегментов и сохраняет один состав',()=>{
+  const html=render({items});
+  assert.equal((html.match(/class="dp-level-meaning"/g)||[]).length,6);
+  assert.doesNotMatch(html,/class="dp-kpis|dp-with-kpis|dp-purpose/);
+  assert.match(html,/Датчики фиксируют параметры производства и передают первичные данные/);
+  assert.match(html,/INNOVA \/ SKOV \/ FarmOnline/);
+  assert.equal((html.match(/disabled=""/g)||[]).length,6);
 });
