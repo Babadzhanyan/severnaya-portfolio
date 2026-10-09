@@ -1,0 +1,700 @@
+{
+  "$defs": {
+    "Capacity": {
+      "properties": {
+        "code": {
+          "title": "Код",
+          "type": "string"
+        },
+        "name": {
+          "title": "Название",
+          "type": "string"
+        },
+        "unit": {
+          "enum": [
+            "кг",
+            "гол",
+            "упак"
+          ],
+          "title": "Единица",
+          "type": "string"
+        },
+        "capacity_per_month": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Мощность за месяц / ёмкость склада"
+        },
+        "baseline_flow_per_meat_kg": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Поток базы на кг мяса"
+        },
+        "target_flow_per_meat_kg": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Поток цели на кг мяса"
+        },
+        "source": {
+          "default": "",
+          "title": "Источник",
+          "type": "string"
+        },
+        "confirmed": {
+          "default": false,
+          "title": "Подтверждено",
+          "type": "boolean"
+        },
+        "capacity_basis": {
+          "default": "monthly_flow",
+          "enum": [
+            "monthly_flow",
+            "peak_stock"
+          ],
+          "title": "Основа мощности",
+          "type": "string"
+        },
+        "baseline_peak_stock": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Пиковый запас базы"
+        },
+        "target_peak_stock": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Пиковый запас цели"
+        },
+        "target_capacity_per_month": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Мощность цели за месяц / ёмкость склада"
+        }
+      },
+      "required": [
+        "code",
+        "name",
+        "unit",
+        "capacity_per_month",
+        "baseline_flow_per_meat_kg",
+        "target_flow_per_meat_kg"
+      ],
+      "title": "Capacity",
+      "type": "object",
+      "additionalProperties": false
+    },
+    "CostItem": {
+      "properties": {
+        "code": {
+          "title": "Код",
+          "type": "string"
+        },
+        "name": {
+          "title": "Название",
+          "type": "string"
+        },
+        "driver": {
+          "title": "Физический драйвер",
+          "type": "string"
+        },
+        "baseline_rate": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Ставка базы"
+        },
+        "target_rate": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Ставка цели"
+        },
+        "source": {
+          "default": "",
+          "title": "Источник",
+          "type": "string"
+        },
+        "confirmed": {
+          "default": false,
+          "title": "Подтверждено",
+          "type": "boolean"
+        },
+        "unit": {
+          "anyOf": [
+            {
+              "enum": [
+                "руб/кг",
+                "руб/гол"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Единица"
+        }
+      },
+      "required": [
+        "code",
+        "name",
+        "driver",
+        "baseline_rate"
+      ],
+      "title": "CostItem",
+      "type": "object",
+      "additionalProperties": false
+    },
+    "OperationalChanges": {
+      "properties": {
+        "eggs_pct": {
+          "default": 0,
+          "title": "Изменение закладки яиц",
+          "type": "number",
+          "x-unit": "%"
+        },
+        "hatch_pp": {
+          "default": 0,
+          "title": "Изменение выводимости",
+          "type": "number",
+          "x-unit": "п.п."
+        },
+        "chick_reject_pp": {
+          "default": 0,
+          "title": "Изменение отбраковки цыплят",
+          "type": "number",
+          "x-unit": "п.п."
+        },
+        "mortality_pp": {
+          "default": 0,
+          "title": "Изменение падежа",
+          "type": "number",
+          "x-unit": "п.п."
+        },
+        "average_weight_pct": {
+          "default": 0,
+          "title": "Изменение средней массы",
+          "type": "number",
+          "x-unit": "%"
+        },
+        "fcr_pct": {
+          "default": 0,
+          "title": "Изменение конверсии корма",
+          "type": "number",
+          "x-unit": "%"
+        },
+        "slaughter_yield_pp": {
+          "default": 0,
+          "title": "Изменение выхода мяса",
+          "type": "number",
+          "x-unit": "п.п."
+        }
+      },
+      "title": "OperationalChanges",
+      "type": "object",
+      "additionalProperties": false
+    },
+    "Product": {
+      "properties": {
+        "code": {
+          "title": "Код",
+          "type": "string"
+        },
+        "name": {
+          "title": "Название",
+          "type": "string"
+        },
+        "kind": {
+          "enum": [
+            "sale",
+            "loss",
+            "stock"
+          ],
+          "title": "Вид",
+          "type": "string"
+        },
+        "route_yields": {
+          "additionalProperties": {
+            "type": "number"
+          },
+          "title": "Выход по маршрутам",
+          "type": "object"
+        },
+        "baseline_price": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Цена базы",
+          "x-unit": "руб/кг после исключения НДС и скидок"
+        },
+        "target_price": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Цена цели",
+          "x-unit": "руб/кг после исключения НДС и скидок"
+        },
+        "target_route_yields": {
+          "anyOf": [
+            {
+              "additionalProperties": {
+                "type": "number"
+              },
+              "type": "object"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Выход цели по маршрутам"
+        },
+        "additional_demand_kg": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Дополнительный спрос",
+          "x-unit": "кг за исходный период"
+        },
+        "source": {
+          "default": "",
+          "title": "Источник",
+          "type": "string"
+        },
+        "confirmed": {
+          "default": false,
+          "title": "Подтверждено",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "code",
+        "name",
+        "kind",
+        "route_yields",
+        "baseline_price"
+      ],
+      "title": "Product",
+      "type": "object",
+      "additionalProperties": false
+    },
+    "ProductionBaseline": {
+      "properties": {
+        "period": {
+          "title": "Период базы",
+          "type": "string"
+        },
+        "months": {
+          "title": "Месяцев в исходном периоде",
+          "type": "integer"
+        },
+        "eggs_set": {
+          "title": "Яиц заложено",
+          "type": "number",
+          "x-unit": "шт за исходный период"
+        },
+        "hatch_rate": {
+          "title": "Выводимость",
+          "type": "number",
+          "x-unit": "доля 0…1"
+        },
+        "chick_reject_rate": {
+          "title": "Отбраковка цыплят",
+          "type": "number",
+          "x-unit": "доля 0…1"
+        },
+        "placed_chicks": {
+          "title": "Цыплят посажено",
+          "type": "number",
+          "x-unit": "гол за исходный период"
+        },
+        "live_heads": {
+          "title": "Голов сдано на убой",
+          "type": "number",
+          "x-unit": "гол за исходный период"
+        },
+        "live_kg": {
+          "title": "Живой вес",
+          "type": "number",
+          "x-unit": "кг за исходный период"
+        },
+        "mortality_rate": {
+          "title": "Падёж",
+          "type": "number",
+          "x-unit": "доля 0…1"
+        },
+        "fcr": {
+          "title": "Конверсия корма",
+          "type": "number",
+          "x-unit": "кг корма / кг живого веса"
+        },
+        "slaughter_yield": {
+          "title": "Выход мяса бройлера",
+          "type": "number",
+          "x-unit": "доля 0…1"
+        },
+        "feed_kg": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Расход корма",
+          "x-unit": "кг за исходный период"
+        },
+        "source": {
+          "default": "",
+          "title": "Источник",
+          "type": "string"
+        },
+        "confirmed": {
+          "default": false,
+          "title": "Подтверждено",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "period",
+        "months",
+        "eggs_set",
+        "hatch_rate",
+        "chick_reject_rate",
+        "placed_chicks",
+        "live_heads",
+        "live_kg",
+        "mortality_rate",
+        "fcr",
+        "slaughter_yield"
+      ],
+      "title": "ProductionBaseline",
+      "type": "object",
+      "additionalProperties": false
+    },
+    "Route": {
+      "properties": {
+        "code": {
+          "title": "Код",
+          "type": "string"
+        },
+        "name": {
+          "title": "Название",
+          "type": "string"
+        },
+        "kind": {
+          "enum": [
+            "whole",
+            "cut",
+            "deep"
+          ],
+          "title": "Вид",
+          "type": "string"
+        },
+        "baseline_share": {
+          "title": "Доля базы",
+          "type": "number",
+          "x-unit": "доля 0…1"
+        },
+        "target_share": {
+          "title": "Доля цели",
+          "type": "number",
+          "x-unit": "доля 0…1"
+        },
+        "added_mass_per_kg": {
+          "default": 0,
+          "title": "Добавочная масса базы",
+          "type": "number",
+          "x-unit": "кг / кг мяса маршрута"
+        },
+        "target_added_mass_per_kg": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Добавочная масса цели",
+          "x-unit": "кг / кг мяса маршрута"
+        },
+        "source": {
+          "default": "",
+          "title": "Источник",
+          "type": "string"
+        },
+        "confirmed": {
+          "default": false,
+          "title": "Подтверждено",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "code",
+        "name",
+        "kind",
+        "baseline_share",
+        "target_share"
+      ],
+      "title": "Route",
+      "type": "object",
+      "additionalProperties": false
+    }
+  },
+  "properties": {
+    "baseline": {
+      "$ref": "#/$defs/ProductionBaseline",
+      "title": "Производственная база"
+    },
+    "changes": {
+      "$ref": "#/$defs/OperationalChanges",
+      "title": "Изменения операционных параметров"
+    },
+    "routes": {
+      "items": {
+        "$ref": "#/$defs/Route"
+      },
+      "title": "Конечные маршруты",
+      "type": "array"
+    },
+    "products": {
+      "items": {
+        "$ref": "#/$defs/Product"
+      },
+      "title": "Конечные продукты",
+      "type": "array"
+    },
+    "costs": {
+      "items": {
+        "$ref": "#/$defs/CostItem"
+      },
+      "title": "Переменные расходы",
+      "type": "array"
+    },
+    "capacities": {
+      "items": {
+        "$ref": "#/$defs/Capacity"
+      },
+      "title": "Мощности участков",
+      "type": "array"
+    },
+    "baseline_fixed_expenses": {
+      "anyOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Постоянные расходы базы",
+      "x-unit": "руб за исходный период"
+    },
+    "target_fixed_expenses": {
+      "anyOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Постоянные расходы цели",
+      "x-unit": "руб за исходный период"
+    },
+    "costs_complete": {
+      "default": false,
+      "title": "Все расходы учтены",
+      "type": "boolean"
+    },
+    "expenses_confirmed": {
+      "default": false,
+      "title": "Расходы согласованы",
+      "description": "Финансовая служба проверила переменные ставки, сопоставимый состав продукции и период, покрытие продукции, однократный учёт логистики и ручных переносов. Подтверждение включает классификацию переменных и распределённых расходов",
+      "type": "boolean"
+    },
+    "demand_confirmed": {
+      "default": false,
+      "title": "Спрос согласован",
+      "type": "boolean"
+    },
+    "capacity_scope_confirmed": {
+      "default": false,
+      "title": "Все мощности учтены",
+      "type": "boolean"
+    },
+    "price_basis": {
+      "default": "После исключения НДС и скидок",
+      "title": "Основа цены",
+      "type": "string"
+    },
+    "currency": {
+      "default": "руб",
+      "title": "Валюта",
+      "type": "string"
+    },
+    "sources": {
+      "additionalProperties": {
+        "type": "string"
+      },
+      "title": "Источники параметров",
+      "type": "object"
+    },
+    "incremental_assumptions": {
+      "type": "object",
+      "title": "Предпосылки приростного расчёта",
+      "description": "Каждое подтверждение задаёт неизменность соответствующего расхода в сопоставимом сценарии. Пустой объект сохраняет все подтверждения выключенными. Недостающая предпосылка оставляет соответствующую денежную разницу пустой",
+      "default": {},
+      "properties": {
+        "unknown_rates_unchanged": {
+          "type": "boolean",
+          "title": "Неизвестные переменные ставки сохраняются",
+          "default": false
+        },
+        "unknown_fixed_expenses_unchanged": {
+          "type": "boolean",
+          "title": "Неизвестные постоянные расходы сохраняются",
+          "default": false
+        },
+        "unlisted_expenses_unchanged": {
+          "type": "boolean",
+          "title": "Расходы за пределами перечня сохраняются",
+          "default": false
+        },
+        "price_linked_expenses_unchanged": {
+          "type": "boolean",
+          "title": "Расходы, связанные с ценой, сохраняются",
+          "default": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "additional_depreciation": {
+      "anyOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Изменение амортизации",
+      "description": "Разница амортизации сценария и базы, руб. за сопоставимый период. Знак сохраняется; пустое значение оставляет операционную прибыль пустой",
+      "default": null
+    },
+    "depreciation_confirmed": {
+      "type": "boolean",
+      "title": "Амортизация согласована",
+      "description": "Финансовая служба проверила источник и сопоставимый период амортизации",
+      "default": false
+    },
+    "depreciation_source": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Источник амортизации",
+      "description": "Документ финансовой службы, расчёт и дата подтверждения",
+      "default": null
+    },
+    "depreciation_period": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Период амортизации",
+      "description": "Период изменения амортизации сопоставляется с базовым сценарием; пустое значение использует период базы",
+      "default": null
+    }
+  },
+  "required": [
+    "baseline",
+    "changes",
+    "routes",
+    "products"
+  ],
+  "title": "Производственный расчёт двух состояний",
+  "type": "object",
+  "description": "Физический выход, структура продукции, средняя цена и мост к изменению прибыли до процентов, налога на прибыль и амортизации",
+  "additionalProperties": false
+}

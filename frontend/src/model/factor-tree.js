@@ -1,0 +1,30 @@
+import {isNumber} from './portfolio.js';
+const delta=(a,b)=>isNumber(a)&&isNumber(b)?b-a:null;
+const sum=(...values)=>values.every(isNumber)?values.reduce((a,b)=>a+b,0):null;
+export function productionTreeModel(input,result){
+ const b=result?.baseline||{},t=result?.target||{},nodes=[];
+ const add=(id,title,unit,baseline,target,{change=delta(baseline,target),editor=null,formula='',source='',image=null}={})=>nodes.push({id,title,unit,baseline,target,change,editor,formula,source,image,index:isNumber(baseline)&&baseline!==0&&isNumber(target)?target/baseline:null});
+ add('ebit','Прирост EBIT','млн руб',null,null,{change:result?.period_delta_ebit,formula:'Прирост EBITDA − дополнительная амортизация'});
+ add('ebitda','Прирост EBITDA','млн руб',b.ebitda,t.ebitda,{change:result?.period_delta_ebitda,formula:'Изменение выручки − изменение расходов'});
+ add('depreciation','Дополнительная амортизация','млн руб',null,input?.additional_depreciation,{change:input?.additional_depreciation,editor:'depreciation',formula:'Амортизация того же периода'});
+ add('revenue','Выручка','млн руб',b.revenue,t.revenue,{formula:'Продажи × средняя цена'});
+ add('expenses','Операционные расходы','млн руб',sum(b.variable_expenses,b.fixed_expenses),sum(t.variable_expenses,t.fixed_expenses),{editor:'costs',formula:'Переменные + постоянные расходы'});
+ add('sales','Продажи','кг',b.sold_kg,t.sold_kg,{editor:'products',formula:'Сумма реализованных конечных продуктов'});
+ add('price','Средняя цена','руб / кг',b.average_price,t.average_price,{editor:'price',formula:'Выручка / масса тех же продаж',source:input?.sources?.prices});
+ add('variable','Переменные расходы','млн руб',b.variable_expenses,t.variable_expenses,{editor:'costs',formula:'Сумма физический драйвер × ставка'});
+ add('fixed','Постоянные расходы','млн руб',b.fixed_expenses,t.fixed_expenses,{editor:'fixed',formula:'Расходы сопоставимого периода'});
+ add('meat','Годное мясо','кг',b.meat_kg,t.meat_kg,{formula:'Живая масса × выход годного'});
+ add('mix','Выход конечной корзины','кг / кг',isNumber(b.meat_kg)&&b.meat_kg>0?b.sold_kg/b.meat_kg:null,isNumber(t.meat_kg)&&t.meat_kg>0?t.sold_kg/t.meat_kg:null,{editor:'mix',formula:'Продажи / годное мясо; структура и конечные выходы'});
+ add('liveweight','Живой вес','кг',b.live_kg,t.live_kg,{formula:'Головы на убой × средняя масса',image:'liveweight-v14.webp'});
+ add('yield','Выход годного','%',b.slaughter_yield,t.slaughter_yield,{editor:'slaughter_yield_pp',formula:'Изменение доли в процентных пунктах'});
+ add('heads','Головы на убой','гол',b.live_heads,t.live_heads,{formula:'База голов × индекс посадки × индекс сохранности'});
+ add('weight','Средняя масса птицы','кг / гол',b.average_weight_kg,t.average_weight_kg,{editor:'average_weight_pct',formula:'Живая масса / головы на убой'});
+ add('placement','Посадка цыплят','гол',b.placed_chicks,t.placed_chicks,{formula:'База посадки × индексы закладки, вывода и годных цыплят'});
+ add('survival','Сохранность птицы','%',isNumber(b.mortality_rate)?1-b.mortality_rate:null,isNumber(t.mortality_rate)?1-t.mortality_rate:null,{editor:'mortality_pp',formula:'1 − падёж'});
+ add('eggs','Закладка яиц','шт',b.eggs_set,t.eggs_set,{editor:'eggs_pct'});
+ add('hatch','Выводимость','%',b.hatch_rate,t.hatch_rate,{editor:'hatch_pp'});
+ add('reject','Выход годных цыплят','%',isNumber(b.chick_reject_rate)?1-b.chick_reject_rate:null,isNumber(t.chick_reject_rate)?1-t.chick_reject_rate:null,{editor:'chick_reject_pp',formula:'1 − отбраковка'});
+ add('feed','Расход корма','кг',b.feed_kg,t.feed_kg,{formula:'База расхода корма × индекс живой массы × индекс конверсии'});
+ add('fcr','Конверсия корма','кг / кг',b.fcr,t.fcr,{editor:'fcr_pct'});
+ return {nodes,byId:Object.fromEntries(nodes.map(n=>[n.id,n])),period:input?.baseline?.period,months:input?.baseline?.months,reconciliation:result?.reconciliation,monetaryReady:isNumber(result?.period_delta_ebitda)};
+}

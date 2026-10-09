@@ -1,0 +1,161 @@
+.ev-calculation,.ev-effect-bridge{margin:22px 0 26px;min-width:0}
+.ev-calculation figcaption,.ev-effect-bridge figcaption{margin-bottom:18px}
+.ev-effect-bridge figcaption p,.ev-calculation-note{font-size:13px;color:#555;margin-top:7px;line-height:1.4}
+.ev-production-flow{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));list-style:none;padding:0;margin:0 0 18px;gap:20px}
+.ev-production-flow li{position:relative;min-width:0}
+.ev-production-flow li+li:before{content:'→';position:absolute;left:-18px;top:91px;color:#6e8ca8;font-size:20px}
+.ev-production-object{height:84px;display:flex;align-items:center;justify-content:flex-start;color:#003c72;margin-bottom:7px}
+.ev-production-object img{max-width:100%;width:104px;height:82px;object-fit:contain;object-position:left center}
+.ev-production-flow h3{font-size:14px;line-height:1.3;margin-bottom:6px;min-height:36px}
+.ev-production-flow strong,.ev-feed-branch strong{display:block;color:#003c72;font-size:22px;font-weight:600;line-height:1.2;overflow-wrap:anywhere;font-variant-numeric:tabular-nums}
+.ev-production-flow small,.ev-feed-branch small{display:block;color:#555;font-size:13px;line-height:1.4;margin-top:5px}
+.ev-calculation .ev-value-delta{color:#003c72}
+.ev-lever-notes{margin-top:9px;color:#555;font-size:13px;line-height:1.4}
+.ev-lever-notes span{display:block}
+.ev-feed-branch{display:grid;grid-template-columns:28px minmax(150px,.9fr) minmax(180px,1.2fr);gap:12px;align-items:start;border-top:1px solid #edf3f8;border-bottom:1px solid #edf3f8;padding:15px 0;margin:16px 0;color:#003c72}
+.ev-feed-branch h3{font-size:14px;margin-bottom:5px}
+.ev-feed-branch strong{font-size:19px}
+.ev-feed-branch p{color:#1a1a1a;font-size:14px;line-height:1.4}
+.ev-feed-branch p span{display:block;color:#555;font-size:13px;margin-top:5px}
+.ev-pricing-equation,.ev-profit-equation{display:grid;grid-template-columns:1fr 16px 1fr 16px 1fr;gap:10px;align-items:start;margin-top:20px}
+.ev-profit-equation{grid-template-columns:1fr 16px 1fr 16px 1fr 16px 1fr;border-top:1px solid #edf3f8;padding-top:18px}
+.ev-pricing-equation>div,.ev-profit-equation>div{min-width:0}
+.ev-pricing-equation span,.ev-profit-equation span{display:flex;gap:7px;align-items:center;font-size:13px;color:#555;min-height:32px;line-height:1.25}
+.ev-pricing-equation .ui-icon,.ev-profit-equation .ui-icon{flex-shrink:0;color:#003c72}
+.ev-pricing-equation strong,.ev-profit-equation strong{display:block;color:#003c72;font-size:22px;font-weight:600;line-height:1.2;overflow-wrap:anywhere;font-variant-numeric:tabular-nums;margin:7px 0 5px}
+.ev-pricing-equation small,.ev-profit-equation small{font-size:13px;line-height:1.4;color:#555;display:block}
+.ev-operator{color:#6e8ca8;font-size:20px;font-weight:400;padding-top:41px}
+.ev-equation-result{padding-left:10px;border-left:3px solid #003c72}
+.ev-equation-result strong{font-weight:700}
+.ev-bridge-scroll{overflow:auto;min-width:0}
+.ev-waterfall{display:block;width:100%;min-width:590px;height:auto;font-family:inherit;overflow:visible}
+.ev-zero-line{stroke:#6e8ca8;stroke-width:1}
+.ev-connector{stroke:#6e8ca8;stroke-width:1;stroke-dasharray:4 4}
+.ev-positive{fill:#003c72;background:#003c72}
+.ev-negative{fill:#6e8ca8;background:#6e8ca8}
+.ev-total{fill:#003c72}
+.ev-bar-value{fill:#003c72;font-size:18px;font-weight:600;font-variant-numeric:tabular-nums}
+.ev-bar-label{fill:#555;font-size:16px}
+.ev-bridge-reading{display:flex;flex-wrap:wrap;gap:10px 20px;font-size:13px;color:#555;margin-top:8px;align-items:center}
+.ev-bridge-reading span{display:flex;align-items:center;gap:7px}
+.ev-bridge-reading i{width:12px;height:12px;display:block}
+.ev-bridge-reading strong{color:#003c72;margin-left:auto;font-weight:600}
+.ev-bridge-pending{padding:18px 0;border-top:1px solid #edf3f8;border-bottom:1px solid #edf3f8}
+.ev-bridge-pending>p{font-size:14px;color:#555;line-height:1.4}
+.ev-bridge-pending dl{display:grid;grid-template-columns:minmax(0,1fr) minmax(100px,170px);gap:10px 20px;margin:17px 0;color:#1a1a1a;font-size:14px}
+.ev-bridge-pending dd{margin:0;text-align:right;font-variant-numeric:tabular-nums;color:#003c72}
+.ev-initiative-effect{padding:20px 0;min-width:0}
+.ev-initiative-metric{display:grid;grid-template-columns:26px minmax(0,1fr) auto;align-items:start;gap:13px;color:#003c72}
+.ev-initiative-metric h3{font-size:18px;line-height:1.25}
+.ev-initiative-metric p{font-size:15px;color:#555;display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:8px}
+.ev-initiative-metric>span{font-size:13px;color:#555}
+.ev-initiative-money{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));margin:20px 0 0;gap:24px}
+.ev-initiative-money>div{border-top:2px solid #003c72;padding-top:12px;min-width:0}
+.ev-initiative-money dt{font-size:14px;line-height:1.3;color:#555;display:flex;gap:8px;align-items:flex-start;min-height:37px}
+.ev-initiative-money .ui-icon{color:#003c72;flex-shrink:0}
+.ev-initiative-money dd{margin:12px 0;color:#003c72;font-size:28px;line-height:1.15;font-weight:600;font-variant-numeric:tabular-nums;overflow-wrap:anywhere}
+.ev-initiative-money small{display:block;font-size:13px;font-weight:400;color:#555;margin-top:6px}
+.ev-initiative-money p{font-size:13px;color:#555;line-height:1.4}
+.ev-session-journey{margin:26px 0 30px;min-width:0}
+.ev-session-journey ol{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));list-style:none;padding:0;margin:0;gap:28px}
+.ev-session-journey li{min-width:0;position:relative}
+.ev-session-journey li+li:before{content:'';position:absolute;left:-28px;right:calc(100% - 0px);top:24px;height:1px;background:#6e8ca8}
+.ev-session-journey li>div,.ev-session-journey li>button{width:100%;text-align:left;display:block;border:0;padding:0;background:transparent;border-radius:0}
+.ev-session-journey li>button:hover{background:transparent}
+.ev-session-journey li>button:hover strong{text-decoration:underline;text-underline-offset:3px}
+.ev-session-step{display:flex;align-items:center;gap:11px;color:#003c72;height:48px;border-bottom:2px solid #edf3f8;padding-bottom:12px;margin-bottom:12px}
+.ev-session-step b{font-size:30px;line-height:1;font-weight:600}
+.ev-session-journey strong{color:#003c72;font-size:19px;line-height:1.25;display:block;font-weight:600}
+.ev-session-journey time{display:block;color:#555;font-size:13px;line-height:1.4;margin:9px 0}
+.ev-session-journey p{font-size:14px;line-height:1.4;color:#1a1a1a}
+.ev-session-selected .ev-session-step{border-bottom-color:#003c72}
+@media(max-width:1100px) and (min-width:761px){.ev-production-flow{gap:14px}.ev-production-flow li+li:before{left:-13px;font-size:16px}.ev-production-flow strong{font-size:19px}.ev-profit-equation{gap:7px}.ev-profit-equation strong{font-size:20px}}
+@media(max-width:760px){
+  .ev-production-flow{grid-template-columns:1fr;gap:23px}
+  .ev-production-flow li{display:grid;grid-template-columns:84px minmax(0,1fr);column-gap:14px;padding-left:20px}
+  .ev-production-flow li+li:before{content:'↓';left:8px;top:-23px;font-size:21px}
+  .ev-production-object{grid-row:1/5;height:76px;margin:0}
+  .ev-production-object img{width:84px;height:76px}
+  .ev-production-flow h3{min-height:0;margin-bottom:5px}
+  .ev-production-flow strong{font-size:23px}
+  .ev-production-flow small,.ev-lever-notes{margin-top:4px}
+  .ev-feed-branch{grid-template-columns:28px minmax(0,1fr);gap:10px}
+  .ev-feed-branch p{grid-column:2}
+  .ev-pricing-equation{gap:6px;grid-template-columns:minmax(0,1fr) 12px minmax(0,1fr) 12px minmax(0,1fr)}
+  .ev-pricing-equation span,.ev-profit-equation span{display:block;font-size:13px;min-height:45px}
+  .ev-pricing-equation .ui-icon,.ev-profit-equation .ui-icon{display:block;margin-bottom:5px}
+  .ev-pricing-equation strong,.ev-profit-equation strong{font-size:18px}
+  .ev-pricing-equation small,.ev-profit-equation small{font-size:13px}
+  .ev-operator{font-size:18px;padding-top:52px}
+  .ev-profit-equation{grid-template-columns:12px minmax(0,1fr);gap:13px 9px}
+  .ev-profit-equation>div:first-child{grid-column:2}
+  .ev-profit-equation span{display:flex;min-height:0;font-size:13px}
+  .ev-profit-equation .ui-icon{margin:0}
+  .ev-profit-equation strong{font-size:23px}
+  .ev-profit-equation .ev-operator{padding-top:32px}
+  .ev-profit-equation small{font-size:13px}
+  .ev-bridge-reading strong{margin-left:0;width:100%}
+  .ev-bridge-pending dl{grid-template-columns:minmax(0,1fr) minmax(95px,.6fr);gap:11px;font-size:13px}
+  .ev-initiative-metric{grid-template-columns:26px minmax(0,1fr)}
+  .ev-initiative-metric>span{grid-column:2}
+  .ev-initiative-money{grid-template-columns:1fr;gap:16px}
+  .ev-initiative-money dt{min-height:0}
+  .ev-initiative-money dd{margin:10px 0;font-size:27px}
+  .ev-session-journey ol{grid-template-columns:1fr;gap:24px}
+  .ev-session-journey li>div,.ev-session-journey li>button{padding-left:59px;position:relative}
+  .ev-session-step{position:absolute;left:0;top:0;display:flex;flex-direction:column;align-items:flex-start;gap:7px;height:auto;border-bottom:0;padding:0;margin:0;width:37px}
+  .ev-session-step b{font-size:29px}
+  .ev-session-journey li+li:before{left:14px;right:auto;top:-27px;height:21px;width:1px}
+  .ev-session-selected .ev-session-step{border-left:3px solid #003c72;padding-left:5px}
+  .ev-session-journey time{margin:6px 0}
+}
+@media print{
+  .ev-calculation,.ev-effect-bridge{margin:12px 0 17px;break-inside:avoid}
+  .ev-calculation figcaption,.ev-effect-bridge figcaption{margin-bottom:9px}
+  .ev-calculation h2,.ev-effect-bridge h2{font-size:17px}
+  .ev-production-flow{grid-template-columns:repeat(5,minmax(0,1fr));gap:14px;margin-bottom:8px}
+  .ev-production-flow li{display:block;padding:0}
+  .ev-production-object{height:37px;margin-bottom:4px}
+  .ev-production-object img{height:37px;width:55px}
+  .ev-production-object .ui-icon{height:22px;width:22px}
+  .ev-production-flow h3{font-size:11px;min-height:28px}
+  .ev-production-flow strong{font-size:15px}
+  .ev-production-flow small,.ev-lever-notes{font-size:9px;line-height:1.25}
+  .ev-production-flow li+li:before{content:'→';top:39px;left:-13px;font-size:15px}
+  .ev-feed-branch{grid-template-columns:22px minmax(0,1fr) minmax(0,1.2fr);padding:8px 0;margin:9px 0;gap:9px}
+  .ev-feed-branch h3{font-size:11px;margin-bottom:3px}
+  .ev-feed-branch strong{font-size:14px}
+  .ev-feed-branch p{font-size:10px;grid-column:auto}
+  .ev-feed-branch small,.ev-feed-branch p span{font-size:9px}
+  .ev-pricing-equation{grid-template-columns:1fr 12px 1fr 12px 1fr}
+  .ev-profit-equation{grid-template-columns:1fr 12px 1fr 12px 1fr 12px 1fr;padding-top:9px}
+  .ev-pricing-equation,.ev-profit-equation{margin-top:10px;gap:7px}
+  .ev-profit-equation>div:first-child{grid-column:auto}
+  .ev-pricing-equation span,.ev-profit-equation span{display:flex;font-size:10px;min-height:24px;gap:5px}
+  .ev-pricing-equation .ui-icon,.ev-profit-equation .ui-icon{width:14px;height:14px;display:block;margin:0}
+  .ev-pricing-equation strong,.ev-profit-equation strong{font-size:15px;margin:5px 0 3px}
+  .ev-pricing-equation small,.ev-profit-equation small{font-size:9px}
+  .ev-operator,.ev-profit-equation .ev-operator{font-size:15px;padding-top:28px}
+  .ev-calculation-note{font-size:9px;margin-top:7px}
+  .ev-waterfall{min-width:0}
+  .ev-bridge-scroll{overflow:visible}
+  .ev-bridge-reading{font-size:10px;gap:8px 14px}
+  .ev-bridge-reading strong{width:auto;margin-left:auto}
+  .ev-bridge-pending{padding:10px 0}
+  .ev-bridge-pending dl{font-size:11px;gap:7px 15px;margin:10px 0}
+  .ev-bridge-pending>p{font-size:11px}
+  .ev-session-journey{margin:16px 0 20px;break-inside:avoid}
+  .ev-session-journey ol{grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}
+  .ev-session-journey li>div,.ev-session-journey li>button{position:static;padding:0}
+  .ev-session-step{position:static;flex-direction:row;gap:8px;height:35px;width:auto;border-bottom:1px solid #edf3f8;padding-bottom:8px;margin-bottom:9px}
+  .ev-session-step b{font-size:23px}
+  .ev-session-step .ui-icon{width:19px;height:19px}
+  .ev-session-journey li+li:before{left:-20px;right:100%;top:17px;width:auto;height:1px}
+  .ev-session-journey strong{font-size:14px}
+  .ev-session-journey time{font-size:10px;margin:7px 0}
+  .ev-session-journey p{font-size:11px;line-height:1.35}
+  .ev-initiative-effect{padding:10px 0;break-inside:avoid}
+  .ev-initiative-money{grid-template-columns:repeat(3,minmax(0,1fr));gap:17px;margin-top:13px}
+  .ev-initiative-money dd{font-size:21px}
+  .ev-initiative-money dt,.ev-initiative-money p{font-size:11px}
+}

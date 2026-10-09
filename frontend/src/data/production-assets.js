@@ -1,0 +1,7 @@
+import {useEffect,useState} from 'react';
+// Иллюстрации меняют изображения узлов; коды, связи и фильтры формирует React
+import {allPlantNodes,mainStages} from '../model/plant.js';
+const nodeAsset=Object.fromEntries([...allPlantNodes,...mainStages].map(n=>[n.id,n.asset]));
+export function normalizeManifest(manifest){const raw=Array.isArray(manifest)?manifest:manifest.assets||manifest.images||manifest.files||[],items=Array.isArray(raw)?raw:Object.entries(raw).map(([id,file])=>typeof file==='string'?{id,file}:{id,...file});const result={};for(const asset of items){const key=asset.id||asset.key||asset.code||asset.name,file=asset.file||asset.filename||asset.path||asset.src;if(key&&typeof file==='string'){const filename=file.replace(/^\/?assets\/production-ai\//,'');if(/^[a-z0-9-]+\.(webp|png)$/i.test(filename))result[key]=filename;}}return result;}
+let cachedAssets={};
+export function useProductionAssets(){const[assets,setAssets]=useState(cachedAssets);useEffect(()=>{if(!window.PMO_RUNTIME?.productionAi)return;const controller=new AbortController(),base=import.meta.env.BASE_URL+'assets/production-ai/';fetch(base+'manifest.json',{signal:controller.signal,cache:'no-cache'}).then(r=>r.ok?r.json():Promise.reject()).then(m=>{const files=normalizeManifest(m),result={};for(const[node,key]of Object.entries(nodeAsset)){const file=files[node]||files[key];if(file)result[node]=base+file;}cachedAssets=result;setAssets(result);}).catch(()=>{});return()=>controller.abort();},[]);return assets;}

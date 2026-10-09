@@ -1,0 +1,38 @@
+services:
+  db:
+    image: postgres:18.6
+    environment:
+      POSTGRES_USER: pmo
+      POSTGRES_DB: pmo
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Задайте POSTGRES_PASSWORD в локальном .env}
+      POSTGRES_INITDB_ARGS: --auth-host=scram-sha-256
+    volumes:
+      - pmo_database:/var/lib/postgresql
+    healthcheck:
+      test: [CMD-SHELL, pg_isready -U pmo -d pmo]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+    restart: unless-stopped
+    networks: [database]
+  api:
+    build: .
+    environment:
+      DATABASE_URL: postgresql://pmo:${POSTGRES_PASSWORD:?Задайте POSTGRES_PASSWORD}@db:5432/pmo
+      CORS_ORIGINS: ${CORS_ORIGINS:-https://babadzhanyan.github.io,http://localhost:5173,http://127.0.0.1:5173,http://localhost:4173,http://127.0.0.1:4173}
+      PMO_POLL_SECONDS: 15
+      PMO_STALE_SECONDS: 45
+      PMO_SOURCE_MIN_RECORDS: 190
+    ports:
+      - 127.0.0.1:8000:8000
+    depends_on:
+      db:
+        condition: service_healthy
+    restart: unless-stopped
+    networks: [database, outbound]
+volumes:
+  pmo_database:
+networks:
+  database:
+    internal: true
+  outbound:

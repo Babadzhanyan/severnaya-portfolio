@@ -1,0 +1,789 @@
+{
+  "baseline": {
+    "months": 6,
+    "eggs_set": 72924750,
+    "hatch_rate": 0.863941556193199,
+    "chick_reject_rate": 0.010003377314396,
+    "placed_chicks": 62372482,
+    "live_heads": 57795460,
+    "live_kg": 140052766,
+    "mortality_rate": 0.114820735816656,
+    "fcr": 1.58894726599462,
+    "slaughter_yield": 0.80363011316749,
+    "period": "Январь–июнь 2026",
+    "source": "Costing2026_S&W_June.xlsx / Q:V / O",
+    "confirmed": false
+  },
+  "changes": {
+    "eggs_pct": 0,
+    "hatch_pp": 0,
+    "chick_reject_pp": 0,
+    "mortality_pp": 0,
+    "average_weight_pct": 0,
+    "fcr_pct": 0,
+    "slaughter_yield_pp": 0
+  },
+  "routes": [
+    {
+      "code": "whole",
+      "name": "Тушка",
+      "kind": "whole",
+      "baseline_share": 1,
+      "target_share": 1,
+      "added_mass_per_kg": 0,
+      "target_added_mass_per_kg": 0,
+      "confirmed": false,
+      "source": "Сравнительный случай / матрица конечных выходов"
+    },
+    {
+      "code": "cut",
+      "name": "Разделка",
+      "kind": "cut",
+      "baseline_share": 0,
+      "target_share": 0,
+      "added_mass_per_kg": 0,
+      "target_added_mass_per_kg": 0,
+      "confirmed": false,
+      "source": "Сравнительный случай / матрица конечных выходов"
+    },
+    {
+      "code": "deep",
+      "name": "Глубокая переработка",
+      "kind": "deep",
+      "baseline_share": 0,
+      "target_share": 0,
+      "added_mass_per_kg": 0,
+      "target_added_mass_per_kg": 0,
+      "confirmed": false,
+      "source": "Сравнительный случай / матрица конечных выходов"
+    }
+  ],
+  "products": [
+    {
+      "code": "p0",
+      "name": "Тушка",
+      "kind": "sale",
+      "route_yields": {
+        "whole": 1,
+        "cut": 0,
+        "deep": 0
+      },
+      "target_route_yields": {
+        "whole": 1,
+        "cut": 0,
+        "deep": 0
+      },
+      "baseline_price": 141.591388333307,
+      "target_price": 141.591388333307,
+      "additional_demand_kg": null,
+      "source": "Калькуляция / март 2026",
+      "confirmed": false
+    },
+    {
+      "code": "p1",
+      "name": "Грудка с кожей",
+      "kind": "sale",
+      "route_yields": {
+        "whole": 0,
+        "cut": 0.39,
+        "deep": 0
+      },
+      "target_route_yields": {
+        "whole": 0,
+        "cut": 0.39,
+        "deep": 0
+      },
+      "baseline_price": 222.775249802277,
+      "target_price": 222.775249802277,
+      "additional_demand_kg": null,
+      "source": "Калькуляция / март 2026",
+      "confirmed": false
+    },
+    {
+      "code": "p2",
+      "name": "Четвертина задняя",
+      "kind": "sale",
+      "route_yields": {
+        "whole": 0,
+        "cut": 0.42,
+        "deep": 0
+      },
+      "target_route_yields": {
+        "whole": 0,
+        "cut": 0.42,
+        "deep": 0
+      },
+      "baseline_price": 164.329787068178,
+      "target_price": 164.329787068178,
+      "additional_demand_kg": null,
+      "source": "Калькуляция / март 2026",
+      "confirmed": false
+    },
+    {
+      "code": "p3",
+      "name": "Крыло с кожей",
+      "kind": "sale",
+      "route_yields": {
+        "whole": 0,
+        "cut": 0.069,
+        "deep": 0
+      },
+      "target_route_yields": {
+        "whole": 0,
+        "cut": 0.069,
+        "deep": 0
+      },
+      "baseline_price": 212.818180775812,
+      "target_price": 212.818180775812,
+      "additional_demand_kg": null,
+      "source": "Калькуляция / март 2026",
+      "confirmed": false
+    },
+    {
+      "code": "p4",
+      "name": "Кисть крыла",
+      "kind": "sale",
+      "route_yields": {
+        "whole": 0,
+        "cut": 0.01,
+        "deep": 0
+      },
+      "target_route_yields": {
+        "whole": 0,
+        "cut": 0.01,
+        "deep": 0
+      },
+      "baseline_price": 46.1015220082531,
+      "target_price": 46.1015220082531,
+      "additional_demand_kg": null,
+      "source": "Калькуляция / март 2026",
+      "confirmed": false
+    },
+    {
+      "code": "p5",
+      "name": "Набор «Крылья»",
+      "kind": "sale",
+      "route_yields": {
+        "whole": 0,
+        "cut": 0.031,
+        "deep": 0
+      },
+      "target_route_yields": {
+        "whole": 0,
+        "cut": 0.031,
+        "deep": 0
+      },
+      "baseline_price": 83.6344887515027,
+      "target_price": 83.6344887515027,
+      "additional_demand_kg": null,
+      "source": "Калькуляция / март 2026",
+      "confirmed": false
+    },
+    {
+      "code": "p6",
+      "name": "Спинно-лопаточная часть",
+      "kind": "sale",
+      "route_yields": {
+        "whole": 0,
+        "cut": 0.08,
+        "deep": 0
+      },
+      "target_route_yields": {
+        "whole": 0,
+        "cut": 0.08,
+        "deep": 0
+      },
+      "baseline_price": 43.5216556057538,
+      "target_price": 43.5216556057538,
+      "additional_demand_kg": null,
+      "source": "Калькуляция / март 2026",
+      "confirmed": false
+    },
+    {
+      "code": "p7",
+      "name": "Изделия глубокой переработки",
+      "kind": "sale",
+      "route_yields": {
+        "whole": 0,
+        "cut": 0,
+        "deep": 0
+      },
+      "target_route_yields": {
+        "whole": 0,
+        "cut": 0,
+        "deep": 0
+      },
+      "baseline_price": null,
+      "target_price": null,
+      "additional_demand_kg": null,
+      "source": "Матрица глубокой переработки",
+      "confirmed": false
+    },
+    {
+      "code": "p8",
+      "name": "Потери глубокой переработки",
+      "kind": "loss",
+      "route_yields": {
+        "whole": 0,
+        "cut": 0,
+        "deep": 0
+      },
+      "target_route_yields": {
+        "whole": 0,
+        "cut": 0,
+        "deep": 0
+      },
+      "baseline_price": 0,
+      "target_price": 0,
+      "additional_demand_kg": null,
+      "source": "Матрица глубокой переработки",
+      "confirmed": false
+    }
+  ],
+  "costs": [
+    {
+      "code": "p0_pack",
+      "name": "Упаковка / Тушка",
+      "driver": "product:p0",
+      "baseline_rate": 4.62228034393614,
+      "target_rate": 4.62228034393614,
+      "unit": "руб/кг",
+      "source": "Калькуляция / классификация расходов",
+      "confirmed": false
+    },
+    {
+      "code": "p0_other",
+      "name": "Прочие переменные / Тушка",
+      "driver": "product:p0",
+      "baseline_rate": null,
+      "target_rate": null,
+      "unit": "руб/кг",
+      "source": "Калькуляция / классификация расходов",
+      "confirmed": false
+    },
+    {
+      "code": "p0_delivery",
+      "name": "Доставка и хранение / Тушка",
+      "driver": "product:p0",
+      "baseline_rate": null,
+      "target_rate": null,
+      "unit": "руб/кг",
+      "source": "Калькуляция / классификация расходов",
+      "confirmed": false
+    },
+    {
+      "code": "p1_pack",
+      "name": "Упаковка / Грудка с кожей",
+      "driver": "product:p1",
+      "baseline_rate": 14.8082453961578,
+      "target_rate": 14.8082453961578,
+      "unit": "руб/кг",
+      "source": "Калькуляция / классификация расходов",
+      "confirmed": false
+    },
+    {
+      "code": "p1_other",
+      "name": "Прочие переменные / Грудка с кожей",
+      "driver": "product:p1",
+      "baseline_rate": null,
+      "target_rate": null,
+      "unit": "руб/кг",
+      "source": "Калькуляция / классификация расходов",
+      "confirmed": false
+    },
+    {
+      "code": "p1_delivery",
+      "name": "Доставка и хранение / Грудка с кожей",
+      "driver": "product:p1",
+      "baseline_rate": null,
+      "target_rate": null,
+      "unit": "руб/кг",
+      "source": "Калькуляция / классификация расходов",
+      "confirmed": false
+    },
+    {
+      "code": "p2_pack",
+      "name": "Упаковка / Четвертина задняя",
+      "driver": "product:p2",
+      "baseline_rate": 14.8082445055569,
+      "target_rate": 14.8082445055569,
+      "unit": "руб/кг",
+      "source": "Калькуляция / классификация расходов",
+      "confirmed": false
+    },
+    {
+      "code": "p2_other",
+      "name": "Прочие переменные / Четвертина задняя",
+      "driver": "product:p2",
+      "baseline_rate": null,
+      "target_rate": null,
+      "unit": "руб/кг",
+      "source": "Калькуляция / классификация расходов",
+      "confirmed": false
+    },
+    {
+      "code": "p2_delivery",
+      "name": "Доставка и хранение / Четвертина задняя",
+      "driver": "product:p2",
+      "baseline_rate": null,
+      "target_rate": null,
+      "unit": "руб/кг",
+      "source": "Калькуляция / классификация расходов",
+      "confirmed": false
+    },
+    {
+      "code": "p3_pack",
+      "name": "Упаковка / Крыло с кожей",
+      "driver": "product:p3",
+      "baseline_rate": 21.3598837377447,
+      "target_rate": 21.3598837377447,
+      "unit": "руб/кг",
+      "source": "Калькуляция / классификация расходов",
+      "confirmed": false
+    },
+    {
+      "code": "p3_other",
+      "name": "Прочие переменные / Крыло с кожей",
+      "driver": "product:p3",
+      "baseline_rate": null,
+      "target_rate": null,
+      "unit": "руб/кг",
+      "source": "Калькуляция / классификация расходов",
+      "confirmed": false
+    },
+    {
+      "code": "p3_delivery",
+      "name": "Доставка и хранение / Крыло с кожей",
+      "driver": "product:p3",
+      "baseline_rate": null,
+      "target_rate": null,
+      "unit": "руб/кг",
+      "source": "Калькуляция / классификация расходов",
+      "confirmed": false
+    },
+    {
+      "code": "p4_pack",
+      "name": "Упаковка / Кисть крыла",
+      "driver": "product:p4",
+      "baseline_rate": 4.60799747126437,
+      "target_rate": 4.60799747126437,
+      "unit": "руб/кг",
+      "source": "Калькуляция / классификация расходов",
+      "confirmed": false
+    },
+    {
+      "code": "p4_other",
+      "name": "Прочие переменные / Кисть крыла",
+      "driver": "product:p4",
+      "baseline_rate": null,
+      "target_rate": null,
+      "unit": "руб/кг",
+      "source": "Калькуляция / классификация расходов",
+      "confirmed": false
+    },
+    {
+      "code": "p4_delivery",
+      "name": "Доставка и хранение / Кисть крыла",
+      "driver": "product:p4",
+      "baseline_rate": null,
+      "target_rate": null,
+      "unit": "руб/кг",
+      "source": "Калькуляция / классификация расходов",
+      "confirmed": false
+    },
+    {
+      "code": "p5_pack",
+      "name": "Упаковка / Набор «Крылья»",
+      "driver": "product:p5",
+      "baseline_rate": 4.6079973470261,
+      "target_rate": 4.6079973470261,
+      "unit": "руб/кг",
+      "source": "Калькуляция / классификация расходов",
+      "confirmed": false
+    },
+    {
+      "code": "p5_other",
+      "name": "Прочие переменные / Набор «Крылья»",
+      "driver": "product:p5",
+      "baseline_rate": null,
+      "target_rate": null,
+      "unit": "руб/кг",
+      "source": "Калькуляция / классификация расходов",
+      "confirmed": false
+    },
+    {
+      "code": "p5_delivery",
+      "name": "Доставка и хранение / Набор «Крылья»",
+      "driver": "product:p5",
+      "baseline_rate": null,
+      "target_rate": null,
+      "unit": "руб/кг",
+      "source": "Калькуляция / классификация расходов",
+      "confirmed": false
+    },
+    {
+      "code": "p6_pack",
+      "name": "Упаковка / Спинно-лопаточная часть",
+      "driver": "product:p6",
+      "baseline_rate": 4.60988390938511,
+      "target_rate": 4.60988390938511,
+      "unit": "руб/кг",
+      "source": "Калькуляция / классификация расходов",
+      "confirmed": false
+    },
+    {
+      "code": "p6_other",
+      "name": "Прочие переменные / Спинно-лопаточная часть",
+      "driver": "product:p6",
+      "baseline_rate": null,
+      "target_rate": null,
+      "unit": "руб/кг",
+      "source": "Калькуляция / классификация расходов",
+      "confirmed": false
+    },
+    {
+      "code": "p6_delivery",
+      "name": "Доставка и хранение / Спинно-лопаточная часть",
+      "driver": "product:p6",
+      "baseline_rate": null,
+      "target_rate": null,
+      "unit": "руб/кг",
+      "source": "Калькуляция / классификация расходов",
+      "confirmed": false
+    },
+    {
+      "code": "p7_pack",
+      "name": "Упаковка / Изделия глубокой переработки",
+      "driver": "product:p7",
+      "baseline_rate": null,
+      "target_rate": null,
+      "unit": "руб/кг",
+      "source": "Калькуляция / классификация расходов",
+      "confirmed": false
+    },
+    {
+      "code": "p7_other",
+      "name": "Прочие переменные / Изделия глубокой переработки",
+      "driver": "product:p7",
+      "baseline_rate": null,
+      "target_rate": null,
+      "unit": "руб/кг",
+      "source": "Калькуляция / классификация расходов",
+      "confirmed": false
+    },
+    {
+      "code": "p7_delivery",
+      "name": "Доставка и хранение / Изделия глубокой переработки",
+      "driver": "product:p7",
+      "baseline_rate": null,
+      "target_rate": null,
+      "unit": "руб/кг",
+      "source": "Калькуляция / классификация расходов",
+      "confirmed": false
+    },
+    {
+      "code": "p8_pack",
+      "name": "Упаковка / Потери глубокой переработки",
+      "driver": "product:p8",
+      "baseline_rate": null,
+      "target_rate": null,
+      "unit": "руб/кг",
+      "source": "Калькуляция / классификация расходов",
+      "confirmed": false
+    },
+    {
+      "code": "p8_other",
+      "name": "Прочие переменные / Потери глубокой переработки",
+      "driver": "product:p8",
+      "baseline_rate": null,
+      "target_rate": null,
+      "unit": "руб/кг",
+      "source": "Калькуляция / классификация расходов",
+      "confirmed": false
+    },
+    {
+      "code": "p8_delivery",
+      "name": "Доставка и хранение / Потери глубокой переработки",
+      "driver": "product:p8",
+      "baseline_rate": null,
+      "target_rate": null,
+      "unit": "руб/кг",
+      "source": "Калькуляция / классификация расходов",
+      "confirmed": false
+    },
+    {
+      "code": "feed_rate",
+      "name": "Корм / переменная часть",
+      "driver": "feed_kg",
+      "baseline_rate": null,
+      "target_rate": null,
+      "unit": "руб/кг",
+      "source": "Классификация финансовой службы",
+      "confirmed": false
+    },
+    {
+      "code": "chick_rate",
+      "name": "Прочие расходы на голову",
+      "driver": "placed_chicks",
+      "baseline_rate": null,
+      "target_rate": null,
+      "unit": "руб/гол",
+      "source": "Классификация финансовой службы",
+      "confirmed": false
+    },
+    {
+      "code": "live_rate",
+      "name": "Прочие расходы выращивания",
+      "driver": "live_kg",
+      "baseline_rate": null,
+      "target_rate": null,
+      "unit": "руб/кг",
+      "source": "Классификация финансовой службы",
+      "confirmed": false
+    },
+    {
+      "code": "slaughter_rate",
+      "name": "Переменные расходы убоя",
+      "driver": "live_kg",
+      "baseline_rate": null,
+      "target_rate": null,
+      "unit": "руб/кг",
+      "source": "Классификация финансовой службы",
+      "confirmed": false
+    }
+  ],
+  "capacities": [
+    {
+      "code": "c0",
+      "name": "Приёмка и навеска",
+      "unit": "кг",
+      "capacity_basis": "monthly_flow",
+      "source": "Норма, единица и поток участка",
+      "confirmed": false,
+      "capacity_per_month": null,
+      "target_capacity_per_month": null,
+      "baseline_flow_per_meat_kg": null,
+      "target_flow_per_meat_kg": null
+    },
+    {
+      "code": "c1",
+      "name": "Убой и снятие пера",
+      "unit": "кг",
+      "capacity_basis": "monthly_flow",
+      "source": "Норма, единица и поток участка",
+      "confirmed": false,
+      "capacity_per_month": null,
+      "target_capacity_per_month": null,
+      "baseline_flow_per_meat_kg": null,
+      "target_flow_per_meat_kg": null
+    },
+    {
+      "code": "c2",
+      "name": "Потрошение",
+      "unit": "кг",
+      "capacity_basis": "monthly_flow",
+      "source": "Норма, единица и поток участка",
+      "confirmed": false,
+      "capacity_per_month": null,
+      "target_capacity_per_month": null,
+      "baseline_flow_per_meat_kg": null,
+      "target_flow_per_meat_kg": null
+    },
+    {
+      "code": "c3",
+      "name": "Охлаждение тушки",
+      "unit": "кг",
+      "capacity_basis": "monthly_flow",
+      "source": "Норма, единица и поток участка",
+      "confirmed": false,
+      "capacity_per_month": null,
+      "target_capacity_per_month": null,
+      "baseline_flow_per_meat_kg": null,
+      "target_flow_per_meat_kg": null
+    },
+    {
+      "code": "c4",
+      "name": "Групповая упаковка тушки",
+      "unit": "кг",
+      "capacity_basis": "monthly_flow",
+      "source": "Норма, единица и поток участка",
+      "confirmed": false,
+      "capacity_per_month": null,
+      "target_capacity_per_month": null,
+      "baseline_flow_per_meat_kg": null,
+      "target_flow_per_meat_kg": null
+    },
+    {
+      "code": "c5",
+      "name": "Индивидуальная упаковка тушки",
+      "unit": "кг",
+      "capacity_basis": "monthly_flow",
+      "source": "Норма, единица и поток участка",
+      "confirmed": false,
+      "capacity_per_month": null,
+      "target_capacity_per_month": null,
+      "baseline_flow_per_meat_kg": null,
+      "target_flow_per_meat_kg": null
+    },
+    {
+      "code": "c6",
+      "name": "Групповая упаковка субпродуктов",
+      "unit": "кг",
+      "capacity_basis": "monthly_flow",
+      "source": "Норма, единица и поток участка",
+      "confirmed": false,
+      "capacity_per_month": null,
+      "target_capacity_per_month": null,
+      "baseline_flow_per_meat_kg": null,
+      "target_flow_per_meat_kg": null
+    },
+    {
+      "code": "c7",
+      "name": "Индивидуальная упаковка субпродуктов",
+      "unit": "кг",
+      "capacity_basis": "monthly_flow",
+      "source": "Норма, единица и поток участка",
+      "confirmed": false,
+      "capacity_per_month": null,
+      "target_capacity_per_month": null,
+      "baseline_flow_per_meat_kg": null,
+      "target_flow_per_meat_kg": null
+    },
+    {
+      "code": "c8",
+      "name": "Упаковка лап",
+      "unit": "кг",
+      "capacity_basis": "monthly_flow",
+      "source": "Норма, единица и поток участка",
+      "confirmed": false,
+      "capacity_per_month": null,
+      "target_capacity_per_month": null,
+      "baseline_flow_per_meat_kg": null,
+      "target_flow_per_meat_kg": null
+    },
+    {
+      "code": "c9",
+      "name": "Разделка STORK / MEYN",
+      "unit": "кг",
+      "capacity_basis": "monthly_flow",
+      "source": "Норма, единица и поток участка",
+      "confirmed": false,
+      "capacity_per_month": null,
+      "target_capacity_per_month": null,
+      "baseline_flow_per_meat_kg": null,
+      "target_flow_per_meat_kg": null
+    },
+    {
+      "code": "c10",
+      "name": "Филе грудки",
+      "unit": "кг",
+      "capacity_basis": "monthly_flow",
+      "source": "Норма, единица и поток участка",
+      "confirmed": false,
+      "capacity_per_month": null,
+      "target_capacity_per_month": null,
+      "baseline_flow_per_meat_kg": null,
+      "target_flow_per_meat_kg": null
+    },
+    {
+      "code": "c11",
+      "name": "Филе бедра",
+      "unit": "кг",
+      "capacity_basis": "monthly_flow",
+      "source": "Норма, единица и поток участка",
+      "confirmed": false,
+      "capacity_per_month": null,
+      "target_capacity_per_month": null,
+      "baseline_flow_per_meat_kg": null,
+      "target_flow_per_meat_kg": null
+    },
+    {
+      "code": "c12",
+      "name": "Упаковка ISHIDA",
+      "unit": "кг",
+      "capacity_basis": "monthly_flow",
+      "source": "Норма, единица и поток участка",
+      "confirmed": false,
+      "capacity_per_month": null,
+      "target_capacity_per_month": null,
+      "baseline_flow_per_meat_kg": null,
+      "target_flow_per_meat_kg": null
+    },
+    {
+      "code": "c13",
+      "name": "Переработка KFC",
+      "unit": "кг",
+      "capacity_basis": "monthly_flow",
+      "source": "Норма, единица и поток участка",
+      "confirmed": false,
+      "capacity_per_month": null,
+      "target_capacity_per_month": null,
+      "baseline_flow_per_meat_kg": null,
+      "target_flow_per_meat_kg": null
+    },
+    {
+      "code": "c14",
+      "name": "Полуфабрикаты",
+      "unit": "кг",
+      "capacity_basis": "monthly_flow",
+      "source": "Норма, единица и поток участка",
+      "confirmed": false,
+      "capacity_per_month": null,
+      "target_capacity_per_month": null,
+      "baseline_flow_per_meat_kg": null,
+      "target_flow_per_meat_kg": null
+    },
+    {
+      "code": "c15",
+      "name": "Механическая обвалка",
+      "unit": "кг",
+      "capacity_basis": "monthly_flow",
+      "source": "Норма, единица и поток участка",
+      "confirmed": false,
+      "capacity_per_month": null,
+      "target_capacity_per_month": null,
+      "baseline_flow_per_meat_kg": null,
+      "target_flow_per_meat_kg": null
+    },
+    {
+      "code": "c16",
+      "name": "Заморозка",
+      "unit": "кг",
+      "capacity_basis": "monthly_flow",
+      "source": "Норма, единица и поток участка",
+      "confirmed": false,
+      "capacity_per_month": null,
+      "target_capacity_per_month": null,
+      "baseline_flow_per_meat_kg": null,
+      "target_flow_per_meat_kg": null
+    },
+    {
+      "code": "c17",
+      "name": "Склад готовой продукции",
+      "unit": "кг",
+      "capacity_basis": "peak_stock",
+      "source": "Норма, единица и поток участка",
+      "confirmed": false,
+      "capacity_per_month": null,
+      "target_capacity_per_month": null,
+      "baseline_flow_per_meat_kg": 0,
+      "target_flow_per_meat_kg": 0,
+      "baseline_peak_stock": null,
+      "target_peak_stock": null
+    }
+  ],
+  "baseline_fixed_expenses": null,
+  "target_fixed_expenses": null,
+  "costs_complete": false,
+  "expenses_confirmed": false,
+  "demand_confirmed": true,
+  "capacity_scope_confirmed": false,
+  "price_basis": "После исключения НДС и скидок",
+  "currency": "руб",
+  "sources": {
+    "production": "Costing2026_S&W_June.xlsx / январь–июнь 2026",
+    "prices": "Калькуляция / март 2026",
+    "mix": "База сравнительного случая / структуру выпуска подтвердить",
+    "google_cell": "Калькулятор EBITDA!K2"
+  }
+}

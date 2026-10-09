@@ -1,0 +1,33 @@
+.passport-timeline{min-width:0;margin:18px 0 0}
+.passport-timeline-scroll{width:100%;max-height:360px;overflow:auto;scrollbar-width:thin;scrollbar-color:#6e8ca8 #edf3f8}
+.passport-timeline-scroll:focus-visible{outline:2px solid #003c72;outline-offset:3px}
+.passport-timeline-svg{display:block;width:100%;height:auto;min-height:0;font-family:"Source Sans Pro",Arial,sans-serif}
+.pt-grid{stroke:#edf3f8;stroke-width:1;vector-effect:non-scaling-stroke}
+.pt-row-line{stroke:#edf3f8;stroke-width:1;vector-effect:non-scaling-stroke}
+.pt-axis{font-size:17px;fill:#52677d}.pt-axis-year{font-size:15px;fill:#52677d}
+.pt-today-line{stroke:#003c72;stroke-width:1;stroke-dasharray:3 3;vector-effect:non-scaling-stroke}
+.pt-today-label{font-size:15px;fill:#003c72}.pt-empty-axis{font-size:14px;fill:#52677d}
+.pt-label{font-size:14px;line-height:1.2;color:#1a1a1a;padding:2px 6px 2px 0;box-sizing:border-box;overflow-wrap:anywhere}
+.pt-label strong{display:block;font-size:17px;font-weight:600;line-height:1.2;margin:0 0 3px;color:#003c72}
+.pt-label .pt-date{display:inline-block;font-size:16px;line-height:1.2;padding:1px 3px;margin:0 0 2px;border-radius:2px}
+.pt-label small{display:block;font-size:14px;line-height:1.2;margin:0;color:#52677d}
+.pt-label.pt-current strong{font-weight:700}
+.pt-milestone{stroke:#003c72;stroke-width:1.5;fill:#fff;vector-effect:non-scaling-stroke}
+.pt-milestone.pt-confirmed{fill:#003c72}
+.pt-work-bar{fill:#6e8ca8}.pt-date-warning{color:#1a1a1a!important}
+.passport-timeline-key{display:flex;align-items:center;flex-wrap:wrap;gap:7px;font-size:13px;color:#52677d;margin:10px 0 0}
+.pt-key-diamond{width:8px;height:8px;border:1px solid #003c72;transform:rotate(45deg);display:inline-block;margin-right:3px}
+.pt-key-bar{display:inline-block;width:20px;height:7px;background:#6e8ca8;margin-left:11px}
+.passport-timeline-idea-note{font-size:13px;line-height:1.4;color:#52677d;margin-top:8px}
+@media(max-width:700px){.passport-timeline-svg{min-width:650px;min-height:0}.passport-timeline-scroll{max-height:360px}.passport-timeline-key:after{content:"Календарь прокручивается по горизонтали";flex-basis:100%;font-size:13px;margin-top:3px}}
+@media print{#print-root .passport-timeline{margin:11px 0 0;break-inside:avoid}#print-root .passport-timeline-scroll{max-height:none;overflow:visible}#print-root .passport-timeline-svg{width:100%;min-width:0;min-height:0;max-height:360px}#print-root .pt-label{padding:2px 5px 2px 0;font-size:14px}#print-root .pt-label strong{font-size:17px}#print-root .pt-label .pt-date{font-size:16px}#print-root .pt-label small{font-size:14px}#print-root .passport-timeline-key,#print-root .passport-timeline-idea-note{font-size:10px;gap:5px;margin-top:6px}#print-root .passport-timeline-key:after{content:none}#print-root .pt-key-diamond{width:6px;height:6px}#print-root .pt-key-bar{width:16px;height:6px}}
+
+.passport-timeline-svg{min-width:650px}.pt-print-dates{display:none}
+@media print{#print-root .pt-print-dates{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:6px;margin:6px 0 0;font-size:12px!important;line-height:1.25}#print-root .pt-print-dates>div{min-width:0}#print-root .pt-print-dates>div>span{display:block;color:#003c72;font-size:12px!important;margin-bottom:3px}#print-root .pt-print-dates time{display:inline-block;font-size:12px!important;line-height:1.25;padding:1px 3px;overflow-wrap:normal}#print-root .passport-timeline-idea .pt-print-dates{grid-template-columns:1fr}#print-root .pt-label:not(.pt-work-label) .pt-date{display:none!important}#print-root .passport-timeline-svg{min-width:0}}
+
+.pt-print-chart{display:none}
+@media print{#print-root .pt-compact-print .passport-timeline-scroll{display:none}#print-root .pt-print-chart{display:block;width:100%;height:auto;max-height:none;font-family:"Source Sans Pro",Arial,sans-serif}#print-root .pt-print-chart text{font-size:16px;fill:#52677d}#print-root .pt-print-chart .pt-print-stage{fill:#003c72;font-weight:600}}
+
+@media print{#print-root .pt-works-key{display:none}}
+
+.passport-timeline:not(:has([data-work-row])) .passport-timeline-scroll{max-height:none}

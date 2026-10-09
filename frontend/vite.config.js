@@ -1,0 +1,5 @@
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
+import fs from 'node:fs';
+import path from 'node:path';
+export default defineConfig({plugins:[react(),{name:'production-public-assets',closeBundle(){const dir=path.resolve('dist/assets/production-ai'),file=path.join(dir,'manifest.json');if(!fs.existsSync(file))return;const source=JSON.parse(fs.readFileSync(file,'utf8'));const publicManifest={version:source.version,title:source.title,generation:source.generation,palette:source.palette,assets:source.assets.map(({id,name,path:assetPath,size,sha256,architecture_nodes})=>({id,name,path:assetPath,size,sha256,architecture_nodes})),source:'20261007_Master_v65.pdf / схема производственных узлов',meaning:'Предметные иллюстрации этапов; оборудование показано условно'};fs.writeFileSync(file,JSON.stringify(publicManifest,null,2));for(const entry of fs.readdirSync(dir))if(entry.endsWith('.png')||entry==='prompts.md')fs.unlinkSync(path.join(dir,entry));}}],base:'./',server:{proxy:{'/api':'http://127.0.0.1:8000'}},build:{target:'es2022',sourcemap:false}});

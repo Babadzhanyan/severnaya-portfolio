@@ -1,0 +1,237 @@
+{
+  "baseline_period": "Январь–июнь 2026",
+  "months": 6,
+  "unit": "руб за исходный период",
+  "annual_unit": "руб за год выбранного режима",
+  "price_basis": "После исключения НДС и скидок",
+  "sources": {
+    "production": "02_Входящие_Rocket/Отчеты от финансов/Costing2026_S&W_June.xlsx",
+    "prices": "Продажи/Эффективность разделки.xlsx / Калькуляция / март 2026",
+    "mix": "Предложение для проверки расчёта",
+    "variable_rates": "Предложение для проверки расчёта",
+    "deep_recipe": "Предложение для проверки расчёта"
+  },
+  "baseline": {
+    "eggs_set": 72924750.0,
+    "hatch_rate": 0.8639415561931991,
+    "chick_reject_rate": 0.010003377314396034,
+    "placed_chicks": 62372482.0,
+    "mortality_rate": 0.11482073581665633,
+    "live_heads": 57795460.0,
+    "average_weight_kg": 2.4232485735038702,
+    "live_kg": 140052766.0,
+    "fcr": 1.5889472659946222,
+    "feed_kg": 222536459.63068458,
+    "slaughter_yield": 0.80363011316749,
+    "meat_kg": 112550620.19,
+    "route_quantities": {
+      "whole": 67530372.114,
+      "cut": 45020248.076000005,
+      "deep": 0.0
+    },
+    "product_quantities": {
+      "0": 67530372.114,
+      "1": 17557896.749640003,
+      "2": 18908504.19192,
+      "3": 3106397.1172440005,
+      "4": 450202.48076000006,
+      "5": 1395627.690356,
+      "6": 3601619.8460800005,
+      "deep": 0.0,
+      "deep_loss": 0.0
+    },
+    "sold_kg": 112550620.19,
+    "loss_kg": 0.0,
+    "stock_kg": 0,
+    "cut_share": 0.4,
+    "deep_share": 0,
+    "processing_share": 0.4,
+    "revenue": 17535738314.094032,
+    "average_price": 155.80312471394151,
+    "variable_expenses": 7621259241.39561,
+    "fixed_expenses": 0,
+    "ebitda": 9914479072.698421,
+    "cost_items": {
+      "feed": 5118338571.505746,
+      "upstream": 1559312050.0,
+      "pack_0": 312144311.6412354,
+      "pack_1": 260001643.70907056,
+      "pack_2": 280001753.30829895,
+      "pack_3": 66352281.26759714,
+      "pack_4": 2074531.8928990264,
+      "pack_5": 6431048.694596613,
+      "pack_6": 16603049.376166271,
+      "deep_ingredients": 0.0
+    }
+  },
+  "target": {
+    "eggs_set": 72924750.0,
+    "hatch_rate": 0.8639415561931991,
+    "chick_reject_rate": 0.010003377314396034,
+    "placed_chicks": 62372482.0,
+    "mortality_rate": 0.11482073581665633,
+    "live_heads": 57795460.0,
+    "average_weight_kg": 2.4232485735038702,
+    "live_kg": 140052766.0,
+    "fcr": 1.5889472659946222,
+    "feed_kg": 222536459.63068458,
+    "slaughter_yield": 0.80563011316749,
+    "meat_kg": 112830725.722,
+    "route_quantities": {
+      "whole": 56415362.861,
+      "cut": 56415362.861,
+      "deep": 0.0
+    },
+    "product_quantities": {
+      "0": 56415362.861,
+      "1": 22001991.51579,
+      "2": 23694452.40162,
+      "3": 3892660.0374090006,
+      "4": 564153.62861,
+      "5": 1748876.248691,
+      "6": 4513229.02888,
+      "deep": 0.0,
+      "deep_loss": 0.0
+    },
+    "sold_kg": 112830725.722,
+    "loss_kg": 0.0,
+    "stock_kg": 0,
+    "cut_share": 0.5,
+    "deep_share": 0,
+    "processing_share": 0.5,
+    "revenue": 17980259763.62848,
+    "average_price": 159.35605880910012,
+    "variable_expenses": 7729713041.83015,
+    "fixed_expenses": 1000000,
+    "ebitda": 10249546721.798328,
+    "cost_items": {
+      "feed": 5118338571.505746,
+      "upstream": 1559312050.0,
+      "pack_0": 260767622.8484252,
+      "pack_1": 325810889.57000023,
+      "pack_2": 350873244.58846885,
+      "pack_3": 83146765.82962118,
+      "pack_4": 2599618.4940394987,
+      "pack_5": 8058817.114245087,
+      "pack_6": 20805461.8796037,
+      "deep_ingredients": 0.0
+    }
+  },
+  "bridge": [
+    {
+      "code": "yield",
+      "name": "Изменение выхода",
+      "rub": 43641317.135261536
+    },
+    {
+      "code": "mix",
+      "name": "Изменение структуры продукции",
+      "rub": 400880132.3991852
+    },
+    {
+      "code": "price",
+      "name": "Изменение цены",
+      "rub": 0.0
+    },
+    {
+      "code": "variable_cost",
+      "name": "Изменение переменных расходов",
+      "rub": -108453800.4345398
+    },
+    {
+      "code": "fixed_cost",
+      "name": "Изменение постоянных расходов",
+      "rub": -1000000
+    }
+  ],
+  "bridge_sum": 335067649.0999069,
+  "bridge_residual": 0.0,
+  "revenue_delta": 444521449.5344467,
+  "period_delta_ebitda": 335067649.0999069,
+  "annual_run_rate_delta": 670135298.1998138,
+  "approved_delta_ebitda": null,
+  "approved_annual_run_rate_delta": null,
+  "status": "На согласовании",
+  "confirmation_fields": [
+    "Производственная база",
+    "Матрица конечных выходов",
+    "Состав и ставки расходов",
+    "Постоянные расходы",
+    "Спрос конечных продуктов",
+    "Мощности маршрутов"
+  ],
+  "demand": [
+    {
+      "code": "0",
+      "name": "Тушка",
+      "additional_kg": 0.0,
+      "demand_kg": null,
+      "excess_kg": 0.0,
+      "status": "На согласовании"
+    },
+    {
+      "code": "1",
+      "name": "Грудка с кожей",
+      "additional_kg": 4444094.766149998,
+      "demand_kg": null,
+      "excess_kg": null,
+      "status": "На согласовании"
+    },
+    {
+      "code": "2",
+      "name": "Четвертина задняя",
+      "additional_kg": 4785948.2097,
+      "demand_kg": null,
+      "excess_kg": null,
+      "status": "На согласовании"
+    },
+    {
+      "code": "3",
+      "name": "Крыло с кожей",
+      "additional_kg": 786262.920165,
+      "demand_kg": null,
+      "excess_kg": null,
+      "status": "На согласовании"
+    },
+    {
+      "code": "4",
+      "name": "Кисть крыла",
+      "additional_kg": 113951.14784999995,
+      "demand_kg": null,
+      "excess_kg": null,
+      "status": "На согласовании"
+    },
+    {
+      "code": "5",
+      "name": "Набор «Крылья»",
+      "additional_kg": 353248.55833499995,
+      "demand_kg": null,
+      "excess_kg": null,
+      "status": "На согласовании"
+    },
+    {
+      "code": "6",
+      "name": "Спинно-лопаточная часть",
+      "additional_kg": 911609.1827999996,
+      "demand_kg": null,
+      "excess_kg": null,
+      "status": "На согласовании"
+    },
+    {
+      "code": "deep",
+      "name": "Изделие глубокой переработки",
+      "additional_kg": 0.0,
+      "demand_kg": null,
+      "excess_kg": 0.0,
+      "status": "На согласовании"
+    }
+  ],
+  "capacities": [],
+  "reconciliation": {
+    "placement_timing_factor": 1.0,
+    "mortality_timing_factor": 1.0468138657685613,
+    "feed_timing_factor": 1.0,
+    "feed_basis": "Расчётная потребность по конверсии корма",
+    "method": "Наблюдаемая база × относительное изменение операционных факторов"
+  }
+}

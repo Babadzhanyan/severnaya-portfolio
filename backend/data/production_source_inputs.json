@@ -1,0 +1,141 @@
+{
+  "period": "Январь–июнь 2026",
+  "months": 6,
+  "file": "02_Входящие_Rocket/Отчеты от финансов/Costing2026_S&W_June.xlsx",
+  "actual_month_columns": [
+    "Q",
+    "R",
+    "S",
+    "T",
+    "U",
+    "V"
+  ],
+  "july_column": "W",
+  "july_live_kg": 0,
+  "fields": [
+    {
+      "code": "eggs_set",
+      "name": "Яиц заложено",
+      "value": 72924750,
+      "unit": "шт",
+      "cell": "DOC!O12",
+      "origin": "Исходные данные",
+      "status": "На согласовании"
+    },
+    {
+      "code": "hatch_rate",
+      "name": "Выводимость",
+      "value": 0.8639415561931991,
+      "unit": "доля",
+      "cell": "DOC!O13",
+      "origin": "Исходные данные",
+      "status": "На согласовании"
+    },
+    {
+      "code": "chick_reject_rate",
+      "name": "Отбраковка цыплят",
+      "value": 0.010003377314396034,
+      "unit": "доля",
+      "cell": "DOC!O15",
+      "origin": "Исходные данные",
+      "status": "На согласовании"
+    },
+    {
+      "code": "placed_chicks",
+      "name": "Цыплят посажено",
+      "value": 62372482,
+      "unit": "гол",
+      "cell": "Broiler!O6",
+      "origin": "Исходные данные",
+      "status": "На согласовании"
+    },
+    {
+      "code": "live_heads",
+      "name": "Голов сдано на убой",
+      "value": 57795460,
+      "unit": "гол",
+      "cell": "Broiler!O7",
+      "origin": "Исходные данные",
+      "status": "На согласовании"
+    },
+    {
+      "code": "live_kg",
+      "name": "Живой вес",
+      "value": 140052766,
+      "unit": "кг",
+      "cell": "Broiler!O9",
+      "origin": "Исходные данные",
+      "status": "На согласовании"
+    },
+    {
+      "code": "mortality_rate",
+      "name": "Падёж",
+      "value": 0.11482073581665633,
+      "unit": "доля",
+      "cell": "Broiler!O14",
+      "origin": "Исходные данные",
+      "status": "На согласовании"
+    },
+    {
+      "code": "fcr",
+      "name": "Конверсия корма",
+      "value": 1.5889472659946222,
+      "unit": "кг/кг",
+      "cell": "Broiler!O11",
+      "origin": "Исходные данные",
+      "status": "На согласовании"
+    },
+    {
+      "code": "slaughter_yield",
+      "name": "Выход мяса бройлера",
+      "value": 0.80363011316749,
+      "unit": "доля",
+      "cell": "Chicken meat!O12",
+      "origin": "Исходные данные",
+      "status": "На согласовании"
+    },
+    {
+      "code": "broiler_meat_kg",
+      "name": "Мясо бройлера",
+      "value": 112550620.19,
+      "unit": "кг",
+      "cell": "Chicken meat!O10",
+      "origin": "Исходные данные",
+      "status": "На согласовании"
+    },
+    {
+      "code": "total_meat_kg",
+      "name": "Мясо бройлера и родительского стада",
+      "value": 113649484.09,
+      "unit": "кг",
+      "cell": "Chicken meat!O9",
+      "origin": "Исходные данные",
+      "status": "На согласовании"
+    }
+  ],
+  "current_basket": {
+    "file": "Продажи/Эффективность разделки.xlsx",
+    "sheet": "Калькуляция",
+    "period": "Март 2026",
+    "common_input_kg": 1,
+    "revenue_delta_per_kg": 35.52934095158622,
+    "full_price_and_packaging_delta_per_kg": 26.12539182997926,
+    "status": "На согласовании"
+  },
+  "new_pricebook": {
+    "file": "Встречи/С Экспертом 2/20261005_Прайс лист и расчет контрибуционной маржи.xlsx",
+    "sample_products": 3,
+    "financial_period": "Январь / 20?? Fact",
+    "gross_to_net_rate_cell": "Sheet1!AB2:AB4",
+    "comparison": "Изделие × упаковка × период × основа цены"
+  },
+  "confirmation_fields": [
+    "Структура выпуска по маршрутам",
+    "Выходы глубокой переработки",
+    "Переменные расходы и их физические драйверы",
+    "Цены после исключения НДС и скидок за сопоставимый период",
+    "Спрос всех конечных продуктов",
+    "Нормы и часы всех участков",
+    "Пиковый запас холодильного склада"
+  ]
+}

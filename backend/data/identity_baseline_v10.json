@@ -1,0 +1,808 @@
+{
+  "ИТ-001": {
+    "source_row": 3,
+    "retired_aliases": []
+  },
+  "ИТ-002": {
+    "source_row": 4,
+    "retired_aliases": []
+  },
+  "ИТ-003": {
+    "source_row": 5,
+    "retired_aliases": []
+  },
+  "ИТ-004": {
+    "source_row": 6,
+    "retired_aliases": []
+  },
+  "ИТ-006": {
+    "source_row": 8,
+    "retired_aliases": []
+  },
+  "ИТ-007": {
+    "source_row": 9,
+    "retired_aliases": []
+  },
+  "ИТ-008": {
+    "source_row": 10,
+    "retired_aliases": []
+  },
+  "ИТ-009": {
+    "source_row": 11,
+    "retired_aliases": []
+  },
+  "ИТ-010": {
+    "source_row": 12,
+    "retired_aliases": []
+  },
+  "ИТ-011": {
+    "source_row": 13,
+    "retired_aliases": []
+  },
+  "ИТ-012": {
+    "source_row": 14,
+    "retired_aliases": []
+  },
+  "ИТ-013": {
+    "source_row": 15,
+    "retired_aliases": []
+  },
+  "ИТ-014": {
+    "source_row": 16,
+    "retired_aliases": []
+  },
+  "ИТ-015": {
+    "source_row": 17,
+    "retired_aliases": []
+  },
+  "ИТ-018": {
+    "source_row": 20,
+    "retired_aliases": []
+  },
+  "ИТ-019": {
+    "source_row": 21,
+    "retired_aliases": []
+  },
+  "ИТ-020": {
+    "source_row": 22,
+    "retired_aliases": []
+  },
+  "ИТ-021": {
+    "source_row": 23,
+    "retired_aliases": []
+  },
+  "ИТ-022": {
+    "source_row": 24,
+    "retired_aliases": []
+  },
+  "ИТ-023": {
+    "source_row": 25,
+    "retired_aliases": []
+  },
+  "ИТ-024": {
+    "source_row": 26,
+    "retired_aliases": []
+  },
+  "ИТ-026": {
+    "source_row": 28,
+    "retired_aliases": []
+  },
+  "ИТ-027": {
+    "source_row": 29,
+    "retired_aliases": []
+  },
+  "ИТ-028": {
+    "source_row": 30,
+    "retired_aliases": []
+  },
+  "ИТ-029": {
+    "source_row": 31,
+    "retired_aliases": [
+      "ИТ-025"
+    ]
+  },
+  "ИТ-030": {
+    "source_row": 32,
+    "retired_aliases": []
+  },
+  "ИТ-031": {
+    "source_row": 33,
+    "retired_aliases": []
+  },
+  "ИТ-032": {
+    "source_row": 34,
+    "retired_aliases": []
+  },
+  "ИТ-033": {
+    "source_row": 35,
+    "retired_aliases": [
+      "ИТ-005"
+    ]
+  },
+  "ИТ-034": {
+    "source_row": 36,
+    "retired_aliases": []
+  },
+  "ИТ-035": {
+    "source_row": 37,
+    "retired_aliases": [
+      "ИТ-016"
+    ]
+  },
+  "ИТ-036": {
+    "source_row": 38,
+    "retired_aliases": []
+  },
+  "ИТ-037": {
+    "source_row": 39,
+    "retired_aliases": []
+  },
+  "ИТ-038": {
+    "source_row": 40,
+    "retired_aliases": [
+      "ИТ-017"
+    ]
+  },
+  "ИТ-039": {
+    "source_row": 41,
+    "retired_aliases": []
+  },
+  "ИТ-040": {
+    "source_row": 42,
+    "retired_aliases": []
+  },
+  "ИТ-041": {
+    "source_row": 43,
+    "retired_aliases": []
+  },
+  "ИТ-042": {
+    "source_row": 44,
+    "retired_aliases": []
+  },
+  "ИТ-043": {
+    "source_row": 45,
+    "retired_aliases": []
+  },
+  "ИТ-044": {
+    "source_row": 46,
+    "retired_aliases": []
+  },
+  "ИТ-045": {
+    "source_row": 47,
+    "retired_aliases": []
+  },
+  "ИТ-046": {
+    "source_row": 48,
+    "retired_aliases": []
+  },
+  "ИТ-047": {
+    "source_row": 49,
+    "retired_aliases": []
+  },
+  "ИТ-048": {
+    "source_row": 50,
+    "retired_aliases": []
+  },
+  "ИТ-049": {
+    "source_row": 51,
+    "retired_aliases": []
+  },
+  "ИТ-050": {
+    "source_row": 52,
+    "retired_aliases": []
+  },
+  "ИТ-051": {
+    "source_row": 53,
+    "retired_aliases": [
+      "ИТ-082"
+    ]
+  },
+  "ИТ-052": {
+    "source_row": 54,
+    "retired_aliases": []
+  },
+  "ИТ-053": {
+    "source_row": 55,
+    "retired_aliases": []
+  },
+  "ИТ-054": {
+    "source_row": 56,
+    "retired_aliases": []
+  },
+  "ИТ-055": {
+    "source_row": 57,
+    "retired_aliases": []
+  },
+  "ИТ-056": {
+    "source_row": 58,
+    "retired_aliases": []
+  },
+  "ИТ-057": {
+    "source_row": 59,
+    "retired_aliases": []
+  },
+  "ИТ-058": {
+    "source_row": 60,
+    "retired_aliases": []
+  },
+  "ИТ-059": {
+    "source_row": 61,
+    "retired_aliases": []
+  },
+  "ИТ-060": {
+    "source_row": 62,
+    "retired_aliases": []
+  },
+  "ИТ-061": {
+    "source_row": 63,
+    "retired_aliases": []
+  },
+  "ИТ-062": {
+    "source_row": 64,
+    "retired_aliases": []
+  },
+  "ИТ-063": {
+    "source_row": 65,
+    "retired_aliases": []
+  },
+  "ИТ-064": {
+    "source_row": 66,
+    "retired_aliases": []
+  },
+  "ИТ-065": {
+    "source_row": 67,
+    "retired_aliases": []
+  },
+  "ИТ-066": {
+    "source_row": 68,
+    "retired_aliases": []
+  },
+  "ИТ-067": {
+    "source_row": 69,
+    "retired_aliases": []
+  },
+  "ИТ-068": {
+    "source_row": 70,
+    "retired_aliases": []
+  },
+  "ИТ-069": {
+    "source_row": 71,
+    "retired_aliases": []
+  },
+  "ИТ-070": {
+    "source_row": 72,
+    "retired_aliases": []
+  },
+  "ИТ-071": {
+    "source_row": 73,
+    "retired_aliases": []
+  },
+  "ИТ-072": {
+    "source_row": 74,
+    "retired_aliases": []
+  },
+  "ИТ-073": {
+    "source_row": 75,
+    "retired_aliases": []
+  },
+  "ИТ-074": {
+    "source_row": 76,
+    "retired_aliases": []
+  },
+  "ИТ-075": {
+    "source_row": 77,
+    "retired_aliases": []
+  },
+  "ИТ-076": {
+    "source_row": 78,
+    "retired_aliases": []
+  },
+  "ИТ-077": {
+    "source_row": 79,
+    "retired_aliases": []
+  },
+  "ИТ-078": {
+    "source_row": 80,
+    "retired_aliases": []
+  },
+  "ИТ-079": {
+    "source_row": 81,
+    "retired_aliases": []
+  },
+  "ИТ-080": {
+    "source_row": 82,
+    "retired_aliases": [
+      "ИТ-083"
+    ]
+  },
+  "ИТ-081": {
+    "source_row": 83,
+    "retired_aliases": []
+  },
+  "ИТ-084": {
+    "source_row": 86,
+    "retired_aliases": []
+  },
+  "ИТ-085": {
+    "source_row": 87,
+    "retired_aliases": []
+  },
+  "ИТ-086": {
+    "source_row": 88,
+    "retired_aliases": []
+  },
+  "ИТ-088": {
+    "source_row": 90,
+    "retired_aliases": []
+  },
+  "ИТ-089": {
+    "source_row": 91,
+    "retired_aliases": []
+  },
+  "ИТ-090": {
+    "source_row": 92,
+    "retired_aliases": []
+  },
+  "ИТ-091": {
+    "source_row": 93,
+    "retired_aliases": []
+  },
+  "ИТ-092": {
+    "source_row": 94,
+    "retired_aliases": []
+  },
+  "ИТ-093": {
+    "source_row": 95,
+    "retired_aliases": []
+  },
+  "ИТ-094": {
+    "source_row": 96,
+    "retired_aliases": []
+  },
+  "ИТ-095": {
+    "source_row": 97,
+    "retired_aliases": []
+  },
+  "ИТ-096": {
+    "source_row": 98,
+    "retired_aliases": []
+  },
+  "ИТ-097": {
+    "source_row": 99,
+    "retired_aliases": []
+  },
+  "ИТ-098": {
+    "source_row": 100,
+    "retired_aliases": []
+  },
+  "ИТ-099": {
+    "source_row": 101,
+    "retired_aliases": []
+  },
+  "ИТ-100": {
+    "source_row": 102,
+    "retired_aliases": []
+  },
+  "ИТ-102": {
+    "source_row": 104,
+    "retired_aliases": []
+  },
+  "ИТ-103": {
+    "source_row": 105,
+    "retired_aliases": []
+  },
+  "ИТ-104": {
+    "source_row": 106,
+    "retired_aliases": []
+  },
+  "ИТ-105": {
+    "source_row": 107,
+    "retired_aliases": []
+  },
+  "ИТ-106": {
+    "source_row": 108,
+    "retired_aliases": []
+  },
+  "ИТ-107": {
+    "source_row": 109,
+    "retired_aliases": []
+  },
+  "ИТ-108": {
+    "source_row": 110,
+    "retired_aliases": [
+      "ИТ-087"
+    ]
+  },
+  "ИТ-109": {
+    "source_row": 111,
+    "retired_aliases": []
+  },
+  "ИТ-110": {
+    "source_row": 112,
+    "retired_aliases": []
+  },
+  "ИТ-111": {
+    "source_row": 113,
+    "retired_aliases": []
+  },
+  "ИТ-112": {
+    "source_row": 114,
+    "retired_aliases": []
+  },
+  "ИТ-113": {
+    "source_row": 115,
+    "retired_aliases": []
+  },
+  "ИТ-114": {
+    "source_row": 116,
+    "retired_aliases": []
+  },
+  "ИТ-115": {
+    "source_row": 117,
+    "retired_aliases": [
+      "ИТ-101"
+    ]
+  },
+  "ИТ-116": {
+    "source_row": 118,
+    "retired_aliases": []
+  },
+  "ИТ-117": {
+    "source_row": 119,
+    "retired_aliases": []
+  },
+  "ИТ-118": {
+    "source_row": 120,
+    "retired_aliases": []
+  },
+  "ИТ-120": {
+    "source_row": 122,
+    "retired_aliases": []
+  },
+  "ИТ-121": {
+    "source_row": 123,
+    "retired_aliases": []
+  },
+  "ИТ-122": {
+    "source_row": 124,
+    "retired_aliases": []
+  },
+  "ИТ-123": {
+    "source_row": 125,
+    "retired_aliases": [
+      "ИТ-119"
+    ]
+  },
+  "ИТ-124": {
+    "source_row": 126,
+    "retired_aliases": []
+  },
+  "ИТ-125": {
+    "source_row": 127,
+    "retired_aliases": []
+  },
+  "ИТ-126": {
+    "source_row": 128,
+    "retired_aliases": []
+  },
+  "ИТ-127": {
+    "source_row": 129,
+    "retired_aliases": [
+      "ИТ-129"
+    ]
+  },
+  "ИТ-128": {
+    "source_row": 130,
+    "retired_aliases": []
+  },
+  "ИТ-130": {
+    "source_row": 132,
+    "retired_aliases": []
+  },
+  "ИТ-131": {
+    "source_row": 133,
+    "retired_aliases": []
+  },
+  "ИТ-132": {
+    "source_row": 134,
+    "retired_aliases": []
+  },
+  "ИТ-133": {
+    "source_row": 135,
+    "retired_aliases": []
+  },
+  "ИТ-134": {
+    "source_row": 136,
+    "retired_aliases": []
+  },
+  "ИТ-135": {
+    "source_row": 137,
+    "retired_aliases": []
+  },
+  "ИТ-136": {
+    "source_row": 138,
+    "retired_aliases": []
+  },
+  "ИТ-137": {
+    "source_row": 139,
+    "retired_aliases": [
+      "ИТ-142"
+    ]
+  },
+  "ИТ-138": {
+    "source_row": 140,
+    "retired_aliases": []
+  },
+  "ИТ-139": {
+    "source_row": 141,
+    "retired_aliases": []
+  },
+  "ИТ-140": {
+    "source_row": 142,
+    "retired_aliases": []
+  },
+  "ИТ-141": {
+    "source_row": 143,
+    "retired_aliases": []
+  },
+  "ИТ-143": {
+    "source_row": 145,
+    "retired_aliases": []
+  },
+  "ИТ-144": {
+    "source_row": 146,
+    "retired_aliases": []
+  },
+  "ИТ-145": {
+    "source_row": 147,
+    "retired_aliases": [
+      "ИТ-156"
+    ]
+  },
+  "ИТ-146": {
+    "source_row": 148,
+    "retired_aliases": []
+  },
+  "ИТ-147": {
+    "source_row": 149,
+    "retired_aliases": []
+  },
+  "ИТ-148": {
+    "source_row": 150,
+    "retired_aliases": []
+  },
+  "ИТ-149": {
+    "source_row": 151,
+    "retired_aliases": []
+  },
+  "ИТ-150": {
+    "source_row": 152,
+    "retired_aliases": []
+  },
+  "ИТ-151": {
+    "source_row": 153,
+    "retired_aliases": []
+  },
+  "ИТ-152": {
+    "source_row": 154,
+    "retired_aliases": []
+  },
+  "ИТ-153": {
+    "source_row": 155,
+    "retired_aliases": []
+  },
+  "ИТ-154": {
+    "source_row": 156,
+    "retired_aliases": []
+  },
+  "ИТ-155": {
+    "source_row": 157,
+    "retired_aliases": []
+  },
+  "ИТ-157": {
+    "source_row": 159,
+    "retired_aliases": []
+  },
+  "ИТ-158": {
+    "source_row": 160,
+    "retired_aliases": []
+  },
+  "ИТ-159": {
+    "source_row": 161,
+    "retired_aliases": []
+  },
+  "ИТ-160": {
+    "source_row": 162,
+    "retired_aliases": []
+  },
+  "ИТ-161": {
+    "source_row": 163,
+    "retired_aliases": []
+  },
+  "ИТ-162": {
+    "source_row": 164,
+    "retired_aliases": []
+  },
+  "ИТ-163": {
+    "source_row": 165,
+    "retired_aliases": []
+  },
+  "ИТ-164": {
+    "source_row": 166,
+    "retired_aliases": []
+  },
+  "ИТ-165": {
+    "source_row": 167,
+    "retired_aliases": []
+  },
+  "ИТ-166": {
+    "source_row": 168,
+    "retired_aliases": []
+  },
+  "ИТ-167": {
+    "source_row": 169,
+    "retired_aliases": []
+  },
+  "ИТ-168": {
+    "source_row": 170,
+    "retired_aliases": []
+  },
+  "ИТ-169": {
+    "source_row": 171,
+    "retired_aliases": []
+  },
+  "ИТ-170": {
+    "source_row": 172,
+    "retired_aliases": []
+  },
+  "ИТ-171": {
+    "source_row": 173,
+    "retired_aliases": []
+  },
+  "ИТ-172": {
+    "source_row": 174,
+    "retired_aliases": []
+  },
+  "ИТ-173": {
+    "source_row": 175,
+    "retired_aliases": []
+  },
+  "ИТ-174": {
+    "source_row": 176,
+    "retired_aliases": []
+  },
+  "ИТ-175": {
+    "source_row": 177,
+    "retired_aliases": []
+  },
+  "ИТ-176": {
+    "source_row": 178,
+    "retired_aliases": []
+  },
+  "ИТ-177": {
+    "source_row": 179,
+    "retired_aliases": []
+  },
+  "ИТ-178": {
+    "source_row": 180,
+    "retired_aliases": []
+  },
+  "ИТ-179": {
+    "source_row": 181,
+    "retired_aliases": []
+  },
+  "ИТ-180": {
+    "source_row": 182,
+    "retired_aliases": []
+  },
+  "ИТ-181": {
+    "source_row": 183,
+    "retired_aliases": []
+  },
+  "ИТ-182": {
+    "source_row": 184,
+    "retired_aliases": []
+  },
+  "ИТ-183": {
+    "source_row": 185,
+    "retired_aliases": []
+  },
+  "ИТ-184": {
+    "source_row": 186,
+    "retired_aliases": []
+  },
+  "ИТ-185": {
+    "source_row": 187,
+    "retired_aliases": []
+  },
+  "ИТ-186": {
+    "source_row": 188,
+    "retired_aliases": []
+  },
+  "ИТ-187": {
+    "source_row": 189,
+    "retired_aliases": []
+  },
+  "ИТ-188": {
+    "source_row": 190,
+    "retired_aliases": []
+  },
+  "ИТ-189": {
+    "source_row": 191,
+    "retired_aliases": []
+  },
+  "ИТ-190": {
+    "source_row": 192,
+    "retired_aliases": []
+  },
+  "ИТ-191": {
+    "source_row": 193,
+    "retired_aliases": [
+      "ИТ-195"
+    ]
+  },
+  "ИТ-192": {
+    "source_row": 194,
+    "retired_aliases": []
+  },
+  "ИТ-193": {
+    "source_row": 195,
+    "retired_aliases": []
+  },
+  "ИТ-194": {
+    "source_row": 196,
+    "retired_aliases": []
+  },
+  "ИТ-196": {
+    "source_row": 198,
+    "retired_aliases": []
+  },
+  "ИТ-197": {
+    "source_row": 199,
+    "retired_aliases": []
+  },
+  "ИТ-198": {
+    "source_row": 200,
+    "retired_aliases": []
+  },
+  "ИТ-199": {
+    "source_row": 201,
+    "retired_aliases": []
+  },
+  "ИТ-200": {
+    "source_row": 202,
+    "retired_aliases": []
+  },
+  "ИТ-201": {
+    "source_row": 203,
+    "retired_aliases": []
+  },
+  "ИТ-202": {
+    "source_row": 204,
+    "retired_aliases": []
+  },
+  "ИТ-203": {
+    "source_row": 205,
+    "retired_aliases": []
+  },
+  "ИТ-204": {
+    "source_row": 206,
+    "retired_aliases": []
+  },
+  "ИТ-205": {
+    "source_row": 207,
+    "retired_aliases": []
+  },
+  "ИТ-206": {
+    "source_row": 208,
+    "retired_aliases": []
+  },
+  "ИТ-207": {
+    "source_row": 209,
+    "retired_aliases": []
+  },
+  "ИТ-208": {
+    "source_row": 210,
+    "retired_aliases": []
+  }
+}

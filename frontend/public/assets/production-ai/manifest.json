@@ -1,0 +1,411 @@
+{
+  "version": 2,
+  "title": "28 иллюстраций показывают всю цепочку производства и поддерживающие службы Северной",
+  "generation": "Встроенный image_gen",
+  "palette": {
+    "white": "#FFFFFF",
+    "navy": "#003C72",
+    "steel": "#6E8CA8",
+    "light_blue": "#EDF3F8",
+    "amber": "#F2AA00"
+  },
+  "assets": [
+    {
+      "id": "procurement",
+      "name": "Закупка сырья и логистика",
+      "path": "assets/production-ai/procurement.webp",
+      "size": {
+        "width": 640,
+        "height": 640,
+        "bytes": 77010
+      },
+      "sha256": "4f7e034345807fc5d8b98814417843ff69eb9fc00540ba2ea26a192b7c59b628",
+      "architecture_nodes": [
+        "procurement"
+      ]
+    },
+    {
+      "id": "feed",
+      "name": "Комбикормовый завод",
+      "path": "assets/production-ai/feed.webp",
+      "size": {
+        "width": 640,
+        "height": 640,
+        "bytes": 95148
+      },
+      "sha256": "4b9609d7795f28578a1611bd3718993e3b4d2872e05398b57bf54e53aa960bfb",
+      "architecture_nodes": [
+        "feed"
+      ]
+    },
+    {
+      "id": "parent",
+      "name": "Родительское стадо",
+      "path": "assets/production-ai/parent.webp",
+      "size": {
+        "width": 640,
+        "height": 640,
+        "bytes": 72534
+      },
+      "sha256": "243f1fae509a9b6b8e96471ae1245e84c0e3063de296a510cdefe6fd7f06f099",
+      "architecture_nodes": [
+        "parent"
+      ]
+    },
+    {
+      "id": "hatchery",
+      "name": "Инкубаторий",
+      "path": "assets/production-ai/hatchery.webp",
+      "size": {
+        "width": 640,
+        "height": 640,
+        "bytes": 59282
+      },
+      "sha256": "d1931172dd2e955695e4aa87c6ddcc2a23cdf8193313afc9241a0cca0147ad68",
+      "architecture_nodes": [
+        "hatchery"
+      ]
+    },
+    {
+      "id": "broiler",
+      "name": "Выращивание бройлеров",
+      "path": "assets/production-ai/broiler.webp",
+      "size": {
+        "width": 640,
+        "height": 640,
+        "bytes": 62166
+      },
+      "sha256": "2601e59bcea1c86a7921d68a1b3bcd5899a96fbbb9af88ceafe9e3b6198acda1",
+      "architecture_nodes": [
+        "broiler"
+      ]
+    },
+    {
+      "id": "processing",
+      "name": "Убой, разделка и глубокая переработка",
+      "path": "assets/production-ai/processing.webp",
+      "size": {
+        "width": 640,
+        "height": 640,
+        "bytes": 69688
+      },
+      "sha256": "281a6d30569b5d8d829cc1d24d3dd7fa0a503e678cd5a9f0fb4556677283df8a",
+      "architecture_nodes": [
+        "slaughter",
+        "chilling",
+        "cutting",
+        "deep",
+        "packing"
+      ]
+    },
+    {
+      "id": "sales",
+      "name": "Продажи и отгрузка",
+      "path": "assets/production-ai/sales.webp",
+      "size": {
+        "width": 640,
+        "height": 640,
+        "bytes": 66058
+      },
+      "sha256": "1103c74bf29aa883e926c9f8081650afe37d6e79f75d6e927fb1afdb424b2d4c",
+      "architecture_nodes": [
+        "warehouse",
+        "sales"
+      ]
+    },
+    {
+      "id": "personnel",
+      "name": "Управление персоналом",
+      "path": "assets/production-ai/personnel.webp",
+      "size": {
+        "width": 640,
+        "height": 640,
+        "bytes": 58074
+      },
+      "sha256": "035cb114a1a45cada9e844a523676fcfebebc82ed17d2e9de4d0cb1528942746",
+      "architecture_nodes": [
+        "personnel"
+      ]
+    },
+    {
+      "id": "finance",
+      "name": "Финансы",
+      "path": "assets/production-ai/finance.webp",
+      "size": {
+        "width": 640,
+        "height": 640,
+        "bytes": 64096
+      },
+      "sha256": "06635ef8425a74826cb06270af508d86163e1dba8f7d38fd1ec6600fd764c743",
+      "architecture_nodes": [
+        "finance"
+      ]
+    },
+    {
+      "id": "accounting",
+      "name": "Бухгалтерский учёт",
+      "path": "assets/production-ai/accounting.webp",
+      "size": {
+        "width": 640,
+        "height": 640,
+        "bytes": 64612
+      },
+      "sha256": "d45461597cba045768c22a5c5a618caa31754680e6c5b225b1c95d5981aeec38",
+      "architecture_nodes": [
+        "accounting"
+      ]
+    },
+    {
+      "id": "veterinary",
+      "name": "Ветеринария",
+      "path": "assets/production-ai/veterinary.webp",
+      "size": {
+        "width": 640,
+        "height": 640,
+        "bytes": 58842
+      },
+      "sha256": "42c347ff41c1a9a6394bd890199609d501efb5e3bd20d63550e444e6aeaae344",
+      "architecture_nodes": [
+        "veterinary"
+      ]
+    },
+    {
+      "id": "vet-lab",
+      "name": "Ветеринарная лаборатория",
+      "path": "assets/production-ai/vet-lab.webp",
+      "size": {
+        "width": 640,
+        "height": 640,
+        "bytes": 63072
+      },
+      "sha256": "a6716a0b7e0362b867a054a4b8e1aa954e5ae062d665f725cb766872f6d57b7e",
+      "architecture_nodes": [
+        "vet-lab"
+      ]
+    },
+    {
+      "id": "chilling",
+      "name": "Охлаждение и сортировка",
+      "path": "assets/production-ai/chilling.webp",
+      "size": {
+        "width": 640,
+        "height": 640,
+        "bytes": 52750
+      },
+      "sha256": "d55337b1fa73a31953b6e68dd84083483b548b348de2e48148c290cee3b35dcd",
+      "architecture_nodes": [
+        "chilling"
+      ]
+    },
+    {
+      "id": "cutting",
+      "name": "Разделка и обвалка",
+      "path": "assets/production-ai/cutting.webp",
+      "size": {
+        "width": 640,
+        "height": 640,
+        "bytes": 64842
+      },
+      "sha256": "2de23357698f0e4c955b15db41bf6ce282f5263c98d6bd427d3a1ae02017d18b",
+      "architecture_nodes": [
+        "cutting"
+      ]
+    },
+    {
+      "id": "fleet",
+      "name": "Автопарк",
+      "path": "assets/production-ai/fleet.webp",
+      "size": {
+        "width": 640,
+        "height": 640,
+        "bytes": 61356
+      },
+      "sha256": "ac401175c61d5b4508ed2469003b792e8b5e3eed34911ebe76f3882d64e8e293",
+      "architecture_nodes": [
+        "fleet"
+      ]
+    },
+    {
+      "id": "repair",
+      "name": "Ремонт",
+      "path": "assets/production-ai/repair.webp",
+      "size": {
+        "width": 640,
+        "height": 640,
+        "bytes": 62782
+      },
+      "sha256": "a9542aeac6183f3ad8a6e1d5d9e97f705f4a0b9bbab52c9eafe4fc53d0c12fb3",
+      "architecture_nodes": [
+        "repair"
+      ]
+    },
+    {
+      "id": "boiler",
+      "name": "Котельная",
+      "path": "assets/production-ai/boiler.webp",
+      "size": {
+        "width": 640,
+        "height": 640,
+        "bytes": 69786
+      },
+      "sha256": "a8a5cbbf32468916d9dedf453473b4a9a6002ff04ef83d12eb6f10fb459c9a24",
+      "architecture_nodes": [
+        "boiler"
+      ]
+    },
+    {
+      "id": "electric",
+      "name": "Электроснабжение",
+      "path": "assets/production-ai/electric.webp",
+      "size": {
+        "width": 640,
+        "height": 640,
+        "bytes": 62110
+      },
+      "sha256": "3bfc984703a9f4302fa594366471fc86e24458004c51a4ce9b8210f5557512e9",
+      "architecture_nodes": [
+        "electric"
+      ]
+    },
+    {
+      "id": "extrusion",
+      "name": "Экструзия",
+      "path": "assets/production-ai/extrusion.webp",
+      "size": {
+        "width": 640,
+        "height": 640,
+        "bytes": 67472
+      },
+      "sha256": "df9b055e7884d6d5718318d4f85a669d7be44512a095a91c1b1c03a2cee67ce0",
+      "architecture_nodes": [
+        "extrusion"
+      ]
+    },
+    {
+      "id": "deep",
+      "name": "Глубокая переработка",
+      "path": "assets/production-ai/deep.webp",
+      "size": {
+        "width": 640,
+        "height": 640,
+        "bytes": 60516
+      },
+      "sha256": "e700912cc07326b347c032bd622a75245f171dc8710668a58088c6741ffb2595",
+      "architecture_nodes": [
+        "deep"
+      ]
+    },
+    {
+      "id": "packing",
+      "name": "Упаковка и маркировка",
+      "path": "assets/production-ai/packing.webp",
+      "size": {
+        "width": 640,
+        "height": 640,
+        "bytes": 60298
+      },
+      "sha256": "9429fecac486d561d16094ae494056ea53f85ebbc5209ca1560244a2f7cf9475",
+      "architecture_nodes": [
+        "packing"
+      ]
+    },
+    {
+      "id": "warehouse",
+      "name": "Склад",
+      "path": "assets/production-ai/warehouse.webp",
+      "size": {
+        "width": 640,
+        "height": 640,
+        "bytes": 86120
+      },
+      "sha256": "629d3ed8d1bd3ac63da56f4d2cf0a2b68055e9f33111cf846c249c13269dc4d4",
+      "architecture_nodes": [
+        "warehouse"
+      ]
+    },
+    {
+      "id": "environment",
+      "name": "Экология",
+      "path": "assets/production-ai/environment.webp",
+      "size": {
+        "width": 640,
+        "height": 640,
+        "bytes": 72676
+      },
+      "sha256": "7e6ecf42df27fd9981096460594681df8bc0c16761ee9873706aeb61baf77c93",
+      "architecture_nodes": [
+        "environment"
+      ]
+    },
+    {
+      "id": "safety",
+      "name": "Охрана труда",
+      "path": "assets/production-ai/safety.webp",
+      "size": {
+        "width": 640,
+        "height": 640,
+        "bytes": 87598
+      },
+      "sha256": "dda00e7aa088c4561d6261d857099f275259545bdd991d711a996007632ac794",
+      "architecture_nodes": [
+        "safety"
+      ]
+    },
+    {
+      "id": "wastewater",
+      "name": "Очистные сооружения",
+      "path": "assets/production-ai/wastewater.webp",
+      "size": {
+        "width": 640,
+        "height": 640,
+        "bytes": 67432
+      },
+      "sha256": "d1831987ef2694971e40dd6f0c45f9fd3e580a9daf76cedf4bbca49672901c6a",
+      "architecture_nodes": [
+        "wastewater"
+      ]
+    },
+    {
+      "id": "other-services",
+      "name": "Другие службы",
+      "path": "assets/production-ai/other-services.webp",
+      "size": {
+        "width": 640,
+        "height": 640,
+        "bytes": 51674
+      },
+      "sha256": "4942f2bf5ab54f86dd83217045b6d5ba4175b593ed80f5c66c65a4f3247b2951",
+      "architecture_nodes": [
+        "other-services"
+      ]
+    },
+    {
+      "id": "byproducts",
+      "name": "Субпродукты и механическая обвалка",
+      "path": "assets/production-ai/byproducts.webp",
+      "size": {
+        "width": 640,
+        "height": 640,
+        "bytes": 57582
+      },
+      "sha256": "97fa2330de55f0c7c1dd9f633ff6c3fc0dd49628151cbc10b4db33e9a52b6bf7",
+      "architecture_nodes": [
+        "other"
+      ]
+    },
+    {
+      "id": "coldstore",
+      "name": "Заморозка и склад",
+      "path": "assets/production-ai/coldstore.webp",
+      "size": {
+        "width": 640,
+        "height": 640,
+        "bytes": 52256
+      },
+      "sha256": "06e696c8bfb2ed8f8eeccecd4664cf7844ee007d1d27cc829cac4fb8742b3766",
+      "architecture_nodes": [
+        "warehouse"
+      ]
+    }
+  ]
+}

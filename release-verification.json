@@ -1,0 +1,308 @@
+{
+  "schema_version": 1,
+  "released_at": "2026-10-09T00:09:51.240986+00:00",
+  "verdict": "Проверка пройдена",
+  "site": "https://babadzhanyan.github.io/severnaya-portfolio/",
+  "registry": "https://docs.google.com/spreadsheets/d/1stFDS_18dulhc96CSybYdXDk3RyvMvsSO9HxPkTvB4g/edit#gid=404672457&range=B2",
+  "site_commit": "e0e030dcd82a7b8555bb13bff05e2a743cf1970e",
+  "content": {
+    "cards": 200,
+    "source_projects": 172,
+    "ideas": 28,
+    "working_cards": 147,
+    "historical_cards": 53,
+    "passport_fields": 58,
+    "visible_sheets": 5,
+    "table_start": "B2",
+    "main_sections": 5,
+    "linked_filters": 7,
+    "meeting_sessions": 4,
+    "copyable_messages": 10,
+    "videos": 3,
+    "legal_items": 28,
+    "legal_links": 95,
+    "primary_plant_associations": 95,
+    "general_systems": 105,
+    "repeated_primary_plant_associations": 0,
+    "preliminary_annual_ebitda_mln_rub": 55.013791,
+    "financially_approved_effects": 0,
+    "staff_review_deadline": "2026-10-13T18:00:00+03:00",
+    "heads_review_deadline": "2026-10-14T18:00:00+03:00"
+  },
+  "checks": {
+    "frontend_model_tests": 125,
+    "frontend_component_tests": 14,
+    "backend_tests": 71,
+    "full_browser_checks": 94,
+    "final_map_browser_checks": 51,
+    "independent_interface_score": {
+      "actual": 47,
+      "maximum": 50
+    },
+    "native_independent_checks": 2292,
+    "native_effective_cells": 17394,
+    "formula_errors": 0,
+    "duplicate_codes": 0,
+    "blank_card_rows": 0,
+    "public_assets_verified": 47,
+    "google_link_access": "anyone / writer",
+    "protected_ranges": 0,
+    "database_restart_preserves_200_cards": true
+  },
+  "hashes": {
+    "static_manifest_sha256": "985b2dd64545208f9d6f6368a682d6b3fae626416d4a471c7bef7f87bb6d9db5",
+    "source_manifest_sha256": "f27cca63d7e81b2108be92e16c143c37f004d863f9c024500fdebde57ab8e8e4",
+    "backend_normalized_source_sha256": "e23409c30377764bd4aa0f363e8cf0d920c39a0c504b68ded2dbe2b56a25aac5",
+    "independent_interface_report_sha256": "6c3f7a42f14a0f38dd576e783d6705af9ccf532b3efb0bd54474a206b76f076e"
+  },
+  "public_assets": [
+    {
+      "path": "assets/index-BXWKmZnB.js",
+      "bytes": 553410,
+      "sha256": "a820c3589dc8016cbd86e35205c28197e76abff13a440803c0b2510da833a5e1"
+    },
+    {
+      "path": "assets/index-Cd-aFBUU.css",
+      "bytes": 145933,
+      "sha256": "b9bc86ae3aba94699d3ea9412a93808567622ce76bafee970b3006a88b5ba491"
+    },
+    {
+      "path": "assets/production-ai/accounting.webp",
+      "bytes": 64612,
+      "sha256": "d45461597cba045768c22a5c5a618caa31754680e6c5b225b1c95d5981aeec38"
+    },
+    {
+      "path": "assets/production-ai/boiler.webp",
+      "bytes": 69786,
+      "sha256": "a8a5cbbf32468916d9dedf453473b4a9a6002ff04ef83d12eb6f10fb459c9a24"
+    },
+    {
+      "path": "assets/production-ai/broiler.webp",
+      "bytes": 62166,
+      "sha256": "2601e59bcea1c86a7921d68a1b3bcd5899a96fbbb9af88ceafe9e3b6198acda1"
+    },
+    {
+      "path": "assets/production-ai/byproducts.webp",
+      "bytes": 57582,
+      "sha256": "97fa2330de55f0c7c1dd9f633ff6c3fc0dd49628151cbc10b4db33e9a52b6bf7"
+    },
+    {
+      "path": "assets/production-ai/chilling.webp",
+      "bytes": 52750,
+      "sha256": "d55337b1fa73a31953b6e68dd84083483b548b348de2e48148c290cee3b35dcd"
+    },
+    {
+      "path": "assets/production-ai/coldstore.webp",
+      "bytes": 52256,
+      "sha256": "06e696c8bfb2ed8f8eeccecd4664cf7844ee007d1d27cc829cac4fb8742b3766"
+    },
+    {
+      "path": "assets/production-ai/cutting.webp",
+      "bytes": 64842,
+      "sha256": "2de23357698f0e4c955b15db41bf6ce282f5263c98d6bd427d3a1ae02017d18b"
+    },
+    {
+      "path": "assets/production-ai/deep.webp",
+      "bytes": 60516,
+      "sha256": "e700912cc07326b347c032bd622a75245f171dc8710668a58088c6741ffb2595"
+    },
+    {
+      "path": "assets/production-ai/electric.webp",
+      "bytes": 62110,
+      "sha256": "3bfc984703a9f4302fa594366471fc86e24458004c51a4ce9b8210f5557512e9"
+    },
+    {
+      "path": "assets/production-ai/environment.webp",
+      "bytes": 72676,
+      "sha256": "7e6ecf42df27fd9981096460594681df8bc0c16761ee9873706aeb61baf77c93"
+    },
+    {
+      "path": "assets/production-ai/extrusion.webp",
+      "bytes": 67472,
+      "sha256": "df9b055e7884d6d5718318d4f85a669d7be44512a095a91c1b1c03a2cee67ce0"
+    },
+    {
+      "path": "assets/production-ai/feed.webp",
+      "bytes": 95148,
+      "sha256": "4b9609d7795f28578a1611bd3718993e3b4d2872e05398b57bf54e53aa960bfb"
+    },
+    {
+      "path": "assets/production-ai/finance.webp",
+      "bytes": 64096,
+      "sha256": "06635ef8425a74826cb06270af508d86163e1dba8f7d38fd1ec6600fd764c743"
+    },
+    {
+      "path": "assets/production-ai/fleet.webp",
+      "bytes": 61356,
+      "sha256": "ac401175c61d5b4508ed2469003b792e8b5e3eed34911ebe76f3882d64e8e293"
+    },
+    {
+      "path": "assets/production-ai/hatchery.webp",
+      "bytes": 59282,
+      "sha256": "d1931172dd2e955695e4aa87c6ddcc2a23cdf8193313afc9241a0cca0147ad68"
+    },
+    {
+      "path": "assets/production-ai/liveweight-v14.webp",
+      "bytes": 103390,
+      "sha256": "afe45f93d9ec74c44d8e330dcc81d6ebf6bbf2c1ac7b04fcbaa3a2ca0a6b62e7"
+    },
+    {
+      "path": "assets/production-ai/manifest.json",
+      "bytes": 11165,
+      "sha256": "1b0b96e8c7f984838efbfc3937caef2d42fc11ac6248203243e7c6702a5e6da4"
+    },
+    {
+      "path": "assets/production-ai/other-services.webp",
+      "bytes": 51674,
+      "sha256": "4942f2bf5ab54f86dd83217045b6d5ba4175b593ed80f5c66c65a4f3247b2951"
+    },
+    {
+      "path": "assets/production-ai/packing.webp",
+      "bytes": 60298,
+      "sha256": "9429fecac486d561d16094ae494056ea53f85ebbc5209ca1560244a2f7cf9475"
+    },
+    {
+      "path": "assets/production-ai/parent.webp",
+      "bytes": 72534,
+      "sha256": "243f1fae509a9b6b8e96471ae1245e84c0e3063de296a510cdefe6fd7f06f099"
+    },
+    {
+      "path": "assets/production-ai/personnel.webp",
+      "bytes": 58074,
+      "sha256": "035cb114a1a45cada9e844a523676fcfebebc82ed17d2e9de4d0cb1528942746"
+    },
+    {
+      "path": "assets/production-ai/processing.webp",
+      "bytes": 69688,
+      "sha256": "281a6d30569b5d8d829cc1d24d3dd7fa0a503e678cd5a9f0fb4556677283df8a"
+    },
+    {
+      "path": "assets/production-ai/procurement.webp",
+      "bytes": 77010,
+      "sha256": "4f7e034345807fc5d8b98814417843ff69eb9fc00540ba2ea26a192b7c59b628"
+    },
+    {
+      "path": "assets/production-ai/repair.webp",
+      "bytes": 62782,
+      "sha256": "a9542aeac6183f3ad8a6e1d5d9e97f705f4a0b9bbab52c9eafe4fc53d0c12fb3"
+    },
+    {
+      "path": "assets/production-ai/safety.webp",
+      "bytes": 87598,
+      "sha256": "dda00e7aa088c4561d6261d857099f275259545bdd991d711a996007632ac794"
+    },
+    {
+      "path": "assets/production-ai/sales.webp",
+      "bytes": 66058,
+      "sha256": "1103c74bf29aa883e926c9f8081650afe37d6e79f75d6e927fb1afdb424b2d4c"
+    },
+    {
+      "path": "assets/production-ai/vet-lab.webp",
+      "bytes": 63072,
+      "sha256": "a6716a0b7e0362b867a054a4b8e1aa954e5ae062d665f725cb766872f6d57b7e"
+    },
+    {
+      "path": "assets/production-ai/veterinary.webp",
+      "bytes": 58842,
+      "sha256": "42c347ff41c1a9a6394bd890199609d501efb5e3bd20d63550e444e6aeaae344"
+    },
+    {
+      "path": "assets/production-ai/warehouse.webp",
+      "bytes": 86120,
+      "sha256": "629d3ed8d1bd3ac63da56f4d2cf0a2b68055e9f33111cf846c249c13269dc4d4"
+    },
+    {
+      "path": "assets/production-ai/wastewater.webp",
+      "bytes": 67432,
+      "sha256": "d1831987ef2694971e40dd6f0c45f9fd3e580a9daf76cedf4bbca49672901c6a"
+    },
+    {
+      "path": "assets/tutorials/01-passport.jpg",
+      "bytes": 62493,
+      "sha256": "939a0901354fa5d1d96afa6139993f8dfd70f77407d1f3c5137e4e4585bf62dd"
+    },
+    {
+      "path": "assets/tutorials/01-passport.mp4",
+      "bytes": 2386006,
+      "sha256": "10bb76fc32bec01fd2c9f3dcec87487b606f9e36e6ba5bd2bac700704153de1f"
+    },
+    {
+      "path": "assets/tutorials/01-passport.vtt",
+      "bytes": 932,
+      "sha256": "3e306001d5894f4d00a1c9c79f92492d3d5530c849f1cf81cbb3a6ee354e524a"
+    },
+    {
+      "path": "assets/tutorials/02-effects.jpg",
+      "bytes": 65086,
+      "sha256": "fe64f317e0891c5df99f8e390a612f52754f5d281760ee7ed70175bbe7ce75b7"
+    },
+    {
+      "path": "assets/tutorials/02-effects.mp4",
+      "bytes": 2274546,
+      "sha256": "ea24a7a5d69d4627ce4b587509420d42e4b3fa2648e7f3b4fe373afcdccc3d32"
+    },
+    {
+      "path": "assets/tutorials/02-effects.vtt",
+      "bytes": 1111,
+      "sha256": "b56549ae6958d556370cdd5b0b0b493a93ff4ebaac1ca4adcac5c1d74ebc24c8"
+    },
+    {
+      "path": "assets/tutorials/03-portfolio.jpg",
+      "bytes": 76430,
+      "sha256": "134afcc333aa9c13f1af94822c771e39e578d85a372238133510473faa6293c0"
+    },
+    {
+      "path": "assets/tutorials/03-portfolio.mp4",
+      "bytes": 3530232,
+      "sha256": "08650e530d9b2b59c5d240926e1b39d3eef85fea12298c2f5c2b4ed37f089084"
+    },
+    {
+      "path": "assets/tutorials/03-portfolio.vtt",
+      "bytes": 1061,
+      "sha256": "26527f3f761f2eaab45bc39c9aec904115096cf7761bacd73f1ab78cba1a4e48"
+    },
+    {
+      "path": "fonts/LICENSE.md",
+      "bytes": 4486,
+      "sha256": "56af9b9c6715597e458284a474dc118a50a4150e9d547c70f7b4a33c3e6a9328"
+    },
+    {
+      "path": "fonts/SourceSansPro-Bold.ttf",
+      "bytes": 253344,
+      "sha256": "8d869f2aeac0220984a430120af819fbcb12a88e8ea4ad72aae4c5f6d6a2b985"
+    },
+    {
+      "path": "fonts/SourceSansPro-Regular.ttf",
+      "bytes": 254076,
+      "sha256": "c6f835b6a6d942b196e2607bf73a7b086407ae8dbdc928c23a2fb4893ec383f6"
+    },
+    {
+      "path": "fonts/SourceSansPro-Semibold.ttf",
+      "bytes": 253832,
+      "sha256": "72bf9aa2e78b8c78444ae74b6be09411d5fb5bf0eb9bcdfd47082cc5d9b536df"
+    },
+    {
+      "path": "index.html",
+      "bytes": 441,
+      "sha256": "b71fc1cb6f69110ed8c043fd1ce984f9b87ba31f317deef8575851c5daf632a7"
+    },
+    {
+      "path": "runtime-config.js",
+      "bytes": 184,
+      "sha256": "966714f48698728b284414a0908f01129ded1b5ac7e5561713acc5ee58cd69ff"
+    }
+  ],
+  "deployment": {
+    "public_frontend": "GitHub Pages / прямое чтение Google Sheets каждые 15 секунд",
+    "backend_verified": "Локальный FastAPI и PostgreSQL / сохранение после перезапуска",
+    "external_backend_hosting": "Площадка определяется владельцем системы"
+  },
+  "business_confirmation": [
+    "Ставки начисленной зарплаты, предложения поставщиков, состав расходов и амортизация",
+    "Спрос, производственные выходы и доступная мощность",
+    "Применимость правовых требований и фактические сроки",
+    "Полный состав оборудования ИТ-050",
+    "Персональные назначения и доступные часы команд",
+    "Факт первой встречи и календарь следующих встреч"
+  ]
+}

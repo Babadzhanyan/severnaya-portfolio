@@ -1,0 +1,16 @@
+import test from 'node:test';import assert from 'node:assert/strict';
+import {priorityMetrics,priorityProjection} from './priorities.js';
+const i={code:'ИТ-001',priority_annual_ebitda:12,priority_annual_depreciation:2,priority_hour_rate:2000,priority_duration_months:6,total_hours:'500 ч',one_off_2027:3,run_2027:1,legal_required:'Да',legal_basis:'Норма с предельным сроком',finance_status:'Подтверждено'};
+test('EBIT и ресурсы используют отдельные годовые и календарные единицы',()=>{const m=priorityMetrics(i);assert.equal(m.ebit,10);assert.equal(m.resourceCost,5);assert.equal(m.duration,6);assert.equal(m.complete,true);assert.equal(m.status,'Расчётная оценка');});
+test('Пустая амортизация сохраняет неизвестный EBIT, явный0 рассчитывает его',()=>{assert.equal(priorityMetrics({...i,priority_annual_depreciation:null}).ebit,null);assert.equal(priorityMetrics({...i,priority_annual_depreciation:0}).ebit,12);});
+test('Каждая неизвестная ось сохраняет пропуск, оборудование пустым отличается от0',()=>{assert.equal(priorityMetrics({...i,one_off_2027:null}).resourceCost,null);assert.equal(priorityMetrics({...i,one_off_2027:0}).resourceCost,2);assert.equal(priorityMetrics({...i,priority_duration_months:null}).complete,false);});
+test('Обязательство сохраняет отдельный признак и исходное основание',()=>{const m=priorityMetrics(i);assert.equal(m.legal,'required');assert.equal(m.legalBasis,i.legal_basis);assert.equal(priorityMetrics({...i,legal_required:'Уточнить'}).legal,'unknown');});
+test('Законодательный приоритет требует основание применимости',()=>{const m=priorityMetrics({...i,legal_basis:null});assert.equal(m.complete,false);assert.ok(m.missing.includes('Основание и срок обязательства'));});
+test('Историческая точка остаётся в диаграмме и получает отметку выполненного проекта',()=>{assert.equal(priorityMetrics({...i,execution_fact:{state:'completed',audited:true,scope_complete:true}}).historical,true);});
+test('Поворот меняет позицию точки, 2D сохраняет числовую модель',()=>{const m=priorityMetrics(i),a=priorityProjection([m],{yaw:0,pitch:0}),b=priorityProjection([m],{yaw:45,pitch:20}),flat=priorityProjection([m],{mode:'2d'});assert.notEqual(a.points[0].x,b.points[0].x);assert.equal(flat.points[0].ebit,m.ebit);assert.ok(Number.isFinite(flat.points[0].x));});
+
+test('Сопровождение входит в ресурс отдельно, пропуск сохраняет неизвестную стоимость',()=>{assert.equal(priorityMetrics({...i,run_2027:null}).resourceCost,null);assert.equal(priorityMetrics({...i,run_2027:0}).resourceCost,4);assert.equal(priorityMetrics(i).grossPayroll,1);});
+
+test('Дополнительная амортизация сохраняет отрицательный знак',()=>{const m=priorityMetrics({...i,priority_annual_depreciation:-2});assert.equal(m.ebit,14);assert.equal(m.complete,true);});
+
+test('Требование состава капитального оборудования блокирует готовность ранжирования',()=>{const i={code:'ИТ-050',priority_annual_ebitda:1,priority_annual_depreciation:0,priority_hour_rate:1000,total_hours:10,one_off_2027:0,run_2027:0,priority_duration_months:1,provenance:{assessment:{requires_capital_scope_confirmation:true}}};const r=priorityMetrics(i);assert.equal(r.complete,false);assert.equal(r.capitalScopePending,true);assert.ok(r.missing.some(x=>x.includes('состав оборудования')));});

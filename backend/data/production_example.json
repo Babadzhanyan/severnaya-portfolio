@@ -1,0 +1,255 @@
+{
+  "baseline": {
+    "eggs_set": 72924750,
+    "hatch_rate": 0.8639415561931991,
+    "chick_reject_rate": 0.010003377314396034,
+    "placed_chicks": 62372482,
+    "live_heads": 57795460,
+    "live_kg": 140052766,
+    "mortality_rate": 0.11482073581665633,
+    "fcr": 1.5889472659946222,
+    "slaughter_yield": 0.80363011316749,
+    "period": "Январь–июнь 2026",
+    "months": 6,
+    "source": "02_Входящие_Rocket/Отчеты от финансов/Costing2026_S&W_June.xlsx",
+    "confirmed": false
+  },
+  "changes": {
+    "slaughter_yield_pp": 0.2
+  },
+  "routes": [
+    {
+      "code": "whole",
+      "name": "Тушка",
+      "kind": "whole",
+      "baseline_share": 0.6,
+      "target_share": 0.5,
+      "source": "Предложение для проверки расчёта",
+      "confirmed": false
+    },
+    {
+      "code": "cut",
+      "name": "Разделка",
+      "kind": "cut",
+      "baseline_share": 0.4,
+      "target_share": 0.5,
+      "source": "Предложение для проверки расчёта",
+      "confirmed": false
+    },
+    {
+      "code": "deep",
+      "name": "Глубокая переработка",
+      "kind": "deep",
+      "baseline_share": 0,
+      "target_share": 0,
+      "added_mass_per_kg": 0.1,
+      "source": "Предложение для проверки расчёта",
+      "confirmed": false
+    }
+  ],
+  "products": [
+    {
+      "code": "0",
+      "name": "Тушка",
+      "kind": "sale",
+      "route_yields": {
+        "whole": 1
+      },
+      "baseline_price": 141.591388333307,
+      "source": "Калькуляция / март 2026",
+      "confirmed": false
+    },
+    {
+      "code": "1",
+      "name": "Грудка с кожей",
+      "kind": "sale",
+      "route_yields": {
+        "cut": 0.39
+      },
+      "baseline_price": 222.775249802277,
+      "source": "Калькуляция / март 2026",
+      "confirmed": false
+    },
+    {
+      "code": "2",
+      "name": "Четвертина задняя",
+      "kind": "sale",
+      "route_yields": {
+        "cut": 0.42
+      },
+      "baseline_price": 164.329787068178,
+      "source": "Калькуляция / март 2026",
+      "confirmed": false
+    },
+    {
+      "code": "3",
+      "name": "Крыло с кожей",
+      "kind": "sale",
+      "route_yields": {
+        "cut": 0.069
+      },
+      "baseline_price": 212.818180775812,
+      "source": "Калькуляция / март 2026",
+      "confirmed": false
+    },
+    {
+      "code": "4",
+      "name": "Кисть крыла",
+      "kind": "sale",
+      "route_yields": {
+        "cut": 0.01
+      },
+      "baseline_price": 46.1015220082531,
+      "source": "Калькуляция / март 2026",
+      "confirmed": false
+    },
+    {
+      "code": "5",
+      "name": "Набор «Крылья»",
+      "kind": "sale",
+      "route_yields": {
+        "cut": 0.031
+      },
+      "baseline_price": 83.6344887515027,
+      "source": "Калькуляция / март 2026",
+      "confirmed": false
+    },
+    {
+      "code": "6",
+      "name": "Спинно-лопаточная часть",
+      "kind": "sale",
+      "route_yields": {
+        "cut": 0.08
+      },
+      "baseline_price": 43.5216556057538,
+      "source": "Калькуляция / март 2026",
+      "confirmed": false
+    },
+    {
+      "code": "deep",
+      "name": "Изделие глубокой переработки",
+      "kind": "sale",
+      "route_yields": {
+        "deep": 1.05
+      },
+      "baseline_price": 250,
+      "source": "Предложение для проверки расчёта",
+      "confirmed": false
+    },
+    {
+      "code": "deep_loss",
+      "name": "Потери глубокой переработки",
+      "kind": "loss",
+      "route_yields": {
+        "deep": 0.05
+      },
+      "baseline_price": 0,
+      "source": "Предложение для проверки расчёта",
+      "confirmed": false
+    }
+  ],
+  "costs": [
+    {
+      "code": "feed",
+      "name": "Корм / переменная часть",
+      "driver": "feed_kg",
+      "baseline_rate": 23,
+      "unit": "руб/кг",
+      "source": "Предложение для проверки расчёта",
+      "confirmed": false
+    },
+    {
+      "code": "upstream",
+      "name": "Прочие переменные расходы выращивания",
+      "driver": "placed_chicks",
+      "baseline_rate": 25,
+      "unit": "руб/гол",
+      "source": "Предложение для проверки расчёта",
+      "confirmed": false
+    },
+    {
+      "code": "pack_0",
+      "name": "Упаковка / Тушка",
+      "driver": "product:0",
+      "baseline_rate": 4.62228034393614,
+      "unit": "руб/кг",
+      "source": "Калькуляция / март 2026",
+      "confirmed": false
+    },
+    {
+      "code": "pack_1",
+      "name": "Упаковка / Грудка с кожей",
+      "driver": "product:1",
+      "baseline_rate": 14.8082453961578,
+      "unit": "руб/кг",
+      "source": "Калькуляция / март 2026",
+      "confirmed": false
+    },
+    {
+      "code": "pack_2",
+      "name": "Упаковка / Четвертина задняя",
+      "driver": "product:2",
+      "baseline_rate": 14.8082445055569,
+      "unit": "руб/кг",
+      "source": "Калькуляция / март 2026",
+      "confirmed": false
+    },
+    {
+      "code": "pack_3",
+      "name": "Упаковка / Крыло с кожей",
+      "driver": "product:3",
+      "baseline_rate": 21.3598837377447,
+      "unit": "руб/кг",
+      "source": "Калькуляция / март 2026",
+      "confirmed": false
+    },
+    {
+      "code": "pack_4",
+      "name": "Упаковка / Кисть крыла",
+      "driver": "product:4",
+      "baseline_rate": 4.60799747126437,
+      "unit": "руб/кг",
+      "source": "Калькуляция / март 2026",
+      "confirmed": false
+    },
+    {
+      "code": "pack_5",
+      "name": "Упаковка / Набор «Крылья»",
+      "driver": "product:5",
+      "baseline_rate": 4.6079973470261,
+      "unit": "руб/кг",
+      "source": "Калькуляция / март 2026",
+      "confirmed": false
+    },
+    {
+      "code": "pack_6",
+      "name": "Упаковка / Спинно-лопаточная часть",
+      "driver": "product:6",
+      "baseline_rate": 4.60988390938511,
+      "unit": "руб/кг",
+      "source": "Калькуляция / март 2026",
+      "confirmed": false
+    },
+    {
+      "code": "deep_ingredients",
+      "name": "Ингредиенты / глубокая переработка",
+      "driver": "route:deep",
+      "baseline_rate": 10,
+      "unit": "руб/кг",
+      "source": "Предложение для проверки расчёта",
+      "confirmed": false
+    }
+  ],
+  "baseline_fixed_expenses": 0,
+  "target_fixed_expenses": 1000000,
+  "costs_complete": true,
+  "expenses_confirmed": false,
+  "demand_confirmed": false,
+  "capacity_scope_confirmed": false,
+  "sources": {
+    "prices": "Продажи/Эффективность разделки.xlsx / Калькуляция / март 2026",
+    "mix": "Предложение для проверки расчёта",
+    "variable_rates": "Предложение для проверки расчёта",
+    "deep_recipe": "Предложение для проверки расчёта"
+  }
+}

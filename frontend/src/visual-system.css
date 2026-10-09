@@ -1,0 +1,13 @@
+/* Общие действия сохраняют одинаковые ориентиры на всех экранах */
+button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,summary:focus-visible{outline:2px solid #003c72;outline-offset:3px}
+.search-label{position:relative}
+.search-label>.ui-icon{position:absolute;left:12px;top:50%;transform:translateY(-50%);color:#52677d;pointer-events:none}
+.search-label:has(>.ui-icon)>input{padding-left:39px}
+.visual-action{display:inline-flex;align-items:center;justify-content:flex-start;gap:8px;min-height:40px}
+.visual-block-heading{display:flex;align-items:flex-start;gap:8px}
+.visual-block-heading>.ui-icon{flex:0 0 auto;color:#003c72;margin-top:2px}
+.visual-button-row{display:flex;flex-wrap:wrap;gap:8px}
+.visual-caption{display:flex;align-items:flex-start;gap:7px;color:#52677d;font-size:13px;line-height:1.45}
+.visual-caption>.ui-icon{flex:0 0 auto;margin-top:1px}
+@media(max-width:760px){.visual-action{min-height:44px}.visual-button-row{gap:8px}.visual-button-row>button,.visual-button-row>a{min-height:44px}.visual-block-heading>.ui-icon{margin-top:1px}}
+@media print{#print-root .visual-block-heading>.ui-icon{width:16px;height:16px}#print-root .visual-caption{font-size:10px}#print-root .visual-action{min-height:0}}
