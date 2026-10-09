@@ -15,7 +15,7 @@ for(const block of config.blocks){const prior=byKey[block.key];for(let n=0;n<=pr
 const blocks=Object.fromEntries(config.blocks.map(b=>[b.key,b]));
 for(const [n,idea] of ideas.entries()){
  const index=200+n,row=next.table.rows[blocks.initiatives.feedFirst-1+index];
- const values={0:idea.code,1:idea.title,2:idea.team,3:idea.owner,4:'L0 Входящие предложения',5:'Обсудить',44:'Паспортные метаданные: '+JSON.stringify({primary:false,assessment:{proposal:idea},fields:{}})};
+ const values={0:idea.code,1:idea.title,2:idea.team,3:idea.owner,4:'L0 Входящие предложения',5:'Обсудить',13:idea.process,18:'Участки проверки: '+idea.process_detail+' / Результат: '+idea.result,44:'Паспортные метаданные: '+JSON.stringify({primary:false,assessment:{proposal:idea},fields:{}})};
  for(const [column,value] of Object.entries(values))row.c[Number(column)]={v:'s:'+value};
  next.table.rows[blocks.digitalLayers.feedFirst-1+index].c[0]={v:'s:'+idea.level};
  next.table.rows[blocks.priorityInputs.feedFirst-1+index].c[4]={v:'s:Уточнить'};
@@ -31,4 +31,11 @@ test('Расширенный источник сохраняет все200 ка�
 test('Потерянная последняя карточка и обрезанная порция останавливают неполное чтение',()=>{
  const short=structuredClone(next);short.table.rows[blocks.initiatives.feedFirst-1+299].c[0]={v:'z:'};assert.throws(()=>projectResponse(short),/полный состав/);
  const truncated=structuredClone(next);truncated.table.rows.pop();assert.throws(()=>projectResponse(truncated),/полный состав/);
+});
+
+test('Новые идеи сохраняют 13 действующих групп участка и подробности охвата',()=>{
+ const data=projectResponse(next,'2026-10-09T05:00:00Z');
+ const canonical=new Set(baseline.initiatives.map(i=>String(i.process||'').split(' / ')[0]));
+ assert.equal(new Set(ideas.map(i=>i.process)).size,13);
+ for(const i of data.initiatives.slice(200)){assert.ok(canonical.has(i.process));assert.ok(i.provenance.assessment.proposal.process_detail);assert.ok(i.scope.includes(i.provenance.assessment.proposal.process_detail));assert.ok(i.scope.includes(i.provenance.assessment.proposal.result));}
 });

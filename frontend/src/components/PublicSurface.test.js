@@ -14,7 +14,7 @@ async function component(file,named='default'){
  const code=(Array.isArray(result)?result[0]:result).output.find(o=>o.type==='chunk').code.replace(/["']react(?:\/jsx-runtime)?["']/g,name=>JSON.stringify(pathToFileURL(resolve(root,'node_modules/react/'+(name.includes('/')?'jsx-runtime.js':'index.js'))).href));
  return (await import('data:text/javascript;base64,'+Buffer.from(code).toString('base64')))[named];
 }
-const [SessionPlan,Passport,LegalObligations,InitiativeCollection]=await Promise.all([component('SessionPlan'),component('Passport'),component('LegalObligations'),component('UserJourney','InitiativeCollection')]);
+const [SessionPlan,Passport,LegalObligations,InitiativeCollection,IdeasReview]=await Promise.all([component('SessionPlan'),component('Passport'),component('LegalObligations'),component('UserJourney','InitiativeCollection'),component('IdeasReview')]);
 const render=(Component,props)=>renderToStaticMarkup(React.createElement(Component,props));
 
 test('Публичный план показывает четыре встречи и исключает черновики организатора',async()=>{
@@ -68,4 +68,13 @@ test('История показывает завершённое внедрен�
  const card={code:'ИТ-104',title:'Дашборды этапа 1',stage:'L4 Реализация',initiative_lead:'Петров Дмитрий',execution_fact:{state:'completed',scope_complete:true,audited:true,work_status:'Сопровождение'}};
  const html=render(InitiativeCollection,{list:[card],all:true,onOpen:()=>{}});
  assert.match(html,/Выполнено \/ Петров Дмитрий \/ Сопровождение/);assert.doesNotMatch(html,/>L4 \/ Петров Дмитрий/);assert.equal(card.stage,'L4 Реализация');assert.equal(card.execution_fact.work_status,'Сопровождение');
+});
+
+test('Единый раздел переключает идеи и открытые результаты ревью',()=>{
+ const idea={code:'ИТ-312',title:'Проверка обмена',stage:'L0 Входящие предложения',initiative_lead:'Лебедев Андрей',collection:'ideas'};
+ const data={initiatives:[idea]},review=React.createElement(IdeasReview,{data,onOpen:()=>{},compact:true});
+ const list=render(InitiativeCollection,{list:[idea],children:review,onOpen:()=>{},section:'ideas',onSection:()=>{}});
+ assert.match(list,/Содержание новых идей/);assert.match(list,/Идеи \/ 1/);assert.match(list,/Результаты ревью/);assert.match(list,/collection-item/);assert.doesNotMatch(list,/review-levels/);
+ const result=render(InitiativeCollection,{list:[idea],children:review,onOpen:()=>{},section:'review',onSection:()=>{}});
+ assert.match(result,/Новые идеи \/ 1/);assert.match(result,/review-levels/);assert.match(result,/Правовая сверка связывает 28/);assert.match(result,/Внутренние обязательства/);assert.doesNotMatch(result,/<details|<summary|collection-item/);
 });

@@ -32,16 +32,16 @@ export default function UserJourney({data,list,employee,initiative,onEmployee,on
  </section>;
 }
 
-export function InitiativeCollection({list,history=false,all=false,onOpen,children}){
+export function InitiativeCollection({list,history=false,all=false,onOpen,children,section="ideas",onSection}){
  const status=i=>isCompleted(i)?"Выполнено":isHistorical(i)?"Отменено":stageCode(i);
  return <section className="initiative-collection">
   <div className="journey-heading"><h1>{all?'Все инициативы':history?'История проектов':'Новые идеи'} / {list.length}</h1><p>{all?'Выберите паспорт для проверки, расчёта и обсуждения':history?'Исходные реестры фиксируют завершение и отмену работ':'Руководители команд проверяют предмет, владельца и целесообразность входящих предложений'}</p></div>
-  {children}
-  <div className="collection-list">{list.map(i=><article data-code={i.code} key={i.code} className={'collection-item '+(isHistorical(i)?'is-historical':'')}>
+  {children&&<nav className="ideas-section-tabs" aria-label="Содержание новых идей"><button className={section==='ideas'?'active':''} aria-pressed={section==='ideas'} onClick={()=>onSection('ideas')}>Идеи / {list.length}</button><button className={section==='review'?'active':''} aria-pressed={section==='review'} onClick={()=>onSection('review')}>Результаты ревью</button></nav>}
+  {children&&section==='review'?children:<><div className="collection-list">{list.map(i=><article data-code={i.code} key={i.code} className={'collection-item '+(isHistorical(i)?'is-historical':'')}>
    <span className={'journey-code '+(i.provenance?.origin==='primary'?'source-primary':'addition')}>{i.code}</span>
    <div className="collection-content"><h2>{initiativeTitle(i)}</h2><p>{status(i)} / {person(i)}{(history||all)&&i.execution_fact&&executionLabel(i)!==status(i)?' / '+executionLabel(i):''}{history&&actualFinishLabel(i)?' / '+actualFinishLabel(i):''}</p>{history&&isCompleted(i)&&!actualFinishLabel(i)&&<p>Требуется дата завершения</p>}</div>
    <div className="collection-actions"><button aria-label={i.code+' / открыть паспорт'} onClick={()=>onOpen(i.code)}>Паспорт</button><a aria-label={i.code+' / открыть в таблице'} className="button-link" href={googleLink(i)} target="_blank" rel="noopener noreferrer">Таблица</a></div>
   </article>)}</div>
-  {!list.length&&<p className="journey-start">Выбранный состав содержит 0 карточек</p>}
+  {!list.length&&<p className="journey-start">Выбранный состав содержит 0 карточек</p>}</>}
  </section>;
 }
