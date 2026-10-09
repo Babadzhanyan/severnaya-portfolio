@@ -7,6 +7,7 @@ import {build} from 'vite';
 import react from '@vitejs/plugin-react';
 import React from 'react';
 import {renderToStaticMarkup} from 'react-dom/server';
+import {isNewIdea} from '../model/portfolio.js';
 
 const root=fileURLToPath(new URL('../../',import.meta.url));
 async function component(file,named='default'){
@@ -14,7 +15,7 @@ async function component(file,named='default'){
  const code=(Array.isArray(result)?result[0]:result).output.find(o=>o.type==='chunk').code.replace(/["']react(?:\/jsx-runtime)?["']/g,name=>JSON.stringify(pathToFileURL(resolve(root,'node_modules/react/'+(name.includes('/')?'jsx-runtime.js':'index.js'))).href));
  return (await import('data:text/javascript;base64,'+Buffer.from(code).toString('base64')))[named];
 }
-const [SessionPlan,Passport,LegalObligations,InitiativeCollection,IdeasReview]=await Promise.all([component('SessionPlan'),component('Passport'),component('LegalObligations'),component('UserJourney','InitiativeCollection'),component('IdeasReview')]);
+const [SessionPlan,Passport,LegalObligations,InitiativeCollection,IdeasReview,StageGateFlow]=await Promise.all([component('SessionPlan'),component('Passport'),component('LegalObligations'),component('UserJourney','InitiativeCollection'),component('IdeasReview'),component('PlanningVisuals','StageGateFlow')]);
 const render=(Component,props)=>renderToStaticMarkup(React.createElement(Component,props));
 
 test('Публичный план показывает четыре встречи и исключает черновики организатора',async()=>{
@@ -77,4 +78,26 @@ test('Единый раздел переключает идеи и открыт�
  assert.match(list,/Содержание новых идей/);assert.match(list,/Идеи \/ 1/);assert.match(list,/Результаты ревью/);assert.match(list,/collection-item/);assert.doesNotMatch(list,/review-levels/);
  const result=render(InitiativeCollection,{list:[idea],children:review,onOpen:()=>{},section:'review',onSection:()=>{}});
  assert.match(result,/Новые идеи \/ 1/);assert.match(result,/review-levels/);assert.match(result,/Правовая сверка связывает 28/);assert.match(result,/Внутренние обязательства/);assert.doesNotMatch(result,/<details|<summary|collection-item/);
+});
+
+
+test('Состав входящих показывает 28 прежних и 100 новых идей, фильтр пересчитывает выбранные числа',async()=>{
+ const fixture=JSON.parse(await readFile(resolve(root,'src/components/fixtures/initiative_estimates_v18.json'),'utf8')),report=JSON.parse(await readFile(resolve(root,'src/data/ideas-review.json'),'utf8'));
+ const previous=fixture.initiatives.filter(isNewIdea),added=report.ideas.map(i=>({...i,collection:'ideas',stage:'L0 Входящие предложения',initiative_lead:i.owner})),props={onOpen:()=>{}};
+ assert.equal(previous.length,28);assert.equal(added.length,100);
+ const full=render(InitiativeCollection,{...props,list:[...previous,...added]});assert.match(full,/28 прежних предложений \/ 100 новых по итогам ревью/);assert.equal((full.match(/class="collection-item /g)||[]).length,128);
+ const selected=render(InitiativeCollection,{...props,list:[previous[0],...added.slice(0,2)]});assert.match(selected,/1 прежнее предложение \/ 2 новых по итогам ревью/);assert.equal((selected.match(/class="collection-item /g)||[]).length,3);
+ assert.match(render(InitiativeCollection,{...props,list:[added[0]]}),/0 прежних предложений \/ 1 новое по итогам ревью/);
+ assert.match(render(InitiativeCollection,{...props,list:[]}),/0 прежних предложений \/ 0 новых по итогам ревью/);
+ for(const mode of [{all:true},{history:true}])assert.doesNotMatch(render(InitiativeCollection,{...props,...mode,list:[previous[0]]}),/ideas-cohort-count/);
+});
+
+test('Стадия L0 открывает входящие нативной кнопкой, остальные стадии сохраняют счётчики',()=>{
+ const rows=[['L0','Входящие предложения',128],['L1','Идея',69],['L2','Оценка',0],['L3','Решение о запуске',0],['L4','Реализация',50],['L5','Подтверждение эффекта',0]].map(([code,name,count])=>({code,name,count}));
+ const opened=[],props={rows,onIdeas:()=>opened.push('ideas')},html=render(StageGateFlow,props);
+ assert.equal((html.match(/class="planning-stage-step/g)||[]).length,6);assert.equal((html.match(/<button /g)||[]).length,1);assert.match(html,/aria-label="Открыть входящие предложения \/ 128 карточек"/);
+ for(const row of rows)assert.match(html,new RegExp('>'+row.count+'<\\/strong>'));
+ const buttons=node=>!node?[]:Array.isArray(node)?node.flatMap(buttons):[...(node.type==='button'?[node]:[]),...buttons(node.props?.children)];
+ buttons(StageGateFlow(props))[0].props.onClick();assert.deepEqual(opened,['ideas']);
+ const staticHtml=render(StageGateFlow,{rows});assert.doesNotMatch(staticHtml,/<button|planning-stage-open/);assert.equal((staticHtml.match(/<h3>/g)||[]).length,6);
 });

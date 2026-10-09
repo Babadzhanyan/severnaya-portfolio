@@ -15,14 +15,14 @@ const nextCriteria={
 const roleLabels={layer:'Уровень трансформации',group:'Команда внедрения',curator:'Куратор команды',person:'Ответственный за паспорт',process:'Передел'};
 const roleIcons={layer:'layers',group:'teams',curator:'decision',person:'owner',process:'process'};
 
-export function StageGateFlow({rows}){
+export function StageGateFlow({rows,onIdeas}){
  const known=rows.filter(row=>/^L[0-5]$/.test(row.code)),unassigned=rows.find(row=>row.code==='Уточнить');
  const conditions=['Владелец','Состав и цель','Эффект и ресурсы','Решение о запуске','Приёмка результата','Подтверждённый эффект'];
  return <figure className="planning-visual planning-stage-distribution">
   <figcaption>Стадии снижают риск и направляют ресурсы в приоритетные инициативы</figcaption>
   <div className="stage-risk"><span>Неопределённость решения</span><svg viewBox="0 0 1100 92" preserveAspectRatio="none" role="img" aria-label="Схема снижения неопределённости от идеи к подтверждённому результату"><path d="M0 4 L1100 46 L0 88 Z" fill="#EDF3F8" stroke="#6E8CA8" strokeWidth="1.3"/></svg></div>
   <ol className="planning-stage-flow" aria-label="Распределение карточек по текущим стадиям">
-   {known.map(row=><li key={row.code} className={'planning-stage-step'+(row.count>0?' has-initiatives':'')}><span className="planning-stage-code">{row.code}</span><strong className="planning-stage-count" aria-label={row.count+' карточек'}>{row.count}</strong><h3>{row.name}</h3></li>)}
+   {known.map(row=><li key={row.code} className={'planning-stage-step'+(row.count>0?' has-initiatives':'')}>{row.code==='L0'&&onIdeas?<button type="button" className="planning-stage-open" onClick={onIdeas} aria-label={'Открыть входящие предложения / '+row.count+' карточек'}><span className="planning-stage-code">{row.code}</span><strong className="planning-stage-count" aria-hidden="true">{row.count}</strong><span className="planning-stage-name">{row.name}</span></button>:<><span className="planning-stage-code">{row.code}</span><strong className="planning-stage-count" aria-label={row.count+' карточек'}>{row.count}</strong><h3>{row.name}</h3></>}</li>)}
   </ol>
   <div className="stage-gate-conditions"><span>Условия допуска</span><ol>{known.map((row,k)=><li key={row.code}>{conditions[k]}</li>)}</ol></div>
   <div className="stage-resource-allocation"><span>Ресурсы</span><p>Проверяем идеи</p><p>Выделяем на приоритетные работы после L3</p></div>

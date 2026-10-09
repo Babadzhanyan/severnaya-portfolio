@@ -46,3 +46,5 @@
  .collection-item{grid-template-columns:66px minmax(0,1fr);gap:4px 8px;padding:12px 0;min-height:0}.collection-item h2{font-size:16px;line-height:1.5;margin-bottom:3px}.collection-item p{font-size:14px;line-height:1.4}.collection-actions{grid-column:2;justify-self:start;flex-direction:row;gap:8px;margin-top:5px}.collection-actions button,.collection-actions .button-link{min-height:40px;font-size:14px;padding:8px 13px}
  .journey-ideas>button,.journey-history>button{grid-template-columns:66px minmax(0,1fr);gap:4px 8px;padding:12px;line-height:1.5}.journey-ideas>button>span:last-child,.journey-history>button>span:last-child{grid-column:2;min-height:32px;align-content:center;font-size:14px}
 }
+
+.journey-heading .ideas-cohort-count{font-size:14px;line-height:1.45;color:#003C72;margin-top:8px}

@@ -13,26 +13,42 @@ const Kpis=await component('TransformationKpis'),Pyramid=await component('Pyrami
 const input=JSON.parse(await readFile(resolve(root,'../backend/data/production_native_input.json'),'utf8'));
 const data={productionInput:input,annualActualInput:{period:'Май 2025–апрель 2026',sales:{quantity_kg:208515884.605,revenue:33096006892.8734},sources:{sales:'Факт',price:'Чистая выручка / кг'}},initiatives:[],ledger:[]};
 const render=props=>renderToStaticMarkup(React.createElement(Kpis,{data,...props}));
-test('Одна пирамида связывает четыре результата с пятнадцатью уникальными КПЭ',()=>{
- const html=render({});assert.equal((html.match(/data-outcome=/g)||[]).length,4);assert.equal((html.match(/role="tab"/g)||[]).length,2);assert.equal((html.match(/data-pyramid-level=/g)||[]).length,6);assert.equal((html.match(/data-metric=/g)||[]).length,15);
- assert.equal((html.match(/class="digital-pyramid /g)||[]).length,1);const metricIds=[...html.matchAll(/data-metric="([^"]+)"/g)].map(m=>m[1]);assert.equal(new Set(metricIds).size,15);assert.doesNotMatch(html,/kpi-level-controls|kpi-outcomes|dp-purpose/);
- assert.match(html,/158,72 руб \/ кг/);assert.match(html,/208,52 млн кг/);assert.doesNotMatch(html,/141,59|EBIT|амортизац|Гипотеза|<details|источник Д/);assert.equal((html.match(/tabindex="0"/g)||[]).length,2);
+const visible=html=>html.replace(/<[^>]+>/g,'');
+test('Одна пирамида показывает по две метрики на каждом уровне и сохраняет компактные цели',()=>{
+ const html=render({});assert.equal((html.match(/data-pyramid-level=/g)||[]).length,6);assert.equal((html.match(/data-metric=/g)||[]).length,12);
+ assert.equal((html.match(/class="digital-pyramid /g)||[]).length,1);const metricIds=[...html.matchAll(/data-metric="([^"]+)"/g)].map(m=>m[1]);assert.equal(new Set(metricIds).size,12);
+ assert.deepEqual([...html.matchAll(/<strong class="addition">([^<]+)<\/strong>/g)].map(m=>m[1]),['≥90%','−10%','≥99%','≥99%','≥95%','≥98%','≥98%','≥95%','≥99%','≥95%','≥99,9%','100%']);
+ assert.doesNotMatch(html,/role="tab(?:list|panel)?"|<select|role="table"|data-outcome=|kpi-level-controls|kpi-outcomes|dp-purpose|dp-result-kpis|kpi-compact/);
+ assert.match(visible(html),/после замера базы ИТ за 30 дней/);assert.equal((visible(html).match(/искусственный интеллект/g)||[]).length,1);
 });
-test('Фильтр выделяет ступень и сохраняет КПЭ всех шести уровней',()=>{
- const html=render({filter:{layer:'Ц5 Аналитика и ИИ'},contextList:[{digital_layer:'Ц5 Аналитика и ИИ'}]});assert.match(html,/Ц5 Аналитика и искусственный интеллект \/ количество инициатив: 1/);assert.match(html,/Качество прогноза/);assert.match(html,/машинного зрения/);assert.match(html,/data-metric="automatic-valid"/);assert.equal((html.match(/data-metric=/g)||[]).length,15);assert.match(html,/class="dp-segment dp-selected"/);
+test('Фильтр выделяет ступень и сохраняет метрики всех шести уровней',()=>{
+ const html=render({filter:{layer:'Ц5 Аналитика и ИИ'},contextList:[{digital_layer:'Ц5 Аналитика и ИИ'}]});assert.match(html,/Ц5 Аналитика и искусственный интеллект \/ количество инициатив: 1/);
+ assert.match(visible(html),/Решения по данным/);assert.match(visible(html),/Ошибка прогноза/);assert.match(html,/data-metric="automatic-valid"/);assert.equal((html.match(/data-metric=/g)||[]).length,12);assert.match(html,/class="dp-segment dp-selected"/);
+ assert.match(html,/aria-description="Качество прогноза относительно действующего метода/);assert.doesNotMatch(visible(html),/сумма абсолютных ошибок|машинного зрения/);
 });
-test('Основание Ц0 показывает пять общих требований ровно по одному разу',()=>{
- const html=render({initialSelection:{section:'quality'}}),foundation=html.split('data-pyramid-level="Ц0"')[1].split('</li>')[0];assert.equal((foundation.match(/data-metric=/g)||[]).length,5);assert.match(html,/Предлагаемая цель/);assert.match(html,/99,9%/);assert.match(html,/Рабочая операция \/ время \/ потеря данных/);assert.match(html,/Одинаковый класс задач/);assert.match(html,/aria-selected="true"/);assert.match(html,/aria-colspan="3">Успешные операции в согласованное время \/ все попытки/);
+test('Основание Ц0 сохраняет только надёжность и восстановление, полный метод доступен в описании',()=>{
+ const html=render({initialSelection:{section:'quality'}}),foundation=html.split('data-pyramid-level="Ц0"')[1].split('</ol>')[0];
+ assert.equal((foundation.match(/data-metric=/g)||[]).length,2);assert.match(visible(foundation),/Надёжность/);assert.match(visible(foundation),/Восстановление/);assert.match(visible(foundation),/≥99,9%/);assert.match(visible(foundation),/100%/);
+ assert.match(foundation,/title="Проверенное восстановление \/ Системы с успешным испытанием/);assert.match(foundation,/Цель: 100% \/ проверка раз в квартал/);
+ assert.doesNotMatch(html,/data-metric="change-failure"|data-metric="delivery-time"|data-metric="overdue-controls"/);
 });
-test('Участок объединяет площадки и выбирает операционные показатели функции',()=>{
- const html=render({initialSelection:{section:'business'},filter:{process:'Выращивание / Войсковицы'}});assert.match(html,/data-metric="fcr"/);assert.match(html,/data-metric="mortality"/);assert.match(html,/11,48%/);assert.match(html,/Январь–июнь 2026/);assert.doesNotMatch(html,/Войсковицы/);assert.match(html,/option value="grow" selected/);
+test('Участок и прежнее состояние подразделения сохраняют единый набор уровневых метрик',()=>{
+ const html=render({initialSelection:{section:'business',functionId:'grow'},filter:{process:'Выращивание / Войсковицы'}});
+ assert.equal((html.match(/data-metric=/g)||[]).length,12);assert.match(html,/data-metric="automatic-valid"/);assert.match(html,/data-metric="critical-success"/);
+ assert.doesNotMatch(html,/<select|role="tab(?:list|panel)?"|data-metric="(?:fcr|mortality)"|Войсковицы|Подразделения/);
 });
-test('Печать сохраняет выбранную группу КПЭ и подразделение',()=>{
- const html=renderToStaticMarkup(React.createElement(Pyramid,{data,list:[],contextList:[],initialKpiSelection:{section:'business',functionId:'deep',level:'Ц4'}}));assert.match(html,/data-metric="deep-share"/);assert.match(html,/data-metric="deep-margin"/);assert.doesNotMatch(html,/data-metric="automatic-valid"/);assert.match(html,/маржа альтернативного маршрута/);
+test('Печать сохраняет единственную пирамиду и выбранную ступень',()=>{
+ const level='Ц4 Единые данные и интеграции',html=renderToStaticMarkup(React.createElement(Pyramid,{data,list:[],contextList:[{digital_layer:level}],filter:{layer:level},initialKpiSelection:{section:'business',functionId:'deep',level}}));
+ assert.equal((html.match(/data-metric=/g)||[]).length,12);assert.equal((html.match(/class="digital-pyramid /g)||[]).length,1);assert.match(html,/class="dp-segment dp-selected"/);
+ assert.doesNotMatch(html,/data-metric="deep-share"|data-metric="deep-margin"|<select|role="tab(?:list|panel)?"/);
 });
-test('Страница использует единственный объединённый дашборд и сохраняет исходные периоды',()=>{
- const html=renderToStaticMarkup(React.createElement(Pyramid,{data,list:[],contextList:[],onLayer:()=>{}}));assert.equal((html.match(/class="digital-pyramid /g)||[]).length,1);assert.equal((html.match(/data-outcome=/g)||[]).length,4);assert.equal((html.match(/data-metric=/g)||[]).length,15);assert.match(html,/Май 2025–апрель 2026/);assert.doesNotMatch(html,/kpi-level-controls|dp-purpose|КПЭ связывают работу ИТ/);
+test('Вершина содержит только результат бизнеса, фактические суммы и КПЭ вершины исключены',()=>{
+ const html=renderToStaticMarkup(React.createElement(Pyramid,{data,list:[],contextList:[],onLayer:()=>{}})),apex=html.split('class="dp-row dp-apex-row"')[1].split('<ol')[0];
+ assert.match(visible(apex),/Результаты бизнеса/);assert.doesNotMatch(apex,/data-metric=|data-outcome=|Предлагаемая цель|База|dp-result-kpis/);
+ assert.doesNotMatch(visible(html),/158,72|208,52|Май 2025–апрель 2026|EBIT|амортизац|Гипотеза|Требуется замер/);
 });
-test('Пустой источник показывает замер, цели сохраняют статус предложения',()=>{
- const html=renderToStaticMarkup(React.createElement(Kpis,{data:{},initialSelection:{section:'business',functionId:'hatch'}}));assert.match(html,/Требуется замер/);assert.match(html,/Зафиксировать базу/);assert.doesNotMatch(html,/NaN|undefined|Infinity/);assert.match(html,/class="kpi-goal addition"/);
+test('Пустой источник сохраняет предлагаемые цели и пояснение о замере базы',()=>{
+ const html=renderToStaticMarkup(React.createElement(Kpis,{data:{},initialSelection:{section:'business',functionId:'hatch'}}));
+ assert.match(visible(html),/предлагаемые цели/);assert.match(visible(html),/замера базы ИТ/);assert.equal((html.match(/data-metric=/g)||[]).length,12);
+ assert.doesNotMatch(html,/NaN|undefined|Infinity/);assert.doesNotMatch(visible(html),/База: 0|(?:^|\s)0%/);
 });

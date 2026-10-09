@@ -1,9 +1,12 @@
 import React from 'react';
 import {initiativeTitle,display,person,isNewIdea,googleLink,isHistorical,isCompleted,executionLabel,actualFinishLabel,stageCode} from '../model/portfolio.js';
 import {Legend} from './Common.jsx';
+import report from '../data/ideas-review.json';
 import {passportGaps,passportCheckLevel} from '../model/user-journey.js';
 import './user-journey.css';
 
+const reviewCodes=new Set(report.ideas.map(i=>i.code));
+const counted=(n,forms)=>n+' '+forms[n%100>=11&&n%100<=14?2:n%10===1?0:n%10>=2&&n%10<=4?1:2];
 const passportWord=n=>n%100>=11&&n%100<=14?'паспортов':n%10===1?'паспорт':n%10>=2&&n%10<=4?'паспорта':'паспортов';
 
 export default function UserJourney({data,list,employee,initiative,onEmployee,onSelect,onOpen,coordinator}){
@@ -33,9 +36,10 @@ export default function UserJourney({data,list,employee,initiative,onEmployee,on
 }
 
 export function InitiativeCollection({list,history=false,all=false,onOpen,children,section="ideas",onSection}){
+ const reviewed=list.filter(i=>reviewCodes.has(i.code)).length;
  const status=i=>isCompleted(i)?"Выполнено":isHistorical(i)?"Отменено":stageCode(i);
  return <section className="initiative-collection">
-  <div className="journey-heading"><h1>{all?'Все инициативы':history?'История проектов':'Новые идеи'} / {list.length}</h1><p>{all?'Выберите паспорт для проверки, расчёта и обсуждения':history?'Исходные реестры фиксируют завершение и отмену работ':'Руководители команд проверяют предмет, владельца и целесообразность входящих предложений'}</p></div>
+  <div className="journey-heading"><h1>{all?'Все инициативы':history?'История проектов':'Новые идеи'} / {list.length}</h1><p>{all?'Выберите паспорт для проверки, расчёта и обсуждения':history?'Исходные реестры фиксируют завершение и отмену работ':'Руководители команд проверяют предмет, владельца и целесообразность входящих предложений'}</p>{!all&&!history&&<p className="ideas-cohort-count" aria-live="polite">{counted(list.length-reviewed,['прежнее предложение','прежних предложения','прежних предложений'])} / {counted(reviewed,['новое','новых','новых'])} по итогам ревью</p>}</div>
   {children&&<nav className="ideas-section-tabs" aria-label="Содержание новых идей"><button className={section==='ideas'?'active':''} aria-pressed={section==='ideas'} onClick={()=>onSection('ideas')}>Идеи / {list.length}</button><button className={section==='review'?'active':''} aria-pressed={section==='review'} onClick={()=>onSection('review')}>Результаты ревью</button></nav>}
   {children&&section==='review'?children:<><div className="collection-list">{list.map(i=><article data-code={i.code} key={i.code} className={'collection-item '+(isHistorical(i)?'is-historical':'')}>
    <span className={'journey-code '+(i.provenance?.origin==='primary'?'source-primary':'addition')}>{i.code}</span>

@@ -12,7 +12,7 @@ const root=fileURLToPath(new URL('../../',import.meta.url));
 const result=await build({configFile:false,root,logLevel:'silent',plugins:[react()],build:{write:false,lib:{entry:resolve(root,'src/components/Calculator.jsx'),formats:['es']},rollupOptions:{external:['react','react/jsx-runtime']}}});
 const output=(Array.isArray(result)?result[0]:result).output.find(o=>o.type==='chunk').code.replace(/from ["'](react(?:\/jsx-runtime)?)["']/g,(_,key)=>'from '+JSON.stringify(pathToFileURL(resolve(root,'node_modules/react/'+(key==='react'?'index.js':'jsx-runtime.js'))).href)).replace(/import ["']react["'];/g,'import '+JSON.stringify(pathToFileURL(resolve(root,'node_modules/react/index.js')).href)+';');
 globalThis.window={PMO_RUNTIME:{}};
-const {InitiativeEstimate,scenarioChanges,CalculatorPrint}=await import('data:text/javascript;base64,'+Buffer.from(output).toString('base64'));
+const {default:Calculator,ProductionFields,InitiativeEstimate,scenarioChanges,CalculatorPrint,mechanismParameters}=await import('data:text/javascript;base64,'+Buffer.from(output).toString('base64'));
 const data=JSON.parse(readFileSync(resolve(root,'src/components/fixtures/initiative_estimates_v18.json'),'utf8'));
 test('Оценки всех рабочих инициатив сохраняют источник годовой прибыли и состав ресурсов',()=>{
  const current=data.initiatives.filter(i=>!isHistorical(i));assert.equal(current.length,147);
@@ -33,4 +33,31 @@ test('Печатный результат рычага сохраняет выб
  const initiative={code:'ИТ-129',title:'Ключи подписи'},input={period:'2027',months:12,baseline:10,target:9,additional_opex:0},result={physical_change:10,hours_released:null,period_gross_benefit:20,period_delta_ebitda:20,annual_delta_ebitda:20,one_off_cash_release:null,expected_risk_reduction:null,requirements:[]};
  const html=renderToStaticMarkup(React.createElement(CalculatorPrint,{mechanism:true,title:'Экономия ресурса',input,result,resultInitiative:initiative}));
  assert.match(html,/ИТ-129 \/ Ключи подписи/);assert.match(html,/База 10 \/ цель 9/);assert.match(html,/Изменение операционной прибыли/);assert.match(html,/Финансовое согласование: требуется подтверждение/);assert.doesNotMatch(html,/История \/|Фонд оплаты труда|EBIT|амортизац/);
+});
+test('Печатный механизм сохраняет объём, тариф и денежную долю времени',()=>{const input={kind:'hours',quantity:3000,baseline:4,target:2,rate:700,monetization:.5,additional_opex:0,period:'2027',months:12};const html=renderToStaticMarkup(React.createElement(CalculatorPrint,{mechanism:true,title:'Освобождение времени',input,resultInitiative:{code:'ИТ-116',title:'База знаний'}}));assert.match(html,/Объём: 3\s*000 операций/);assert.match(html,/тариф: 700 руб \/ ч/);assert.match(html,/доля времени с денежной экономией: 50%/);assert.match(html,/База 4 \/ цель 2 мин \/ операцию/);});
+
+
+test('Единая форма содержит три предметные группы, один выбор инициативы и одну карточку',()=>{
+ const cards=Array.from({length:300},(_,index)=>({code:'ИТ-'+String(index+1).padStart(3,'0'),title:'Инициатива '+(index+1),priority_annual_ebitda:1}));
+ const html=renderToStaticMarkup(React.createElement(Calculator,{data:{initiatives:cards},list:cards,selectedCode:cards[0].code}));
+ assert.equal((html.match(/<option/g)||[]).length,300);assert.equal((html.match(/class="calculator-case-tabs"/g)||[]).length,1);assert.equal((html.match(/aria-pressed=/g)||[]).length,3);assert.equal((html.match(/class="calculator-result-card"/g)||[]).length,1);
+ assert.match(html,/Выпуск и структура/);assert.match(html,/Средняя цена/);assert.match(html,/Расходы и ресурсы/);assert.match(html,/Условия результата/);assert.doesNotMatch(html,/Годовая цена|Отдельный рычаг|Оценки инициатив|Пример расчёта|factor-editor|<details|NaN|undefined/);
+});
+test('Семь операционных строк показывают базу, изменение и цель с объяснениями единиц',()=>{
+ const input={baseline:{eggs_set:72924750,hatch_rate:.863941556193199,chick_reject_rate:.010003377314396,mortality_rate:.114820735816656,live_kg:140052766,live_heads:57795460,fcr:1.58894726599462,slaughter_yield:.80363011316749},changes:{hatch_pp:.5,fcr_pct:-1}};
+ const html=renderToStaticMarkup(React.createElement(ProductionFields,{input}));
+ assert.equal((html.match(/type="number"/g)||[]).length,7);assert.equal((html.match(/aria-describedby=/g)||[]).length,7);assert.match(html,/86,39%/);assert.match(html,/86,89%/);assert.match(html,/1,589 кг \/ кг/);assert.match(html,/1,573 кг \/ кг/);assert.match(html,/Корм на 1 кг живого веса/);assert.match(html,/Цыплята, выведенные из 100 заложенных яиц/);assert.doesNotMatch(html,/NaN|Infinity|undefined/);
+});
+test('Дополнительные расходы сохраняют знак и переносятся в выбранный печатный паспорт',()=>{
+ const rows=scenarioChanges({},null,{otherMillion:-.8,itMillion:.2});assert.deepEqual(rows,[['Прочие операционные изменения',-.8,'млн руб'],['Сопровождение ИТ',.2,'млн руб']]);
+ const html=renderToStaticMarkup(React.createElement(CalculatorPrint,{resultInitiative:{code:'ИТ-086',title:'Конверсия корма'},input:{baseline:{period:'Январь–июнь 2026'}},scenarioChanges:rows}));
+ assert.match(html,/ИТ-086 \/ Конверсия корма/);assert.match(html,/Прочие операционные изменения -0,8 млн руб/);assert.match(html,/Сопровождение ИТ 0,2 млн руб/);assert.match(html,/Январь–июнь 2026/);
+});
+
+test('Карточка времени сохраняет тариф и денежную долю, капитал сохраняет самостоятельный поток',()=>{
+ const rows=mechanismParameters({kind:'hours',quantity:3000,baseline:4,target:2,rate:700,monetization:.5,additional_opex:0});
+ assert.ok(rows.some(([name,value,unit])=>name==='Цена ресурса'&&value===700&&unit==='руб / ч'));
+ assert.ok(rows.some(([name,value,unit])=>name==='Доля времени с денежной экономией'&&value===50&&unit==='%'));
+ const capital=mechanismParameters({kind:'working_capital',quantity:100000,baseline:30,target:20,additional_opex:0});
+ assert.deepEqual(capital,[['База показателя',30,'дней'],['Цель показателя',20,'дней'],['Объём',100000,'руб / день']]);
 });

@@ -8,7 +8,8 @@ export function productionTreeModel(input,result){
  add('ebitda','Операционная прибыль','млн руб',b.ebitda,t.ebitda,{change:result?.period_delta_ebitda,formula:'Изменение выручки − изменение расходов'});
  add('depreciation','Дополнительная амортизация','млн руб',null,input?.additional_depreciation,{change:input?.additional_depreciation,editor:'depreciation',formula:'Амортизация того же периода'});
  add('revenue','Выручка','млн руб',b.revenue,t.revenue,{formula:'Продажи × средняя цена'});
- add('expenses','Операционные расходы','млн руб',sum(b.variable_expenses,b.fixed_expenses),sum(t.variable_expenses,t.fixed_expenses),{editor:'costs',formula:'Переменные + постоянные расходы'});
+ add('expenses','Операционные расходы','млн руб',sum(b.variable_expenses,b.fixed_expenses),sum(t.variable_expenses,t.fixed_expenses,Object.hasOwn(t,'extra_opex_delta')?t.extra_opex_delta:0),{change:isNumber(result?.revenue_delta)&&isNumber(result?.period_delta_ebitda)?result.revenue_delta-result.period_delta_ebitda:delta(sum(b.variable_expenses,b.fixed_expenses),sum(t.variable_expenses,t.fixed_expenses,Object.hasOwn(t,'extra_opex_delta')?t.extra_opex_delta:0)),editor:'costs',formula:'Переменные + постоянные + дополнительные расходы'});
+ if(Object.hasOwn(t,'extra_opex_delta')&&t.extra_opex_delta!==0)add('extraopex','Дополнительные расходы','млн руб',0,t.extra_opex_delta,{editor:'costs',formula:'Прочие операционные изменения + сопровождение ИТ'});
  add('sales','Продажи','кг',b.sold_kg,t.sold_kg,{editor:'products',formula:'Сумма реализованных конечных продуктов'});
  add('price','Средняя цена','руб / кг',b.average_price,t.average_price,{editor:'price',formula:'Выручка / масса тех же продаж',source:input?.sources?.prices});
  add('variable','Переменные расходы','млн руб',b.variable_expenses,t.variable_expenses,{editor:'costs',formula:'Сумма физический драйвер × ставка'});

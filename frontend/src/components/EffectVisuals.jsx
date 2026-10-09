@@ -39,6 +39,7 @@ function ebitdaRequirement(result){
 
 export function CalculationFlow({input,result}){
   const images=useProductionAssets(),feedBasis=result?.reconciliation?.feed_basis;
+  const expenseItems=[['revenue','Выручка','money','Заполните цены'],['variable_expenses','Переменные расходы','costs','Заполните ставки'],['fixed_expenses','Постоянные расходы','costs','Заполните расходы'],...(Object.hasOwn(result?.target||{},'extra_opex_delta')&&result.target.extra_opex_delta!==0?[['extra_opex_delta','Дополнительные расходы','costs','Заполните дополнительные расходы']]:[]),['ebitda','Операционная прибыль','effect',ebitdaRequirement(result)]];
   const feedLabel=feedBasis?feedBasis==='Наблюдаемый расход'?'Наблюдаемый расход корма':'Расчётный расход корма':isNumber(input?.baseline?.feed_kg)?'Наблюдаемый расход корма':'Расход корма';
   return <figure className="ev-calculation">
     <figcaption><h2>Производственные рычаги определяют объём годного мяса</h2>{input&&<p className="ev-calculation-note">Процентный пункт (п.п.) меняет долю на 0,01</p>}</figcaption>
@@ -58,19 +59,19 @@ export function CalculationFlow({input,result}){
       <div><span><Icon name="price"/>Средняя цена</span><strong>{fmt(result?.target?.average_price,2,'Заполните цены')}</strong><small>руб / кг / база {fmt(result?.baseline?.average_price,2,'Заполните цены')}</small></div><b className="ev-operator" aria-hidden="true">=</b>
       <div><span><Icon name="money"/>Выручка</span><ComparedValue result={result} name="revenue" unit="млн руб" empty="Заполните цены" money/></div>
     </div>
-    <div className="ev-profit-equation" aria-label="Прибыль равна выручке за вычетом переменных и постоянных расходов">
-      {[['revenue','Выручка','money','Заполните цены'],['variable_expenses','Переменные расходы','costs','Заполните ставки'],['fixed_expenses','Постоянные расходы','costs','Заполните расходы'],['ebitda','Операционная прибыль','effect',ebitdaRequirement(result)]].map(([key,label,icon,empty],k)=><React.Fragment key={key}>
-        {k>0&&<b className="ev-operator" aria-hidden="true">{k===3?'=':'−'}</b>}
-        <div className={k===3?'ev-equation-result':''}><span><Icon name={icon}/>{label}</span><strong>{fmt(isNumber(result?.target?.[key])?result.target[key]/1e6:null,2,empty)}</strong><small>млн руб / база {fmt(isNumber(result?.baseline?.[key])?result.baseline[key]/1e6:null,2,empty)}</small></div>
+    <div className={'ev-profit-equation '+(expenseItems.length===5?'ev-profit-extra':'')} aria-label="Прибыль равна выручке за вычетом переменных и постоянных расходов">
+      {expenseItems.map(([key,label,icon,empty],k)=><React.Fragment key={key}>
+        {k>0&&<b className="ev-operator" aria-hidden="true">{k===expenseItems.length-1?'=':'−'}</b>}
+        <div className={k===expenseItems.length-1?'ev-equation-result':''}><span><Icon name={icon}/>{label}</span><strong>{fmt(isNumber(result?.target?.[key])?result.target[key]/1e6:null,2,empty)}</strong><small>млн руб / база {fmt(key==='extra_opex_delta'?0:isNumber(result?.baseline?.[key])?result.baseline[key]/1e6:null,2,empty)}</small></div>
       </React.Fragment>)}
     </div>
-    <p className="ev-calculation-note">Выручка − переменные и постоянные расходы / {display(result?.baseline_period)||'Укажите период расчёта'}</p>
+    <p className="ev-calculation-note">Выручка − операционные расходы / {display(result?.baseline_period)||'Укажите период расчёта'}</p>
   </figure>;
 }
 
 export function bridgeGeometry(result){
   const rows=result?.bridge,total=result?.period_delta_ebitda;
-  const codes=['yield','mix','price','variable_cost','fixed_cost'];
+  const codes=['yield','mix','price','variable_cost','fixed_cost',...(rows?.length===6?['extra_opex']:[])];
   if(!Array.isArray(rows)||rows.length!==codes.length||!isNumber(total)||rows.some((r,k)=>r?.code!==codes[k]||!isNumber(r?.rub)))return null;
   const sum=rows.reduce((v,r)=>v+r.rub,0);
   // Копейка допускает округление при сверке денежных составляющих
@@ -83,7 +84,7 @@ export function bridgeGeometry(result){
   return {bars:bars.map((r,k)=>({...r,x:left+step*k+(step-barWidth)/2,y:Math.min(y(r.start),y(r.end)),height:Math.abs(y(r.end)-y(r.start)),endY:y(r.end)})),total,x:left+step*bars.length+(step-barWidth)/2,totalY:Math.min(y(0),y(total)),totalHeight:Math.abs(y(total)-y(0)),zeroY:y(0),barWidth,step,width};
 }
 
-const bridgeLabels={yield:['Выход'],mix:['Структура'],price:['Цена'],variable_cost:['Переменные','расходы'],fixed_cost:['Постоянные','расходы']};
+const bridgeLabels={yield:['Выход'],mix:['Структура'],price:['Цена'],variable_cost:['Переменные','расходы'],fixed_cost:['Постоянные','расходы'],extra_opex:['Дополнительные','расходы']};
 export function EffectBridge({result}){
   if(!result)return null;
   const geometry=bridgeGeometry(result);

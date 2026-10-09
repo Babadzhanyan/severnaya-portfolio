@@ -34,3 +34,64 @@ test('Годовое копирование различает неизвест�
  for(const percent of [0,-1]){const scenario={price_change_pct:percent,unchanged_expenses:true},result=annualPriceEstimate(actualCase,scenario),text=annualResultText(result,scenario,initiative);assert.match(text,/^ИТ-002/);assert.match(text,percent===0?/прибыли: 0 млн руб/:/прибыли: -330,96 млн руб/);assert.equal(result.approved_delta_ebitda,null);}
  assert.equal(annualResultText(annualPriceEstimate(actualCase,{unchanged_expenses:false}),{},initiative),null);
 });
+
+
+test('Встроенная годовая форма сохраняет фактический период и дерево, итог переносит общий калькулятор',()=>{
+ const html=renderToStaticMarkup(React.createElement(AnnualActualCase,{actualCase,scenario:{price_change_percent:1,unchanged_expenses:true},embedded:true,compact:true}));
+ assert.match(html,/Май 2025–апрель 2026 \/ весь завод \/ 12 месяцев/);assert.match(html,/data-calculator-control="annual_price"/);assert.match(html,/data-calculator-control="annual_expenses"/);assert.match(html,/158,72 руб \/ кг/);assert.match(html,/Дерево от производства к операционной прибыли/);assert.doesNotMatch(html,/annual-actual-result|Скопировать для паспорта|factor-editor|<details|NaN|undefined/);
+});
+
+test('Явный пропуск дополнительных расходов сохраняет годовую базу и ценовой эффект, прибыль ожидает сумму',()=>{
+ const scenario={price_change_pct:1,additional_cash_expenses:null,unchanged_expenses:true},result=annualPriceEstimate(actualCase,scenario);
+ assert.equal(result.period,'Май 2025–апрель 2026');
+ assert.equal(result.baseline_sales_kg,208515884.605);
+ assert.equal(result.baseline_revenue,33096006892.8734);
+ assert.ok(Math.abs(result.revenue_delta-330960068.928734)<1e-5);
+ assert.ok(result.target_price>result.baseline_price);
+ assert.equal(result.period_delta_ebitda,null);
+ assert.equal(result.period_delta_ebit,null);
+ assert.equal(result.status,'Требуются дополнительные расходы');
+ assert.equal(annualResultText(result,scenario,{code:'ИТ-002',title:'Тестовая идея'}),null);
+ for(const embedded of [false,true]){
+  const html=renderToStaticMarkup(React.createElement(AnnualActualCase,{actualCase,scenario,embedded}));
+  assert.match(html,/data-calculator-control="annual_price"/);
+  assert.match(html,/data-calculator-control="annual_expenses"[^>]*value=""/);
+  assert.match(html,/158,72 руб \/ кг/);
+  assert.match(html,/208,52 млн кг/);
+  assert.match(html,/Требуются дополнительные расходы/);
+  assert.doesNotMatch(html,/NaN|Infinity|undefined/);
+ }
+ assert.ok(Math.abs(annualPriceEstimate(actualCase,{price_change_pct:1,unchanged_expenses:true}).period_delta_ebitda-330960068.928734)<1e-5);
+ assert.ok(Math.abs(annualPriceEstimate(actualCase,{...scenario,additional_cash_expenses:0}).period_delta_ebitda-330960068.928734)<1e-5);
+});
+
+test('Ошибочный процент сохраняет редактируемую форму и наблюдаемую базу, денежные цели ожидают исправления',()=>{
+ for(const price_change_pct of [null,NaN,Infinity,true,-101,1001]){
+  const scenario={price_change_pct,additional_cash_expenses:2e6,unchanged_expenses:true},result=annualPriceEstimate(actualCase,scenario);
+  assert.ok(result.error);
+  assert.equal(result.baseline_sales_kg,208515884.605);
+  assert.equal(result.baseline_revenue,33096006892.8734);
+  assert.ok(Number.isFinite(result.baseline_price));
+  for(const key of ['target_price','revenue_delta','period_delta_ebitda','period_delta_ebit'])assert.equal(result[key],null);
+  const html=renderToStaticMarkup(React.createElement(AnnualActualCase,{actualCase,scenario,embedded:true}));
+  assert.match(html,/data-calculator-control="annual_price"/);
+  assert.match(html,/data-calculator-control="annual_expenses"/);
+  assert.match(html,/role="alert"/);
+  assert.match(html,/Май 2025–апрель 2026/);
+  assert.match(html,/158,72 руб \/ кг/);
+  assert.doesNotMatch(html,/NaN|Infinity|undefined/);
+ }
+});
+
+test('Ошибочная сумма расходов сохраняет поля исправления и ожидающую прибыль',()=>{
+ for(const additional_cash_expenses of [NaN,Infinity,true,'2']){
+  const scenario={price_change_pct:1,additional_cash_expenses,unchanged_expenses:true},result=annualPriceEstimate(actualCase,scenario);
+  assert.ok(result.error);
+  assert.equal(result.period_delta_ebitda,null);
+  assert.ok(Math.abs(result.revenue_delta-330960068.928734)<1e-5);
+  const html=renderToStaticMarkup(React.createElement(AnnualActualCase,{actualCase,scenario,embedded:true}));
+  assert.match(html,/data-calculator-control="annual_expenses"[^>]*value=""/);
+  assert.match(html,/role="alert"/);
+  assert.doesNotMatch(html,/NaN|Infinity|undefined/);
+ }
+});
